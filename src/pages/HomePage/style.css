@@ -1,0 +1,48 @@
+/*HomePage/style.css*/
+
+.flexbox {
+    /*Required for three column layout*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.middle-col {
+    flex: 1 0 auto !important;
+}
+
+.flexbox-hero-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.card{
+    /*required for card resizing*/
+    flex: 1 1 0;
+    min-width: 20rem;
+}
+
+.light-green{
+    background-color: #CCFF33;
+}
+
+.flexbox-edu-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+    .flexbox-hero-card {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 575px) {
+    .container {
+        max-width: 95vw;
+    }
+}

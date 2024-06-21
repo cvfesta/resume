@@ -1,0 +1,34 @@
+// types.ts
+export interface Hero {
+    title: string;
+    subTitle: string;
+}
+
+export interface HeroCard {
+    title: string;
+    level: string;
+    subTitle: string;
+    badges: string[];
+}
+
+export interface Experience {
+    title: string;
+    organization: string;
+    description: string;
+    date: string;
+}
+
+export interface Education {
+    title: string;
+    institution: string,
+    location: string,
+    date: string;
+    icon: string;
+}
+
+export interface Data {
+    hero: Hero;
+    heroCard: HeroCard[];
+    experience: Experience[];
+    education: Education[];
+}

@@ -1,0 +1,23 @@
+.eduCard{
+    /*required for card resizing*/
+    flex: 1 0 0;
+    /*margin-left: -1px; !* Adjust margin value as needed *!*/
+    /*margin-right: -1px; !* Adjust margin value as needed *!*/
+    /*margin-top: -1px;*/
+    margin: -1px;
+}
+
+/*@media (max-width: 990px) {*/
+/*    .eduCard{*/
+/*        min-width: 320px*/
+/*        !*width: clamp(320px, 100%, 659px);*!*/
+/*    }*/
+/*}*/
+/*@media (min-width: 1320px) {*/
+/*    .eduCard{*/
+/*        !*width: clamp(40rem, auto, 659px);*!*/
+/*        width: clamp(40rem, 100%, 659px);*/
+/*        !*required for card resizing*!*/
+/*        !*flex: 1 1 0;*!*/
+/*    }*/
+/*}*/

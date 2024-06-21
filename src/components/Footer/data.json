@@ -1,0 +1,19 @@
+{
+  "Links": [
+    {
+      "id": 1,
+      "name": "Dribbble",
+      "href": "https://dribbble.com/christianfesta1"
+    },
+    {
+      "id": 2,
+      "name": "Github",
+      "href": "https://github.com/cvfesta"
+    },
+    {
+      "id": 3,
+      "name": "Figma",
+      "href": "https://www.figma.com/file/M9wIXWbK30TCLjjVWfIKdb/Resume?type=design&node-id=302%3A660&mode=dev"
+    }
+  ]
+}

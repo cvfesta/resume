@@ -1,0 +1,14 @@
+/*HomeCard/style.css*/
+
+.hero-card {
+    margin: -1px;
+}
+
+.light-green{
+    background-color: #CCFF33;
+}
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}

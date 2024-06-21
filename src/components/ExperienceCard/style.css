@@ -1,0 +1,37 @@
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /*align-content: stretch;*/
+    justify-content: center;
+    /*align-items: stretch;*/
+}
+
+.vr{
+    width: .15rem;
+}
+
+.circle{
+    border-width: .15rem!important;
+    /*border-radius: 99rem;*/
+    border-color: var(--bs-body-color);
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+.timeline{
+    padding-bottom: .25rem!important;
+}
+
+@media (min-width: 720px) {
+    .date-size {
+        width: 8rem;
+    }
+}
+@media (max-width: 719px) {
+    .date-size {
+        width: 4rem;
+    }
+}
+
+

@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "title": "Christian Festa",
+    "subTitle": "A seasoned System Integrator with expertise in project execution, product leadership, and product design. Adept at designing for and managing complex Design, Develop, and Integrate (DDI) projects, Maintenance & Operations (M&O) projects, and Commercial Off-the-Shelf (COTS) implementations. I have a proven track record of delivering successful projects and am skilled in fostering strong stakeholder relationships and clear communication."
+  },
+  "heroCard": [
+    {
+      "title": "Designer",
+      "level": "Principal",
+      "subTitle": "Championed the creation and maintenance of comprehensive UI/UX standards, and of multiple custom design systems within Figma. All while ensuring WCAG compliance within the design.",
+      "badges": [
+        "Primitives",
+        "Semantics",
+        "Tokens",
+        "Components",
+        "Branding",
+        "Prototyping",
+        "WCAG",
+        "Figma"
+      ]
+    },
+    {
+      "title": "Developer",
+      "level": "",
+      "subTitle": "I'm a skilled front-end developer. I built this app using with the following stack: React with Typescript, Vite as a package manager, JSON for content separation, Bootstrap, and custom CSS. This allowed me to achieve a unique and responsive design that go beyond a traditional resume.",
+      "badges": [
+        "CSS",
+        "HTML",
+        "Bootstrap",
+        "React",
+        "Typescript",
+        "Github",
+        "Jira",
+        "IntelliJ"
+      ]
+    },
+    {
+      "title": "Product Manager",
+      "level": "Senior",
+      "subTitle": "Proven leader with a track record of successfully managing serveral technical projects concurrently. I excel at setting strategic direction, providing clear roadmaps, prioritizing tasks effectively, and keeping stakeholders informed.",
+      "badges": [
+        "Leadership",
+        "Strategic Planning",
+        "Data-Driven",
+        "Visionary",
+        "Problem-Solving",
+        "Strategic Planning"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Technical Delivery Lead & Principal Designer",
+      "organization": "Public Consulting Group",
+      "description": "Led the design, development, and integration (DDI) of a public and an admin portal on Amazon Web Services (AWS) cloud serving as both Principal Designer and Delivery Lead.\nInstalled and configured project wide application and established project wide best practices and processes.\nGuiding cross-functional teams to ensure a seamless user experience across both portals.\nEstablishing a comprehensive Figma design system for WCAG compliance and responsive design across devices.\nLed the design direction for user flows and UX.",
+      "date": "2022 - Present"
+    },
+    {
+      "title": "Technical Product and Design Manager",
+      "organization": "Unisys",
+      "description": "Spearheaded the design, development, and integration (DDI) of a user portal on Google Cloud Platform, wearing the combined hat of Technical Product Manager and Design Manager.\nManaged multiple projects concurrently, setting clear direction and priorities to ensure successful and on-time delivery.\nOversaw the completion of payment milestones and tracked progress, providing stakeholders with transparent status reports.\nEstablished clear UI/UX standards and led the creation of a comprehensive Figma design system for WCAG compliance and responsive design across devices. This system streamlined development and ensured design consistency throughout the project.\nLed the design direction for user flows and UX, oversaw the facilitation of rapid application development (RAD) sessions with the client to guarantee user needs were met.",
+      "date": "2018 - 2022"
+    },
+    {
+      "title": "Technical Consultant",
+      "organization": "County Welfare Directors Association of California",
+      "description": "As a Technical Consultant, I played a vital role on the Independent Verification and Validation (IV&V) team. Leveraging my design expertise, I actively identified and analyzed potential integration issues within the multi-system environment to ensure seamless system interaction and overall project success.  Additionally, I collaborated with the project team to identify areas for process improvement, contributing recommendations that enhanced efficiency and reduced potential risks.",
+      "date": "2016 - 2018"
+    },
+    {
+      "title": "System Integrator",
+      "organization": "Unisys",
+      "description": "Extensive experience in System Integration Consulting, with a strong background in both sales and project execution. Skilled in managing Design, Develop, and Integrate (DDI) projects, Maintenance & Operations (M&O) projects, and COTS (Commercial Off-the-Shelf) implementations. Successfully co-authored winning proposals exceeding 1,000 pages. Adept at project management, effectively communicating progress through clear and concise weekly reports, and fostering strong relationships with key stakeholders.",
+      "date": "2009 - 2016"
+    }
+  ],
+  "education": [
+    {
+      "title": "Google User Experience (UX) Design Certification",
+      "institution": "",
+      "location": "",
+      "date": "2021",
+      "icon": "<i className=\"bi bi-award\"></i>"
+    },
+    {
+      "title": "Project Management Professional (PMP) Certification",
+      "institution": "",
+      "location": "",
+      "date": "2014",
+      "icon": "<i className=\"bi bi-award\"></i>"
+    },
+    {
+      "title": "Bachelor of Science in Information Sciences and Technology",
+      "institution": "Pennsylvania State University",
+      "location": "University Park, PA",
+      "date": "2005 - 2009",
+      "icon": "<i className=\"bi bi-mortarboard-fill\"></i>"
+    }
+    ]
+}

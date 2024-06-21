@@ -10,6 +10,6 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/resume-react/',
+  base: '/vite-project/',
   plugins: [react()],
 });

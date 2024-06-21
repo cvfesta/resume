@@ -14,6 +14,6 @@ export default defineConfig({
   plugins: [react()],
   base: "/resume-react/",
   build: {
-    outDir: '', // This outputs files to the root directory
+    outDir: 'dist', // Create a 'dist' directory for built files
   },
 });

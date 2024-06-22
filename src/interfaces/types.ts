@@ -16,6 +16,7 @@ export interface Experience {
     organization: string;
     description: string;
     date: string;
+    link: string;
 }
 
 export interface Education {

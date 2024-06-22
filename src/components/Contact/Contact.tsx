@@ -1,5 +1,6 @@
 import React from 'react';
 import useBootstrapValidation from '../../utils/bs-validations';
+import './style.css';
 
 const ContactModal: React.FC = () => {
     useBootstrapValidation(); // Apply the validation logic
@@ -7,10 +8,10 @@ const ContactModal: React.FC = () => {
     return (
         <div className="modal fade" id="contactModal" data-bs-backdrop="static" tabIndex={-1} aria-labelledby="contactModalLabel" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
-                <div className="modal-content rounded-4">
+                <div className="modal-content rounded-5">
                     <div className="modal-header">
                         <i className="fa-regular fa-envelope fs-4 me-2"></i>
-                        <h5 className="modal-title me-2" id="contactModalLabel">Contact Christian Festa</h5>
+                        <h5 className="modal-title me-2" id="contactModalLabel">Contact</h5>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form name="contact" className="contact needs-validation" method="POST" action="https://formspree.io/f/mpzgazbz" data-netlify="true" noValidate>
@@ -54,8 +55,8 @@ const ContactModal: React.FC = () => {
                             </div>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" className="btn btn-info"><i className="bi bi-send me-2"></i>Send</button>
+                            <button type="button" className="btn btn-outline-dark" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" className="btn btn-outline-dark brand-color">Send</button>
                         </div>
                     </form>
                 </div>

@@ -6,7 +6,7 @@ import "./style.css";
 // Ensure the imported JSON conforms to the Data type
 const data: Data = experienceData as Data;
 
-const Card: React.FC<Experience> = ({ title, organization, description, date }) => {
+const Card: React.FC<Experience> = ({ title, organization, description, date, link }) => {
     return (
         <>
             <div className="flexbox gap-2 gap-lg-4">
@@ -23,6 +23,7 @@ const Card: React.FC<Experience> = ({ title, organization, description, date }) 
                     <p className="fs-2 fw-semibold mb-0 lh-1">{title}</p>
                     {organization && <p className="fs-4 pt-1 lh-1 fw-semibold text-body-tertiary">{organization}</p>}
                     <p>{description}</p>
+                    {link && <a className="btn btn-outline-dark brand-color rounded-5" target="_blank" href={link}>View ca-path.com</a>}
                 </div>
             </div>
         </>
@@ -39,6 +40,7 @@ const ExperienceCard: React.FC = () => {
                     organization={exp.organization}
                     description={exp.description}
                     date={exp.date}
+                    link={exp.link}
                 />
             ))}
         </div>

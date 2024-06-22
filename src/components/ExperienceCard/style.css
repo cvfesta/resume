@@ -11,6 +11,11 @@
     width: .15rem;
 }
 
+.brand-color {
+    background-color: #CCFF33;
+    width: 13rem;
+}
+
 .circle{
     border-width: .15rem!important;
     /*border-radius: 99rem;*/

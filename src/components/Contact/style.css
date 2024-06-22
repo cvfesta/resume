@@ -1,3 +1,6 @@
-.brand-color {
-    background-color: #CCFF33;
+.contact-button {
+    background-color: #CCFF33 !important;
+}
+.contact-button:hover {
+    background-color: #212921 !important;
 }

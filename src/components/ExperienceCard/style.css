@@ -11,9 +11,12 @@
     width: .15rem;
 }
 
-.brand-color {
-    background-color: #CCFF33;
+.exp-button {
+    background-color: #CCFF33 !important;
     width: 13rem;
+}
+.exp-button:hover {
+    background-color: #212921 !important;
 }
 
 .circle{

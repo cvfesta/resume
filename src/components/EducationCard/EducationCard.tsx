@@ -9,12 +9,14 @@ const data: Data = educationData as Data;
 
 const Card: React.FC<Education> = ({ title, institution, location, icon, date }) => {
     return (
-        <div className="eduCard bg-dark-subtle border border-black py-3 px-3 px-lg-5">
+        <div className="eduCard d-flex gap-4 bg-dark-subtle border border-black py-3 px-3 px-lg-5">
             <div dangerouslySetInnerHTML={{ __html: icon }} />
+            <div>
             <p className="fs-5 fw-semibold mb-1">{title}</p>
             {institution && <p className="mb-0">{institution}</p>}
             {location && <p className="">{location}</p>}
             <p className="mb-0">{date}</p>
+            </div>
         </div>
     );
 };

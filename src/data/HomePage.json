@@ -84,21 +84,21 @@
       "institution": "",
       "location": "",
       "date": "2021",
-      "icon": "<i className=\"bi bi-award\"></i>"
+      "icon": "<i class='bi bi-award display-5'></i>"
     },
     {
       "title": "Project Management Professional (PMP) Certification",
       "institution": "",
       "location": "",
       "date": "2014",
-      "icon": "<i className=\"bi bi-award\"></i>"
+      "icon": "<i class='bi bi-award display-5'></i>"
     },
     {
       "title": "Bachelor of Science in Information Sciences and Technology",
       "institution": "Pennsylvania State University",
       "location": "University Park, PA",
       "date": "2005 - 2009",
-      "icon": "<i className=\"bi bi-mortarboard-fill\"></i>"
+      "icon": "<i class='bi bi-mortarboard-fill display-5'></i>"
     }
     ]
 }

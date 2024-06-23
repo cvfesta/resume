@@ -24,12 +24,12 @@
       "level": "",
       "subTitle": "I'm a skilled front-end developer. I built this app using with the following stack: React with Typescript, Vite as a package manager, JSON for content separation, Bootstrap, and custom CSS. This allowed me to achieve a unique and responsive design that go beyond a traditional resume.",
       "badges": [
-        "CSS",
+        "Custom CSS",
         "HTML",
         "Bootstrap",
         "React",
         "Typescript",
-        "Github",
+        "GitHub",
         "Jira",
         "IntelliJ"
       ]
@@ -41,10 +41,9 @@
       "badges": [
         "Leadership",
         "Strategic Planning",
-        "Data-Driven",
         "Visionary",
-        "Problem-Solving",
-        "Strategic Planning"
+        "Data-Driven",
+        "Stakeholder Communication"
       ]
     }
   ],

@@ -1,13 +1,13 @@
 {
   "hero": {
     "title": "Christian Festa",
-    "subTitle": "A seasoned System Integrator with expertise in project execution, product leadership, and product design. Adept at designing for and managing complex Design, Develop, and Integrate (DDI) projects, Maintenance & Operations (M&O) projects, and Commercial Off-the-Shelf (COTS) implementations. I have a proven track record of delivering successful projects and am skilled in fostering strong stakeholder relationships and clear communication."
+    "subTitle": "Welcome to my portfolio website! I'm Christian Festa, a seasoned system integrator specializing in UI/UX design, front-end development, and product management. My site showcases my professional journey, technical skills, and a variety of projects that highlight my expertise in design and the delivery of responsive high-quality web applications. Explore my work to see how I integrate these roles to deliver innovative and successful digital solutions."
   },
   "heroCard": [
     {
       "title": "Designer",
       "level": "Principal",
-      "subTitle": "Championed the creation and maintenance of comprehensive UI/UX standards, and of multiple custom design systems within Figma. All while ensuring WCAG compliance within the design.",
+      "subTitle": "I excel in leading cross-functional teams, mentoring designers, and aligning design strategies with business goals. I championed the creation and maintenance of comprehensive design standards and custom design systems within Figma.",
       "badges": [
         "Primitives",
         "Semantics",
@@ -22,7 +22,7 @@
     {
       "title": "Developer",
       "level": "",
-      "subTitle": "I'm a skilled front-end developer. I built this app using with the following stack: React with Typescript, Vite as a package manager, JSON for content separation, Bootstrap, and custom CSS. This allowed me to achieve a unique and responsive design that go beyond a traditional resume.",
+      "subTitle": "I built this app using React with TypeScript for a seamless interface, Vite for optimized performance, JSON for content separation, and a blend of Bootstrap and custom CSS for a unique, responsive design. This approach enabled me to create a design that go beyond traditional resumes.",
       "badges": [
         "Custom CSS",
         "HTML",
@@ -37,7 +37,7 @@
     {
       "title": "Product Manager",
       "level": "Senior",
-      "subTitle": "Proven leader with a track record of successfully managing serveral technical projects concurrently. I excel at setting strategic direction, providing clear roadmaps, prioritizing tasks effectively, and keeping stakeholders informed.",
+      "subTitle": "Proven leader with clear communication and a track record of successfully and concurrently managing complex Design, Develop, and Integrate (DDI) projects, Maintenance & Operations (M&O) projects, and Commercial Off-the-Shelf (COTS) implementations.",
       "badges": [
         "Leadership",
         "Strategic Planning",

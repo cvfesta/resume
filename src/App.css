@@ -6,5 +6,5 @@ html, body {
 }
 /*override bootstrap default corner radius*/
 .btn {
-  border-radius: .5rem!important;
+  border-radius: 0.5rem!important;
 }

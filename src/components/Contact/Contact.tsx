@@ -8,9 +8,8 @@ const ContactModal: React.FC = () => {
     return (
         <div className="modal fade" id="contactModal" data-bs-backdrop="static" tabIndex={-1} aria-labelledby="contactModalLabel" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
-                <div className="modal-content rounded-5">
-                    <div className="modal-header">
-                        <i className="fa-regular fa-envelope fs-4 me-2"></i>
+                <div className="modal-content px-3 rounded-5">
+                    <div className="modal-header border-0 pb-0">
                         <h5 className="modal-title me-2" id="contactModalLabel">Contact</h5>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -54,7 +53,7 @@ const ContactModal: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="modal-footer">
+                        <div className="modal-footer border-0">
                             <button type="button" className="btn btn-outline-dark" data-bs-dismiss="modal">Cancel</button>
                             <button type="submit" className="btn btn-outline-dark contact-button">Send</button>
                         </div>

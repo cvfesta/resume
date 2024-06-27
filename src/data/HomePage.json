@@ -1,78 +1,81 @@
 {
   "hero": {
     "title": "Christian Festa",
-    "subTitle": "Welcome to my portfolio website! I'm Christian Festa, a seasoned system integrator specializing in UI/UX design, front-end development, and product management. My site showcases my professional journey, technical skills, and a variety of projects that highlight my expertise in design and the delivery of responsive high-quality web applications. Explore my work to see how I integrate these roles to deliver innovative and successful digital solutions."
+    "subTitle": "As a system integrator, I’ve had the unique opportunity to wear multiple hats, giving me a comprehensive perspective that spans the entire product lifecycle—from initial design to final launch. This journey has allowed me to excel in UI/UX design, front-end development, and product management, seamlessly blending these skills to deliver innovative, user-centric enterprise-level solutions for Fortune 500 companies and government agencies. My hands-on involvement at every stage, paired with my ability to manage cross-functional teams, ensures that creative vision aligns with business goals, driving operational efficiency and measurable success."
   },
   "heroCard": [
     {
       "title": "Designer",
       "level": "Principal",
-      "subTitle": "I excel in leading cross-functional teams, mentoring designers, and aligning design strategies with business goals. I championed the creation and maintenance of comprehensive design standards and custom design systems within Figma.",
+      "subTitle": "As a Principal Designer, I lead teams to create intuitive, scalable design systems that align with business goals and ensure accessibility across all platforms. My expertise in Figma and WCAG standards has driven measurable improvements in user engagement and operational efficiency, while I mentor junior and senior designers and foster cross-functional collaboration.",
       "badges": [
-        "Primitives",
-        "Semantics",
-        "Tokens",
-        "Components",
-        "Branding",
+        "Design Systems",
+        "WCAG Compliance",
+        "Figma",
         "Prototyping",
-        "WCAG",
-        "Figma"
+        "User Research",
+        "Branding",
+        "Mentorship",
+        "Cross-Functional Leadership"
       ]
     },
     {
       "title": "Developer",
-      "level": "",
-      "subTitle": "I built this app using React with TypeScript for a seamless interface, Vite for optimized performance, JSON for content separation, and a blend of Bootstrap and custom CSS for a unique, responsive design. This approach enabled me to create a design that go beyond traditional resumes.",
+      "level": "Front-End",
+      "subTitle": "With deep front-end expertise, I build high-performance, responsive web applications using React, TypeScript, and Vite. I integrate design principles into development for a seamless user experience and optimize performance to deliver fast, scalable solutions.",
       "badges": [
-        "Custom CSS",
-        "HTML",
-        "Bootstrap",
         "React",
-        "Typescript",
+        "TypeScript",
+        "Vite",
+        "Custom CSS",
+        "Bootstrap",
         "GitHub",
-        "Jira",
-        "IntelliJ"
+        "Agile Development",
+        "Performance Optimization"
       ]
     },
     {
       "title": "Product Manager",
       "level": "Senior",
-      "subTitle": "Proven leader with clear communication and a track record of successfully and concurrently managing complex Design, Develop, and Integrate (DDI) projects, Maintenance & Operations (M&O) projects, and Commercial Off-the-Shelf (COTS) implementations.",
+      "subTitle": "As a Senior Product Manager, I drive complex projects from concept to launch, delivering results that exceed expectations. My strategic vision and data-driven approach, paired with cross-functional leadership, consistently improve efficiency, speed up time-to-market, and boost business growth.",
       "badges": [
         "Leadership",
-        "Strategic Planning",
-        "Visionary",
-        "Data-Driven",
-        "Stakeholder Communication"
+        "Strategic Vision",
+        "Stakeholder Management",
+        "Agile Methodologies",
+        "Risk Management",
+        "Data Analytics",
+        "Budgeting",
+        "Roadmapping"
       ]
     }
   ],
   "experience": [
     {
-      "title": "Technical Delivery Lead & Principal Designer",
+      "title": "Technical Delivery Manager & Principal Design Manager",
       "organization": "Public Consulting Group",
-      "description": "Led the design, development, and integration (DDI) of a public and an admin portal on Amazon Web Services (AWS) cloud serving as both Principal Designer and Delivery Lead.\nInstalled and configured project wide application and established project wide best practices and processes.\nGuiding cross-functional teams to ensure a seamless user experience across both portals.\nEstablishing a comprehensive Figma design system for WCAG compliance and responsive design across devices.\nLed the design direction for user flows and UX.",
+      "description": "As Technical Delivery Manager and Principal Design Manager, I spearheaded the design, development, and integration (DDI) of a brand-new public and admin portal hosted on Amazon Web Services (AWS)—a $40 million project that required coordinating a team of over 30 designers, developers, and QA engineers. I established a comprehensive Figma-based design system to standardize components, enforce WCAG compliance, and ensure responsiveness across all devices. I led both onshore and offshore teams through the full project lifecycle, from design to launch, and implemented best practices for design handoffs, code reviews, and testing workflows. A key achievement was the phased rollout, with the first phase live in just three months. I also mentored junior and senior designers and managed stakeholder relationships through weekly meetings and detailed progress reports. Post-launch, I’ve been actively involved in optimization efforts, using user feedback and performance metrics to refine the platform. This role required blending creative leadership, technical expertise, and team coordination to deliver a portal that’s now a cornerstone of the organization’s digital strategy.",
       "date": "2022 - Present",
       "link": "https://ca-path.com/"
     },
     {
       "title": "Technical Product and Design Manager",
       "organization": "Unisys",
-      "description": "Spearheaded the design, development, and integration (DDI) of a user portal on Google Cloud Platform, wearing the combined hat of Technical Product Manager and Design Manager.\nManaged multiple projects concurrently, setting clear direction and priorities to ensure successful and on-time delivery.\nOversaw the completion of payment milestones and tracked progress, providing stakeholders with transparent status reports.\nEstablished clear UI/UX standards and led the creation of a comprehensive Figma design system for WCAG compliance and responsive design across devices. This system streamlined development and ensured design consistency throughout the project.\nLed the design direction for user flows and UX, oversaw the facilitation of rapid application development (RAD) sessions with the client to guarantee user needs were met.",
+      "description": "As Technical Product and Design Manager, I spearheaded the design, development, and integration of a brand-new public and admin portal hosted on Google Cloud Platform—a $100 million project that demanded managing multiple workstreams, tight deadlines, and a diverse team of over 30 professionals, including designers, developers, business analysts, and testers, across onshore and offshore locations. I pioneered the early adoption of Figma, a groundbreaking design tool that transformed our workflow and accelerated the design process by more than 2x, effectively doubling the output of the design team. My team and I established a comprehensive Figma-based design system that standardized components, enforced WCAG compliance, and ensured responsiveness across all devices. I oversaw the full project lifecycle—from requirements gathering and stakeholder workshops to deployment—while directing UX design processes and fostering cross-functional collaboration. My leadership in setting UI/UX standards delivered a scalable, user-friendly portal that significantly enhanced the organization’s customer service capabilities.",
       "date": "2018 - 2022",
       "link": ""
     },
     {
       "title": "Technical Consultant",
       "organization": "County Welfare Directors Association of California",
-      "description": "As a Technical Consultant, I played a vital role on the Independent Verification and Validation (IV&V) team. Leveraging my design expertise, I actively identified and analyzed potential integration issues within the multi-system environment to ensure seamless system interaction and overall project success.  Additionally, I collaborated with the project team to identify areas for process improvement, contributing recommendations that enhanced efficiency and reduced potential risks.",
+      "description": "In my role as a Technical Consultant on the Independent Verification and Validation (IV&V) team, I was tasked with ensuring the successful integration of a complex, multi-system environment for a high-profile public sector initiative. This position required me to dive deep into technical documentation, analyze system interactions, and identify potential risks that could jeopardize project timelines or performance. I pinpointed integration bottlenecks, recommended process optimizations like automated testing scripts, and collaborated with developers to implement fixes before they became critical issues. I worked tirelessly with stakeholders, conducting biweekly reviews to present findings, explain technical challenges in accessible terms, and secure buy-in for my proposed solutions. My role demanded both technical expertise and strong communication skills, as I acted as the bridge between technical teams and non-technical leadership, ensuring everyone stayed aligned on goals and progress. Ultimately, my contributions helped deliver a reliable, integrated system that met all contractual obligations and served as a model for future initiatives.",
       "date": "2016 - 2018",
       "link": ""
     },
     {
       "title": "System Integrator",
       "organization": "Unisys",
-      "description": "Extensive experience in System Integration Consulting, with a strong background in both sales and project execution. Skilled in managing Design, Develop, and Integrate (DDI) projects, Maintenance & Operations (M&O) projects, and COTS (Commercial Off-the-Shelf) implementations. Successfully co-authored winning proposals exceeding 1,000 pages. Adept at project management, effectively communicating progress through clear and concise weekly reports, and fostering strong relationships with key stakeholders.",
+      "description": "Starting as a college new hire and advancing to a managerial role over seven years, I contributed to a wide variety of projects at Unisys, including criminal justice systems, welfare systems, and grant management systems. My role was dynamic, requiring me to wear many hats across design, development, integration, and maintenance efforts. I established standards and protocols for a multisystem case exchange, enabling seamless data sharing across platforms, and led the implementation build for our system, ensuring its successful deployment. Additionally, I built and maintained the system’s regression suite, conducting rigorous testing to uphold reliability and performance. In business development, I co-authored winning proposals, collaborating with experts to secure over $100 million in contracts. As a manager, I oversaw teams of up to 25 professionals, managing full system builds and coordinating tasks like system configuration, third-party integrations, and user acceptance testing.",
       "date": "2009 - 2016",
       "link": ""
     }
@@ -80,24 +83,27 @@
   "education": [
     {
       "title": "Google User Experience (UX) Design Certification",
-      "institution": "",
+      "institution": "Google",
       "location": "",
       "date": "2021",
-      "icon": "<i class='bi bi-award display-5'></i>"
+      "icon": "<i class='bi bi-award display-5'></i>",
+      "description": "Through this intensive Google certification program, I immersed myself in the fundamentals of user experience design, mastering skills like conducting in-depth user research, creating wireframes and prototypes, and performing usability testing to refine designs. The coursework included hands-on projects where I designed mobile and web applications from scratch, applying techniques like persona development and journey mapping to ensure user needs were at the forefront. This training sharpened my ability to create functional, accessible, and delightful interfaces, and it’s directly informed my approach to leading design teams and delivering user-centric solutions in my professional roles."
     },
     {
       "title": "Project Management Professional (PMP) Certification",
-      "institution": "",
+      "institution": "Project Management Institute",
       "location": "",
       "date": "2014",
-      "icon": "<i class='bi bi-award display-5'></i>"
+      "icon": "<i class='bi bi-award display-5'></i>",
+      "description": "Earning my PMP certification from the Project Management Institute was a game-changer, equipping me with advanced knowledge of project management methodologies like Agile, Scrum, and Waterfall. The rigorous process involved studying risk management, stakeholder engagement, resource allocation, and schedule optimization, all of which I’ve applied to lead complex, multi-million-dollar projects successfully. I completed real-world simulations and exams that tested my ability to handle scope creep, resolve conflicts, and deliver under pressure—skills that have been critical in my roles as a product manager and technical lead, enabling me to consistently bring projects in on time, within budget, and above expectations."
     },
     {
       "title": "Bachelor of Science in Information Sciences and Technology",
       "institution": "Pennsylvania State University",
       "location": "University Park, PA",
       "date": "2005 - 2009",
-      "icon": "<i class='bi bi-mortarboard-fill display-5'></i>"
+      "icon": "<i class='bi bi-mortarboard-fill display-5'></i>",
+      "description": "Graduating with honors from Penn State’s Information Sciences and Technology program gave me a rock-solid foundation in IT, systems integration, and human-computer interaction—areas that have shaped my entire career. My coursework covered software development, database management, network security, and user interface design, with projects that ranged from coding custom applications to analyzing how people interact with technology. I also took electives in leadership and project management, which sparked my interest in bridging technical and creative disciplines. This degree, earned through four years of rigorous study and collaboration with peers, has been the bedrock of my ability to excel in roles that demand both technical prowess and strategic thinking."
     }
-    ]
+  ]
 }

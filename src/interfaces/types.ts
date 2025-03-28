@@ -26,7 +26,7 @@ export interface Education {
     location: string,
     date: string;
     icon: string;
-    description: string;
+    description?: string;
 }
 
 export interface Data {

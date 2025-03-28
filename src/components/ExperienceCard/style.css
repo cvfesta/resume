@@ -25,6 +25,7 @@
     border-color: var(--bs-body-color);
     height: 1.25rem;
     width: 1.25rem;
+    background-color: #CCFF33;
 }
 
 .timeline{

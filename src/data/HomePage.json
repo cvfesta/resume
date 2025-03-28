@@ -52,32 +52,36 @@
   ],
   "experience": [
     {
-      "title": "Technical Delivery Manager & Principal Design Manager",
+      "title": "Technical Delivery & Principal Design Manager",
       "organization": "Public Consulting Group",
       "description": "As Technical Delivery Manager and Principal Design Manager, I spearheaded the design, development, and integration (DDI) of a brand-new public and admin portal hosted on Amazon Web Services (AWS)—a $40 million project that required coordinating a team of over 30 designers, developers, and QA engineers. I established a comprehensive Figma-based design system to standardize components, enforce WCAG compliance, and ensure responsiveness across all devices. I led both onshore and offshore teams through the full project lifecycle, from design to launch, and implemented best practices for design handoffs, code reviews, and testing workflows. A key achievement was the phased rollout, with the first phase live in just three months. I also mentored junior and senior designers and managed stakeholder relationships through weekly meetings and detailed progress reports. Post-launch, I’ve been actively involved in optimization efforts, using user feedback and performance metrics to refine the platform. This role required blending creative leadership, technical expertise, and team coordination to deliver a portal that’s now a cornerstone of the organization’s digital strategy.",
       "date": "2022 - Present",
-      "link": "https://ca-path.com/"
+      "link": "https://ca-path.com/",
+      "engagementType": "Consultant"
     },
     {
       "title": "Technical Product and Design Manager",
       "organization": "Unisys",
-      "description": "As Technical Product and Design Manager, I spearheaded the design, development, and integration of a brand-new public and admin portal hosted on Google Cloud Platform—a $100 million project that demanded managing multiple workstreams, tight deadlines, and a diverse team of over 30 professionals, including designers, developers, business analysts, and testers, across onshore and offshore locations. I pioneered the early adoption of Figma, a groundbreaking design tool that transformed our workflow and accelerated the design process by more than 2x, effectively doubling the output of the design team. My team and I established a comprehensive Figma-based design system that standardized components, enforced WCAG compliance, and ensured responsiveness across all devices. I oversaw the full project lifecycle—from requirements gathering and stakeholder workshops to deployment—while directing UX design processes and fostering cross-functional collaboration. My leadership in setting UI/UX standards delivered a scalable, user-friendly portal that significantly enhanced the organization’s customer service capabilities.",
+      "description": "As Technical Product Manager and Design Manager, I spearheaded the design, development, and integration of a brand-new public and admin portal hosted on Google Cloud Platform—a $100 million project that demanded managing multiple workstreams, tight deadlines, and a diverse team of over 30 professionals, including designers, developers, business analysts, and testers, across onshore and offshore locations. I pioneered the early adoption of Figma, a groundbreaking design tool that transformed our workflow and accelerated the design process by more than 2x, effectively doubling the output of the design team. My team and I established a comprehensive Figma-based design system that standardized components, enforced WCAG compliance, and ensured responsiveness across all devices. I oversaw the full project lifecycle—from requirements gathering and stakeholder workshops to deployment—while directing UX design processes and fostering cross-functional collaboration. My leadership in setting UI/UX standards delivered a scalable, user-friendly portal that significantly enhanced the organization’s customer service capabilities.",
       "date": "2018 - 2022",
-      "link": ""
+      "link": "",
+      "engagementType": "Consultant"
     },
     {
       "title": "Technical Consultant",
       "organization": "County Welfare Directors Association of California",
       "description": "In my role as a Technical Consultant on the Independent Verification and Validation (IV&V) team, I was tasked with ensuring the successful integration of a complex, multi-system environment for a high-profile public sector initiative. This position required me to dive deep into technical documentation, analyze system interactions, and identify potential risks that could jeopardize project timelines or performance. I pinpointed integration bottlenecks, recommended process optimizations like automated testing scripts, and collaborated with developers to implement fixes before they became critical issues. I worked tirelessly with stakeholders, conducting biweekly reviews to present findings, explain technical challenges in accessible terms, and secure buy-in for my proposed solutions. My role demanded both technical expertise and strong communication skills, as I acted as the bridge between technical teams and non-technical leadership, ensuring everyone stayed aligned on goals and progress. Ultimately, my contributions helped deliver a reliable, integrated system that met all contractual obligations and served as a model for future initiatives.",
       "date": "2016 - 2018",
-      "link": ""
+      "link": "",
+      "engagementType": "Consultant"
     },
     {
       "title": "System Integrator",
       "organization": "Unisys",
       "description": "Starting as a college new hire and advancing to a managerial role over seven years, I contributed to a wide variety of projects at Unisys, including criminal justice systems, welfare systems, and grant management systems. My role was dynamic, requiring me to wear many hats across design, development, integration, and maintenance efforts. I established standards and protocols for a multisystem case exchange, enabling seamless data sharing across platforms, and led the implementation build for our system, ensuring its successful deployment. Additionally, I built and maintained the system’s regression suite, conducting rigorous testing to uphold reliability and performance. In business development, I co-authored winning proposals, collaborating with experts to secure over $100 million in contracts. As a manager, I oversaw teams of up to 25 professionals, managing full system builds and coordinating tasks like system configuration, third-party integrations, and user acceptance testing.",
       "date": "2009 - 2016",
-      "link": ""
+      "link": "",
+      "engagementType": "Employee"
     }
   ],
   "education": [

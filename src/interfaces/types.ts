@@ -17,6 +17,7 @@ export interface Experience {
     description: string;
     date: string;
     link: string;
+    engagementType: string;
 }
 
 export interface Education {
@@ -25,6 +26,7 @@ export interface Education {
     location: string,
     date: string;
     icon: string;
+    description: string;
 }
 
 export interface Data {

@@ -3,17 +3,20 @@
     {
       "id": 1,
       "name": "Dribbble",
-      "href": "https://dribbble.com/christianfesta1"
+      "href": "https://dribbble.com/christianfesta1",
+      "display": false
     },
     {
       "id": 2,
       "name": "Github",
-      "href": "https://github.com/cvfesta/resume-react"
+      "href": "https://github.com/cvfesta/resume-react",
+      "display": true
     },
     {
       "id": 3,
       "name": "Figma",
-      "href": "https://www.figma.com/file/M9wIXWbK30TCLjjVWfIKdb/Resume?type=design&node-id=302%3A660&mode=dev"
+      "href": "https://www.figma.com/file/M9wIXWbK30TCLjjVWfIKdb/Resume?type=design&node-id=302%3A660&mode=dev",
+      "display": true
     }
   ]
 }

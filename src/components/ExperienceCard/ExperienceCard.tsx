@@ -6,7 +6,7 @@ import './style.css';
 const data: Data = experienceData as Data;
 
 // Keep Card props as Experience, but add isLast as an additional prop
-const Card: React.FC<Experience & { isLast?: boolean }> = ({ title, organization, description, date, link, engagementType, isLast }) => {
+const Card: React.FC<Experience & { isLast?: boolean }> = ({ title, organization, description, date, link, engagementType, bullets, badges, isLast }) => {
     return (
         <>
             <div className="flexbox gap-2 gap-lg-4">
@@ -26,7 +26,21 @@ const Card: React.FC<Experience & { isLast?: boolean }> = ({ title, organization
                         </div>
                     )}
                     <p>{description}</p>
-                    {link && <a className="btn btn-outline-dark exp-button rounded-5" target="_blank" href={link}>View ca-path.com</a>}
+                    {bullets && bullets.length > 0 && (
+                        <ul className="">
+                            {bullets.map((bullet, index) => (
+                                <li key={index} className="">{bullet}</li>
+                            ))}
+                        </ul>
+                    )}
+                    {badges && badges.length > 0 && (
+                        <div className="d-flex flex-wrap gap-2 mt-3">
+                            {badges.map((badge, index) => (
+                                <span key={index} className="badge rounded-pill text-bg-light border">{badge}</span>
+                            ))}
+                        </div>
+                    )}
+                    {link && <a className="btn btn-outline-dark exp-button rounded-5 mt-3" target="_blank" href={link}>View ca-path.com</a>}
                 </div>
             </div>
         </>
@@ -45,6 +59,8 @@ const ExperienceCard: React.FC = () => {
                     date={exp.date}
                     link={exp.link}
                     engagementType={exp.engagementType}
+                    bullets={exp.bullets}
+                    badges={exp.badges}
                     isLast={index === data.experience.length - 1} // Dynamically determine if last
                 />
             ))}

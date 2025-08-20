@@ -1,41 +1,48 @@
 // EducationCard.tsx
-import React from 'react';
-import educationData from '../../data/HomePage.json'; // Import JSON
-import { Data, Education } from '../../interfaces/types'; // Import JSON types
+import React from "react";
+import educationData from "../../data/HomePage.json"; // Adjust path if needed
+import { Data, Education } from "../../interfaces/types";
+import { PsuLogo, GoogleLogo, PmiLogo } from "../icons/icons";
 import "./style.css";
 
-// Ensure the imported JSON conforms to the Data type
-const data: Data = educationData as Data;
+const data = educationData as Data;
 
-const Card: React.FC<Education> = ({ title, institution, location, icon, date }) => {
+const iconMap: Record<string, React.ReactNode> = {
+    psu: <PsuLogo size={64} />,
+    award: <i className="bi bi-award display-5"></i>,
+    google: <GoogleLogo size={64} />,
+    pmi: <PmiLogo size={64} />,
+    // Add more mappings as needed
+};
+
+const Card: React.FC<Education> = ({
+                                       title,
+                                       institution,
+                                       location,
+                                       date,
+                                       icon,
+                                   }) => {
     return (
-        <div className="eduCard d-flex gap-4 bg-dark-subtle border border-black py-3 px-3 px-lg-5">
-            <div dangerouslySetInnerHTML={{ __html: icon }} />
+        <div className="eduCard d-flex gap-3 bg-dark-subtle border border-black py-3 px-3">
+            <div className="icon-container">
+                {iconMap[icon] || null}
+            </div>
             <div>
-            <p className="fs-5 fw-semibold mb-1">{title}</p>
-            {institution && <p className="mb-0">{institution}</p>}
-            {location && <p className="">{location}</p>}
-            <p className="mb-0">{date}</p>
+                <p className="fs-5 fw-semibold mb-1">{title}</p>
+                {institution && <p className="mb-0">{institution}</p>}
+                {location && <p className="">{location}</p>}
+                <p className="mb-0">{date}</p>
             </div>
         </div>
     );
 };
 
-const EducationCard: React.FC = () => {
-    return (
-        <>
-            {data.education.map((edu, index) => (
-                <Card
-                    key={index}
-                    title={edu.title}
-                    institution={edu.institution}
-                    location={edu.location}
-                    date={edu.date}
-                    icon={edu.icon}
-                />
-            ))}
-        </>
-    );
-};
+const EducationCard: React.FC = () => (
+    <>
+        {data.education.map((edu, index) => (
+            <Card key={index} {...edu} />
+        ))}
+    </>
+);
 
 export default EducationCard;

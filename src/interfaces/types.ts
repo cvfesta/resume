@@ -18,6 +18,8 @@ export interface Experience {
     date: string;
     link: string;
     engagementType: string;
+    bullets?: string[];
+    badges?: string[];
 }
 
 export interface Education {

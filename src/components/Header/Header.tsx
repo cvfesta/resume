@@ -7,9 +7,17 @@ import ThemeToggle from '../../components/ThemeSwitcher.tsx'; // Import the Them
 
 const Header: React.FC = () => {
     const [links, setLinks] = useState<string[]>([]);
-    const [theme, setTheme] = useState<'light' | 'dark' | 'auto'>(
-        (document.documentElement.getAttribute('data-bs-theme') as 'light' | 'dark' | 'auto') || 'light'
-    );
+    const [theme, setTheme] = useState<'light' | 'dark' | 'auto'>(() => {
+        return (document.documentElement.getAttribute('data-bs-theme') as 'light' | 'dark' | 'auto') || 'auto';
+    });
+    const [effectiveTheme, setEffectiveTheme] = useState<'light' | 'dark'>(() => {
+        const attr = document.documentElement.getAttribute('data-bs-theme') || 'auto';
+        if (attr === 'auto') {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        } else {
+            return attr as 'light' | 'dark';
+        }
+    });
 
     useEffect(() => {
         setLinks(data.Links);
@@ -17,8 +25,13 @@ const Header: React.FC = () => {
 
     useEffect(() => {
         const observer = new MutationObserver(() => {
-            const currentTheme = document.documentElement.getAttribute('data-bs-theme') || 'light';
-            setTheme(currentTheme as 'light' | 'dark' | 'auto');
+            const attr = document.documentElement.getAttribute('data-bs-theme') || 'auto';
+            setTheme(attr as 'light' | 'dark' | 'auto');
+            if (attr === 'auto') {
+                setEffectiveTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            } else {
+                setEffectiveTheme(attr as 'light' | 'dark');
+            }
         });
 
         observer.observe(document.documentElement, {
@@ -29,7 +42,20 @@ const Header: React.FC = () => {
         return () => observer.disconnect();
     }, []);
 
-    const buttonClass = theme === 'dark' ? 'btn-outline-light' : 'btn-outline-dark';
+    useEffect(() => {
+        if (theme !== 'auto') return;
+
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        const handleChange = () => {
+            setEffectiveTheme(mediaQuery.matches ? 'dark' : 'light');
+        };
+
+        mediaQuery.addEventListener('change', handleChange);
+
+        return () => mediaQuery.removeEventListener('change', handleChange);
+    }, [theme]);
+
+    const buttonClass = effectiveTheme === 'dark' ? 'btn-outline-light' : 'btn-outline-dark';
 
     return (
         <>

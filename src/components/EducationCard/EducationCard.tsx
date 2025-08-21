@@ -23,7 +23,7 @@ const Card: React.FC<Education> = ({
                                        icon,
                                    }) => {
     return (
-        <div className="eduCard d-flex gap-3 bg-dark-subtle border border-black py-3 px-3">
+        <div className="eduCard d-flex gap-3 bg-dark-subtle border border-secondary py-3 px-3">
             <div className="icon-container">
                 {iconMap[icon] || null}
             </div>

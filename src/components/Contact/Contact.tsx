@@ -54,7 +54,7 @@ const ContactModal: React.FC = () => {
                             </div>
                         </div>
                         <div className="modal-footer border-0">
-                            <button type="button" className="btn btn-outline-dark" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
                             <button type="submit" className="btn btn-outline-dark contact-button">Send</button>
                         </div>
                     </form>

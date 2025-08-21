@@ -14,10 +14,10 @@ const Card: React.FC<Experience & { isLast?: boolean }> = ({ title, organization
                     <p className="date-size">{date}</p>
                 </div>
                 <div className="timeline text-center mb-3">
-                    <div className="circle rounded-circle border border-dark w-5 h-5"></div>
+                    <div className="circle rounded-circle border border-secondary w-5 h-5"></div>
                     {!isLast && <div className="vr opacity-100 h-100"></div>}
                 </div>
-                <div className="card rounded-5 border-bottom border-black py-4 py-lg-5 px-4 px-lg-5 mb-3">
+                <div className="card rounded-5 border-bottom border-secondary py-4 py-lg-5 px-4 px-lg-5 mb-3">
                     <p className="fs-2 fw-semibold mb-1 lh-1">{title}</p>
                     {organization && (
                         <div className="mb-2 d-flex align-items-center">

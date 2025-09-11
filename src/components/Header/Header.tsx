@@ -1,5 +1,6 @@
-// src/components/Header.tsx
-import React, { useEffect, useState } from 'react';
+// src/components/Header.tsx (updated to use Link for navigation)
+    import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import data from "./data.json";
 import Logo from '../../assets/logo.svg';
 import ContactModal from '../../components/Contact/Contact'; // Import the ContactModal component
@@ -86,16 +87,23 @@ const Header: React.FC = () => {
                                     );
                                 }
                                 return (
-                                    <button
-                                        type="button"
-                                        className={`btn ${buttonClass} text-decoration-none border-0`}
+                                    <a
+                                        href={`#${link}`}
+                                        className={`btn ${buttonClass} align-content-center text-decoration-none border-0`}
                                         key={link}
-                                        onClick={() => window.location.href = `#${link}`}
                                     >
                                         {link}
-                                    </button>
+                                    </a>
                                 );
                             })}
+                            <Link
+                                to="/print"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`btn ${buttonClass} align-content-center text-decoration-none border-0`}
+                            >
+                                <i className="bi bi-printer-fill"></i>
+                            </Link>
                             <ThemeToggle />
                         </div>
                     </div>

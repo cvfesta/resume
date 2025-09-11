@@ -100,11 +100,11 @@ const HomePage: React.FC = () => {
 
             {/* Footer row */}
             <div className="flexbox gx-0">
-                <div className="w-100 border-secondary"></div>
-                <div className="middle-col container border-start border-end border-secondary">
+                <div className="w-100 border-secondary bg-dark"></div>
+                <div className="middle-col container border-start border-end border-secondary bg-dark">
                     <div><Footer /></div>
                 </div>
-                <div className="w-100 border-secondary"></div>
+                <div className="w-100 border-secondary bg-dark"></div>
             </div>
         </>
     );

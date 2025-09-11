@@ -1,5 +1,11 @@
 /*HomePage/style.css*/
 
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=swap');
+
+h1{
+    font-family: "Alfa Slab One", serif!important;
+}
+
 .flexbox {
     /*Required for three column layout*/
     display: flex;

@@ -22,7 +22,7 @@ import './App.css';
 
 const App: React.FC = () => {
     return (
-        <Router basename="/resume-react">
+        <Router basename="/resume">
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/print" element={<PrintablePage />} />

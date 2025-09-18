@@ -1,0 +1,115 @@
+@media print {
+    @page {
+        size: letter portrait;
+        margin: 0.25in; /* Minimal margins; adjust if your printer clips edges */
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 10pt; /* Compact base font for print */
+        line-height: 1.2; /* Tighter line spacing to reduce vertical waste */
+        orphans: 3; /* Prevent lonely lines at page bottom/top */
+        widows: 3;
+    }
+
+    .container {
+        padding: 0.25in !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    /* Reduce header sizes and margins */
+    h1.display-2 {
+        font-size: 24pt !important;
+        margin-bottom: 0.1in !important;
+    }
+
+    h2.fs-5, .fs-5 {
+        font-size: 14pt !important;
+        margin-bottom: 0.1in !important;
+    }
+
+    p.lead, p {
+        font-size: 10pt !important;
+        margin-bottom: 0.1in !important;
+    }
+
+    ul, li {
+        margin-bottom: 0.05in !important;
+        padding-left: 1em !important;
+        font-size: 10pt !important;
+    }
+
+    .row {
+        page-break-inside: auto;
+        --bs-gutter-x: 0.25rem !important;
+        --bs-gutter-y: 0.25rem !important;
+    }
+
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Compact skills cards */
+    .card {
+        page-break-inside: avoid; /* Keep entire card on one page */
+        margin-bottom: 0.1in !important;
+        border: none !important; /* Optional: Cleaner for print */
+    }
+
+    .card-body {
+        /*padding: 0.3rem !important; !* Less internal padding *!*/
+    }
+
+    .badge {
+        font-size: 8pt !important;
+        margin-bottom: 0.05in !important;
+        overflow-wrap: break-word !important;
+    }
+
+    /* Target experience and education items */
+    .experience-item {
+        page-break-inside: avoid; /* Prevent splitting an entry across pages */
+        margin-bottom: 0.2in !important;
+    }
+
+    /* Override Bootstrap margin/padding utilities for compactness */
+    .mb-0, .mb-1, .mb-2, .mb-3, .mb-4, .mb-5 {
+        margin-bottom: 0.1in !important;
+    }
+
+    .py-5 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Keep skills in 3 columns if they fit on one page */
+    .col-md-6, .col-lg-4 {
+        width: 33.33% !important;
+        float: left !important;
+        page-break-inside: avoid;
+    }
+
+    /* Clear floats for rows */
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Hide non-essential elements (e.g., links as text, or browser-added footers can't be hidden via CSS) */
+    a {
+        color: black !important;
+        text-decoration: none !important;
+    }
+
+    /* Ensure sections don't force new pages unnecessarily */
+    section {
+        page-break-before: avoid;
+        page-break-after: auto;
+        margin-bottom: 0.2in !important;
+    }
+}

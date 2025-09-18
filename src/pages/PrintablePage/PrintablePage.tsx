@@ -2,6 +2,7 @@
 import React from 'react';
 import homepageContent from '../../data/HomePage.json';
 import { Data } from '../../interfaces/types';
+import './style.css';
 
 const data: Data = homepageContent as Data;
 
@@ -40,7 +41,7 @@ const PrintablePage: React.FC = () => {
             <section className="mb-4">
                 <h2 className="fs-5 fw-medium mb-2">Experience</h2>
                 {data.experience.map((exp, index) => (
-                    <div key={index} className="row mb-4">
+                    <div key={index} className="row mb-4 experience-item"> {/* Added class for targeting */}
                         <div className="col-2">
                             <p className="text-body-secondary">{exp.date}</p>
                         </div>
@@ -75,7 +76,7 @@ const PrintablePage: React.FC = () => {
             <section className="mb-5">
                 <p className="fs-5 fw-medium mb-2">Education</p>
                 {data.education.map((edu, index) => (
-                    <div key={index} className="row mb-4">
+                    <div key={index} className="row mb-4 experience-item"> {/* Reuse class if needed */}
                         <div className="col-2">
                             <p className="text-body-secondary">{edu.date}</p>
                         </div>

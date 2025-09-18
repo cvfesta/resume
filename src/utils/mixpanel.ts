@@ -1,12 +1,12 @@
 import mixpanel from 'mixpanel-browser';
 
-const MIXPANEL_TOKEN = '9fe0a45051663a4fa5d964c6d3eb3183'; // Your token
+const MIXPANEL_TOKEN = import.meta.env.VITE_MIXPANEL_TOKEN; // Load token from environment variable
 
 // Initialize once, ideally at app startup
 export const initMixpanel = () => {
     mixpanel.init(MIXPANEL_TOKEN, {
         debug: false, // Set to true for development
-        track_pageview: true, // Auto-track page views (but handle SPA navigation separately)
+        track_pageview: false, // Disable auto-tracking to avoid duplicates
         persistence: 'localStorage', // Persist user data
         // Add other options as needed: https://docs.mixpanel.com/docs/quickstart/javascript
     });

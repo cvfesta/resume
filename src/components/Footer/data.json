@@ -8,14 +8,20 @@
     },
     {
       "id": 2,
-      "name": "Github",
-      "href": "https://github.com/cvfesta/resume-react",
+      "name": "Figma",
+      "href": "https://www.figma.com/file/M9wIXWbK30TCLjjVWfIKdb/Resume?type=design&node-id=302%3A660&mode=dev",
       "display": true
     },
     {
       "id": 3,
-      "name": "Figma",
-      "href": "https://www.figma.com/file/M9wIXWbK30TCLjjVWfIKdb/Resume?type=design&node-id=302%3A660&mode=dev",
+      "name": "Github",
+      "href": "https://github.com/cvfesta/resume",
+      "display": true
+    },
+    {
+      "id": 4,
+      "name": "LinkedIn",
+      "href": "https://www.linkedin.com/in/christian-festa-008376b6/",
       "display": true
     }
   ]

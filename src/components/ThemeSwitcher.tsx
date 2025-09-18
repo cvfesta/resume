@@ -1,5 +1,5 @@
-// src/components/ThemeToggle.tsx
 import React, { useState, useEffect } from 'react';
+import { trackEvent } from '../utils/mixpanel'; // Adjust path if needed (e.g., based on your folder structure)
 
 const ThemeToggle: React.FC = () => {
     const [storedTheme, setStoredTheme] = useState<string | null>(() => localStorage.getItem('theme'));
@@ -40,6 +40,7 @@ const ThemeToggle: React.FC = () => {
         localStorage.setItem('theme', theme);
         setStoredTheme(theme);
         setActiveTheme(theme);
+        trackEvent('Theme Changed', { newTheme: theme });
     };
 
     const iconMap = {

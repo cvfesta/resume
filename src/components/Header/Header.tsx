@@ -1,10 +1,10 @@
-// src/components/Header.tsx (updated to use Link for navigation)
-    import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import data from "./data.json";
 import Logo from '../../assets/logo.svg';
 import ContactModal from '../../components/Contact/Contact'; // Import the ContactModal component
 import ThemeToggle from '../../components/ThemeSwitcher.tsx'; // Import the ThemeToggle component
+import { trackEvent } from '../../utils/mixpanel';
 
 const Header: React.FC = () => {
     const [links, setLinks] = useState<string[]>([]);
@@ -58,6 +58,10 @@ const Header: React.FC = () => {
 
     const buttonClass = effectiveTheme === 'dark' ? 'btn-outline-light' : 'btn-outline-dark';
 
+    const handleNavClick = (linkName: string) => {
+        trackEvent('Nav Link Clicked', { linkName });
+    };
+
     return (
         <>
             <header>
@@ -81,6 +85,7 @@ const Header: React.FC = () => {
                                             key={link}
                                             data-bs-toggle="modal"
                                             data-bs-target="#contactModal"
+                                            onClick={() => handleNavClick(link)}
                                         >
                                             {link}
                                         </button>
@@ -91,6 +96,7 @@ const Header: React.FC = () => {
                                         href={`#${link}`}
                                         className={`btn ${buttonClass} align-content-center text-decoration-none border-0`}
                                         key={link}
+                                        onClick={() => handleNavClick(link)}
                                     >
                                         {link}
                                     </a>
@@ -101,6 +107,7 @@ const Header: React.FC = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`btn ${buttonClass} align-content-center text-decoration-none border-0`}
+                                onClick={() => handleNavClick('Print')}
                             >
                                 <i className="bi bi-printer-fill"></i>
                             </Link>

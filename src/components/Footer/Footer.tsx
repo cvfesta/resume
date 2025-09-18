@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import data from "./data.json";
+import { trackEvent } from '../../utils/mixpanel.ts';
 
 interface Link {
     id: number;
@@ -15,11 +16,14 @@ const Footer: React.FC = () => {
         setLinks(data.Links);
     }, []);
 
+    const handleLinkClick = (linkName: string, href: string) => {
+        trackEvent('Footer Link Clicked', { linkName, href });
+    };
+
     return (
         <>
             <footer
                 className="d-flex flex-wrap justify-content-center align-items-center py-3 my-2 gap-3">
-                {/*<p className="mb-0">© <span className="date" id="date"></span> Christian Festa</p>*/}
                 {links.filter(link => link.display).map((link) => (
                     <a
                         type="button"
@@ -27,6 +31,7 @@ const Footer: React.FC = () => {
                         target="_blank"
                         key={link.id}
                         href={link.href}
+                        onClick={() => handleLinkClick(link.name, link.href)}
                     >
                         {link.name}<i className="bi bi-arrow-up-right ps-2"></i>
                     </a>

@@ -1,10 +1,9 @@
-// src/App.tsx
 import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import PrintablePage from './pages/PrintablePage/PrintablePage';
 import './App.css';
-import mixpanel from 'mixpanel-browser';
+import { trackEvent } from './utils/mixpanel.ts'; // ← Only import safe helper
 
 // Helper function to get a readable page name from pathname
 const getPageName = (pathname: string): string => {
@@ -14,19 +13,20 @@ const getPageName = (pathname: string): string => {
         case '/print':
             return 'Print';
         default:
-            return 'Unknown'; // Fallback for any new routes
+            return 'Unknown';
     }
 };
 
 const App: React.FC = () => {
     const location = useLocation();
 
+    // Track page views on route change
     useEffect(() => {
         const pageName = getPageName(location.pathname);
-        mixpanel.track(`${pageName} Page Viewed`, {
+        trackEvent(`${pageName} Page Viewed`, {
             path: location.pathname,
             search: location.search,
-            full_url: window.location.href, // Optional: for more context
+            full_url: window.location.href,
         });
     }, [location]);
 

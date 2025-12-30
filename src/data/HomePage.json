@@ -1,22 +1,22 @@
 {
   "hero": {
     "title": "Christian Festa",
-    "subTitle": "From system integrator to Director of Software Engineering, I’ve built a 15+ year career mastering the full SDLC. I lead mission-critical engineering teams to deliver scalable platforms, pioneer user-centric design systems that double productivity and ensure accessibility, and orchestrate multi-million-dollar programs with Agile precision to accelerate time-to-market. This holistic expertise enables me to align technical innovation with strategic objectives, delivering transformative solutions for Fortune 500 companies and government agencies that drive measurable growth and position organizations for long-term success."
+    "subTitle": "Seasoned technology executive with {YEARS} years of experience mastering the full SDLC, from system integration to directing multi-million-dollar digital platforms. I lead high-performing engineering teams to deliver scalable, user-centric solutions while pioneering secure generative AI implementations on AWS that unlock proprietary insights and enforce enterprise-grade data protection and compliance. By blending design excellence, Agile precision, and emerging AI capabilities, I align technical innovation with strategic objectives to accelerate growth and position organizations for competitive advantage in an AI-driven landscape."
   },
   "heroCard": [
     {
-      "title": "Principal UX Designer",
-      "level": "Expert",
-      "subTitle": "Expert in crafting user-centric UX strategies and building complex design systems that ensure scalability, accessibility, and seamless integration. Led Figma-driven initiatives to double team productivity, enforce WCAG standards, and deliver enterprise-level interfaces that drive user engagement and operational efficiency.",
+      "title": "AI & Cloud Innovation Leader",
+      "level": "Executive",
+      "subTitle": "Strategic director of generative AI initiatives on AWS, delivering secure Retrieval-Augmented Generation (RAG) solutions that enable intelligent querying of proprietary data without exposing sensitive information. Expertise in Amazon Bedrock, guardrails, and isolated foundational models to mitigate risks around PII and intellectual property.",
       "badges": [
-        "Design Systems Architecture",
-        "WCAG & Accessibility",
-        "Figma & Prototyping",
-        "User Research & Testing",
-        "UI/UX Optimization",
-        "Branding",
-        "Mentorship",
-        "Cross-Functional Design Leadership"
+        "Generative AI Strategy",
+        "AWS Bedrock & RAG Implementation",
+        "AI Guardrails & Data Security",
+        "Secure Enterprise AI Deployment",
+        "Proprietary Data Monetization",
+        "Risk Mitigation & Compliance",
+        "Cross-Functional AI Leadership",
+        "Emerging Tech Adoption"
       ]
     },
     {
@@ -35,18 +35,18 @@
       ]
     },
     {
-      "title": "Technical Program Manager",
-      "level": "Senior",
-      "subTitle": "Seasoned overseer of multiple concurrent, multi-million-dollar programs, from ideation to launch, using Agile methodologies to manage risks, budgets, timelines, and cross-functional teams. Excelled in stakeholder engagement and data-driven strategies that reduce time-to-market, mitigate issues, and ensure scalable, high-impact deliveries.",
+      "title": "Principal UX Designer",
+      "level": "Expert",
+      "subTitle": "Expert in crafting user-centric UX strategies and building complex design systems that ensure scalability, accessibility, and seamless integration. Led Figma-driven initiatives to double team productivity, enforce WCAG standards, and deliver enterprise-level interfaces that drive user engagement and operational efficiency.",
       "badges": [
-        "Multi-Project Portfolio Management",
-        "Agile & Scrum Mastery",
-        "Risk & Budget Oversight",
-        "Stakeholder & Vendor Coordination",
-        "Roadmapping & Strategic Planning",
-        "Data Analytics for Decisions",
-        "Program Lifecycle Governance",
-        "Efficiency & Growth Optimization"
+        "Design Systems Architecture",
+        "WCAG & Accessibility",
+        "Figma & Prototyping",
+        "User Research & Testing",
+        "UI/UX Optimization",
+        "Branding",
+        "Mentorship",
+        "Cross-Functional Design Leadership"
       ]
     }
   ],
@@ -54,8 +54,12 @@
     {
       "title": "Director of Software Engineering",
       "organization": "Public Consulting Group",
-      "description": "As Technical Delivery Manager and Principal Design Manager, I led the design, development, and integration (DDI) of a $40 million AWS-hosted public and admin portal, coordinating a team of over 30 designers, developers, and QA engineers.",
+      "description": "As Director of Software Engineering, Technical Delivery Manager, and Principal Design Manager, I orchestrate the design, development, and integration of a $40M AWS-hosted public/admin portal while spearheading secure generative AI capabilities, leading cross-functional teams of 30+ designers, developers, and engineers.",
       "bullets": [
+        "Championed the strategy and implementation of a secure Retrieval-Augmented Generation (RAG) application on AWS, enabling users to query proprietary company data via natural language chat while delivering accurate, context-specific responses not available publicly.",
+        "Directed the architecture of isolated foundational models within Amazon Bedrock, integrated with robust guardrails to prevent data leakage—ensuring zero exposure of proprietary information or PII even in edge-case prompts—while maintaining enterprise compliance and governance standards.",
+        "Led cross-functional collaboration to integrate generative AI into the platform roadmap, enhancing internal productivity and decision-making through safe, scalable access to sensitive insights.",
+        "Established governance frameworks for responsible AI adoption, balancing rapid innovation with comprehensive risk management to future-proof the organization's digital ecosystem.",
         "Established a comprehensive Figma-based design system to standardize components, enforce WCAG compliance, and ensure device responsiveness, enabling seamless design handoffs and code reviews.",
         "Directed onshore and offshore teams through the full project lifecycle, implementing best practices for testing workflows and achieving a phased rollout with the first phase live in just three months.",
         "Mentored junior and senior designers while managing stakeholder relationships via weekly meetings and progress reports, aligning creative vision with business goals.",
@@ -65,6 +69,9 @@
       "link": "https://ca-path.com/",
       "engagementType": "Employee",
       "badges": [
+        "Generative AI & RAG Leadership",
+        "AWS Bedrock Architecture",
+        "Secure AI Governance",
         "Team Leadership (30+ Members)",
         "Figma Design System",
         "WCAG Compliance",

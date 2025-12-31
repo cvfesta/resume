@@ -7,26 +7,9 @@ import homepageContent from '../../data/HomePage.json';
 import { Data } from '../../interfaces/types';
 import "./style.css";
 import HeroCardList from "../../components/HeroCard/HeroCard";
+import { calculateYearsOfExperience } from '../../utils/calculateYearsOfExperience';
 
 const data: Data = homepageContent as Data;
-
-// Dynamically calculate years of professional experience since May 2009
-const calculateYearsOfExperience = (): string => {
-    const graduationYear = 2009;
-    const graduationMonth = 5; // May (Penn State spring commencement)
-
-    const startDate = new Date(graduationYear, graduationMonth - 1); // Months are 0-indexed
-    const currentDate = new Date();
-
-    let years = currentDate.getFullYear() - startDate.getFullYear();
-    const monthDiff = currentDate.getMonth() - startDate.getMonth();
-
-    if (monthDiff < 0 || (monthDiff === 0 && currentDate.getDate() < startDate.getDate())) {
-        years--;
-    }
-
-    return `${years}+`;
-};
 
 const HomePage: React.FC = () => {
     const yearsOfExperience = calculateYearsOfExperience();

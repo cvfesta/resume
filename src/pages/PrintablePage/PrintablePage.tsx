@@ -2,17 +2,22 @@
 import React from 'react';
 import homepageContent from '../../data/HomePage.json';
 import { Data } from '../../interfaces/types';
+import { calculateYearsOfExperience } from '../../utils/calculateYearsOfExperience'; // <-- New import
 import './style.css';
 
 const data: Data = homepageContent as Data;
 
 const PrintablePage: React.FC = () => {
+    // Dynamically calculate years and replace placeholder
+    const yearsOfExperience = calculateYearsOfExperience();
+    const subTitleWithYears = data.hero.subTitle.replace('{YEARS}', yearsOfExperience);
+
     return (
         <div className="container py-5">
             {/* Hero Section */}
             <section className="mb-4">
                 <h1 className="text-center display-2">{data.hero.title}</h1>
-                <p className="lead">{data.hero.subTitle}</p>
+                <p className="lead">{subTitleWithYears}</p> {/* Now dynamic */}
             </section>
 
             {/* Skills Section */}
@@ -27,7 +32,9 @@ const PrintablePage: React.FC = () => {
                                     <p className="card-text text-body-secondary mb-3">{card.subTitle}</p>
                                     <div className="d-flex flex-wrap">
                                         {card.badges.map((badge, badgeIndex) => (
-                                            <span key={badgeIndex} className="badge rounded-pill text-bg-light border me-1 mb-1">{badge}</span>
+                                            <span key={badgeIndex} className="badge rounded-pill text-bg-light border me-1 mb-1">
+                                                {badge}
+                                            </span>
                                         ))}
                                     </div>
                                 </div>
@@ -41,14 +48,16 @@ const PrintablePage: React.FC = () => {
             <section className="mb-4">
                 <h2 className="fs-5 fw-medium mb-2">Experience</h2>
                 {data.experience.map((exp, index) => (
-                    <div key={index} className="row mb-4 experience-item"> {/* Added class for targeting */}
+                    <div key={index} className="row mb-4 experience-item">
                         <div className="col-2">
                             <p className="text-body-secondary">{exp.date}</p>
                         </div>
                         <div className="col-10">
                             <p className="mb-1">{exp.title}</p>
-                            <span className="text-body-secondary pe-2"> {exp.organization}</span>
-                            <span className="badge rounded-pill text-bg-light border me-1 mb-2">{exp.engagementType}</span>
+                            <span className="text-body-secondary pe-2">{exp.organization}</span>
+                            <span className="badge rounded-pill text-bg-light border me-1 mb-2">
+                                {exp.engagementType}
+                            </span>
                             <p>{exp.description}</p>
                             {exp.bullets && (
                                 <ul>
@@ -58,12 +67,18 @@ const PrintablePage: React.FC = () => {
                                 </ul>
                             )}
                             {exp.link && (
-                                <p><a href={exp.link} target="_blank" rel="noopener noreferrer">{exp.link}</a></p>
+                                <p>
+                                    <a href={exp.link} target="_blank" rel="noopener noreferrer">
+                                        {exp.link}
+                                    </a>
+                                </p>
                             )}
                             {exp.badges && (
                                 <div>
                                     {exp.badges.map((badge, badgeIndex) => (
-                                        <span key={badgeIndex} className="badge rounded-pill text-bg-light border me-1">{badge}</span>
+                                        <span key={badgeIndex} className="badge rounded-pill text-bg-light border me-1">
+                                            {badge}
+                                        </span>
                                     ))}
                                 </div>
                             )}
@@ -76,7 +91,7 @@ const PrintablePage: React.FC = () => {
             <section className="mb-5">
                 <p className="fs-5 fw-medium mb-2">Education</p>
                 {data.education.map((edu, index) => (
-                    <div key={index} className="row mb-4 experience-item"> {/* Reuse class if needed */}
+                    <div key={index} className="row mb-4 experience-item">
                         <div className="col-2">
                             <p className="text-body-secondary">{edu.date}</p>
                         </div>

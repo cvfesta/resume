@@ -5,6 +5,7 @@ import { SplitText } from 'gsap/SplitText';
 import data from '../../content/resume.json';
 import { Data } from '../../types/content';
 import walkoutDark from '../../assets/walkout-dark.svg';
+import { trackEvent } from '../../utils/mixpanel';
 import './projects.css';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -89,6 +90,9 @@ const Projects: React.FC = () => {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackEvent('Project Clicked', {
+                            project: project.name, url: project.link,
+                        })}
                     >
                         <div className="project-icon" aria-hidden="true">
                             {project.icon && logoFor[project.icon] ? (

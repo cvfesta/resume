@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 import footerData from '../../content/links.json';
 import { makeMagnetic } from '../../utils/magnetic';
+import { trackEvent } from '../../utils/mixpanel';
 import './sitefooter.css';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -75,6 +76,7 @@ const SiteFooter: React.FC = () => {
                     type="button"
                     data-bs-toggle="modal"
                     data-bs-target="#contactModal"
+                    onClick={() => trackEvent('Contact Modal Opened', { source: 'footer' })}
                 >
                     <span className="sf-headline-text">Let’s talk</span>
                     <span className="sf-headline-mark">↗</span>
@@ -91,11 +93,20 @@ const SiteFooter: React.FC = () => {
                             href={link.href}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() => trackEvent('Outbound Link Clicked', {
+                                label: link.name, url: link.href, location: 'footer',
+                            })}
                         >
                             {link.name}<span className="sf-link-arrow">↗</span>
                         </a>
                     ))}
-                    <Link className="sf-link" to="/print" target="_blank" rel="noopener noreferrer">
+                    <Link
+                        className="sf-link"
+                        to="/print"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackEvent('Printable Résumé Opened', { source: 'footer' })}
+                    >
                         Printable résumé<span className="sf-link-arrow">↗</span>
                     </Link>
                 </div>

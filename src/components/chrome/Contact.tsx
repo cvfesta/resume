@@ -1,9 +1,16 @@
 import React from 'react';
 import useBootstrapValidation from '../../utils/bs-validations';
+import { trackEvent } from '../../utils/mixpanel';
 import './contact.css';
 
 const ContactModal: React.FC = () => {
     useBootstrapValidation(); // Apply the validation logic
+
+    // Bootstrap validation calls stopPropagation() on an invalid form, so this
+    // handler only runs when the form is valid and about to POST to Formspree.
+    const handleSubmit = () => {
+        trackEvent('Contact Form Submitted', undefined, { sendBeacon: true });
+    };
 
     return (
         <div className="modal fade" id="contactModal" data-bs-backdrop="static" tabIndex={-1} aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -13,7 +20,7 @@ const ContactModal: React.FC = () => {
                         <h5 className="modal-title me-2" id="contactModalLabel">Contact</h5>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form name="contact" className="contact needs-validation" method="POST" action="https://formspree.io/f/mpzgazbz" data-netlify="true" noValidate>
+                    <form name="contact" className="contact needs-validation" method="POST" action="https://formspree.io/f/mpzgazbz" data-netlify="true" noValidate onSubmit={handleSubmit}>
                         <div className="modal-body">
                             <p className="visually-hidden">
                                 <label>

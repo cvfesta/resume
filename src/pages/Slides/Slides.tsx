@@ -11,6 +11,7 @@ import Roles from '../../components/sections/Roles';
 import Experience from '../../components/sections/Experience';
 import Education from '../../components/sections/Education';
 import Projects from '../../components/sections/Projects';
+import { trackEvent } from '../../utils/mixpanel';
 import '../../styles/tokens.css';
 import './slides.css';
 
@@ -45,6 +46,25 @@ const Slides: React.FC = () => {
                     onRefresh: (self) => gsap.set(bar, { scaleX: self.progress }),
                 });
             }
+
+            // Scroll-depth milestones — one "Section Reached" event the first
+            // time each section scrolls into view (analytics; see utils/mixpanel).
+            [
+                { name: 'Roles', selector: '#Roles' },
+                { name: 'Experience', selector: '#Experience' },
+                { name: 'Education', selector: '#Education' },
+                { name: 'Projects', selector: '#Projects' },
+                { name: 'Contact', selector: '.sitefooter' },
+            ].forEach(({ name, selector }) => {
+                const el = document.querySelector(selector);
+                if (!el) return;
+                ScrollTrigger.create({
+                    trigger: el,
+                    start: 'top 70%',
+                    once: true,
+                    onEnter: () => trackEvent('Section Reached', { section: name }),
+                });
+            });
         });
 
         return () => {

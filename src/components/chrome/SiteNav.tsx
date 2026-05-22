@@ -6,6 +6,7 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import ContactModal from './Contact';
 import { introGate } from '../../utils/introGate';
 import { makeMagnetic } from '../../utils/magnetic';
+import { trackEvent } from '../../utils/mixpanel';
 import './sitenav.css';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -96,6 +97,14 @@ const SiteNav: React.FC = () => {
         else window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    const handleSection = (
+        section: { label: string; target: string },
+        menu: 'desktop' | 'mobile',
+    ) => {
+        trackEvent('Nav Item Clicked', { section: section.label, menu });
+        goTo(section.target);
+    };
+
     return (
         <>
             <div className={`sitenav${menuOpen ? ' is-menu-open' : ''}`} ref={navRef}>
@@ -111,7 +120,7 @@ const SiteNav: React.FC = () => {
                                 key={section.target}
                                 className="sitenav-link"
                                 type="button"
-                                onClick={() => goTo(section.target)}
+                                onClick={() => handleSection(section, 'desktop')}
                             >
                                 {section.label}
                             </button>
@@ -133,6 +142,7 @@ const SiteNav: React.FC = () => {
                         rel="noopener noreferrer"
                         aria-label="Printable résumé"
                         title="Printable résumé"
+                        onClick={() => trackEvent('Printable Résumé Opened', { source: 'nav' })}
                     >
                         <i className="bi bi-printer-fill" aria-hidden="true" />
                     </Link>
@@ -141,6 +151,7 @@ const SiteNav: React.FC = () => {
                         type="button"
                         data-bs-toggle="modal"
                         data-bs-target="#contactModal"
+                        onClick={() => trackEvent('Contact Modal Opened', { source: 'nav' })}
                     >
                         Let’s talk
                     </button>
@@ -152,7 +163,7 @@ const SiteNav: React.FC = () => {
                             key={section.target}
                             className="sitenav-menu-link"
                             type="button"
-                            onClick={() => goTo(section.target)}
+                            onClick={() => handleSection(section, 'mobile')}
                         >
                             {section.label}
                         </button>

@@ -4,6 +4,7 @@ import homepageContent from '../../content/resume.json';
 import { Data } from '../../types/content';
 import { calculateYearsOfExperience } from '../../utils/calculateYearsOfExperience';
 import footerData from '../../content/links.json';
+import { trackEvent } from '../../utils/mixpanel';
 import './printable.css';
 
 const data: Data = homepageContent as Data;
@@ -27,7 +28,14 @@ const PrintablePage: React.FC = () => {
             {/* toolbar — screen only, hidden when printing */}
             <div className="pp-toolbar">
                 <Link to="/" className="pp-back">← Back to the site</Link>
-                <button type="button" className="pp-print-btn" onClick={() => window.print()}>
+                <button
+                    type="button"
+                    className="pp-print-btn"
+                    onClick={() => {
+                        trackEvent('Résumé Printed');
+                        window.print();
+                    }}
+                >
                     Print / Save as PDF
                 </button>
             </div>
@@ -40,7 +48,14 @@ const PrintablePage: React.FC = () => {
                         {links.map((link, i) => (
                             <React.Fragment key={link.id}>
                                 {i > 0 && <span className="pp-sep" aria-hidden="true">·</span>}
-                                <a href={link.href} target="_blank" rel="noopener noreferrer">
+                                <a
+                                    href={link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => trackEvent('Outbound Link Clicked', {
+                                        label: link.name, url: link.href, location: 'print',
+                                    })}
+                                >
                                     {link.name}
                                 </a>
                             </React.Fragment>
@@ -93,7 +108,15 @@ const PrintablePage: React.FC = () => {
                                 )}
                                 {exp.link && (
                                     <p className="pp-entry-link">
-                                        <a href={exp.link} target="_blank" rel="noopener noreferrer">
+                                        <a
+                                            href={exp.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={() => trackEvent('Experience Link Clicked', {
+                                                company: exp.organization, role: exp.title,
+                                                url: exp.link, location: 'print',
+                                            })}
+                                        >
                                             {hostnameOf(exp.link)}
                                         </a>
                                     </p>

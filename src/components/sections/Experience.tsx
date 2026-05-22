@@ -5,6 +5,7 @@ import { SplitText } from 'gsap/SplitText';
 import data from '../../content/resume.json';
 import { Data } from '../../types/content';
 import { LinkArrow } from '../icons/icons';
+import { trackEvent } from '../../utils/mixpanel';
 import './experience.css';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -224,7 +225,10 @@ const Experience: React.FC = () => {
 
                             {job.link && (
                                 <a className="exp-link" href={job.link}
-                                   target="_blank" rel="noopener noreferrer">
+                                   target="_blank" rel="noopener noreferrer"
+                                   onClick={() => trackEvent('Experience Link Clicked', {
+                                       company: job.organization, role: job.title, url: job.link,
+                                   })}>
                                     Visit {hostnameOf(job.link)} <LinkArrow size={13} />
                                 </a>
                             )}

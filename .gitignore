@@ -25,3 +25,8 @@ dist-ssr
 
 # Environment variables
 .env
+
+# Generated build artifacts (tsc composite-project output)
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts

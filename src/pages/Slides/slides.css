@@ -1,0 +1,33 @@
+/* slides.css — page shell for the cinematic Slides page.
+ * Hosts ScrollSmoother (#smooth-wrapper / #smooth-content) and the fixed
+ * scroll-progress bar. The header/footer own their own styles. */
+
+#smooth-content {
+    background: var(--bg);
+}
+
+/* offset smooth-scroll / anchor jumps so sections clear the floating nav */
+#Roles,
+#Experience,
+#Education {
+    scroll-margin-top: 88px;
+}
+
+/* --- scroll-progress bar (fixed, outside the smoothed content) --- */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 1001;
+    background: var(--line);
+}
+.scroll-progress-bar {
+    height: 100%;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left center;
+    background: var(--accent);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 60%, transparent);
+}

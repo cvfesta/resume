@@ -1,0 +1,34 @@
+/* cursor.css — custom lime cursor (dot + trailing ring). */
+
+.cursor-dot,
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 50%;
+    visibility: hidden;            /* GSAP autoAlpha reveals on first move */
+}
+
+.cursor-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+}
+
+.cursor-ring {
+    width: 34px;
+    height: 34px;
+    border: 1.5px solid var(--accent);
+    transition: width 0.25s ease, height 0.25s ease, background-color 0.25s ease;
+}
+.cursor-ring.is-hover {
+    width: 58px;
+    height: 58px;
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+/* hide the native cursor while the follower is active (text fields keep it) */
+body.has-custom-cursor { cursor: none; }
+body.has-custom-cursor :is(input, textarea) { cursor: text; }

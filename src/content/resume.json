@@ -1,0 +1,184 @@
+{
+  "hero": {
+    "title": "Christian Festa",
+    "subTitle": "Seasoned technology executive with {YEARS} years of experience mastering the full SDLC, from system integration to directing multi-million-dollar digital platforms. I lead high-performing engineering teams to deliver scalable, user-centric solutions while pioneering secure generative AI implementations on AWS that unlock proprietary insights and enforce enterprise-grade data protection and compliance. By blending design excellence, Agile precision, and emerging AI capabilities, I align technical innovation with strategic objectives to accelerate growth and position organizations for competitive advantage in an AI-driven landscape."
+  },
+  "roles": [
+    {
+      "title": "AI & Cloud Innovation Leader",
+      "level": "Executive",
+      "subTitle": "Strategic director of generative AI initiatives on AWS, delivering secure Retrieval-Augmented Generation (RAG) solutions that enable intelligent querying of proprietary data without exposing sensitive information. Expertise in Amazon Bedrock, guardrails, and isolated foundational models to mitigate risks around PII and intellectual property.",
+      "badges": [
+        "Generative AI Strategy",
+        "AWS Bedrock & RAG Implementation",
+        "AI Guardrails & Data Security",
+        "Secure Enterprise AI Deployment",
+        "Proprietary Data Monetization",
+        "Risk Mitigation & Compliance",
+        "Cross-Functional AI Leadership",
+        "Emerging Tech Adoption"
+      ]
+    },
+    {
+      "title": "Director of Software Engineering",
+      "level": "Executive",
+      "subTitle": "Technical leader overseeing software development and integration across the full SDLC, from architecture to deployment. Directed teams to accelerate delivery by up to 2x through modern technologies that help future-proof solutions, optimizing performance and aligning technical strategies with business goals.",
+      "badges": [
+        "Full SDLC Technical Oversight",
+        "Team Scaling & Leadership",
+        "Performance & Code Optimization",
+        "Agile Engineering Practices",
+        "Stakeholder Technical Alignment",
+        "Innovation in Software Architecture",
+        "Modern Tech Adoption",
+        "Future-Proof Solutions"
+      ]
+    },
+    {
+      "title": "Principal UX Designer",
+      "level": "Expert",
+      "subTitle": "Expert in crafting user-centric UX strategies and building complex design systems that ensure scalability, accessibility, and seamless integration. Led Figma-driven initiatives to double team productivity, enforce WCAG standards, and deliver enterprise-level interfaces that drive user engagement and operational efficiency.",
+      "badges": [
+        "Design Systems Architecture",
+        "WCAG & Accessibility",
+        "Figma & Prototyping",
+        "User Research & Testing",
+        "UI/UX Optimization",
+        "Branding",
+        "Mentorship",
+        "Cross-Functional Design Leadership"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Director of Software Engineering",
+      "organization": "Public Consulting Group",
+      "description": "As Director of Software Engineering, Technical Delivery Manager, and Principal Design Manager, I orchestrate the design, development, and integration of a $40M AWS-hosted public/admin portal while spearheading secure generative AI capabilities, leading cross-functional teams of 30+ designers, developers, and engineers.",
+      "bullets": [
+        "Championed the strategy and implementation of a secure Retrieval-Augmented Generation (RAG) application on AWS, enabling users to query proprietary company data via natural language chat while delivering accurate, context-specific responses not available publicly.",
+        "Directed the architecture of isolated foundational models within Amazon Bedrock, integrated with robust guardrails to prevent data leakage—ensuring zero exposure of proprietary information or PII even in edge-case prompts—while maintaining enterprise compliance and governance standards.",
+        "Led cross-functional collaboration to integrate generative AI into the platform roadmap, enhancing internal productivity and decision-making through safe, scalable access to sensitive insights.",
+        "Established governance frameworks for responsible AI adoption, balancing rapid innovation with comprehensive risk management to future-proof the organization's digital ecosystem.",
+        "Established a comprehensive Figma-based design system to standardize components, enforce WCAG compliance, and ensure device responsiveness, enabling seamless design handoffs and code reviews.",
+        "Directed onshore and offshore teams through the full project lifecycle, implementing best practices for testing workflows and achieving a phased rollout with the first phase live in just three months.",
+        "Mentored junior and senior designers while managing stakeholder relationships via weekly meetings and progress reports, aligning creative vision with business goals.",
+        "Post-launch, optimized the platform using user feedback and performance metrics, driving operational efficiency and positioning it as a cornerstone of the organization’s digital strategy."
+      ],
+      "date": "2022 - Present",
+      "link": "https://ca-path.com/",
+      "engagementType": "Employee",
+      "badges": [
+        "Generative AI & RAG Leadership",
+        "AWS Bedrock Architecture",
+        "Secure AI Governance",
+        "Team Leadership (30+ Members)",
+        "Figma Design System",
+        "WCAG Compliance",
+        "Phased Rollout Success",
+        "Mentorship & Optimization"
+      ]
+    },
+    {
+      "title": "Technical Program and Design Manager",
+      "organization": "Unisys",
+      "description": "As Technical Program Manager and Design Manager, I directed multiple workstreams across three of four solutions in a $100 million Google Cloud Platform-hosted portal project, managing a diverse team of over 30 professionals including designers, developers, business analysts, and testers across onshore and offshore locations.",
+      "bullets": [
+        "Pioneered early Figma adoption and created a comprehensive Figma-based design system, accelerating the design process by more than 2x and doubling design team output.",
+        "Established UI/UX standards for standardization, WCAG compliance, and cross-device responsiveness, fostering cross-functional collaboration throughout the project lifecycle from requirements gathering to deployment.",
+        "Oversaw UX design processes, stakeholder workshops, and team coordination to deliver a scalable, user-friendly portal that enhanced customer service capabilities.",
+        "Provided strategic leadership to align project deliverables with organizational goals, ensuring efficient execution and long-term scalability."
+      ],
+      "date": "2018 - 2022",
+      "link": "",
+      "engagementType": "Consultant",
+      "badges": [
+        "Multi-Workstream Management",
+        "Figma Adoption & 2x Acceleration",
+        "UI/UX Standards Leadership",
+        "Cross-Functional Collaboration",
+        "Scalable Portal Delivery"
+      ]
+    },
+    {
+      "title": "Technical Consultant",
+      "organization": "County Welfare Directors Association of California",
+      "description": "As a Technical Consultant on the Independent Verification and Validation (IV&V) team, I ensured successful integration of a complex multi-system environment for a high-profile public sector initiative.",
+      "bullets": [
+        "Actively participated in system design, analyzed technical documentation, and identified potential risks and integration bottlenecks to maintain project timelines and performance.",
+        "Provided thorough reviews and sign-offs on technical documentation, recommending process optimizations to address issues before they escalated.",
+        "Collaborated with developers and stakeholders in biweekly reviews, presenting findings and securing buy-in for solutions while bridging technical and non-technical teams.",
+        "Contributed to delivering a reliable, integrated system that met all contractual obligations and served as a model for future initiatives."
+      ],
+      "date": "2016 - 2018",
+      "link": "",
+      "engagementType": "Consultant",
+      "badges": [
+        "System Design Participation",
+        "Risk Identification",
+        "Technical Reviews & Sign-Offs",
+        "Stakeholder Collaboration",
+        "Multi-System Integration"
+      ]
+    },
+    {
+      "title": "Technical Consultant",
+      "organization": "Unisys",
+      "description": "Progressing from a college new hire to a managerial role over my tenure, I contributed to diverse projects including criminal justice, welfare, and grant management systems, wearing multiple hats across design, development, integration, and maintenance.",
+      "bullets": [
+        "Established standards and protocols for multisystem case exchange, enabling seamless data sharing, and led implementation builds for successful deployments.",
+        "Designed and built in-house tools that streamlined workflows, reduced errors, and cut task completion time from hours to minutes.",
+        "Built and maintained regression suites, conducting rigorous testing to ensure system reliability and performance.",
+        "Co-authored winning proposals in business development, collaborating with experts to secure over $100 million in contracts.",
+        "Managed teams of up to 25 professionals in full system builds, configurations, third-party integrations, and user acceptance testing, driving operational excellence."
+      ],
+      "date": "2009 - 2016",
+      "link": "",
+      "engagementType": "Employee",
+      "badges": [
+        "Multi-Hat Expertise (Design/Dev/Integration)",
+        "Data Exchange Standards",
+        "Regression Testing",
+        "$100M+ Proposal Wins",
+        "Team Management (25+ Members)"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Bachelor of Science in Information Sciences and Technology",
+      "institution": "Pennsylvania State University",
+      "location": "University Park, PA",
+      "date": "2005 - 2009",
+      "icon": "psu",
+      "description": "Built foundational knowledge in IT, systems integration, software development, and human-computer interaction, with honors graduation and leadership electives that prepared for executive roles in technical strategy and team management."
+    },
+    {
+      "title": "Project Management Professional (PMP) Certification",
+      "institution": "Project Management Institute",
+      "location": "",
+      "date": "2014",
+      "icon": "pmi",
+      "description": "Gained expertise in Agile, Scrum, Waterfall, risk management, and stakeholder engagement, enabling successful leadership of multi-million-dollar projects delivered on time, within budget, and exceeding expectations."
+    },
+    {
+      "title": "Google User Experience (UX) Design Certification",
+      "institution": "Google",
+      "location": "",
+      "date": "2021",
+      "icon": "google",
+      "description": "Mastered user research, wireframing, prototyping, and usability testing through hands-on projects, applying these skills to lead design strategies that prioritize accessibility and user-centric outcomes in enterprise environments."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Walkout Intros",
+      "tagline": "Custom walkup songs & intros",
+      "description": "Pro-quality walkout intros for sports teams — build a roster, pair each player with an AI-announcer intro and a trimmed music cue, then trigger their entrance with a tap. Works with or without Apple Music.",
+      "category": "iOS App · Sports",
+      "meta": "Free · In-app purchases",
+      "link": "https://apps.apple.com/us/app/walkout-intros/id6761736614",
+      "icon": "walkout-intros"
+    }
+  ]
+}

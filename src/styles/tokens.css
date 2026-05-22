@@ -1,0 +1,30 @@
+/* tokens.css — design tokens for the cinematic site (Neon Lime / Black).
+ * Single source of truth for the palette — retune the whole theme here. */
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+:root {
+    /* ── surfaces (near-black, faint green tint, subtle tonal steps) ── */
+    --bg:        #0a0b0a;   /* base — hero, footer */
+    --bg-2:      #0d0f0d;   /* roles, education */
+    --bg-3:      #111311;   /* experience — the reading section, a touch lifted */
+    --surface:   #181b17;   /* cards */
+    --surface-2: #20231e;   /* chips / raised */
+
+    /* ── accent (neon lime) ── */
+    --accent:    #ccff33;
+    --on-accent: #0a0b0a;   /* text on an accent fill */
+
+    /* ── text ── */
+    --text:       #eef0ea;
+    --text-soft:  #9aa096;
+    --text-faint: #5f655d;
+
+    /* ── lines & plates ── */
+    --line:        rgba(255, 255, 255, 0.09);
+    --line-strong: rgba(255, 255, 255, 0.16);
+    --logo-chip:   #f1efe6;   /* light plate behind the education logos */
+
+    /* ── type ── */
+    --font-display: "Alfa Slab One", serif;
+}

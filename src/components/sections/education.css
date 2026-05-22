@@ -1,0 +1,110 @@
+/* education.css — credentials finale (Step 4 of the cinematic Slides page).
+ * Each brand logo sketches itself in on a light plate, then the colours fill. */
+
+.education {
+    position: relative;
+    background: var(--bg-2);
+    color: var(--text);
+    padding: clamp(5rem, 11vw, 9rem) 1.5rem clamp(6rem, 13vw, 10rem);
+}
+
+.edu-head {
+    max-width: 72rem;
+    margin: 0 auto clamp(2.75rem, 5vw, 4.5rem);
+}
+.edu-kicker {
+    margin: 0 0 1rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+}
+.edu-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 4.75rem);
+    line-height: 0.98;
+    color: var(--text);
+}
+
+.edu-grid {
+    display: flex;
+    gap: clamp(1.1rem, 2.2vw, 1.9rem);
+    max-width: 72rem;
+    margin: 0 auto;
+}
+@media (max-width: 880px) {
+    .edu-grid { flex-direction: column; align-items: center; }
+}
+
+.edu-card {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 26rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(1.75rem, 2.6vw, 2.5rem);
+    border-radius: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: 0 26px 54px -32px rgba(0, 0, 0, 0.8);
+    will-change: transform;
+}
+@media (max-width: 880px) {
+    .edu-card { width: 100%; }
+}
+
+/* light plate so the brand logos read on the dark card */
+.edu-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.5rem;
+    height: 5.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    background: var(--logo-chip);
+    /* the PMI logo has a `currentColor` path (the "P") — keep it dark so it
+       stays visible on the light plate instead of inheriting light text */
+    color: var(--bg);
+}
+.edu-logo svg {
+    overflow: visible;            /* don't clip the stroke mid-draw */
+}
+
+.edu-date {
+    margin-bottom: 0.6rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent);
+}
+.edu-card-title {
+    margin: 0 0 0.6rem;
+    font-size: clamp(1.1rem, 1.5vw, 1.32rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--text);
+}
+.edu-org {
+    margin: 0 0 0.1rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-soft);
+}
+.edu-place {
+    margin: 0 0 1rem;
+    font-size: 0.82rem;
+    color: var(--text-faint);
+}
+.edu-org + .edu-desc { margin-top: 1rem; }
+.edu-desc {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-soft);
+}

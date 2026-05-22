@@ -1,0 +1,193 @@
+/* hero.css — cinematic hero.
+ *
+ * Two states:
+ *  - default          → plain, fully-visible static layout (reduced-motion / no-JS)
+ *  - .hero.is-animated → JS-driven: the title + statement panes overlap and
+ *                        GSAP swaps them while the section is pinned. */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7rem 1.5rem 6rem;
+    overflow: hidden;
+    background:
+        radial-gradient(125% 95% at 50% 0%, var(--surface) 0%, var(--bg-2) 58%, var(--bg) 100%);
+    color: var(--text);
+}
+
+/*!* film-grain overlay *!*/
+/*.hero::after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    inset: 0;*/
+/*    background-image: url("../../assets/noise.png");*/
+/*    background-repeat: repeat;*/
+/*    opacity: 0.14;*/
+/*    mix-blend-mode: overlay;*/
+/*    pointer-events: none;*/
+/*    z-index: 1;*/
+/*}*/
+
+/* --- ambient blobs --- */
+.hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    pointer-events: none;
+    will-change: transform;
+    z-index: 0;
+    background: var(--accent);
+}
+.hero-blob--a { width: 44vw; height: 44vw; left: -10vw;  top: -8vw;     opacity: 0.22; }
+.hero-blob--b { width: 40vw; height: 40vw; right: -12vw; bottom: -12vw; opacity: 0.14; }
+.hero-blob--c { width: 26vw; height: 26vw; right: 16vw;  top: 8vw;      opacity: 0.12; }
+
+/* --- stage --- */
+.hero-stage {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 60rem;
+    text-align: center;
+}
+
+.hero-pane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* In the animated state the two panes share one grid cell so GSAP can
+   cross-fade the title card out and the statement in, both centered. */
+.hero.is-animated .hero-stage { display: grid; }
+.hero.is-animated .hero-title-pane,
+.hero.is-animated .hero-statement-pane { grid-area: 1 / 1; }
+.hero.is-animated .hero-title-pane { z-index: 2; }
+.hero.is-animated .hero-statement-pane { z-index: 1; }
+
+/* static fallback: simple stacked flow */
+.hero-statement-pane { margin-top: 2.75rem; }
+.hero.is-animated .hero-statement-pane { margin-top: 0; }
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 1.6rem;
+}
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+    content: "";
+    width: 2.4rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.55;
+}
+
+.hero-name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(3.4rem, 13vw, 10.5rem);
+    line-height: 0.94;
+    letter-spacing: -0.012em;
+    color: var(--text);
+    transition: color 0.3s ease;
+}
+/* the name picks up the accent on hover — purely for delight */
+.hero-name * { transition: color 0.3s ease; }
+.hero-name:hover { color: var(--accent); }
+
+.hero-lead {
+    max-width: 40ch;
+    margin: 1.9rem auto 0;
+    font-size: clamp(1.05rem, 2.1vw, 1.6rem);
+    line-height: 1.45;
+    color: var(--text);
+}
+
+.hero-body {
+    max-width: 54ch;
+    margin: 0 auto;
+    font-size: clamp(1rem, 1.5vw, 1.22rem);
+    line-height: 1.7;
+    color: var(--text-soft);
+}
+
+/* --- corner stat (bottom-right) --- */
+.hero-stat {
+    position: absolute;
+    right: clamp(1.4rem, 5vw, 5rem);
+    bottom: clamp(1.6rem, 6vh, 3.6rem);
+    z-index: 3;
+    text-align: right;
+}
+.hero-stat-num {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.9rem);
+    line-height: 1;
+    color: var(--accent);
+}
+.hero-stat-label {
+    max-width: 14ch;
+    margin: 0.45rem 0 0 auto;
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+}
+
+/* --- scroll cue (bottom-center) --- */
+.hero-cue {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: clamp(1.4rem, 5vh, 2.8rem);
+    z-index: 3;
+}
+.hero-cue-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+}
+.hero-cue-track {
+    position: relative;
+    width: 1px;
+    height: 2.8rem;
+    overflow: hidden;
+    background: linear-gradient(to bottom, var(--text-faint), transparent);
+}
+.hero-cue-dot {
+    position: absolute;
+    top: 0;
+    left: -1.5px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-blob { display: none; }
+}
+
+@media (max-width: 600px) {
+    .hero-stat { right: 1.25rem; }
+    .hero-stat-num { font-size: 2.2rem; }
+    .hero-eyebrow { letter-spacing: 0.24em; }
+}

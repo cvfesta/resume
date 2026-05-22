@@ -1,0 +1,120 @@
+/* roles.css — "Three hats" section (Step 2 of the cinematic Slides page).
+ * Cards dealt onto a dark table; hovering lifts + 3D-tilts a card. */
+
+.roles {
+    position: relative;
+    background: var(--bg-2);
+    color: var(--text);
+    padding: clamp(5rem, 11vw, 9.5rem) 1.5rem;
+}
+
+.roles-head {
+    max-width: 78rem;
+    margin: 0 auto clamp(2.75rem, 5vw, 4.5rem);
+}
+
+.roles-kicker {
+    margin: 0 0 1rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.roles-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 4.75rem);
+    line-height: 0.98;
+    color: var(--text);
+}
+
+.roles-deck {
+    display: flex;
+    gap: clamp(1.1rem, 2.2vw, 1.9rem);
+    max-width: 78rem;
+    margin: 0 auto;
+    perspective: 1500px;
+}
+
+@media (max-width: 900px) {
+    .roles-deck { flex-direction: column; align-items: center; }
+}
+
+.role-card {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 32rem;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(1.75rem, 2.6vw, 2.6rem);
+    border-radius: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--text);
+    box-shadow: 0 32px 64px -28px rgba(0, 0, 0, 0.8);
+    will-change: transform;
+}
+
+@media (max-width: 900px) {
+    .role-card { width: 100%; }
+}
+
+.role-index {
+    position: absolute;
+    top: clamp(1rem, 2vw, 1.6rem);
+    right: clamp(1.1rem, 2.2vw, 1.9rem);
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    line-height: 1;
+    color: color-mix(in srgb, var(--text) 9%, transparent);
+    pointer-events: none;
+}
+
+.role-level {
+    align-self: flex-start;
+    margin-bottom: 0.9rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.role-title {
+    margin: 0 0 0.9rem;
+    padding-right: 2.5rem;            /* clear the index watermark */
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text);
+}
+
+.role-desc {
+    margin: 0 0 1.5rem;
+    font-size: 0.97rem;
+    line-height: 1.62;
+    color: var(--text-soft);
+}
+
+.role-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: auto;                 /* pin badges to the card foot */
+    padding-top: 0.35rem;
+}
+
+.role-badge {
+    padding: 0.36rem 0.72rem;
+    border-radius: 99rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    color: var(--text-soft);
+    will-change: transform;
+}

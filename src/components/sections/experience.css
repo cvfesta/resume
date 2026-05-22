@@ -1,0 +1,212 @@
+/* experience.css — the timeline section (Step 3 of the cinematic Slides page).
+ * A spine draws itself down the page; nodes ping on as the line reaches them. */
+
+.timeline {
+    position: relative;
+    background: var(--bg-3);
+    color: var(--text);
+    padding: clamp(5rem, 11vw, 9rem) 1.5rem;
+}
+
+.timeline-head {
+    max-width: 64rem;
+    margin: 0 auto clamp(3rem, 6vw, 5rem);
+}
+.timeline-kicker {
+    margin: 0 0 1rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+}
+.timeline-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 4.75rem);
+    line-height: 0.98;
+    color: var(--text);
+}
+
+.timeline-body {
+    position: relative;
+    max-width: 64rem;
+    margin: 0 auto;
+}
+
+/* --- spine --- (top + height are set by JS to span first → last node;
+   the top/bottom here is the reduced-motion / no-JS fallback) */
+.timeline-spine {
+    position: absolute;
+    left: 1.6rem;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    transform: translateX(-50%);
+}
+.timeline-track,
+.timeline-progress {
+    position: absolute;
+    inset: 0;
+    border-radius: 3px;
+}
+.timeline-track { background: color-mix(in srgb, var(--accent) 15%, transparent); }
+.timeline-progress {
+    background: var(--accent);
+    transform-origin: top center;
+}
+.timeline-comet {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 13px;
+    height: 13px;
+    margin: -6.5px 0 0 -6.5px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 16px 3px color-mix(in srgb, var(--accent) 55%, transparent);
+    opacity: 0;
+}
+
+/* --- entry --- */
+.exp-entry {
+    position: relative;
+    padding-left: clamp(3.25rem, 7vw, 5.5rem);
+    padding-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+.exp-entry:last-child { padding-bottom: 0; }
+
+.exp-node {
+    position: absolute;
+    left: 1.6rem;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg-3);
+    box-shadow: 0 0 0 1px var(--line);
+    transform: translate(-50%, -50%);
+}
+.exp-node-ring {
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    opacity: 0;
+}
+
+.exp-year-block { margin-bottom: 1.1rem; }
+.exp-year-mask { overflow: hidden; }
+.exp-year {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    line-height: 1;
+    color: var(--text);
+}
+.exp-range {
+    margin-top: 0.4rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--text-faint);
+}
+
+.exp-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 1.35rem;
+    padding: clamp(1.5rem, 3vw, 2.6rem);
+    box-shadow: 0 24px 50px -30px rgba(0, 0, 0, 0.8);
+}
+.exp-title {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.3rem, 2.2vw, 1.85rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text);
+}
+.exp-org-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 1.1rem;
+}
+.exp-org {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-soft);
+}
+.exp-type {
+    padding: 0.24rem 0.62rem;
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    border-radius: 99rem;
+    font-size: 0.64rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent);
+}
+.exp-desc {
+    margin: 0 0 1.15rem;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--text-soft);
+}
+.exp-bullets {
+    margin: 0 0 1.3rem;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+.exp-bullets li {
+    position: relative;
+    padding-left: 1.4rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-soft);
+}
+.exp-bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.52em;
+    width: 0.62rem;
+    height: 2px;
+    background: var(--accent);
+}
+.exp-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+.exp-badge {
+    padding: 0.34rem 0.7rem;
+    border-radius: 99rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    color: var(--text-soft);
+    will-change: transform;
+}
+.exp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+.exp-link:hover { color: var(--text); }
+
+@media (max-width: 560px) {
+    .exp-card { padding: 1.4rem; }
+}

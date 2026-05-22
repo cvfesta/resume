@@ -1,0 +1,58 @@
+/* preloader.css — page-load intro curtain. */
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+}
+
+.pre-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: min(74vw, 21rem);
+}
+
+.pre-mark {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    opacity: 0;
+    transform: scale(0.8);
+}
+.pre-dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.pre-bar {
+    width: 100%;
+    height: 2px;
+    overflow: hidden;
+    background: var(--line);
+}
+.pre-bar-fill {
+    width: 100%;
+    height: 100%;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+}
+
+.pre-count {
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    color: var(--text-soft);
+    font-variant-numeric: tabular-nums;
+}

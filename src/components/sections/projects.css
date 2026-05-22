@@ -1,0 +1,150 @@
+/* projects.css — "Built" section: shipped apps. */
+
+.projects {
+    position: relative;
+    background: var(--bg);
+    color: var(--text);
+    padding: clamp(5rem, 11vw, 9rem) 1.5rem;
+}
+
+.projects-head {
+    max-width: 72rem;
+    margin: 0 auto clamp(2.75rem, 5vw, 4.5rem);
+}
+.projects-kicker {
+    margin: 0 0 1rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+}
+.projects-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 4.75rem);
+    line-height: 0.98;
+    color: var(--text);
+}
+.projects-intro {
+    max-width: 46ch;
+    margin: 1.3rem 0 0;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.6;
+    color: var(--text-soft);
+}
+
+/* a stacked column of cards — scales as more apps ship */
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 44rem;
+    margin: 0 auto;
+}
+
+.project-card {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(1.1rem, 2.5vw, 1.75rem);
+    padding: clamp(1.5rem, 3vw, 2.1rem);
+    border-radius: 1.4rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: 0 26px 54px -34px rgba(0, 0, 0, 0.8);
+    transition: border-color 0.25s ease, background 0.25s ease;
+    will-change: transform;
+}
+.project-card:hover {
+    border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+    background: var(--surface-2);
+}
+
+/* rounded-square app-icon tile (the walkout-dark.svg logo is the
+   dark-background variant, so it sits on the dark tile cleanly) */
+.project-icon {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    padding: 0.6rem;
+    border-radius: 1.3rem;            /* ~22% — App Store icon rounding */
+    background: linear-gradient(150deg, var(--surface-2), var(--bg));
+    border: 1px solid var(--line);
+    box-shadow:
+        0 10px 22px -12px rgba(0, 0, 0, 0.8),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    color: var(--accent);             /* fallback icon colour */
+    font-size: 2.2rem;
+}
+.project-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.project-body {
+    flex: 1;
+    min-width: 0;
+}
+.project-category {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent);
+}
+.project-name {
+    margin: 0.45rem 0 0.2rem;
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text);
+}
+.project-tagline {
+    margin: 0 0 0.7rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-soft);
+}
+.project-desc {
+    margin: 0 0 1.15rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-soft);
+}
+
+.project-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem 1.1rem;
+}
+.project-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+.project-arrow {
+    transition: transform 0.25s ease;
+}
+.project-card:hover .project-arrow {
+    transform: translate(0.15em, -0.15em);
+}
+.project-meta {
+    font-size: 0.78rem;
+    color: var(--text-faint);
+}
+
+@media (max-width: 540px) {
+    .project-card { flex-direction: column; }
+}

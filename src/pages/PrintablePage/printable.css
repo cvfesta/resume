@@ -1,0 +1,234 @@
+/* PrintablePage — a clean résumé shown on a "sheet" on screen and
+ * print-optimised via @media print. Self-contained: no Bootstrap classes,
+ * no theme tokens, so it stays a stable, conservative printed document. */
+
+.pp-screen {
+    min-height: 100vh;
+    padding: 2.5rem 1rem 5rem;
+    background: #e8e8e3;
+}
+
+/* --- toolbar (screen only) --- */
+.pp-toolbar {
+    max-width: 52rem;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+.pp-back {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #44443f;
+    text-decoration: none;
+}
+.pp-back:hover { color: #1d1d1b; }
+.pp-print-btn {
+    padding: 0.62rem 1.35rem;
+    border: 0;
+    border-radius: 99rem;
+    background: #1d1d1b;
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.pp-print-btn:hover { background: #2e5339; }
+
+/* --- the sheet --- */
+.pp-sheet {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3.4rem);
+    background: #fff;
+    color: #1d1d1b;
+    box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.45);
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+/* --- header --- */
+.pp-head {
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 2px solid #2e5339;
+}
+.pp-name {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #1d1d1b;
+}
+.pp-role {
+    margin: 0.5rem 0 0;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: #2e5339;
+}
+.pp-contact {
+    margin: 0.65rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.84rem;
+    color: #6b6b66;
+}
+.pp-contact a {
+    color: #44443f;
+    text-decoration: none;
+}
+.pp-contact a:hover { color: #2e5339; }
+.pp-sep { color: #b6b6ad; }
+
+/* --- sections --- */
+.pp-section { margin-bottom: 1.5rem; }
+.pp-section:last-child { margin-bottom: 0; }
+.pp-section-label {
+    margin: 0 0 0.7rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #dcdcd5;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #2e5339;
+}
+.pp-summary { margin: 0; }
+
+/* --- expertise --- */
+.pp-expertise { margin-bottom: 0.9rem; }
+.pp-expertise:last-child { margin-bottom: 0; }
+.pp-expertise-title {
+    margin: 0 0 0.4rem;
+    font-size: 0.96rem;
+    font-weight: 700;
+}
+.pp-expertise-level {
+    margin-left: 0.55rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8a8a82;
+}
+.pp-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+.pp-skill {
+    padding: 0.16rem 0.5rem;
+    border: 1px solid #cfcfc7;
+    border-radius: 4px;
+    font-size: 0.76rem;
+    color: #44443f;
+}
+
+/* --- entries (experience / education) --- */
+.pp-entry {
+    display: flex;
+    gap: 1.4rem;
+    margin-bottom: 1.15rem;
+}
+.pp-entry:last-child { margin-bottom: 0; }
+.pp-entry-date {
+    flex: none;
+    width: 6.7rem;
+    padding-top: 0.12rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #8a8a82;
+}
+.pp-entry-main { flex: 1; min-width: 0; }
+.pp-entry-title {
+    margin: 0;
+    font-size: 1.02rem;
+    font-weight: 700;
+}
+.pp-entry-org {
+    margin: 0.15rem 0 0.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    color: #6b6b66;
+}
+.pp-entry-type {
+    padding: 0.1rem 0.5rem;
+    border: 1px solid #bcd0c0;
+    border-radius: 99rem;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2e5339;
+}
+.pp-entry-place { color: #8a8a82; }
+.pp-entry-desc { margin: 0 0 0.4rem; }
+.pp-bullets {
+    margin: 0;
+    padding-left: 1.15rem;
+}
+.pp-bullets li { margin-bottom: 0.25rem; }
+.pp-entry-link {
+    margin: 0.5rem 0 0;
+    font-size: 0.82rem;
+}
+.pp-entry-link a {
+    color: #2e5339;
+    text-decoration: none;
+}
+
+@media (max-width: 620px) {
+    .pp-entry { flex-direction: column; gap: 0.2rem; }
+    .pp-entry-date { width: auto; }
+    .pp-name { font-size: 2rem; }
+}
+
+/* --- print --- */
+@media print {
+    @page {
+        size: letter portrait;
+        margin: 0.5in;
+    }
+    html, body { background: #fff; }
+
+    .pp-screen {
+        min-height: 0;
+        padding: 0;
+        background: #fff;
+    }
+    .pp-toolbar { display: none; }
+    .pp-sheet {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        font-size: 10pt;
+        line-height: 1.4;
+    }
+
+    .pp-name { font-size: 22pt; }
+    .pp-role { font-size: 11pt; }
+    .pp-contact { font-size: 8.5pt; }
+    .pp-section { margin-bottom: 14pt; }
+    .pp-section-label { font-size: 9pt; }
+    .pp-entry-date { font-size: 8.5pt; }
+    .pp-entry-title { font-size: 11pt; }
+    .pp-skill { font-size: 8pt; }
+
+    /* keep things from splitting awkwardly across pages */
+    .pp-section-label { break-after: avoid; }
+    .pp-entry,
+    .pp-expertise { break-inside: avoid; }
+    .pp-bullets li { break-inside: avoid; }
+
+    a { color: #1d1d1b; }
+}

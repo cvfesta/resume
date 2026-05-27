@@ -143,6 +143,39 @@ const PrintablePage: React.FC = () => {
                         </div>
                     ))}
                 </section>
+
+                <section className="pp-section">
+                    <h2 className="pp-section-label">Projects</h2>
+                    {data.projects.map((project) => (
+                        <div className="pp-entry" key={project.name}>
+                            <div className="pp-entry-date">{project.category}</div>
+                            <div className="pp-entry-main">
+                                <h3 className="pp-entry-title">{project.name}</h3>
+                                <p className="pp-entry-org">
+                                    <span>{project.tagline}</span>
+                                    {project.meta && (
+                                        <span className="pp-entry-type">{project.meta}</span>
+                                    )}
+                                </p>
+                                <p className="pp-entry-desc">{project.description}</p>
+                                {project.link && (
+                                    <p className="pp-entry-link">
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={() => trackEvent('Project Link Clicked', {
+                                                project: project.name, url: project.link, location: 'print',
+                                            })}
+                                        >
+                                            {hostnameOf(project.link)}
+                                        </a>
+                                    </p>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </section>
             </article>
         </div>
     );

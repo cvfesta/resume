@@ -192,6 +192,48 @@
     .pp-name { font-size: 2rem; }
 }
 
+/* Dark mode is screen only — @media print below always renders light, since
+ * printers don't need a dark theme and forced dark backgrounds waste ink. */
+@media (prefers-color-scheme: dark) {
+    .pp-screen { background: #141413; }
+    .pp-back { color: #b6b6ad; }
+    .pp-back:hover { color: #ebebe5; }
+    .pp-print-btn { background: #ebebe5; color: #141413; }
+    .pp-print-btn:hover { background: #7fb992; }
+
+    .pp-sheet {
+        background: #1f1f1d;
+        color: #ebebe5;
+        box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
+    }
+    .pp-head { border-bottom-color: #7fb992; }
+    .pp-name { color: #ebebe5; }
+    .pp-role { color: #7fb992; }
+    .pp-contact { color: #8a8a82; }
+    .pp-contact a { color: #b6b6ad; }
+    .pp-contact a:hover { color: #7fb992; }
+    .pp-sep { color: #44443f; }
+
+    .pp-section-label {
+        border-bottom-color: #2e2e2b;
+        color: #7fb992;
+    }
+    .pp-expertise-level { color: #6b6b66; }
+    .pp-skill {
+        border-color: #3a3a37;
+        color: #b6b6ad;
+    }
+
+    .pp-entry-date { color: #6b6b66; }
+    .pp-entry-org { color: #8a8a82; }
+    .pp-entry-type {
+        border-color: #3a5840;
+        color: #7fb992;
+    }
+    .pp-entry-place { color: #6b6b66; }
+    .pp-entry-link a { color: #7fb992; }
+}
+
 /* --- print --- */
 @media print {
     @page {

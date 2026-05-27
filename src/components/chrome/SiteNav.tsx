@@ -15,6 +15,7 @@ const SECTIONS = [
     { label: 'Roles', target: '#Roles' },
     { label: 'Experience', target: '#Experience' },
     { label: 'Education', target: '#Education' },
+    { label: 'Projects', target: '#Projects' },
 ];
 
 const SiteNav: React.FC = () => {

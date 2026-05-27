@@ -30,6 +30,11 @@ const App: React.FC = () => {
             search: location.search,
             full_url: window.location.href,
         });
+        // Per-route <title> — also drives the default filename when a visitor
+        // does "Save as PDF" from /print ("Christian Festa — Résumé.pdf").
+        document.title = pageName === 'Print'
+            ? 'Christian Festa — Résumé'
+            : 'Christian Festa — Technology Executive';
     }, [location]);
 
     return (

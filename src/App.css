@@ -6,6 +6,14 @@ html, body {
   /*font-family: "Space Grotesk", sans-serif!important;*/
   /*  font-family: "Expletus Sans", sans-serif!important;*/
   /*  font-family: "Oi", serif!important;*/
+  /* Match the body bg to the page theme so iOS Safari's rubber-band overscroll
+   * doesn't flash white at the top/bottom of the dark Slides page. */
+  background: var(--bg);
+}
+/* Keep the Printable page's overscroll light to match its paper-sheet theme. */
+body:has(.pp-screen) { background: #e8e8e3; }
+@media (prefers-color-scheme: dark) {
+  body:has(.pp-screen) { background: #141413; }
 }
 /*override bootstrap default corner radius*/
 .btn {

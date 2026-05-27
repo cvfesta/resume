@@ -124,8 +124,17 @@ const Hero: React.FC = () => {
                 });
 
                 // --- pinned scroll act ---
-                // The title card lifts away while the executive statement
-                // writes itself in, one line at a time.
+                // The title card lifts away on scrub; the body statement is
+                // driven by a non-scrubbed reveal kicked off from onUpdate, so
+                // iPad scroll inertia doesn't jitter the masked lines.
+                let bodyShown = false;
+                const animateBody = (show: boolean) => {
+                    bodyShown = show;
+                    gsap.to(bodyLines.lines, show
+                        ? { yPercent: 0, duration: 0.9, stagger: 0.12, ease: 'power3.out', overwrite: 'auto' }
+                        : { yPercent: 105, duration: 0.45, stagger: { each: 0.05, from: 'end' }, ease: 'power2.in', overwrite: 'auto' });
+                };
+
                 gsap.timeline({
                     scrollTrigger: {
                         trigger: root,
@@ -134,6 +143,11 @@ const Hero: React.FC = () => {
                         pin: true,
                         scrub: 1,
                         anticipatePin: 1,
+                        onUpdate: (self) => {
+                            const shouldShow = self.progress >= 0.4;
+                            if (shouldShow && !bodyShown) animateBody(true);
+                            else if (!shouldShow && bodyShown) animateBody(false);
+                        },
                     },
                 })
                     .to(q('.hero-stat, .hero-cue'), {
@@ -142,9 +156,6 @@ const Hero: React.FC = () => {
                     .to(q('.hero-title-pane'), {
                         yPercent: -55, scale: 0.92, opacity: 0, duration: 0.5, ease: 'power2.in',
                     }, 0)
-                    .to(bodyLines.lines, {
-                        yPercent: 0, duration: 0.6, stagger: 0.09, ease: 'power2.out',
-                    }, 0.32)
                     .to(q('.hero-blob'), {
                         yPercent: -22, duration: 1, stagger: 0.15, ease: 'none',
                     }, 0);

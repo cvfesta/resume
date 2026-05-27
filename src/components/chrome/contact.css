@@ -1,6 +1,52 @@
-.contact-button {
-    background-color: #CCFF33 !important;
+/* contact.css — contact modal styled to match the Neon Lime / Black palette.
+ * Pairs with data-bs-theme="dark" on the modal root, which flips Bootstrap's
+ * default control colors; these rules then tune them to the site's tokens. */
+
+#contactModal .modal-content {
+    background-color: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--line);
 }
-.contact-button:hover {
-    background-color: #212921 !important;
+
+#contactModal .modal-title {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    color: var(--text);
+}
+
+#contactModal .form-control {
+    background-color: var(--bg-3);
+    border-color: var(--line);
+    color: var(--text);
+}
+#contactModal .form-control:focus {
+    background-color: var(--surface-2);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent) 22%, transparent);
+    color: var(--text);
+}
+#contactModal .form-floating > label {
+    color: var(--text-soft);
+}
+
+#contactModal .btn-outline-secondary {
+    color: var(--text-soft);
+    border-color: var(--line-strong);
+}
+#contactModal .btn-outline-secondary:hover {
+    background-color: var(--surface-2);
+    border-color: var(--text-soft);
+    color: var(--text);
+}
+
+.contact-button {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: var(--on-accent) !important;
+}
+.contact-button:hover,
+.contact-button:focus {
+    background-color: color-mix(in srgb, var(--accent) 85%, white 15%) !important;
+    border-color: color-mix(in srgb, var(--accent) 85%, white 15%) !important;
+    color: var(--on-accent) !important;
 }

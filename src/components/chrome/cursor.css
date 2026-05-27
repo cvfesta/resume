@@ -1,32 +1,47 @@
-/* cursor.css — custom lime cursor (dot + trailing ring). */
+/* cursor.css — custom lime cursor: dot + magnetic ring that docks around
+ * interactive elements, plus a contextual label pill. */
 
 .cursor-dot,
-.cursor-ring {
+.cursor-ring,
+.cursor-label {
     position: fixed;
     top: 0;
     left: 0;
     pointer-events: none;
     z-index: 9999;
-    border-radius: 50%;
     visibility: hidden;            /* GSAP autoAlpha reveals on first move */
 }
 
 .cursor-dot {
     width: 7px;
     height: 7px;
+    border-radius: 50%;
     background: var(--accent);
 }
 
+/* default radius 999px so the dock-to-pill is a pure size animation —
+ * no border-radius easing needed. */
 .cursor-ring {
     width: 34px;
     height: 34px;
+    border-radius: 999px;
     border: 1.5px solid var(--accent);
-    transition: width 0.25s ease, height 0.25s ease, background-color 0.25s ease;
 }
-.cursor-ring.is-hover {
-    width: 58px;
-    height: 58px;
-    background: color-mix(in srgb, var(--accent) 14%, transparent);
+.cursor-ring.is-docked {
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.cursor-label {
+    padding: 0.34rem 0.78rem;
+    border-radius: 999rem;
+    background: var(--accent);
+    color: var(--on-accent);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    will-change: transform, opacity;
 }
 
 /* hide the native cursor while the follower is active (text fields keep it) */

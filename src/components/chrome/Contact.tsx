@@ -13,7 +13,7 @@ const ContactModal: React.FC = () => {
     };
 
     return (
-        <div className="modal fade" id="contactModal" data-bs-backdrop="static" tabIndex={-1} aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div className="modal fade" id="contactModal" data-bs-theme="dark" data-bs-backdrop="static" tabIndex={-1} aria-labelledby="contactModalLabel" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content px-3 rounded-5">
                     <div className="modal-header border-0 pb-0">

@@ -39,7 +39,6 @@ const Hero: React.FC = () => {
         const q = gsap.utils.selector(root);
 
         // Hide animated elements before first paint so nothing flashes in.
-        root.classList.add('is-animated');
         gsap.set(q('.hero-eyebrow, .hero-name, .hero-lead, .hero-body, .hero-stat-in, .hero-cue-in'), {
             opacity: 0,
         });
@@ -70,7 +69,7 @@ const Hero: React.FC = () => {
 
                 // Containers are visible; their split children carry the reveal.
                 gsap.set(q('.hero-name, .hero-lead, .hero-body'), { opacity: 1 });
-                // Body lines stay hidden until the pinned scroll reveal, every build.
+                // Body lines stay hidden until the statement beat scrolls in.
                 gsap.set(bodyLines.lines, { yPercent: 105 });
 
                 if (firstRun) {
@@ -123,42 +122,22 @@ const Hero: React.FC = () => {
                     repeat: -1, repeatDelay: 0.5,
                 });
 
-                // --- pinned scroll act ---
-                // The title card lifts away on scrub; the body statement is
-                // driven by a non-scrubbed reveal kicked off from onUpdate, so
-                // iPad scroll inertia doesn't jitter the masked lines.
-                let bodyShown = false;
-                const animateBody = (show: boolean) => {
-                    bodyShown = show;
-                    gsap.to(bodyLines.lines, show
-                        ? { yPercent: 0, duration: 0.9, stagger: 0.12, ease: 'power3.out', overwrite: 'auto' }
-                        : { yPercent: 105, duration: 0.45, stagger: { each: 0.05, from: 'end' }, ease: 'power2.in', overwrite: 'auto' });
-                };
-
-                gsap.timeline({
+                // --- statement reveal (beat two) ---
+                // A plain triggered reveal, the same pattern the other sections
+                // use — they scroll smoothly on iOS where the old pinned hero
+                // jittered. No pin, no scrub: the title card scrolls away with
+                // native momentum, and these lines slide in on enter.
+                gsap.to(bodyLines.lines, {
+                    yPercent: 0,
+                    duration: 0.9,
+                    stagger: 0.12,
+                    ease: 'power3.out',
                     scrollTrigger: {
-                        trigger: root,
-                        start: 'top top',
-                        end: '+=120%',
-                        pin: true,
-                        scrub: 1,
-                        anticipatePin: 1,
-                        onUpdate: (self) => {
-                            const shouldShow = self.progress >= 0.4;
-                            if (shouldShow && !bodyShown) animateBody(true);
-                            else if (!shouldShow && bodyShown) animateBody(false);
-                        },
+                        trigger: q('.hero-beat--statement')[0],
+                        start: 'top 68%',
+                        toggleActions: 'play none none reverse',
                     },
-                })
-                    .to(q('.hero-stat, .hero-cue'), {
-                        opacity: 0, y: -24, duration: 0.15, ease: 'power1.in',
-                    }, 0)
-                    .to(q('.hero-title-pane'), {
-                        yPercent: -55, scale: 0.92, opacity: 0, duration: 0.5, ease: 'power2.in',
-                    }, 0)
-                    .to(q('.hero-blob'), {
-                        yPercent: -22, duration: 1, stagger: 0.15, ease: 'none',
-                    }, 0);
+                });
             }, root);
 
             // Mouse parallax for the ambient blobs (re-bound on every build).
@@ -215,7 +194,6 @@ const Hero: React.FC = () => {
             cleanupMagnetic();
             ctx?.revert();
             splits.forEach((s) => s.revert());
-            root.classList.remove('is-animated');
         };
     }, [years, yearsNum]);
 
@@ -225,28 +203,31 @@ const Hero: React.FC = () => {
             <div className="hero-blob hero-blob--b" />
             <div className="hero-blob hero-blob--c" />
 
-            <div className="hero-stage">
+            <div className="hero-beat hero-beat--title">
                 <div className="hero-pane hero-title-pane">
                     <p className="hero-eyebrow">Technology Executive</p>
                     <h1 className="hero-name">{content.hero.title}</h1>
                     <p className="hero-lead">{lead}</p>
                 </div>
+
+                <div className="hero-stat">
+                    <div className="hero-stat-in">
+                        <div className="hero-stat-num">{years}</div>
+                        <div className="hero-stat-label">years executing &amp; delivering</div>
+                    </div>
+                </div>
+
+                <div className="hero-cue">
+                    <div className="hero-cue-in">
+                        <span>Scroll</span>
+                        <span className="hero-cue-track"><span className="hero-cue-dot" /></span>
+                    </div>
+                </div>
+            </div>
+
+            <div className="hero-beat hero-beat--statement">
                 <div className="hero-pane hero-statement-pane">
                     <p className="hero-body">{body}</p>
-                </div>
-            </div>
-
-            <div className="hero-stat">
-                <div className="hero-stat-in">
-                    <div className="hero-stat-num">{years}</div>
-                    <div className="hero-stat-label">years executing &amp; delivering</div>
-                </div>
-            </div>
-
-            <div className="hero-cue">
-                <div className="hero-cue-in">
-                    <span>Scroll</span>
-                    <span className="hero-cue-track"><span className="hero-cue-dot" /></span>
                 </div>
             </div>
         </section>

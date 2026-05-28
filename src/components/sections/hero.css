@@ -1,22 +1,26 @@
 /* hero.css — cinematic hero.
  *
- * Two states:
- *  - default          → plain, fully-visible static layout (reduced-motion / no-JS)
- *  - .hero.is-animated → JS-driven: the title + statement panes overlap and
- *                        GSAP swaps them while the section is pinned. */
+ * Two stacked full-height "beats": the title card, then the executive
+ * statement. The title scrolls away with native momentum and the statement
+ * lines reveal on enter — no pin, no scrub (which jittered on iOS). */
 
 .hero {
     position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(120% 60% at 50% 0%, var(--surface) 0%, var(--bg-2) 45%, var(--bg) 100%);
+    color: var(--text);
+}
+
+.hero-beat {
+    position: relative;
+    z-index: 2;
     min-height: 100vh;
     min-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 7rem 1.5rem 6rem;
-    overflow: hidden;
-    background:
-        radial-gradient(125% 95% at 50% 0%, var(--surface) 0%, var(--bg-2) 58%, var(--bg) 100%);
-    color: var(--text);
 }
 
 /*!* film-grain overlay *!*/
@@ -42,37 +46,23 @@
     z-index: 0;
     background: var(--accent);
 }
-.hero-blob--a { width: 44vw; height: 44vw; left: -10vw;  top: -8vw;     opacity: 0.22; }
-.hero-blob--b { width: 40vw; height: 40vw; right: -12vw; bottom: -12vw; opacity: 0.14; }
-.hero-blob--c { width: 26vw; height: 26vw; right: 16vw;  top: 8vw;      opacity: 0.12; }
+/* Distributed down the two-beat (≈200vh) column so both screens glow. */
+.hero-blob--a { width: 44vw; height: 44vw; left: -10vw;  top: -6vh;  opacity: 0.22; }
+.hero-blob--b { width: 40vw; height: 40vw; right: -12vw; top: 58vh;  opacity: 0.15; }
+.hero-blob--c { width: 26vw; height: 26vw; right: 14vw;  top: 118vh; opacity: 0.12; }
 
-/* --- stage --- */
-.hero-stage {
+/* --- panes --- */
+.hero-pane {
     position: relative;
     z-index: 2;
-    width: 100%;
-    max-width: 60rem;
-    text-align: center;
-}
-
-.hero-pane {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 60rem;
+    text-align: center;
 }
-
-/* In the animated state the two panes share one grid cell so GSAP can
-   cross-fade the title card out and the statement in, both centered. */
-.hero.is-animated .hero-stage { display: grid; }
-.hero.is-animated .hero-title-pane,
-.hero.is-animated .hero-statement-pane { grid-area: 1 / 1; }
-.hero.is-animated .hero-title-pane { z-index: 2; }
-.hero.is-animated .hero-statement-pane { z-index: 1; }
-
-/* static fallback: simple stacked flow */
-.hero-statement-pane { margin-top: 2.75rem; }
-.hero.is-animated .hero-statement-pane { margin-top: 0; }
 
 .hero-eyebrow {
     display: inline-flex;

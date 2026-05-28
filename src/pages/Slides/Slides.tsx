@@ -33,6 +33,11 @@ const Slides: React.FC = () => {
                     content: '#smooth-content',
                     smooth: 1.2,
                     effects: true,
+                    // iOS fixes: route scroll through JS so Safari's address bar
+                    // can't resize the viewport mid-scroll (which makes the pinned
+                    // hero jitter), and ignore the address-bar resize entirely.
+                    normalizeScroll: true,
+                    ignoreMobileResize: true,
                 });
             }
 

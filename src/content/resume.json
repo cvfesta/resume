@@ -1,19 +1,19 @@
 {
   "hero": {
     "title": "Christian Festa",
-    "subTitle": "Seasoned technology executive with {YEARS} years of experience mastering the full SDLC, from system integration to directing multi-million-dollar digital platforms. I lead high-performing engineering teams to deliver scalable, user-centric solutions while pioneering secure generative AI implementations on AWS that unlock proprietary insights and enforce enterprise-grade data protection and compliance. By blending design excellence, Agile precision, and emerging AI capabilities, I align technical innovation with strategic objectives to accelerate growth and position organizations for competitive advantage in an AI-driven landscape."
+    "subTitle": "Technology executive with {YEARS} years across the full software lifecycle, from hands-on development and system integration to directing multi-million-dollar design, development, and integration (DDI) programs. I lead engineering and design teams of 30+ and build secure generative AI on AWS, including Retrieval-Augmented Generation systems that let teams query proprietary data in plain language without ever exposing it. I came up as a developer and a UX designer, and I still think like both, which keeps technical decisions grounded, user-focused, and tied to what the business actually needs."
   },
   "roles": [
     {
       "title": "AI & Cloud Innovation Leader",
       "level": "Executive",
-      "subTitle": "Strategic director of generative AI initiatives on AWS, delivering secure Retrieval-Augmented Generation (RAG) solutions that enable intelligent querying of proprietary data without exposing sensitive information. Expertise in Amazon Bedrock, guardrails, and isolated foundational models to mitigate risks around PII and intellectual property.",
+      "subTitle": "I direct generative AI on AWS, building secure Retrieval-Augmented Generation systems that let users query proprietary data in plain language without exposing PII or IP. They run on Amazon Bedrock with isolated foundation models and guardrails that hold up even against edge-case prompts.",
       "badges": [
         "Generative AI Strategy",
         "AWS Bedrock & RAG Implementation",
         "AI Guardrails & Data Security",
         "Secure Enterprise AI Deployment",
-        "Proprietary Data Monetization",
+        "Proprietary Data Activation",
         "Risk Mitigation & Compliance",
         "Cross-Functional AI Leadership",
         "Emerging Tech Adoption"
@@ -22,7 +22,7 @@
     {
       "title": "Director of Software Engineering",
       "level": "Executive",
-      "subTitle": "Technical leader overseeing software development and integration across the full SDLC, from architecture to deployment. Directed teams to accelerate delivery by up to 2x through modern technologies that help future-proof solutions, optimizing performance and aligning technical strategies with business goals.",
+      "subTitle": "I own all design, development, and integration (DDI) across the full lifecycle, from architecture through deployment. I scale cross-functional teams, accelerate delivery with modern tooling and disciplined Agile, and keep technical strategy tied to business outcomes.",
       "badges": [
         "Full SDLC Technical Oversight",
         "Team Scaling & Leadership",
@@ -37,7 +37,7 @@
     {
       "title": "Principal UX Designer",
       "level": "Expert",
-      "subTitle": "Expert in crafting user-centric UX strategies and building complex design systems that ensure scalability, accessibility, and seamless integration. Led Figma-driven initiatives to double team productivity, enforce WCAG standards, and deliver enterprise-level interfaces that drive user engagement and operational efficiency.",
+      "subTitle": "I build design systems and UX strategy for complex, accessible, enterprise-scale interfaces. My Figma-led initiatives have doubled design-team output, enforced WCAG compliance, and produced interfaces that hold up across every device and handoff.",
       "badges": [
         "Design Systems Architecture",
         "WCAG & Accessibility",
@@ -54,40 +54,39 @@
     {
       "title": "Director of Software Engineering",
       "organization": "Public Consulting Group",
-      "description": "As Director of Software Engineering, Technical Delivery Manager, and Principal Design Manager, I orchestrate the design, development, and integration of a $40M AWS-hosted public/admin portal while spearheading secure generative AI capabilities, leading cross-functional teams of 30+ designers, developers, and engineers.",
+      "description": "As Director of Software Engineering, Technical Delivery Manager, and Principal Design Manager, I own all design, development, and integration (DDI) for a $40M AWS-hosted public and administrative portal, while building the organization's secure generative AI capability. I direct cross-functional teams of 30+ designers, developers, and engineers across the full lifecycle.",
       "bullets": [
-        "Championed the strategy and implementation of a secure Retrieval-Augmented Generation (RAG) application on AWS, enabling users to query proprietary company data via natural language chat while delivering accurate, context-specific responses not available publicly.",
-        "Directed the architecture of isolated foundational models within Amazon Bedrock, integrated with robust guardrails to prevent data leakage—ensuring zero exposure of proprietary information or PII even in edge-case prompts—while maintaining enterprise compliance and governance standards.",
-        "Led cross-functional collaboration to integrate generative AI into the platform roadmap, enhancing internal productivity and decision-making through safe, scalable access to sensitive insights.",
-        "Established governance frameworks for responsible AI adoption, balancing rapid innovation with comprehensive risk management to future-proof the organization's digital ecosystem.",
-        "Established a comprehensive Figma-based design system to standardize components, enforce WCAG compliance, and ensure device responsiveness, enabling seamless design handoffs and code reviews.",
-        "Directed onshore and offshore teams through the full project lifecycle, implementing best practices for testing workflows and achieving a phased rollout with the first phase live in just three months.",
-        "Mentored junior and senior designers while managing stakeholder relationships via weekly meetings and progress reports, aligning creative vision with business goals.",
-        "Post-launch, optimized the platform using user feedback and performance metrics, driving operational efficiency and positioning it as a cornerstone of the organization’s digital strategy."
+        "Leading the build of a multi-tenant platform engineered to support a portfolio of products on shared infrastructure, currently moving toward market launch.",
+        "Led strategy and delivery of a secure Retrieval-Augmented Generation (RAG) application on Amazon Bedrock, letting users query proprietary company data through natural-language chat with zero exposure of PII or IP, even under edge-case prompts, using isolated foundation models and layered guardrails.",
+        "Built the governance framework for responsible AI adoption, balancing fast iteration against enterprise compliance and giving the organization a repeatable model for future AI initiatives.",
+        "Stood up a Figma-based design system that standardized components, enforced WCAG compliance, and guaranteed responsive behavior across devices, streamlining design-to-development handoff and code review.",
+        "Directed onshore and offshore teams through the full project lifecycle, instituting testing workflows that took the first phase live in just three months.",
+        "Mentored designers at every level and managed stakeholder relationships through weekly reviews and progress reporting, keeping creative vision aligned with business goals.",
+        "Drove post-launch optimization from user feedback and performance metrics, sharpening operational efficiency and making the platform a cornerstone of the organization's digital strategy."
       ],
       "date": "2022 - Present",
       "link": "https://ca-path.com/",
       "engagementType": "Employee",
       "badges": [
+        "Multi-Tenant Platform Architecture",
         "Generative AI & RAG Leadership",
         "AWS Bedrock Architecture",
         "Secure AI Governance",
         "Team Leadership (30+ Members)",
         "Figma Design System",
         "WCAG Compliance",
-        "Phased Rollout Success",
-        "Mentorship & Optimization"
+        "Phased Rollout Success"
       ]
     },
     {
       "title": "Technical Program and Design Manager",
       "organization": "Unisys",
-      "description": "As Technical Program Manager and Design Manager, I directed multiple workstreams across three of four solutions in a $100 million Google Cloud Platform-hosted portal project, managing a diverse team of over 30 professionals including designers, developers, business analysts, and testers across onshore and offshore locations.",
+      "description": "As Technical Program Manager and Design Manager, I directed multiple workstreams across three of four solutions in a $100M Google Cloud Platform-hosted DDI program, leading 30+ designers, developers, business analysts, and testers across onshore and offshore teams.",
       "bullets": [
-        "Pioneered early Figma adoption and created a comprehensive Figma-based design system, accelerating the design process by more than 2x and doubling design team output.",
-        "Established UI/UX standards for standardization, WCAG compliance, and cross-device responsiveness, fostering cross-functional collaboration throughout the project lifecycle from requirements gathering to deployment.",
-        "Oversaw UX design processes, stakeholder workshops, and team coordination to deliver a scalable, user-friendly portal that enhanced customer service capabilities.",
-        "Provided strategic leadership to align project deliverables with organizational goals, ensuring efficient execution and long-term scalability."
+        "Drove early Figma adoption and built a comprehensive design system that more than doubled design-team output and accelerated the design process 2x.",
+        "Set UI/UX standards for consistency, WCAG compliance, and cross-device responsiveness, embedding them across the lifecycle from requirements gathering to deployment.",
+        "Ran UX design processes, stakeholder workshops, and team coordination to ship a scalable, user-friendly portal that expanded customer-service capabilities.",
+        "Aligned deliverables to organizational goals, keeping execution efficient and built for long-term scale."
       ],
       "date": "2018 - 2022",
       "link": "",
@@ -103,40 +102,42 @@
     {
       "title": "Technical Consultant",
       "organization": "County Welfare Directors Association of California",
-      "description": "As a Technical Consultant on the Independent Verification and Validation (IV&V) team, I ensured successful integration of a complex multi-system environment for a high-profile public sector initiative.",
+      "description": "As a Technical Consultant on the Independent Verification & Validation (IV&V) team, I validated a complex multi-system integration for a high-profile public-sector initiative as the DDI program moved into long-term maintenance and operations (M&O).",
       "bullets": [
-        "Actively participated in system design, analyzed technical documentation, and identified potential risks and integration bottlenecks to maintain project timelines and performance.",
-        "Provided thorough reviews and sign-offs on technical documentation, recommending process optimizations to address issues before they escalated.",
-        "Collaborated with developers and stakeholders in biweekly reviews, presenting findings and securing buy-in for solutions while bridging technical and non-technical teams.",
-        "Contributed to delivering a reliable, integrated system that met all contractual obligations and served as a model for future initiatives."
+        "Participated in system design and analyzed technical documentation to surface integration risks and bottlenecks before they could threaten timelines or performance.",
+        "Reviewed and signed off on technical deliverables, recommending process improvements that resolved issues early rather than after escalation.",
+        "Presented findings in biweekly reviews with developers and stakeholders, securing buy-in and bridging technical and non-technical teams.",
+        "Helped deliver a reliable, fully integrated system that met every contractual obligation and became a model for later initiatives."
       ],
       "date": "2016 - 2018",
       "link": "",
       "engagementType": "Consultant",
       "badges": [
-        "System Design Participation",
+        "IV&V Leadership",
+        "DDI to M&O Transition",
         "Risk Identification",
         "Technical Reviews & Sign-Offs",
-        "Stakeholder Collaboration",
         "Multi-System Integration"
       ]
     },
     {
       "title": "Technical Consultant",
       "organization": "Unisys",
-      "description": "Progressing from a college new hire to a managerial role over my tenure, I contributed to diverse projects including criminal justice, welfare, and grant management systems, wearing multiple hats across design, development, integration, and maintenance.",
+      "description": "I joined as a college new hire and grew into a management role, working across criminal-justice, welfare, and grant-management systems and wearing every hat from UX design through development, integration, and maintenance. This is where my UX career began, designing the wireframes that developers built from.",
       "bullets": [
-        "Established standards and protocols for multisystem case exchange, enabling seamless data sharing, and led implementation builds for successful deployments.",
-        "Designed and built in-house tools that streamlined workflows, reduced errors, and cut task completion time from hours to minutes.",
-        "Built and maintained regression suites, conducting rigorous testing to ensure system reliability and performance.",
-        "Co-authored winning proposals in business development, collaborating with experts to secure over $100 million in contracts.",
-        "Managed teams of up to 25 professionals in full system builds, configurations, third-party integrations, and user acceptance testing, driving operational excellence."
+        "Launched my UX career here, designing the wireframes and interaction flows developers built from and translating complex public-sector requirements into clear, usable interfaces.",
+        "Set standards and protocols for multi-system case exchange, enabling seamless data sharing, and led implementation builds through to deployment.",
+        "Designed and built in-house tools that streamlined workflows, cut errors, and reduced task completion time from hours to minutes.",
+        "Built and maintained regression suites, running rigorous testing to keep systems reliable under load.",
+        "Co-authored winning business-development proposals, helping secure $100M+ in contracts.",
+        "Managed teams of up to 25 through full system builds, configurations, third-party integrations, and user-acceptance testing."
       ],
       "date": "2009 - 2016",
       "link": "",
       "engagementType": "Employee",
       "badges": [
-        "Multi-Hat Expertise (Design/Dev/Integration)",
+        "Wireframing & UX Origins",
+        "Full DDI Lifecycle (Design/Dev/Integration)",
         "Data Exchange Standards",
         "Regression Testing",
         "$100M+ Proposal Wins",
@@ -151,7 +152,7 @@
       "location": "University Park, PA",
       "date": "2005 - 2009",
       "icon": "psu",
-      "description": "Built foundational knowledge in IT, systems integration, software development, and human-computer interaction, with honors graduation and leadership electives that prepared for executive roles in technical strategy and team management."
+      "description": "Built the foundation for my career in IT, systems integration, software development, and human-computer interaction. Graduated with honors."
     },
     {
       "title": "Project Management Professional (PMP) Certification",
@@ -159,7 +160,7 @@
       "location": "",
       "date": "2014",
       "icon": "pmi",
-      "description": "Gained expertise in Agile, Scrum, Waterfall, risk management, and stakeholder engagement, enabling successful leadership of multi-million-dollar projects delivered on time, within budget, and exceeding expectations."
+      "description": "Formal grounding in Agile, Scrum, Waterfall, risk management, and stakeholder engagement, giving me the toolkit to deliver multi-million-dollar projects on time, on budget, and beyond expectations."
     },
     {
       "title": "Google User Experience (UX) Design Certification",
@@ -167,14 +168,14 @@
       "location": "",
       "date": "2021",
       "icon": "google",
-      "description": "Mastered user research, wireframing, prototyping, and usability testing through hands-on projects, applying these skills to lead design strategies that prioritize accessibility and user-centric outcomes in enterprise environments."
+      "description": "Hands-on training in user research, wireframing, prototyping, and usability testing that formalized the design practice I had been building on the job since 2009."
     }
   ],
   "projects": [
     {
       "name": "Walkout Intros",
       "tagline": "Custom walkup songs & intros",
-      "description": "Pro-quality walkout intros for sports teams — build a roster, pair each player with an AI-announcer intro and a trimmed music cue, then trigger their entrance with a tap. Works with or without Apple Music.",
+      "description": "Pro-quality walkout intros for sports teams. Build a roster, pair each player with an AI-announcer intro and a trimmed music cue, then trigger their entrance with a tap. Works with or without Apple Music.",
       "category": "iOS App · Sports",
       "meta": "Free · In-app purchases",
       "link": "https://apps.apple.com/us/app/walkout-intros/id6761736614",

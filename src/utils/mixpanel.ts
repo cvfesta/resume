@@ -2,6 +2,12 @@ import mixpanel from 'mixpanel-browser';
 
 const MIXPANEL_TOKEN = import.meta.env.VITE_MIXPANEL_TOKEN;
 
+/**
+ * Identifies this app among the sites sharing the same Mixpanel token, so
+ * events can be segmented by origin instead of all arriving with site=undefined.
+ */
+const SITE = 'resume';
+
 /** Coarse device bucket from viewport width — enough to segment events on. */
 const deviceType = (): 'mobile' | 'tablet' | 'desktop' => {
     const w = window.innerWidth;
@@ -27,6 +33,7 @@ const utmParams = (): Record<string, string> => {
  * utm_* reflects the most recent campaign params the visitor arrived with.
  */
 const superProperties = (): Record<string, unknown> => ({
+    site: SITE,
     device: deviceType(),
     viewport: `${window.innerWidth}x${window.innerHeight}`,
     referrer: document.referrer || 'direct',

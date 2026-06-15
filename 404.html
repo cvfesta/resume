@@ -3,8 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Single Page Apps for GitHub Pages — restore the deep-link path that
+         404.html encoded into the query string, so /resume/print loads directly.
+         Must run before the app boots. -->
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      }(window.location));
+    </script>
     <meta name="author" content="Christian Festa" />
-    <meta name="description" content="Christian Festa — technology executive leading the engineering and design teams behind secure, AI-powered, multi-million-dollar platforms." />
+    <meta name="description" content="Christian Festa — technology executive leading the engineering and design teams behind secure, AI-powered, multi-million-dollar platforms, and founder shipping native iOS apps end to end." />
     <meta name="theme-color" content="#ccff33" />
     <link rel="canonical" href="https://cvfesta.github.io/resume/" />
     <link rel="icon" type="image/svg+xml" href="/resume/assets/logo-CaBgOMEB.svg" />
@@ -14,7 +27,7 @@
     <meta property="og:site_name" content="Christian Festa" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="Christian Festa — Technology Executive" />
-    <meta property="og:description" content="Leading the engineering and design teams behind secure, AI-powered, multi-million-dollar platforms." />
+    <meta property="og:description" content="Technology executive leading the teams behind secure, AI-powered, multi-million-dollar platforms — and founder building and shipping native iOS apps end to end." />
     <meta property="og:url" content="https://cvfesta.github.io/resume/" />
     <meta property="og:image" content="https://cvfesta.github.io/resume/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -24,7 +37,7 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Christian Festa — Technology Executive" />
-    <meta name="twitter:description" content="Leading the engineering and design teams behind secure, AI-powered, multi-million-dollar platforms." />
+    <meta name="twitter:description" content="Technology executive leading the teams behind secure, AI-powered, multi-million-dollar platforms — and founder building and shipping native iOS apps end to end." />
     <meta name="twitter:image" content="https://cvfesta.github.io/resume/og-image.png" />
     <meta name="twitter:image:alt" content="Christian Festa — Technology Executive" />
 
@@ -36,18 +49,24 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Christian Festa",
-        "jobTitle": "Technology Executive",
+        "jobTitle": "Technology Executive & Founder",
         "url": "https://cvfesta.github.io/resume/",
         "image": "https://cvfesta.github.io/resume/og-image.png",
-        "description": "Technology executive leading engineering and design teams behind secure, AI-powered, multi-million-dollar platforms.",
+        "description": "Technology executive leading engineering and design teams behind secure, AI-powered, multi-million-dollar platforms, and founder of Christian Festa LLC building native iOS apps.",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Christian Festa LLC",
+          "url": "https://christianfesta.com"
+        },
         "sameAs": [
+          "https://christianfesta.com",
           "https://www.linkedin.com/in/christian-festa-008376b6/",
           "https://github.com/cvfesta"
         ]
       }
     </script>
-    <script type="module" crossorigin src="/resume/assets/index-0IURCu5N.js"></script>
-    <link rel="stylesheet" crossorigin href="/resume/assets/index-B-TPBjLX.css">
+    <script type="module" crossorigin src="/resume/assets/index-q1oD2h36.js"></script>
+    <link rel="stylesheet" crossorigin href="/resume/assets/index-z3nhXCx0.css">
   </head>
   <body class="" data-bs-theme="auto">
     <div id="root"></div>

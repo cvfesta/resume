@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 import footerData from '../../content/links.json';
+import content from '../../content/resume.json';
 import { makeMagnetic } from '../../utils/magnetic';
 import { trackEvent } from '../../utils/mixpanel';
 import './sitefooter.css';
@@ -112,9 +113,9 @@ const SiteFooter: React.FC = () => {
                 </div>
                 <div className="sf-col sf-col--meta">
                     <span className="sf-wordmark">
-                        <span className="sf-dot" />Christian Festa
+                        <span className="sf-dot" />{content.hero.title}
                     </span>
-                    <span className="sf-fineprint">© {year} — Technology Executive</span>
+                    <span className="sf-fineprint">© {year} — {content.hero.eyebrow}</span>
                 </div>
             </div>
         </footer>

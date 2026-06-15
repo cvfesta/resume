@@ -43,7 +43,7 @@ const PrintablePage: React.FC = () => {
             <article className="pp-sheet">
                 <header className="pp-head">
                     <h1 className="pp-name">{data.hero.title}</h1>
-                    <p className="pp-role">Technology Executive · {years} years of experience</p>
+                    <p className="pp-role">{data.hero.eyebrow} · {years} years of experience</p>
                     <p className="pp-contact">
                         {links.map((link, i) => (
                             <React.Fragment key={link.id}>

@@ -175,8 +175,8 @@ const Experience: React.FC = () => {
     return (
         <section className="timeline" id="Experience" ref={rootRef}>
             <div className="timeline-head">
-                <p className="timeline-kicker">02 — Experience</p>
-                <h2 className="timeline-title">The track record.</h2>
+                <p className="timeline-kicker">{content.sections.experience.kicker}</p>
+                <h2 className="timeline-title">{content.sections.experience.title}</h2>
             </div>
 
             <div className="timeline-body">

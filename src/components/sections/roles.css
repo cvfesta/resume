@@ -1,4 +1,4 @@
-/* roles.css — "Three hats" section (Step 2 of the cinematic Slides page).
+/* roles.css — "Where I operate" role-cards section (Step 2 of the cinematic Slides page).
  * Cards dealt onto a dark table; hovering lifts + 3D-tilts a card. */
 
 .roles {
@@ -33,10 +33,17 @@
 
 .roles-deck {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: clamp(1.1rem, 2.2vw, 1.9rem);
     max-width: 78rem;
     margin: 0 auto;
     perspective: 1500px;
+}
+
+/* Mid-size screens: 4 cards in one row gets cramped, so reflow to 2×2. */
+@media (max-width: 1200px) and (min-width: 901px) {
+    .role-card { flex: 1 1 calc(50% - clamp(1.1rem, 2.2vw, 1.9rem)); }
 }
 
 @media (max-width: 900px) {

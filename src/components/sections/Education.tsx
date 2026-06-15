@@ -111,8 +111,8 @@ const Education: React.FC = () => {
     return (
         <section className="education" id="Education" ref={rootRef}>
             <div className="edu-head">
-                <p className="edu-kicker">03 — Education</p>
-                <h2 className="edu-title">Credentials.</h2>
+                <p className="edu-kicker">{content.sections.education.kicker}</p>
+                <h2 className="edu-title">{content.sections.education.title}</h2>
             </div>
             <div className="edu-grid">
                 {items.map((item) => (

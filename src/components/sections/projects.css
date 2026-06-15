@@ -35,19 +35,22 @@
     color: var(--text-soft);
 }
 
-/* a stacked column of cards — scales as more apps ship */
+/* a responsive grid of vertical cards — fills the available width and
+   reflows from 3-up down to 1-up as more apps ship */
 .projects-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    max-width: 44rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    max-width: 72rem;
     margin: 0 auto;
+    align-items: stretch;
 }
 
 .project-card {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    gap: clamp(1.1rem, 2.5vw, 1.75rem);
+    gap: clamp(1rem, 2vw, 1.5rem);
     padding: clamp(1.5rem, 3vw, 2.1rem);
     border-radius: 1.4rem;
     background: var(--surface);
@@ -58,9 +61,13 @@
     transition: border-color 0.25s ease, background 0.25s ease;
     will-change: transform;
 }
-.project-card:hover {
+/* only live (linked) cards react to hover — coming-soon cards aren't clickable */
+a.project-card:hover {
     border-color: color-mix(in srgb, var(--accent) 55%, transparent);
     background: var(--surface-2);
+}
+.project-card--soon {
+    cursor: default;
 }
 
 /* rounded-square app-icon tile (the walkout-dark.svg logo is the
@@ -89,7 +96,10 @@
 }
 
 .project-body {
+    display: flex;
+    flex-direction: column;
     flex: 1;
+    width: 100%;
     min-width: 0;
 }
 .project-category {
@@ -125,6 +135,8 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 0.6rem 1.1rem;
+    margin-top: auto;                 /* pin the foot to the bottom so cards align */
+    padding-top: 0.35rem;
 }
 .project-cta {
     display: inline-flex;
@@ -137,14 +149,31 @@
 .project-arrow {
     transition: transform 0.25s ease;
 }
-.project-card:hover .project-arrow {
+a.project-card:hover .project-arrow {
     transform: translate(0.15em, -0.15em);
 }
 .project-meta {
     font-size: 0.78rem;
     color: var(--text-faint);
 }
-
-@media (max-width: 540px) {
-    .project-card { flex-direction: column; }
+/* coming-soon badge shown in place of the App Store CTA */
+.project-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.32rem 0.72rem;
+    border-radius: 99rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--text-soft);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+}
+.project-status::before {
+    content: "";
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--accent);
 }

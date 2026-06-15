@@ -74,7 +74,13 @@ const Roles: React.FC = () => {
                     .from(titleSplit.chars,
                         { yPercent: 120, duration: 0.7, stagger: 0.03 }, 0.1)
                     .fromTo(cards,
-                        { opacity: 0, yPercent: 55, scale: 0.82, rotation: (i) => [-11, 0, 11][i] ?? 0 },
+                        {
+                            opacity: 0, yPercent: 55, scale: 0.82,
+                            // Fan the deck symmetrically from -11° to +11°, for any
+                            // number of cards (3 → -11/0/+11, 4 → -11/-3.7/+3.7/+11…).
+                            rotation: (i, _t, targets) =>
+                                targets.length > 1 ? -11 + (i / (targets.length - 1)) * 22 : 0,
+                        },
                         { opacity: 1, yPercent: 0, scale: 1, rotation: 0, duration: 0.9, stagger: 0.13 },
                         0.45);
                 cards.forEach((card, i) => {
@@ -133,8 +139,8 @@ const Roles: React.FC = () => {
     return (
         <section className="roles" id="Roles" ref={rootRef}>
             <div className="roles-head">
-                <p className="roles-kicker">01 — Where I operate</p>
-                <h2 className="roles-title">Three hats.</h2>
+                <p className="roles-kicker">{content.sections.roles.kicker}</p>
+                <h2 className="roles-title">{content.sections.roles.title}</h2>
             </div>
             <div className="roles-deck">
                 {roles.map((role, i) => (

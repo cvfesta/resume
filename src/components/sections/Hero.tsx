@@ -205,7 +205,7 @@ const Hero: React.FC = () => {
 
             <div className="hero-beat hero-beat--title">
                 <div className="hero-pane hero-title-pane">
-                    <p className="hero-eyebrow">Technology Executive</p>
+                    <p className="hero-eyebrow">{content.hero.eyebrow}</p>
                     <h1 className="hero-name">{content.hero.title}</h1>
                     <p className="hero-lead">{lead}</p>
                 </div>
@@ -213,7 +213,7 @@ const Hero: React.FC = () => {
                 <div className="hero-stat">
                     <div className="hero-stat-in">
                         <div className="hero-stat-num">{years}</div>
-                        <div className="hero-stat-label">years executing &amp; delivering</div>
+                        <div className="hero-stat-label">{content.hero.statLabel}</div>
                     </div>
                 </div>
 

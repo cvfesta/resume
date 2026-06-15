@@ -4,6 +4,7 @@ import PrintablePage from './pages/PrintablePage/PrintablePage';
 import Slides from './pages/Slides/Slides';
 import './App.css';
 import { trackEvent } from './utils/mixpanel.ts'; // ← Only import safe helper
+import content from './content/resume.json';
 
 // Helper function to get a readable page name from pathname
 const getPageName = (pathname: string): string => {
@@ -33,8 +34,8 @@ const App: React.FC = () => {
         // Per-route <title> — also drives the default filename when a visitor
         // does "Save as PDF" from /print ("Christian Festa — Résumé.pdf").
         document.title = pageName === 'Print'
-            ? 'Christian Festa — Résumé'
-            : 'Christian Festa — Technology Executive';
+            ? `${content.hero.title} — Résumé`
+            : `${content.hero.title} — ${content.hero.eyebrow}`;
     }, [location]);
 
     return (

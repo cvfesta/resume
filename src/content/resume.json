@@ -1,7 +1,28 @@
 {
   "hero": {
     "title": "Christian Festa",
-    "subTitle": "Technology executive with {YEARS} years across the full software lifecycle, from hands-on development and system integration to directing multi-million-dollar design, development, and integration (DDI) programs. I lead engineering and design teams of 30+ and build secure generative AI on AWS, including Retrieval-Augmented Generation systems that let teams query proprietary data in plain language without ever exposing it. I came up as a developer and a UX designer, and I still think like both, which keeps technical decisions grounded, user-focused, and tied to what the business actually needs."
+    "eyebrow": "Technology Executive",
+    "statLabel": "years executing & delivering",
+    "subTitle": "Technology executive with {YEARS} years across the full software lifecycle, from hands-on development and system integration to directing multi-million-dollar design, development, and integration (DDI) programs. I lead engineering and design teams of 30+ and build secure generative AI on AWS, including Retrieval-Augmented Generation systems that let teams query proprietary data in plain language without ever exposing it. I came up as a developer and a UX designer, and I still think like both, which keeps technical decisions grounded, user-focused, and tied to what the business actually needs. Outside my enterprise work, I build and ship my own products, from native iOS apps with on-device AI to a direct-to-consumer brand I run with my wife, which keeps me close to what it takes to build and commercialize from zero."
+  },
+  "sections": {
+    "roles": {
+      "kicker": "01 — Where I operate",
+      "title": "Four hats."
+    },
+    "experience": {
+      "kicker": "02 — Experience",
+      "title": "The track record."
+    },
+    "education": {
+      "kicker": "03 — Education",
+      "title": "Credentials."
+    },
+    "projects": {
+      "kicker": "04 — Projects",
+      "title": "Built.",
+      "intro": "Most of what I’ve built over my career has been for clients and employers. These are the products that are entirely my own — designed, built, and shipped end-to-end, with more on the way."
+    }
   },
   "roles": [
     {
@@ -48,9 +69,69 @@
         "Mentorship",
         "Cross-Functional Design Leadership"
       ]
+    },
+    {
+      "title": "Founder & Product Builder",
+      "level": "Founder",
+      "subTitle": "Outside my enterprise roles, I build and ship products end to end. I design, develop, and publish native iOS apps on the App Store, including AI-powered apps that use on-device large language models, and I co-founded and operate Aloha Fitness, a direct-to-consumer brand spanning physical products and software, owning everything from international manufacturing and logistics to fulfillment, app development, and sales.",
+      "badges": [
+        "iOS App Development & Publishing",
+        "On-Device & Generative AI Products",
+        "Product Launch & Commercialization",
+        "DTC & Amazon FBA",
+        "International Logistics & Freight",
+        "Bootstrapped Operations",
+        "End-to-End Ownership",
+        "Entrepreneurship"
+      ]
     }
   ],
   "experience": [
+    {
+      "title": "Founder & iOS Developer",
+      "organization": "Christian Festa LLC",
+      "description": "Founder of Christian Festa LLC, my own software company, where I design, build, publish, and operate native iOS apps end to end, owning concept, development, App Store launch, monetization, and ongoing operations.",
+      "bullets": [
+        "Published Walkout Intros, a live iOS app that pairs AI-generated announcer intros with trimmed music cues for sports team walkouts, with a free tier and in-app purchases.",
+        "Building Ghosty, a privacy app currently in development, delivered as two products: a business version using a DNS proxy for managed devices and a consumer version delivered as a VPN. I re-architected into this split after hitting the App Store restriction that DNS proxy configurations only run on managed devices.",
+        "Own the full product lifecycle independently, from architecture and AI integration through App Store submission, monetization, and post-launch iteration."
+      ],
+      "date": "2025 - Present",
+      "link": "https://christianfesta.com/",
+      "engagementType": "Founder",
+      "badges": [
+        "iOS Native (Swift)",
+        "On-Device LLM Integration",
+        "AI Product Development",
+        "App Store Publishing",
+        "Networking (DNS Proxy / VPN)",
+        "Monetization & In-App Purchases",
+        "Solo Product Ownership"
+      ]
+    },
+    {
+      "title": "Co-Founder",
+      "organization": "Aloha Fitness",
+      "description": "Co-founded and operate Aloha Fitness with my wife, a direct-to-consumer fitness brand spanning two product lines: physical yoga products and an AI-powered iOS app. I own the full supply chain on the physical side and lead product and AI development on the software side.",
+      "bullets": [
+        "Build and run the physical product line, managing international logistics and freight from production in China through inland trucking to port, ocean freight, customs clearance, and last-mile delivery.",
+        "Run two parallel fulfillment channels: direct-to-consumer from owned inventory and Amazon FBA, including prep, routing, labeling, and distribution across multiple fulfillment centers.",
+        "Building the Aloha Fitness app (coming soon), an AI calorie and nutrition tracker that uses an on-device LLM for natural-language meal logging, multimodal photo meal analysis, and plain-language metabolism insights derived from each user's adaptive Total Daily Energy Expenditure (TDEE), an estimate of the calories their body burns per day.",
+        "Handle sourcing, supplier coordination, inventory planning, monetization, and cost management as an owner-operator."
+      ],
+      "date": "2024 - Present",
+      "link": "https://alohafitness.net/",
+      "engagementType": "Founder",
+      "badges": [
+        "International Logistics & Freight",
+        "Customs & Import",
+        "Amazon FBA",
+        "Direct-to-Consumer",
+        "Supply Chain Management",
+        "On-Device AI App Development",
+        "Owner-Operator"
+      ]
+    },
     {
       "title": "Director of Software Engineering",
       "organization": "Public Consulting Group",
@@ -58,6 +139,7 @@
       "bullets": [
         "Leading the build of a multi-tenant platform engineered to support a portfolio of products on shared infrastructure, currently moving toward market launch.",
         "Led strategy and delivery of a secure Retrieval-Augmented Generation (RAG) application on Amazon Bedrock, letting users query proprietary company data through natural-language chat with zero exposure of PII or IP, even under edge-case prompts, using isolated foundation models and layered guardrails.",
+        "Drove measurable efficiency gains with the RAG application, cutting work that previously took a week or more down to a few hours by having AI handle the heavy lifting while staff review and refine the output.",
         "Built the governance framework for responsible AI adoption, balancing fast iteration against enterprise compliance and giving the organization a repeatable model for future AI initiatives.",
         "Stood up a Figma-based design system that standardized components, enforced WCAG compliance, and guaranteed responsive behavior across devices, streamlining design-to-development handoff and code review.",
         "Directed onshore and offshore teams through the full project lifecycle, instituting testing workflows that took the first phase live in just three months.",
@@ -173,13 +255,37 @@
   ],
   "projects": [
     {
+      "name": "Aloha Fitness",
+      "tagline": "AI calorie and nutrition tracker",
+      "description": "A native iOS calorie and nutrition tracking app from the Aloha Fitness brand. Uses an on-device LLM for three features: natural-language meal logging, multimodal photo meal analysis, and plain-language metabolism insights based on each user's adaptive Total Daily Energy Expenditure (TDEE).",
+      "category": "iOS App · Health & Fitness",
+      "meta": "Coming soon",
+      "available": false,
+      "link": "",
+      "icon": "aloha-fitness",
+      "glyph": "bi-heart-pulse-fill"
+    },
+    {
+      "name": "Ghosty Privacy",
+      "tagline": "Privacy on your terms",
+      "description": "A privacy app delivered as two products: a business version using a DNS proxy for managed devices and a consumer version delivered as a VPN. Currently in development.",
+      "category": "iOS App · Privacy & Security",
+      "meta": "Coming soon",
+      "available": false,
+      "link": "",
+      "icon": "ghosty",
+      "glyph": "bi-shield-lock-fill"
+    },
+    {
       "name": "Walkout Intros",
       "tagline": "Custom walkup songs & intros",
       "description": "Pro-quality walkout intros for sports teams. Build a roster, pair each player with an AI-announcer intro and a trimmed music cue, then trigger their entrance with a tap. Works with or without Apple Music.",
       "category": "iOS App · Sports",
       "meta": "Free · In-app purchases",
+      "available": true,
       "link": "https://apps.apple.com/us/app/walkout-intros/id6761736614",
-      "icon": "walkout-intros"
+      "icon": "walkout-intros",
+      "glyph": "bi-megaphone-fill"
     }
   ]
 }

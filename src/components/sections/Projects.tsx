@@ -71,51 +71,74 @@ const Projects: React.FC = () => {
         };
     }, []);
 
+    const { kicker, title, intro } = content.sections.projects;
+
     return (
         <section className="projects" id="Projects" ref={rootRef}>
             <div className="projects-head">
-                <p className="projects-kicker">04 — Projects</p>
-                <h2 className="projects-title">Built.</h2>
-                <p className="projects-intro">
-                    Most of what I’ve built over my career has been for clients and employers.
-                    Walkout Intros is the first product that’s entirely my own — designed, built,
-                    and shipped end-to-end, with more on the way.
-                </p>
+                <p className="projects-kicker">{kicker}</p>
+                <h2 className="projects-title">{title}</h2>
+                {intro && <p className="projects-intro">{intro}</p>}
             </div>
             <div className="projects-grid">
-                {projects.map((project) => (
-                    <a
-                        className="project-card"
-                        key={project.name}
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => trackEvent('Project Clicked', {
-                            project: project.name, url: project.link,
-                        })}
-                    >
-                        <div className="project-icon" aria-hidden="true">
-                            {project.icon && logoFor[project.icon] ? (
-                                <img className="project-logo" src={logoFor[project.icon]} alt="" />
-                            ) : (
-                                <i className="bi bi-megaphone-fill" />
-                            )}
-                        </div>
-                        <div className="project-body">
-                            <span className="project-category">{project.category}</span>
-                            <h3 className="project-name">{project.name}</h3>
-                            <p className="project-tagline">{project.tagline}</p>
-                            <p className="project-desc">{project.description}</p>
-                            <div className="project-foot">
-                                <span className="project-cta">
-                                    View on the App Store
-                                    <span className="project-arrow" aria-hidden="true">↗</span>
-                                </span>
-                                {project.meta && <span className="project-meta">{project.meta}</span>}
+                {projects.map((project) => {
+                    const logo = project.icon ? logoFor[project.icon] : undefined;
+                    const body = (
+                        <>
+                            <div className="project-icon" aria-hidden="true">
+                                {logo ? (
+                                    <img className="project-logo" src={logo} alt="" />
+                                ) : (
+                                    <i className={`bi ${project.glyph ?? 'bi-app'}`} />
+                                )}
                             </div>
-                        </div>
-                    </a>
-                ))}
+                            <div className="project-body">
+                                <span className="project-category">{project.category}</span>
+                                <h3 className="project-name">{project.name}</h3>
+                                <p className="project-tagline">{project.tagline}</p>
+                                <p className="project-desc">{project.description}</p>
+                                <div className="project-foot">
+                                    {project.available ? (
+                                        <>
+                                            <span className="project-cta">
+                                                View on the App Store
+                                                <span className="project-arrow" aria-hidden="true">↗</span>
+                                            </span>
+                                            {project.meta && (
+                                                <span className="project-meta">{project.meta}</span>
+                                            )}
+                                        </>
+                                    ) : (
+                                        project.meta && (
+                                            <span className="project-status">{project.meta}</span>
+                                        )
+                                    )}
+                                </div>
+                            </div>
+                        </>
+                    );
+
+                    // Live apps link to the App Store; unreleased apps render as a
+                    // non-interactive card showing their "Coming soon" status.
+                    return project.available ? (
+                        <a
+                            className="project-card"
+                            key={project.name}
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => trackEvent('Project Clicked', {
+                                project: project.name, url: project.link,
+                            })}
+                        >
+                            {body}
+                        </a>
+                    ) : (
+                        <article className="project-card project-card--soon" key={project.name}>
+                            {body}
+                        </article>
+                    );
+                })}
             </div>
         </section>
     );

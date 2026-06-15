@@ -80,10 +80,12 @@
     color: #6b6b66;
 }
 .pp-contact a {
-    color: #44443f;
-    text-decoration: none;
+    color: #2e5339;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
 }
-.pp-contact a:hover { color: #2e5339; }
+.pp-contact a:hover { color: #1d1d1b; }
 .pp-sep { color: #b6b6ad; }
 
 /* --- sections --- */
@@ -183,7 +185,9 @@
 }
 .pp-entry-link a {
     color: #2e5339;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
 }
 
 @media (max-width: 620px) {
@@ -210,8 +214,8 @@
     .pp-name { color: #ebebe5; }
     .pp-role { color: #7fb992; }
     .pp-contact { color: #8a8a82; }
-    .pp-contact a { color: #b6b6ad; }
-    .pp-contact a:hover { color: #7fb992; }
+    .pp-contact a { color: #7fb992; }
+    .pp-contact a:hover { color: #ebebe5; }
     .pp-sep { color: #44443f; }
 
     .pp-section-label {
@@ -240,7 +244,21 @@
         size: letter portrait;
         margin: 0.5in;
     }
-    html, body { background: #fff; }
+    /* Reset any global state the cinematic Slides page may have left on the
+     * document (GSAP ScrollSmoother / normalizeScroll write an inline body
+     * height of several thousand px plus position/transform/overflow to drive
+     * momentum scroll). If that state is still present when this page prints,
+     * the giant height yields pages of trailing blanks and the fixed/overflow
+     * clips the sheet — a blank PDF. Force a clean, content-sized document. */
+    html, body {
+        background: #fff;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        position: static !important;
+        transform: none !important;
+        touch-action: auto !important;
+    }
 
     .pp-screen {
         min-height: 0;
@@ -272,5 +290,11 @@
     .pp-expertise { break-inside: avoid; }
     .pp-bullets li { break-inside: avoid; }
 
-    a { color: #1d1d1b; }
+    /* Keep links visibly link-like in the PDF — accent colour + underline so a
+     * reader knows they're clickable (Chrome preserves them as live anchors). */
+    a {
+        color: #2e5339;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
 }

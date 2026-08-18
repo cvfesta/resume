@@ -1,10 +1,77 @@
 {
   "hero": {
     "title": "Christian Festa",
-    "eyebrow": "Technology Executive",
-    "statLabel": "years executing & delivering",
-    "subTitle": "Technology executive with {YEARS} years across the full software lifecycle, from hands-on development and system integration to directing multi-million-dollar design, development, and integration (DDI) programs. I lead engineering and design teams of 30+ and build secure generative AI on AWS, including Retrieval-Augmented Generation systems that let teams query proprietary data in plain language without ever exposing it. I came up as a developer and a UX designer, and I still think like both, which keeps technical decisions grounded, user-focused, and tied to what the business actually needs. Outside my enterprise work, I build and ship my own products, from native iOS apps with on-device AI to a direct-to-consumer brand I run with my wife, which keeps me close to what it takes to build and commercialize from zero."
+    "eyebrow": "Technology Consultant & Delivery Executive",
+    "statLabel": "years consulting & delivering",
+    "statementKickers": ["The work", "Right now", "Built on my own"],
+    "subTitle": "I've spent {YEARS} years as a consultant, and every engagement has been client-facing. Not the configure-someone-else's-software kind of consulting: full design, development, and integration (DDI) of custom systems. I've owned every seat in the SDLC for my clients, from requirements solicitation and UX design in Figma through hands-on development, systems and data integration, and test oversight, and I've run the whole lifecycle as a delivery manager directing teams of 30+. Most of that career has been corp-to-corp: independent contract engagements with CWDA, Unisys, and PCG spanning 2016 through 2025. Operating as an outside consultant inside a client's program is my default mode, not an adjustment.\n\nToday that means directing a $40M AWS-hosted platform for a state agency client and building secure generative and agentic AI: Retrieval-Augmented Generation on Amazon Bedrock with layered guardrails, responsible-AI governance, and AI-accelerated engineering, with GitHub Copilot rolled out to the team under approved enterprise licensing and Claude Code with MCP in my own daily practice.\n\nOutside client work, I build and ship my own products through my LLC, from native iOS apps with on-device AI to a direct-to-consumer brand I run with my wife, which keeps me close to what it takes to build and commercialize from zero. Available for contract and corp-to-corp engagements through Christian Festa LLC."
   },
+  "contact": {
+    "credential": "PMP",
+    "location": "Rocklin, CA (Sacramento area)",
+    "email": "Christian.Festa1@gmail.com",
+    "phone": "(570) 406-8534",
+    "linkedin": "linkedin.com/in/christian-festa-008376b6",
+    "website": "cvfesta.github.io/resume",
+    "availability": "Open to contract & corp-to-corp engagements via Christian Festa LLC"
+  },
+  "skills": [
+    {
+      "category": "Cloud & AI",
+      "items": [
+        "AWS (Bedrock, Lambda, S3, DynamoDB, RDS/MySQL, SQS/SNS, VPC, IAM)",
+        "Google Cloud Platform",
+        "RAG",
+        "Agentic AI",
+        "MCP",
+        "AI Guardrails",
+        "PII Redaction",
+        "Responsible AI Governance",
+        "GitHub Copilot",
+        "Claude Code"
+      ]
+    },
+    {
+      "category": "Engineering",
+      "items": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "Java",
+        "Spring Boot",
+        "Swift (iOS)",
+        "REST APIs",
+        "Git",
+        "CI/CD",
+        "Automated Regression Testing"
+      ]
+    },
+    {
+      "category": "Delivery",
+      "items": [
+        "Full-Lifecycle DDI",
+        "Agile/Scrum",
+        "PMP",
+        "SDLC",
+        "IV&V",
+        "Data Migration",
+        "Enterprise Integration (eHIT, NCIC, SFTP/MOVEit)",
+        "Jira & Confluence Administration",
+        "Stakeholder Management"
+      ]
+    },
+    {
+      "category": "Design",
+      "items": [
+        "Figma",
+        "Design Systems",
+        "WCAG 2.1 Accessibility",
+        "UX Research",
+        "Prototyping"
+      ]
+    }
+  ],
   "sections": {
     "roles": {
       "kicker": "01 — Where I operate",
@@ -21,38 +88,38 @@
     "projects": {
       "kicker": "04 — Projects",
       "title": "Built.",
-      "intro": "Most of what I’ve built over my career has been for clients and employers. These are the products that are entirely my own — designed, built, and shipped end-to-end, with more on the way."
+      "intro": "Most of what I've built over my career has been for clients. These are the products that are entirely my own, designed, built, and shipped end to end, with more on the way."
     }
   },
   "roles": [
     {
-      "title": "AI & Cloud Innovation Leader",
+      "title": "AI & Cloud Solutions Architect",
       "level": "Executive",
-      "subTitle": "I direct generative AI on AWS, building secure Retrieval-Augmented Generation systems that let users query proprietary data in plain language without exposing PII or IP. They run on Amazon Bedrock with isolated foundation models and guardrails that hold up even against edge-case prompts.",
+      "subTitle": "I architect and deliver generative and agentic AI for enterprise clients, taking solutions from proof of concept to production. My Retrieval-Augmented Generation systems run on Amazon Bedrock with isolated foundation models and layered guardrails that protect PII and IP even under edge-case prompts, backed by a responsible-AI governance framework covering safety, privacy, and compliance. I practice AI-accelerated engineering daily with Claude Code, MCP server integrations, and agentic workflows, and I bring those patterns to the teams I lead, including rolling out GitHub Copilot under approved enterprise licensing.",
       "badges": [
-        "Generative AI Strategy",
+        "Generative & Agentic AI Strategy",
         "AWS Bedrock & RAG Implementation",
-        "AI Guardrails & Data Security",
+        "AI Guardrails & PII Protection",
+        "Responsible AI Governance",
+        "AI-Accelerated Engineering (Copilot · Claude Code · MCP)",
         "Secure Enterprise AI Deployment",
         "Proprietary Data Activation",
-        "Risk Mitigation & Compliance",
-        "Cross-Functional AI Leadership",
-        "Emerging Tech Adoption"
+        "POC-to-Production Delivery"
       ]
     },
     {
-      "title": "Director of Software Engineering",
+      "title": "Delivery Leader & Director of Engineering",
       "level": "Executive",
-      "subTitle": "I own all design, development, and integration (DDI) across the full lifecycle, from architecture through deployment. I scale cross-functional teams, accelerate delivery with modern tooling and disciplined Agile, and keep technical strategy tied to business outcomes.",
+      "subTitle": "I own full-lifecycle design, development, and integration (DDI) for client programs: requirements through architecture, build, data migration, testing, and release. I'm PMP-certified, run disciplined Agile delivery, scale cross-functional onshore and offshore teams, and keep technical strategy tied to what the client's business actually needs.",
       "badges": [
-        "Full SDLC Technical Oversight",
-        "Team Scaling & Leadership",
-        "Performance & Code Optimization",
-        "Agile Engineering Practices",
-        "Stakeholder Technical Alignment",
-        "Innovation in Software Architecture",
-        "Modern Tech Adoption",
-        "Future-Proof Solutions"
+        "Full-Lifecycle DDI Delivery",
+        "Technical Delivery Management",
+        "Data Migration & Enterprise Integration",
+        "Agile · Scrum · PMP",
+        "AWS Architecture (Lambda · S3 · DynamoDB · RDS)",
+        "Modern Stacks (React · TypeScript · Node · Python)",
+        "Team Scaling & Leadership (30+)",
+        "Client & Stakeholder Management"
       ]
     },
     {
@@ -73,7 +140,7 @@
     {
       "title": "Founder & Product Builder",
       "level": "Founder",
-      "subTitle": "Outside my enterprise roles, I build and ship products end to end. I design, develop, and publish native iOS apps on the App Store, including AI-powered apps that use on-device large language models, and I co-founded and operate Aloha Fitness, a direct-to-consumer brand spanning physical products and software, owning everything from international manufacturing and logistics to fulfillment, app development, and sales.",
+      "subTitle": "Outside my client engagements, I build and ship products end to end through Christian Festa LLC. I design, develop, and publish native iOS apps on the App Store, including AI-powered apps that use on-device large language models, and I co-founded and operate Aloha Fitness, a direct-to-consumer brand spanning physical products and software, owning everything from international manufacturing and logistics to fulfillment, app development, and sales.",
       "badges": [
         "iOS App Development & Publishing",
         "On-Device & Generative AI Products",
@@ -90,7 +157,8 @@
     {
       "title": "Founder & iOS Developer",
       "organization": "Christian Festa LLC",
-      "description": "Founder of Christian Festa LLC, my own software company, where I design, build, publish, and operate native iOS apps end to end, owning concept, development, App Store launch, monetization, and ongoing operations.",
+      "lead": "Shipping my own iOS products end to end through the LLC I consult from — Walkout Intros live on the App Store, Ghosty in development.",
+      "description": "Founder of Christian Festa LLC, my own software company and the entity through which I take on independent contract and corp-to-corp consulting engagements. I also design, build, publish, and operate native iOS apps end to end, owning concept, development, App Store launch, monetization, and ongoing operations.",
       "bullets": [
         "Published Walkout Intros, a live iOS app that pairs AI-generated announcer intros with trimmed music cues for sports team walkouts, with a free tier and in-app purchases.",
         "Building Ghosty, a privacy app currently in development, delivered as two products: a business version using a DNS proxy for managed devices and a consumer version delivered as a VPN. I re-architected into this split after hitting the App Store restriction that DNS proxy configurations only run on managed devices.",
@@ -100,6 +168,7 @@
       "link": "https://christianfesta.com/",
       "engagementType": "Founder",
       "badges": [
+        "Independent Consulting (C2C / 1099)",
         "iOS Native (Swift)",
         "On-Device LLM Integration",
         "AI Product Development",
@@ -112,6 +181,7 @@
     {
       "title": "Co-Founder",
       "organization": "Aloha Fitness",
+      "lead": "Running a direct-to-consumer fitness brand with my wife — the full physical supply chain from factory to doorstep, plus an on-device-AI iOS app on the way.",
       "description": "Co-founded and operate Aloha Fitness with my wife, a direct-to-consumer fitness brand spanning two product lines: physical yoga products and an AI-powered iOS app. I own the full supply chain on the physical side and lead product and AI development on the software side.",
       "bullets": [
         "Build and run the physical product line, managing international logistics and freight from production in China through inland trucking to port, ocean freight, customs clearance, and last-mile delivery.",
@@ -135,95 +205,112 @@
     {
       "title": "Director of Software Engineering",
       "organization": "Public Consulting Group",
-      "description": "As Director of Software Engineering, Technical Delivery Manager, and Principal Design Manager, I own all design, development, and integration (DDI) for a $40M AWS-hosted public and administrative portal, while building the organization's secure generative AI capability. I direct cross-functional teams of 30+ designers, developers, and engineers across the full lifecycle.",
+      "lead": "Directing a $40M AWS-hosted platform and the firm's generative-AI practice for a California state health agency — teams of 30+ across the full lifecycle.",
+      "description": "As Director of Software Engineering, Technical Delivery Manager, and Principal Design Manager at a national consulting firm, I own all design, development, and integration (DDI) for a $40M AWS-hosted grant management platform delivered for a California state health agency client, spanning a public portal and an administrative back office, while building the firm's secure generative AI capability. I direct cross-functional teams of 30+ designers, developers, and engineers across the full lifecycle and serve as the client-facing technical lead. I joined corp-to-corp as an independent consultant in 2022 and converted to full-time employee in 2025 after three years of contract delivery.",
       "bullets": [
         "Leading the build of a multi-tenant platform engineered to support a portfolio of products on shared infrastructure, currently moving toward market launch.",
         "Led strategy and delivery of a secure Retrieval-Augmented Generation (RAG) application on Amazon Bedrock, letting users query proprietary company data through natural-language chat with zero exposure of PII or IP, even under edge-case prompts, using isolated foundation models and layered guardrails.",
         "Drove measurable efficiency gains with the RAG application, cutting work that previously took a week or more down to a few hours by having AI handle the heavy lifting while staff review and refine the output.",
         "Built the governance framework for responsible AI adoption, balancing fast iteration against enterprise compliance and giving the organization a repeatable model for future AI initiatives.",
+        "Architecting the platform's multi-source data migration for client handoff, spanning SharePoint document libraries, AWS MySQL and DynamoDB data stores, S3 archives, and secure SFTP/MOVEit transfer into a federal grants system, with full data-fidelity validation.",
+        "Embedded AI-accelerated engineering across the team, rolling out GitHub Copilot under the firm's approved enterprise licensing while running my own agentic practice on Claude Code and MCP server integrations, automating program management in Jira and Confluence and compressing delivery cycles across every workstream.",
         "Stood up a Figma-based design system that standardized components, enforced WCAG compliance, and guaranteed responsive behavior across devices, streamlining design-to-development handoff and code review.",
         "Directed onshore and offshore teams through the full project lifecycle, instituting testing workflows that took the first phase live in just three months.",
-        "Mentored designers at every level and managed stakeholder relationships through weekly reviews and progress reporting, keeping creative vision aligned with business goals.",
-        "Drove post-launch optimization from user feedback and performance metrics, sharpening operational efficiency and making the platform a cornerstone of the organization's digital strategy."
+        "Mentored designers at every level and managed client and stakeholder relationships through weekly reviews and progress reporting, keeping creative vision aligned with business goals.",
+        "Drove post-launch optimization from user feedback and performance metrics, sharpening operational efficiency and making the platform a cornerstone of the client's digital strategy."
       ],
       "date": "2022 - Present",
       "link": "https://ca-path.com/",
-      "engagementType": "Employee",
+      "engagementType": "Consultant → Employee",
       "badges": [
+        "Corp-to-Corp Consultant (2022–2025)",
+        "Client-Facing DDI Delivery",
         "Multi-Tenant Platform Architecture",
         "Generative AI & RAG Leadership",
         "AWS Bedrock Architecture",
+        "Data Migration & Client Handoff",
+        "AI-Accelerated Engineering (Copilot · Claude Code · MCP)",
         "Secure AI Governance",
         "Team Leadership (30+ Members)",
         "Figma Design System",
-        "WCAG Compliance",
-        "Phased Rollout Success"
+        "WCAG Compliance"
       ]
     },
     {
       "title": "Technical Program and Design Manager",
       "organization": "Unisys",
-      "description": "As Technical Program Manager and Design Manager, I directed multiple workstreams across three of four solutions in a $100M Google Cloud Platform-hosted DDI program, leading 30+ designers, developers, business analysts, and testers across onshore and offshore teams.",
+      "lead": "Delivery manager across three of four solutions on Hawaii's $100M BESSD modernization — design, BA, development, and test all reporting to me.",
+      "description": "Corp-to-corp consultant on the State of Hawaii's BESSD project, a $100M Google Cloud Platform-hosted DDI program modernizing and consolidating the state's welfare and benefits systems into a single new platform, with Medicaid kept standalone by design. I contributed to the winning RFP response for this program, and Unisys brought me back corp-to-corp to deliver it. I led the public-facing solution build, then rose to delivery manager across three of four solutions, with the design, business analysis, development, and test teams all reporting to me, directing 30+ staff across onshore and offshore teams through the full SDLC. I was taking over the administrative welfare solution as well when I concluded the engagement in 2022.",
       "bullets": [
+        "Led the DDI of everything public-facing on the program: architecture, UX, build, and delivery of the citizen-facing portal that expanded self-service and customer-service capabilities.",
+        "Promoted to delivery manager with design, BA, development, and test teams reporting to me, owning delivery end to end from requirements through deployment.",
         "Drove early Figma adoption and built a comprehensive design system that more than doubled design-team output and accelerated the design process 2x.",
         "Set UI/UX standards for consistency, WCAG compliance, and cross-device responsiveness, embedding them across the lifecycle from requirements gathering to deployment.",
-        "Ran UX design processes, stakeholder workshops, and team coordination to ship a scalable, user-friendly portal that expanded customer-service capabilities.",
-        "Aligned deliverables to organizational goals, keeping execution efficient and built for long-term scale."
+        "Ran client stakeholder workshops and cross-team coordination, aligning deliverables to the state's consolidation goals and keeping execution built for long-term scale."
       ],
       "date": "2018 - 2022",
       "link": "",
-      "engagementType": "Consultant",
+      "engagementType": "Corp-to-Corp Consultant",
       "badges": [
-        "Multi-Workstream Management",
-        "Figma Adoption & 2x Acceleration",
-        "UI/UX Standards Leadership",
-        "Cross-Functional Collaboration",
-        "Scalable Portal Delivery"
+        "Hawaii BESSD Modernization",
+        "Corp-to-Corp Engagement",
+        "Helped Win the RFP, Then Delivered It",
+        "Statewide System Consolidation",
+        "Full-SDLC Delivery Management",
+        "Public-Facing Portal DDI",
+        "Google Cloud Platform",
+        "Onshore/Offshore Teams (30+)"
       ]
     },
     {
       "title": "Technical Consultant",
       "organization": "County Welfare Directors Association of California",
-      "description": "As a Technical Consultant on the Independent Verification & Validation (IV&V) team, I validated a complex multi-system integration for a high-profile public-sector initiative as the DDI program moved into long-term maintenance and operations (M&O).",
+      "lead": "State-side IV&V over the CalHEERS–county eHIT integration — validating the very interface I had built from the county side.",
+      "description": "Corp-to-corp Independent Verification & Validation (IV&V) consultant overseeing the integration between California's CalHEERS health-benefit exchange and the county welfare eligibility systems via the eHIT interface as the program moved into long-term maintenance and operations (M&O). I had helped build that same interface from the county side on the LEADER project, which gave me a rare vantage point: validating from the state side an integration I had implemented myself.",
       "bullets": [
-        "Participated in system design and analyzed technical documentation to surface integration risks and bottlenecks before they could threaten timelines or performance.",
+        "Oversaw eHIT interface integration between CalHEERS and county systems statewide, analyzing designs and technical documentation to surface integration risks before they threatened timelines or performance.",
         "Reviewed and signed off on technical deliverables, recommending process improvements that resolved issues early rather than after escalation.",
-        "Presented findings in biweekly reviews with developers and stakeholders, securing buy-in and bridging technical and non-technical teams.",
+        "Presented findings in biweekly reviews with developers and client stakeholders, bridging technical and non-technical teams.",
         "Helped deliver a reliable, fully integrated system that met every contractual obligation and became a model for later initiatives."
       ],
       "date": "2016 - 2018",
       "link": "",
-      "engagementType": "Consultant",
+      "engagementType": "Corp-to-Corp Consultant",
       "badges": [
-        "IV&V Leadership",
+        "Corp-to-Corp Engagement",
+        "IV&V Advisory",
+        "CalHEERS / eHIT Integration",
         "DDI to M&O Transition",
-        "Risk Identification",
-        "Technical Reviews & Sign-Offs",
-        "Multi-System Integration"
+        "Integration Risk Identification",
+        "Technical Reviews & Sign-Offs"
       ]
     },
     {
-      "title": "Technical Consultant",
+      "title": "Technical Consultant, Development & Integration",
       "organization": "Unisys",
-      "description": "I joined as a college new hire and grew into a management role, working across criminal-justice, welfare, and grant-management systems and wearing every hat from UX design through development, integration, and maintenance. This is where my UX career began, designing the wireframes that developers built from.",
+      "lead": "New grad to lead across two flagship government DDI programs — New York's criminal-history modernization and LA County's LEADER.",
+      "description": "Joined straight out of Penn State and grew into a management role across two flagship government DDI engagements, wearing every hat in the SDLC: requirements, UX design, development, systems and data integration, testing, and maintenance. My whole career launched here: development, testing, integration, and the UX practice of designing the wireframes that developers built from.",
       "bullets": [
-        "Launched my UX career here, designing the wireframes and interaction flows developers built from and translating complex public-sector requirements into clear, usable interfaces.",
-        "Set standards and protocols for multi-system case exchange, enabling seamless data sharing, and led implementation builds through to deployment.",
-        "Designed and built in-house tools that streamlined workflows, cut errors, and reduced task completion time from hours to minutes.",
-        "Built and maintained regression suites, running rigorous testing to keep systems reliable under load.",
-        "Co-authored winning business-development proposals, helping secure $100M+ in contracts.",
-        "Managed teams of up to 25 through full system builds, configurations, third-party integrations, and user-acceptance testing."
+        "NYS Division of Criminal Justice Services (DCJS), Albany, NY (2009–2011): Full modernization of New York State's criminal history repository, the system of record for every arrest in the state. The platform ingested fingerprint-event records, maintained complete criminal histories and generated rap sheets, queried federal and interstate systems including the FBI's NCIC for warrants and felony records at arrest time, and exchanged docket records with the courts to keep dispositions current. Made a lead almost immediately out of school, running the test team and building the automated regression suites.",
+        "LA County LEADER, Los Angeles, CA (2011–2016): The largest county welfare eligibility system in California, a legacy mainframe core fronted by modern Java interface services built on Spring Boot. Led the test and regression teams and became the SME on interfaces between LEADER and state systems, including implementing the eHIT exchange connecting LEADER to CalHEERS for Covered California health-benefit eligibility.",
+        "Designed and built in-house applications (largely for the LEADER project) that streamlined team workflows, cut errors, and reduced task completion time from hours to minutes. I did the UX design and wrote code hands-on.",
+        "Set standards and protocols for multi-system case data exchange, enabling seamless data sharing across agencies, and led implementation builds through to deployment.",
+        "Designed wireframes and interaction flows that developers built from, translating complex public-sector requirements into clear, usable interfaces.",
+        "Contributed to winning RFP responses that secured $100M+ in contracts, including the Hawaii BESSD bid that Unisys later brought me back corp-to-corp to deliver.",
+        "Managed teams of up to 25 through full system builds, third-party integrations, and user-acceptance testing."
       ],
       "date": "2009 - 2016",
       "link": "",
       "engagementType": "Employee",
       "badges": [
-        "Wireframing & UX Origins",
-        "Full DDI Lifecycle (Design/Dev/Integration)",
-        "Data Exchange Standards",
-        "Regression Testing",
-        "$100M+ Proposal Wins",
-        "Team Management (25+ Members)"
+        "NYS DCJS Criminal History Modernization",
+        "FBI/NCIC & Court Docket Integration",
+        "LA County LEADER (Welfare Eligibility)",
+        "Spring Boot Interface Services",
+        "eHIT / CalHEERS / Covered California",
+        "Test & Regression Leadership",
+        "RFP Wins ($100M+, incl. BESSD)",
+        "Team Management (25+)"
       ]
     }
   ],
@@ -242,7 +329,7 @@
       "location": "",
       "date": "2014",
       "icon": "pmi",
-      "description": "Formal grounding in Agile, Scrum, Waterfall, risk management, and stakeholder engagement, giving me the toolkit to deliver multi-million-dollar projects on time, on budget, and beyond expectations."
+      "description": "Formal grounding in Agile, Scrum, Waterfall, risk management, and stakeholder engagement, giving me the toolkit to deliver multi-million-dollar client programs on time, on budget, and beyond expectations."
     },
     {
       "title": "Google User Experience (UX) Design Certification",
@@ -281,7 +368,7 @@
       "tagline": "Custom walkup songs & intros",
       "description": "Pro-quality walkout intros for sports teams. Build a roster, pair each player with an AI-announcer intro and a trimmed music cue, then trigger their entrance with a tap. Works with or without Apple Music.",
       "category": "iOS App · Sports",
-      "meta": "Free · In-app purchases",
+      "meta": "Live on the App Store",
       "available": true,
       "link": "https://apps.apple.com/us/app/walkout-intros/id6761736614",
       "icon": "walkout-intros",

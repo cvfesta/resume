@@ -13,6 +13,8 @@ const getPageName = (pathname: string): string => {
             return 'Home';
         case '/print':
             return 'Print';
+        case '/print/full':
+            return 'Print Full';
         case '/slides':
             return 'Slides';
         default:
@@ -31,17 +33,19 @@ const App: React.FC = () => {
             search: location.search,
             full_url: window.location.href,
         });
-        // Per-route <title> — also drives the default filename when a visitor
-        // does "Save as PDF" from /print ("Christian Festa — Résumé.pdf").
-        document.title = pageName === 'Print'
-            ? `${content.hero.title} — Résumé`
+        // Per-route <title> — also becomes the PDF's default filename/metadata
+        // title on "Save as PDF" from /print. Plain "Resume" (no accents) so
+        // ATS parsers and filename fields never choke on the é.
+        document.title = pageName.startsWith('Print')
+            ? `${content.hero.title} — Resume`
             : `${content.hero.title} — ${content.hero.eyebrow}`;
     }, [location]);
 
     return (
         <Routes>
             <Route path="/" element={<Slides />} />
-            <Route path="/print" element={<PrintablePage />} />
+            <Route path="/print" element={<PrintablePage variant="condensed" />} />
+            <Route path="/print/full" element={<PrintablePage variant="full" />} />
             <Route path="/slides" element={<Slides />} />
             <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

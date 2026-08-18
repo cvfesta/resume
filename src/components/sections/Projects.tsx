@@ -19,7 +19,11 @@ const logoFor: Record<string, string> = {
 
 const Projects: React.FC = () => {
     const rootRef = useRef<HTMLElement>(null);
-    const projects = content.projects;
+    // Lead with proof: shipped, linkable products first; "coming soon" after.
+    // Stable sort, so each group keeps its data order.
+    const projects = [...content.projects].sort(
+        (a, b) => Number(b.available ?? false) - Number(a.available ?? false),
+    );
 
     useLayoutEffect(() => {
         const root = rootRef.current;

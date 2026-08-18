@@ -3,7 +3,29 @@ export interface Hero {
     title: string;
     eyebrow: string;
     statLabel: string;
+    /** Lime kicker labels over the hero statement's paragraphs, paired by
+     *  index with subTitle's \n\n-separated paragraphs (site only). */
+    statementKickers?: string[];
     subTitle: string;
+}
+
+/** Contact block rendered as the ATS-parseable header on the print page. */
+export interface Contact {
+    /** Credential appended to the title line, e.g. "PMP". */
+    credential: string;
+    location: string;
+    email: string;
+    phone: string;
+    /** Display-form URLs (no scheme) — rendered as visible text so parsers can read them. */
+    linkedin: string;
+    website: string;
+    availability: string;
+}
+
+/** One "Category: item, item, …" line in the print page's Technical Skills section. */
+export interface SkillGroup {
+    category: string;
+    items: string[];
 }
 
 /** Heading block (kicker + title, plus optional intro) shared by every section. */
@@ -30,6 +52,10 @@ export interface Role {
 export interface Experience {
     title: string;
     organization: string;
+    /** One-line outcome shown as the card opener on the interactive site.
+     *  When present, the site shows it instead of `description` (print
+     *  always uses the full description). */
+    lead?: string;
     description: string;
     date: string;
     link: string;
@@ -65,6 +91,8 @@ export interface Project {
 
 export interface Data {
     hero: Hero;
+    contact: Contact;
+    skills: SkillGroup[];
     sections: Sections;
     roles: Role[];
     experience: Experience[];

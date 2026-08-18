@@ -28,6 +28,9 @@ const Hero: React.FC = () => {
     const yearsNum = parseInt(years, 10) || 0;
     const summary = content.hero.subTitle.replace('{YEARS}', years);
     const { lead, body } = splitSummary(summary);
+    // The statement beat renders each data paragraph as its own block —
+    // three short beats read; one 190-word wall gets skimmed past.
+    const bodyParagraphs = body.split(/\n+/).map((p) => p.trim()).filter(Boolean);
 
     useLayoutEffect(() => {
         const root = rootRef.current;
@@ -127,17 +130,23 @@ const Hero: React.FC = () => {
                 // use — they scroll smoothly on iOS where the old pinned hero
                 // jittered. No pin, no scrub: the title card scrolls away with
                 // native momentum, and these lines slide in on enter.
-                gsap.to(bodyLines.lines, {
-                    yPercent: 0,
-                    duration: 0.9,
-                    stagger: 0.12,
-                    ease: 'power3.out',
+                gsap.set(q('.hero-statement-kicker'), { opacity: 0, y: 14 });
+                gsap.timeline({
+                    defaults: { ease: 'power3.out' },
                     scrollTrigger: {
                         trigger: q('.hero-beat--statement')[0],
                         start: 'top 68%',
                         toggleActions: 'play none none reverse',
                     },
-                });
+                })
+                    .to(q('.hero-statement-kicker'), {
+                        opacity: 1, y: 0, duration: 0.6, stagger: 0.12,
+                    }, 0)
+                    .to(bodyLines.lines, {
+                        yPercent: 0,
+                        duration: 0.9,
+                        stagger: 0.12,
+                    }, 0.08);
             }, root);
 
             // Mouse parallax for the ambient blobs (re-bound on every build).
@@ -227,7 +236,20 @@ const Hero: React.FC = () => {
 
             <div className="hero-beat hero-beat--statement">
                 <div className="hero-pane hero-statement-pane">
-                    <p className="hero-body">{body}</p>
+                    {bodyParagraphs.map((paragraph, i) => {
+                        const kicker = content.hero.statementKickers?.[i];
+                        return (
+                            <div className="hero-statement-block" key={i}>
+                                {kicker && (
+                                    <div className="hero-statement-kicker">
+                                        <span>{kicker}</span>
+                                        <span className="hero-statement-kicker-rule" aria-hidden="true" />
+                                    </div>
+                                )}
+                                <p className="hero-body">{paragraph}</p>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

@@ -156,6 +156,15 @@
     line-height: 1.6;
     color: var(--text-soft);
 }
+/* One-line outcome opener — full-strength ink, a step up from body copy. */
+.exp-lead {
+    margin: 0 0 1.15rem;
+    max-width: 46rem;
+    font-size: 1.18rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--text);
+}
 .exp-bullets {
     margin: 0 0 1.3rem;
     padding: 0;
@@ -194,6 +203,18 @@
     border: 1px solid var(--line);
     color: var(--text-soft);
     will-change: transform;
+}
+/* Tally chip for the capped badge row — a real button that expands the set. */
+.exp-badge--more {
+    background: transparent;
+    color: var(--accent);
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+.exp-badge--more:hover {
+    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
 }
 .exp-link {
     display: inline-flex;

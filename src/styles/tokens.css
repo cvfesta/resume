@@ -18,7 +18,9 @@
     /* ── text ── */
     --text:       #eef0ea;
     --text-soft:  #9aa096;
-    --text-faint: #5f655d;
+    /* Faint must still clear WCAG AA (4.5:1) on --surface, the lightest
+     * ground it sits on — dates, locations, and cues render small. */
+    --text-faint: #7e847b;
 
     /* ── lines & plates ── */
     --line:        rgba(255, 255, 255, 0.09);

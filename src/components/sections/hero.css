@@ -113,6 +113,35 @@
     line-height: 1.7;
     color: var(--text-soft);
 }
+/* Left-aligned: centered ragged lines fight multi-paragraph reading. */
+.hero-body { text-align: left; }
+
+/* Statement beats — each paragraph under a lime kicker on a hairline rule.
+ * Block font-size matches the body so the 54ch measures line up. */
+.hero-statement-block {
+    width: 100%;
+    max-width: 54ch;
+    margin: 0 auto;
+    font-size: clamp(1rem, 1.5vw, 1.22rem);
+    text-align: left;
+}
+.hero-statement-block + .hero-statement-block { margin-top: 2.4rem; }
+.hero-statement-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin: 0 0 0.7rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+}
+.hero-statement-kicker-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+}
 
 /* --- corner stat (bottom-right) --- */
 .hero-stat {

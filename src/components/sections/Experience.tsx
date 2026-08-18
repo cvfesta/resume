@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
@@ -24,6 +24,11 @@ const hostnameOf = (url: string): string => {
 const Experience: React.FC = () => {
     const rootRef = useRef<HTMLElement>(null);
     const jobs = content.experience;
+    // Per-entry "+N more" badge expansion, keyed by title+organization.
+    const [expandedBadges, setExpandedBadges] = useState<Record<string, boolean>>({});
+    // Targeted spine re-measure, set by build() — called after a badge toggle
+    // changes card heights. A full rebuild here scroll-jumps the page.
+    const remeasureRef = useRef<(() => void) | null>(null);
 
     useLayoutEffect(() => {
         const root = rootRef.current;
@@ -58,18 +63,26 @@ const Experience: React.FC = () => {
                 const nodes = q('.exp-node') as HTMLElement[];
 
                 // --- measure: align each node to its year, then size the spine ---
-                const centers = entries.map((entry, i) => {
-                    const mask = entry.querySelector('.exp-year-mask') as HTMLElement;
-                    const nodeTop = mask.offsetTop + mask.offsetHeight / 2;
-                    gsap.set(nodes[i], { top: nodeTop });
-                    return entry.offsetTop + nodeTop;
-                });
-                const firstC = centers[0];
-                const spineH = centers[centers.length - 1] - firstC;
-                gsap.set(spine, { top: firstC, height: spineH });
-                const fracs = centers.map(
-                    (c) => Math.min(0.999, Math.max(0.001, (c - firstC) / spineH)),
-                );
+                // Kept re-runnable (fracs mutated in place, spineH re-assigned)
+                // so a badge toggle can re-derive geometry without a rebuild.
+                let spineH = 0;
+                const fracs: number[] = [];
+                const measure = () => {
+                    const centers = entries.map((entry, i) => {
+                        const mask = entry.querySelector('.exp-year-mask') as HTMLElement;
+                        const nodeTop = mask.offsetTop + mask.offsetHeight / 2;
+                        gsap.set(nodes[i], { top: nodeTop });
+                        return entry.offsetTop + nodeTop;
+                    });
+                    const firstC = centers[0];
+                    spineH = centers[centers.length - 1] - firstC;
+                    gsap.set(spine, { top: firstC, height: spineH });
+                    fracs.length = 0;
+                    centers.forEach((c) => {
+                        fracs.push(Math.min(0.999, Math.max(0.001, (c - firstC) / spineH)));
+                    });
+                };
+                measure();
 
                 // --- heading reveal ---
                 titleSplit = new SplitText(q('.timeline-title'), { type: 'words,chars', mask: 'chars' });
@@ -141,6 +154,16 @@ const Experience: React.FC = () => {
                 fracs.forEach((f, i) => {
                     entryTls[i].progress(p0 >= f ? 1 : 0);
                 });
+
+                // Badge-toggle hook: re-derive geometry and refresh trigger
+                // positions in place — no revert, no scroll disturbance.
+                remeasureRef.current = () => {
+                    measure();
+                    ScrollTrigger.refresh();
+                    const p = st.progress;
+                    gsap.set(progressEl, { scaleY: p });
+                    gsap.set(cometEl, { y: p * spineH, opacity: p > 0.001 && p < 0.999 ? 1 : 0 });
+                };
             }, root);
         };
 
@@ -165,12 +188,20 @@ const Experience: React.FC = () => {
 
         return () => {
             cancelled = true;
+            remeasureRef.current = null;
             window.clearTimeout(resizeTimer);
             window.removeEventListener('resize', onResize);
             ctx?.revert();
             titleSplit?.revert();
         };
     }, []);
+
+    // After a badge toggle changes card heights, re-measure the spine in
+    // place. (Re-running the whole effect instead tears down and rebuilds
+    // every ScrollTrigger, which visibly scroll-jumps the page.)
+    useLayoutEffect(() => {
+        remeasureRef.current?.();
+    }, [expandedBadges]);
 
     return (
         <section className="timeline" id="Experience" ref={rootRef}>
@@ -186,8 +217,18 @@ const Experience: React.FC = () => {
                     <div className="timeline-comet" />
                 </div>
 
-                {jobs.map((job) => (
-                    <article className="exp-entry" key={job.title + job.organization}>
+                {jobs.map((job) => {
+                    // The site card opens with the one-line outcome and stays
+                    // scannable: three bullets, five chips + a "+N more" toggle
+                    // that expands the full set. Full record on the print pages.
+                    const entryKey = job.title + job.organization;
+                    const isExpanded = !!expandedBadges[entryKey];
+                    const bullets = (job.bullets ?? []).slice(0, 3);
+                    const badges = job.badges ?? [];
+                    const shownBadges = isExpanded ? badges : badges.slice(0, 5);
+                    const hiddenBadges = badges.length - 5;
+                    return (
+                    <article className="exp-entry" key={entryKey}>
                         <div className="exp-node"><div className="exp-node-ring" /></div>
 
                         <div className="exp-year-block">
@@ -205,21 +246,43 @@ const Experience: React.FC = () => {
                                     <span className="exp-type">{job.engagementType}</span>
                                 )}
                             </div>
-                            <p className="exp-desc">{job.description}</p>
+                            {job.lead ? (
+                                <p className="exp-lead">{job.lead}</p>
+                            ) : (
+                                <p className="exp-desc">{job.description}</p>
+                            )}
 
-                            {job.bullets && job.bullets.length > 0 && (
+                            {bullets.length > 0 && (
                                 <ul className="exp-bullets">
-                                    {job.bullets.map((bullet, bi) => (
+                                    {bullets.map((bullet, bi) => (
                                         <li key={bi}>{bullet}</li>
                                     ))}
                                 </ul>
                             )}
 
-                            {job.badges && job.badges.length > 0 && (
+                            {shownBadges.length > 0 && (
                                 <div className="exp-badges">
-                                    {job.badges.map((badge) => (
+                                    {shownBadges.map((badge) => (
                                         <span className="exp-badge" key={badge}>{badge}</span>
                                     ))}
+                                    {hiddenBadges > 0 && (
+                                        <button
+                                            type="button"
+                                            className="exp-badge exp-badge--more"
+                                            aria-expanded={isExpanded}
+                                            onClick={() => {
+                                                setExpandedBadges((prev) => ({
+                                                    ...prev, [entryKey]: !prev[entryKey],
+                                                }));
+                                                trackEvent('Experience Badges Toggled', {
+                                                    company: job.organization,
+                                                    expanded: !isExpanded,
+                                                });
+                                            }}
+                                        >
+                                            {isExpanded ? 'Show less' : `+${hiddenBadges} more`}
+                                        </button>
+                                    )}
                                 </div>
                             )}
 
@@ -234,7 +297,8 @@ const Experience: React.FC = () => {
                             )}
                         </div>
                     </article>
-                ))}
+                    );
+                })}
             </div>
         </section>
     );

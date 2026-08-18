@@ -25,6 +25,15 @@
     text-decoration: none;
 }
 .pp-back:hover { color: #1d1d1b; }
+.pp-variant-link {
+    margin-left: auto;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #2e5339;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.pp-variant-link:hover { color: #1d1d1b; }
 .pp-print-btn {
     padding: 0.62rem 1.35rem;
     border: 0;
@@ -37,6 +46,49 @@
     transition: background 0.2s ease;
 }
 .pp-print-btn:hover { background: #2e5339; }
+
+/* --- full-version banner (condensed variant, screen only) --- */
+.pp-banner {
+    max-width: 52rem;
+    margin: 0 auto 1.25rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: #2e5339;
+    border-radius: 8px;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+.pp-banner-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.pp-banner-text strong {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.pp-banner-text span {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.82rem;
+}
+.pp-banner-btn {
+    padding: 0.55rem 1.25rem;
+    border-radius: 99rem;
+    background: #fff;
+    color: #2e5339;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.pp-banner-btn:hover { background: #e8e8e3; }
+
+@media (max-width: 620px) {
+    .pp-banner { flex-direction: column; align-items: flex-start; }
+}
 
 /* --- the sheet --- */
 .pp-sheet {
@@ -71,22 +123,28 @@
     font-weight: 600;
     color: #2e5339;
 }
-.pp-contact {
-    margin: 0.65rem 0 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+.pp-contact-line {
+    margin: 0.4rem 0 0;
     font-size: 0.84rem;
-    color: #6b6b66;
+    color: #44443f;
 }
-.pp-contact a {
+.pp-contact-line a {
     color: #2e5339;
     text-decoration: underline;
     text-underline-offset: 2px;
     text-decoration-thickness: 1px;
 }
-.pp-contact a:hover { color: #1d1d1b; }
-.pp-sep { color: #b6b6ad; }
+.pp-contact-line a:hover { color: #1d1d1b; }
+.pp-availability {
+    margin: 0.4rem 0 0;
+    font-size: 0.84rem;
+    font-style: italic;
+    color: #6b6b66;
+}
+.pp-sep {
+    margin: 0 0.4rem;
+    color: #b6b6ad;
+}
 
 /* --- sections --- */
 .pp-section { margin-bottom: 1.5rem; }
@@ -101,7 +159,16 @@
     text-transform: uppercase;
     color: #2e5339;
 }
-.pp-summary { margin: 0; }
+.pp-summary { margin: 0 0 0.55rem; }
+.pp-summary:last-child { margin-bottom: 0; }
+
+/* --- technical skills (plain "Category: item, item" lines for parsers) --- */
+.pp-skill-line {
+    margin: 0 0 0.35rem;
+    font-size: 0.88rem;
+}
+.pp-skill-line:last-child { margin-bottom: 0; }
+.pp-skill-line strong { color: #1d1d1b; }
 
 /* --- expertise --- */
 .pp-expertise { margin-bottom: 0.9rem; }
@@ -132,22 +199,19 @@
     color: #44443f;
 }
 
-/* --- entries (experience / education) --- */
-.pp-entry {
-    display: flex;
-    gap: 1.4rem;
-    margin-bottom: 1.15rem;
-}
+/* --- entries (experience / education / projects) ---
+ * Single linear column: title → org line (with the date at its end) → bullets.
+ * The date is pushed right with margin-left:auto but stays inside the org
+ * line's DOM flow, so text extraction reads each entry in logical order. */
+.pp-entry { margin-bottom: 1.15rem; }
 .pp-entry:last-child { margin-bottom: 0; }
 .pp-entry-date {
-    flex: none;
-    width: 6.7rem;
-    padding-top: 0.12rem;
+    margin-left: auto;
     font-size: 0.8rem;
     font-weight: 600;
     color: #8a8a82;
+    white-space: nowrap;
 }
-.pp-entry-main { flex: 1; min-width: 0; }
 .pp-entry-title {
     margin: 0;
     font-size: 1.02rem;
@@ -190,9 +254,55 @@
     text-decoration-thickness: 1px;
 }
 
+/* --- end-of-resume card (condensed variant, screen only) --- */
+.pp-more {
+    margin-top: 2rem;
+    padding-top: 1.8rem;
+    border-top: 1px solid #dcdcd5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.55rem;
+    text-align: center;
+}
+.pp-more-title {
+    margin: 0;
+    font-size: 1.18rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #1d1d1b;
+}
+.pp-more-sub {
+    margin: 0;
+    max-width: 30rem;
+    font-size: 0.88rem;
+    color: #6b6b66;
+}
+.pp-more-btn {
+    margin-top: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.68rem 1.5rem;
+    border-radius: 99rem;
+    background: #1d1d1b;
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+.pp-more-btn:hover { background: #2e5339; color: #fff; }
+.pp-more-btn svg { display: block; }
+
+/* --- print-only pointer to the full resume (hidden on screen) --- */
+.pp-print-footer { display: none; }
+
+/* --- page-one strip pitching the interactive site (print/PDF only) --- */
+.pp-site-strip { display: none; }
+
 @media (max-width: 620px) {
-    .pp-entry { flex-direction: column; gap: 0.2rem; }
-    .pp-entry-date { width: auto; }
+    .pp-entry-date { margin-left: 0; flex-basis: 100%; }
     .pp-name { font-size: 2rem; }
 }
 
@@ -202,6 +312,8 @@
     .pp-screen { background: #141413; }
     .pp-back { color: #b6b6ad; }
     .pp-back:hover { color: #ebebe5; }
+    .pp-variant-link { color: #7fb992; }
+    .pp-variant-link:hover { color: #ebebe5; }
     .pp-print-btn { background: #ebebe5; color: #141413; }
     .pp-print-btn:hover { background: #7fb992; }
 
@@ -213,10 +325,12 @@
     .pp-head { border-bottom-color: #7fb992; }
     .pp-name { color: #ebebe5; }
     .pp-role { color: #7fb992; }
-    .pp-contact { color: #8a8a82; }
-    .pp-contact a { color: #7fb992; }
-    .pp-contact a:hover { color: #ebebe5; }
+    .pp-contact-line { color: #b6b6ad; }
+    .pp-contact-line a { color: #7fb992; }
+    .pp-contact-line a:hover { color: #ebebe5; }
+    .pp-availability { color: #8a8a82; }
     .pp-sep { color: #44443f; }
+    .pp-skill-line strong { color: #ebebe5; }
 
     .pp-section-label {
         border-bottom-color: #2e2e2b;
@@ -236,6 +350,12 @@
     }
     .pp-entry-place { color: #6b6b66; }
     .pp-entry-link a { color: #7fb992; }
+
+    .pp-more { border-top-color: #2e2e2b; }
+    .pp-more-title { color: #ebebe5; }
+    .pp-more-sub { color: #8a8a82; }
+    .pp-more-btn { background: #ebebe5; color: #141413; }
+    .pp-more-btn:hover { background: #7fb992; color: #141413; }
 }
 
 /* --- print --- */
@@ -265,29 +385,115 @@
         padding: 0;
         background: #fff;
     }
-    .pp-toolbar { display: none; }
+    .pp-toolbar,
+    .pp-banner,
+    .pp-more { display: none; }
+
+    /* Page-one strip under the header: the interactive-site pitch plus a
+     * scannable QR. print-color-adjust forces the tint even when the print
+     * dialog's "background graphics" box is unchecked. */
+    .pp-site-strip {
+        display: flex;
+        align-items: center;
+        gap: 16pt;
+        margin: 0 0 14pt;
+        padding: 9pt 13pt;
+        background: #eef2ee;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        break-inside: avoid;
+    }
+    .pp-site-strip-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2pt;
+    }
+    .pp-site-strip-title {
+        margin: 0;
+        font-size: 9.5pt;
+        font-weight: 700;
+        color: #000;
+    }
+    .pp-site-strip-sub {
+        margin: 0;
+        font-size: 9pt;
+        color: #333;
+    }
+    .pp-site-strip-sub a { font-weight: 700; }
+    .pp-site-strip-qr {
+        display: block;
+        width: 44pt;
+        height: 44pt;
+    }
+
+    /* The screen CTAs above are replaced in print by a plain-text footer:
+     * spelled-out URLs stay readable on paper, and Chrome's save-as-PDF
+     * keeps the anchors live so the PDF links straight to the full resume. */
+    .pp-print-footer {
+        display: block;
+        margin: 14pt 0 0;
+        padding-top: 8pt;
+        border-top: 1px solid #dcdcd5;
+        font-size: 9pt;
+        color: #333;
+        break-inside: avoid;
+    }
     .pp-sheet {
         max-width: none;
         margin: 0;
         padding: 0;
         box-shadow: none;
-        font-size: 10pt;
+        font-size: 10.5pt;
         line-height: 1.4;
+        color: #000;
     }
+
+    /* ATS-safe ink: black body text on white; secondary text stays dark
+     * enough to scan cleanly (no light greys that OCR poorly). */
+    .pp-name,
+    .pp-summary,
+    .pp-skill-line strong { color: #000; }
+    .pp-contact-line,
+    .pp-availability,
+    .pp-entry-org,
+    .pp-skill { color: #333; }
+    .pp-entry-date,
+    .pp-entry-place,
+    .pp-expertise-level { color: #444; }
 
     .pp-name { font-size: 22pt; }
     .pp-role { font-size: 11pt; }
-    .pp-contact { font-size: 8.5pt; }
+    .pp-contact-line { font-size: 9pt; }
+    .pp-availability { font-size: 9pt; }
     .pp-section { margin-bottom: 14pt; }
     .pp-section-label { font-size: 9pt; }
-    .pp-entry-date { font-size: 8.5pt; }
+    .pp-skill-line { font-size: 9.5pt; }
+    .pp-entry-date { font-size: 9pt; }
     .pp-entry-title { font-size: 11pt; }
-    .pp-skill { font-size: 8pt; }
+    .pp-skill { font-size: 8.5pt; }
+
+    /* Condensed variant: tighter rhythm so the trimmed content lands on as few
+     * pages as possible while keeping the ATS-safe ≥10.5pt base font. */
+    .pp-sheet--condensed { line-height: 1.32; }
+    .pp-sheet--condensed .pp-head {
+        margin-bottom: 1rem;
+        padding-bottom: 0.7rem;
+    }
+    .pp-sheet--condensed .pp-name { font-size: 20pt; }
+    .pp-sheet--condensed .pp-section { margin-bottom: 10pt; }
+    .pp-sheet--condensed .pp-section-label { margin-bottom: 0.45rem; }
+    .pp-sheet--condensed .pp-entry { margin-bottom: 0.75rem; }
+    .pp-sheet--condensed .pp-entry-desc { margin-bottom: 0.25rem; }
+    .pp-sheet--condensed .pp-bullets li { margin-bottom: 0.12rem; }
+    .pp-sheet--condensed .pp-skill-line { margin-bottom: 0.22rem; }
 
     /* keep things from splitting awkwardly across pages */
     .pp-section-label { break-after: avoid; }
+    .pp-head,
     .pp-entry,
-    .pp-expertise { break-inside: avoid; }
+    .pp-expertise,
+    .pp-skill-line { break-inside: avoid; }
     .pp-bullets li { break-inside: avoid; }
 
     /* Keep links visibly link-like in the PDF — accent colour + underline so a

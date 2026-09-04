@@ -108,7 +108,7 @@ const SiteFooter: React.FC = () => {
                         rel="noopener noreferrer"
                         onClick={() => trackEvent('Printable Résumé Opened', { source: 'footer' })}
                     >
-                        Printable résumé<span className="sf-link-arrow">↗</span>
+                        Printable resume<span className="sf-link-arrow">↗</span>
                     </Link>
                 </div>
                 <div className="sf-col sf-col--meta">

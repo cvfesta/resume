@@ -13,6 +13,8 @@ const getPageName = (pathname: string): string => {
             return 'Home';
         case '/print':
             return 'Print';
+        case '/print/c2c':
+            return 'Print Contract';
         case '/print/full':
             return 'Print Full';
         case '/slides':
@@ -44,7 +46,8 @@ const App: React.FC = () => {
     return (
         <Routes>
             <Route path="/" element={<Slides />} />
-            <Route path="/print" element={<PrintablePage variant="condensed" />} />
+            <Route path="/print" element={<PrintablePage variant="corporate" />} />
+            <Route path="/print/c2c" element={<PrintablePage variant="contract" />} />
             <Route path="/print/full" element={<PrintablePage variant="full" />} />
             <Route path="/slides" element={<Slides />} />
             <Route path="*" element={<Navigate to="/" replace />} />

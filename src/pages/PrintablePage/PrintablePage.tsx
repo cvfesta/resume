@@ -21,13 +21,11 @@ const hostnameOf = (url: string): string => {
     }
 };
 
-/** Bullets each entry keeps on the condensed variant, keyed by
+/** Bullets each entry keeps on the condensed variants, keyed by
  * "organization|date" (falling back to organization alone). All trimming
  * lives here in the render layer — the data stays complete for /print/full. */
 const CONDENSED_BULLET_COUNTS: Record<string, number> = {
-    'Christian Festa LLC': 0,
-    'Aloha Fitness': 0,
-    'Public Consulting Group': Infinity,
+    'Public Consulting Group': 6,
     'Unisys|2018 - 2022': 2,
     'County Welfare Directors Association of California': 1,
     // DCJS + LEADER named-engagement bullets (the first two)
@@ -42,38 +40,75 @@ const condensedBullets = (exp: Experience): string[] => {
     return bullets.slice(0, count === Infinity ? bullets.length : count);
 };
 
+/** Entries with more bullets than this may continue onto the next page,
+ * splitting only between bullets (heading, org line, description, and each
+ * bullet stay intact). Shorter entries stay atomic. Without this the PCG
+ * entry, too tall for the space under Technical Skills, jumps whole to
+ * page 2 and leaves a quarter of page 1 blank. */
+const FLOW_BULLET_THRESHOLD = 5;
+
+/** The three print routes. Two condensed, audience-specific resumes (the
+ * ones actually submitted) plus the long-form reference. `audience` picks
+ * the headline/summary copy from `resume.json`'s `print` block and decides
+ * whether the contract-only header lines show. */
+export type PrintVariant = 'corporate' | 'contract' | 'full';
+type PrintAudience = 'corporate' | 'contract';
+
+interface VariantMeta {
+    path: string;
+    label: string;
+    audience: PrintAudience;
+    condensed: boolean;
+}
+
+const VARIANTS: Record<PrintVariant, VariantMeta> = {
+    corporate: { path: '/print', label: 'corporate (W-2)', audience: 'corporate', condensed: true },
+    contract: { path: '/print/c2c', label: 'contract (C2C)', audience: 'contract', condensed: true },
+    full: { path: '/print/full', label: 'full-detail', audience: 'contract', condensed: false },
+};
+
 interface PrintablePageProps {
-    /** "condensed" (/print, ~2 pages, the version submitted to jobs) or
-     *  "full" (/print/full, every section and bullet). */
-    variant?: 'condensed' | 'full';
+    variant?: PrintVariant;
 }
 
 const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
-    const condensed = variant === 'condensed';
+    const { condensed, audience, label } = VARIANTS[variant];
+    const corporate = audience === 'corporate';
     const years = calculateYearsOfExperience();
-    const summaryParagraphs = data.hero.subTitle
-        .replace('{YEARS}', years)
+    const { contact } = data;
+    const copy = data.print[audience];
+    const headline = copy.headline || data.hero.eyebrow;
+
+    // Condensed variants carry a purpose-written summary per audience; the
+    // full version keeps the site's complete hero statement.
+    const summaryParagraphs = (condensed ? copy.summary : data.hero.subTitle)
+        .split('{YEARS}').join(years)
         .split(/\n+/)
         .filter(Boolean);
-    const summaryShown = condensed ? summaryParagraphs.slice(0, 1) : summaryParagraphs;
-    const { contact } = data;
+    const highlights = data.print.highlights ?? [];
+    const ventures = data.experience.filter((exp) => exp.section === 'ventures');
+    const experience = data.experience.filter((exp) => exp.section !== 'ventures');
+    const otherVariants = (Object.keys(VARIANTS) as PrintVariant[]).filter((v) => v !== variant);
+
+    const variantLink = (target: PrintVariant, className: string, text?: string) => (
+        <Link
+            key={target}
+            to={VARIANTS[target].path}
+            className={className}
+            onClick={() => trackEvent('Résumé Variant Toggled', { from: variant, to: target })}
+        >
+            {text ?? `View ${VARIANTS[target].label} version`}
+        </Link>
+    );
 
     return (
         <div className="pp-screen">
             {/* toolbar — screen only, hidden when printing */}
             <div className="pp-toolbar">
                 <Link to="/" className="pp-back">← Back to the site</Link>
-                {!condensed && (
-                    <Link
-                        to="/print"
-                        className="pp-variant-link"
-                        onClick={() => trackEvent('Résumé Variant Toggled', {
-                            from: variant, to: 'condensed',
-                        })}
-                    >
-                        View condensed version
-                    </Link>
-                )}
+                <div className="pp-variant-links">
+                    {otherVariants.map((v) => variantLink(v, 'pp-variant-link'))}
+                </div>
                 <button
                     type="button"
                     className="pp-print-btn"
@@ -86,17 +121,17 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
                 </button>
             </div>
 
-            {/* Context banner (Option B) — condensed screen view only, hidden in print */}
+            {/* Context banner — condensed screen view only, hidden in print */}
             {condensed && (
                 <div className="pp-banner">
                     <div className="pp-banner-text">
-                        <strong>You're reading the condensed resume — 3 pages.</strong>
+                        <strong>You're reading the condensed {label} resume.</strong>
                         <span>The full version adds areas of expertise, every engagement detail, and shipped products.</span>
                     </div>
                     <Link
                         to="/print/full"
                         className="pp-banner-btn"
-                        onClick={() => trackEvent('Full Résumé CTA Clicked', { source: 'banner' })}
+                        onClick={() => trackEvent('Full Résumé CTA Clicked', { source: 'banner', variant })}
                     >
                         Read the full resume
                     </Link>
@@ -105,67 +140,84 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
 
             <article className={condensed ? 'pp-sheet pp-sheet--condensed' : 'pp-sheet'}>
                 {/* ATS contact header — plain semantic text, URLs spelled out visibly.
-                  * Parsers key on this block to file the resume; keep it text-only. */}
+                  * Parsers key on this block to file the resume; keep it text-only.
+                  * The QR block on the right is print-only and sits beside the
+                  * contact lines so it costs no vertical space on page one. */}
                 <header className="pp-head">
-                    <h1 className="pp-name">{data.hero.title}</h1>
-                    <p className="pp-role">{data.hero.eyebrow} · {contact.credential}</p>
-                    <p className="pp-contact-line">
-                        {contact.location}
-                        <span className="pp-sep" aria-hidden="true">·</span>
-                        {contact.email}
-                        <span className="pp-sep" aria-hidden="true">·</span>
-                        {contact.phone}
-                    </p>
-                    <p className="pp-contact-line">
-                        <a
-                            href={`https://www.${contact.linkedin}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() => trackEvent('Outbound Link Clicked', {
-                                label: 'LinkedIn', url: contact.linkedin, location: 'print',
-                            })}
-                        >
-                            {contact.linkedin}
-                        </a>
-                        <span className="pp-sep" aria-hidden="true">·</span>
-                        <a
-                            href={`https://${contact.website}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() => trackEvent('Outbound Link Clicked', {
-                                label: 'Website', url: contact.website, location: 'print',
-                            })}
-                        >
-                            {contact.website}
-                        </a>
-                    </p>
-                    <p className="pp-availability">{contact.availability}</p>
-                </header>
-
-                {/* Page-one strip — print/PDF only. Pitches the interactive site as
-                  * a work sample and carries a scannable QR for paper readers. */}
-                <div className="pp-site-strip">
-                    <div className="pp-site-strip-text">
-                        <p className="pp-site-strip-title">Prefer the live version?</p>
-                        <p className="pp-site-strip-sub">
-                            This document is a static export of an interactive resume
-                            I designed and built —{' '}
+                    <div className="pp-head-main">
+                        <h1 className="pp-name">{data.hero.title}</h1>
+                        <p className="pp-role">{headline} · {contact.credential}</p>
+                        <p className="pp-contact-line">
+                            {contact.location}
+                            <span className="pp-sep" aria-hidden="true">·</span>
+                            {contact.email}
+                            <span className="pp-sep" aria-hidden="true">·</span>
+                            {contact.phone}
+                        </p>
+                        <p className="pp-contact-line">
+                            <a
+                                href={`https://www.${contact.linkedin}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => trackEvent('Outbound Link Clicked', {
+                                    label: 'LinkedIn', url: contact.linkedin, location: 'print',
+                                })}
+                            >
+                                {contact.linkedin}
+                            </a>
+                            <span className="pp-sep" aria-hidden="true">·</span>
+                            <a
+                                href={`https://${contact.website}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => trackEvent('Outbound Link Clicked', {
+                                    label: 'Website', url: contact.website, location: 'print',
+                                })}
+                            >
+                                {contact.website}
+                            </a>
+                        </p>
+                        {!corporate && (
+                            <p className="pp-availability">
+                                {[contact.availability, ...contact.contractDetails].map((line, i) => (
+                                    <React.Fragment key={line}>
+                                        {i > 0 && <span className="pp-sep" aria-hidden="true">·</span>}
+                                        {line}
+                                    </React.Fragment>
+                                ))}
+                            </p>
+                        )}
+                    </div>
+                    <div className="pp-head-site">
+                        <img
+                            className="pp-head-qr"
+                            src={qrInteractiveResume}
+                            alt={`QR code: ${contact.website}`}
+                        />
+                        <p className="pp-head-site-text">
+                            Interactive version<br />
                             <a href={`https://${contact.website}`}>{contact.website}</a>
                         </p>
                     </div>
-                    <img
-                        className="pp-site-strip-qr"
-                        src={qrInteractiveResume}
-                        alt={`QR code: ${contact.website}`}
-                    />
-                </div>
+                </header>
 
                 <section className="pp-section">
                     <h2 className="pp-section-label">Summary</h2>
-                    {summaryShown.map((paragraph, i) => (
+                    {summaryParagraphs.map((paragraph, i) => (
                         <p className="pp-summary" key={i}>{paragraph}</p>
                     ))}
                 </section>
+
+                {highlights.length > 0 && (
+                    <section className="pp-section">
+                        <h2 className="pp-section-label">Highlights</h2>
+                        <ul className="pp-bullets pp-highlights">
+                            {highlights.map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
+                        </ul>
+                    </section>
+                )}
 
                 <section className="pp-section">
                     <h2 className="pp-section-label">Technical Skills</h2>
@@ -194,18 +246,39 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
                 </section>}
 
                 {/* Entries read linearly for text extraction: title → organization →
-                  * dates → bullets. The date is right-aligned visually but stays in
-                  * the org line's DOM flow — never a structurally separate column. */}
+                  * link → dates → bullets. The date is right-aligned visually but stays
+                  * in the org line's DOM flow — never a structurally separate column. */}
                 <section className="pp-section">
                     <h2 className="pp-section-label">Experience</h2>
-                    {data.experience.map((exp) => {
+                    {experience.map((exp) => {
                         const bullets = condensed ? condensedBullets(exp) : (exp.bullets ?? []);
+                        const entryClass = bullets.length > FLOW_BULLET_THRESHOLD
+                            ? 'pp-entry pp-entry--flow'
+                            : 'pp-entry';
+                        // Corporate readers assume "employee"; the pill only earns
+                        // its space there when the engagement was something else.
+                        const showType = !!exp.engagementType
+                            && !(corporate && exp.engagementType === 'Employee');
                         return (
-                        <div className="pp-entry" key={exp.title + exp.organization}>
+                        <div className={entryClass} key={exp.title + exp.organization}>
                             <h3 className="pp-entry-title">{exp.title}</h3>
                             <p className="pp-entry-org">
-                                <span>{exp.organization}</span>
-                                {exp.engagementType && (
+                                <span className="pp-entry-org-name">{exp.organization}</span>
+                                {exp.link && (
+                                    <a
+                                        className="pp-entry-org-link"
+                                        href={exp.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={() => trackEvent('Experience Link Clicked', {
+                                            company: exp.organization, role: exp.title,
+                                            url: exp.link, location: 'print',
+                                        })}
+                                    >
+                                        {hostnameOf(exp.link)}
+                                    </a>
+                                )}
+                                {showType && (
                                     <span className="pp-entry-type">{exp.engagementType}</span>
                                 )}
                                 <span className="pp-entry-date">{exp.date}</span>
@@ -218,25 +291,28 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
                                     ))}
                                 </ul>
                             )}
-                            {exp.link && (
-                                <p className="pp-entry-link">
-                                    <a
-                                        href={exp.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={() => trackEvent('Experience Link Clicked', {
-                                            company: exp.organization, role: exp.title,
-                                            url: exp.link, location: 'print',
-                                        })}
-                                    >
-                                        {hostnameOf(exp.link)}
-                                    </a>
-                                </p>
-                            )}
                         </div>
                         );
                     })}
                 </section>
+
+                {/* Founder roles, kept out of the Experience narrative: one compact
+                  * block each — org, then role + dates, then a short prose summary. */}
+                {ventures.length > 0 && (
+                    <section className="pp-section pp-section--ventures">
+                        <h2 className="pp-section-label">Independent Ventures</h2>
+                        {ventures.map((exp) => (
+                            <div className="pp-venture" key={exp.title + exp.organization}>
+                                <h3 className="pp-venture-org">{exp.organization}</h3>
+                                <p className="pp-venture-role">
+                                    <span>{exp.title}</span>
+                                    <span className="pp-entry-date">{exp.date}</span>
+                                </p>
+                                <p className="pp-venture-summary">{exp.ventureSummary ?? exp.description}</p>
+                            </div>
+                        ))}
+                    </section>
+                )}
 
                 <section className="pp-section">
                     <h2 className="pp-section-label">Education &amp; Certifications</h2>
@@ -254,7 +330,7 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
                     ))}
                 </section>
 
-                {/* End-of-resume card (Option C) — condensed screen view only */}
+                {/* End-of-resume card — condensed screen view only */}
                 {condensed && (
                     <aside className="pp-more">
                         <p className="pp-more-title">There's more to the story</p>
@@ -265,7 +341,7 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
                         <Link
                             to="/print/full"
                             className="pp-more-btn"
-                            onClick={() => trackEvent('Full Résumé CTA Clicked', { source: 'end-card' })}
+                            onClick={() => trackEvent('Full Résumé CTA Clicked', { source: 'end-card', variant })}
                         >
                             <span>View the full resume</span>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -275,11 +351,10 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
                     </aside>
                 )}
 
-                {/* Printed/PDF-only closing line: points readers at the full version
-                  * (the page-one strip already carries the interactive-site pitch). */}
+                {/* Printed/PDF-only closing line: points readers at the full version. */}
                 {condensed && (
                     <p className="pp-print-footer">
-                        This is the condensed resume. Full detail — areas of expertise, every
+                        This is the condensed {label} resume. Full detail — areas of expertise, every
                         engagement, and shipped products:{' '}
                         <a href={`https://${contact.website}/print/full`}>{contact.website}/print/full</a>
                     </p>

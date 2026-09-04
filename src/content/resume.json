@@ -9,13 +9,44 @@
   "contact": {
     "credential": "PMP",
     "location": "Rocklin, CA (Sacramento area)",
-    "email": "Christian.Festa1@gmail.com",
+    "email": "christian.festa1@gmail.com",
     "phone": "(570) 406-8534",
     "linkedin": "linkedin.com/in/christian-festa-008376b6",
     "website": "cvfesta.github.io/resume",
-    "availability": "Open to contract & corp-to-corp engagements via Christian Festa LLC"
+    "availability": "Open to contract & corp-to-corp engagements via Christian Festa LLC",
+    "contractDetails": [
+      "Contracting entity: Christian Festa LLC (S-Corp)"
+    ]
+  },
+  "print": {
+    "corporate": {
+      "headline": "Director of Software Engineering & Delivery Executive",
+      "summary": "Director of Software Engineering with {YEARS} years leading custom design, development, and integration (DDI) programs for public-sector clients. I direct a $40M AWS-hosted grant management platform for a California state health agency and built the firm's secure generative AI practice: Retrieval-Augmented Generation on Amazon Bedrock with layered guardrails and responsible-AI governance. PMP-certified, I run cross-functional teams of 30+ from requirements and UX through architecture, build, data migration, testing, and release, and have contributed to $100M+ in winning proposals."
+    },
+    "contract": {
+      "headline": "Technology Consultant & Delivery Executive",
+      "summary": "Independent technology consultant and delivery executive with {YEARS} years of client-facing DDI delivery on state and county government programs: integrated eligibility and welfare systems, Medicaid and ACA exchange integration (CalHEERS), criminal justice systems, and grants management. Corp-to-corp since 2016 with CWDA, Unisys, and PCG. Hands-on across the full SDLC, from requirements and UX design through development, integration, and test, and delivery manager for full programs directing teams of 30+. Currently directing a $40M AWS-hosted platform and a secure generative AI practice on Amazon Bedrock. Available for contract and corp-to-corp engagements through Christian Festa LLC."
+    },
+    "highlights": [
+      "Direct a $40M AWS-hosted grant management platform for a California state health agency with cross-functional teams of 30+.",
+      "Delivery manager across three of four solutions on Hawaii's $100M BESSD welfare modernization; design, BA, development, and test reported to me.",
+      "Delivered a secure RAG application on Amazon Bedrock that cut week-long work to hours with zero PII or IP exposure.",
+      "Contributed to $100M+ in winning proposals, including the BESSD bid Unisys brought me back corp-to-corp to deliver."
+    ]
   },
   "skills": [
+    {
+      "category": "Domain",
+      "items": [
+        "State & County Government Modernization",
+        "Integrated Eligibility & Welfare Systems (LEADER, BESSD)",
+        "Medicaid & ACA Exchange Integration (CalHEERS, eHIT)",
+        "Criminal Justice Systems (DCJS, FBI NCIC)",
+        "Grants Management",
+        "Prime/Subcontractor Delivery",
+        "RFP & Proposal Support"
+      ]
+    },
     {
       "category": "Cloud & AI",
       "items": [
@@ -88,14 +119,18 @@
     "projects": {
       "kicker": "04 — Projects",
       "title": "Built.",
-      "intro": "Most of what I've built over my career has been for clients. These are the products that are entirely my own, designed, built, and shipped end to end, with more on the way."
+      "intro": "Most of what I've built over my career has been for clients. These are the products that are entirely my own, designed, built, and shipped end to end, with more on the way.",
+      "cta": {
+        "label": "All of it, on the studio site",
+        "href": "https://christianfesta.com/"
+      }
     }
   },
   "roles": [
     {
-      "title": "AI & Cloud Solutions Architect",
+      "title": "AI & Cloud Architect",
       "level": "Executive",
-      "subTitle": "I architect and deliver generative and agentic AI for enterprise clients, taking solutions from proof of concept to production. My Retrieval-Augmented Generation systems run on Amazon Bedrock with isolated foundation models and layered guardrails that protect PII and IP even under edge-case prompts, backed by a responsible-AI governance framework covering safety, privacy, and compliance. I practice AI-accelerated engineering daily with Claude Code, MCP server integrations, and agentic workflows, and I bring those patterns to the teams I lead, including rolling out GitHub Copilot under approved enterprise licensing.",
+      "subTitle": "I architect and deliver generative and agentic AI for enterprise clients, from proof of concept to production. My RAG systems run on Amazon Bedrock with isolated foundation models and layered guardrails that protect PII and IP, backed by a responsible-AI governance framework. I work with Claude Code and MCP daily and bring those patterns to the teams I lead.",
       "badges": [
         "Generative & Agentic AI Strategy",
         "AWS Bedrock & RAG Implementation",
@@ -103,12 +138,12 @@
         "Responsible AI Governance",
         "AI-Accelerated Engineering (Copilot · Claude Code · MCP)",
         "Secure Enterprise AI Deployment",
-        "Proprietary Data Activation",
+        "Secure Access to Proprietary Data",
         "POC-to-Production Delivery"
       ]
     },
     {
-      "title": "Delivery Leader & Director of Engineering",
+      "title": "Delivery Director",
       "level": "Executive",
       "subTitle": "I own full-lifecycle design, development, and integration (DDI) for client programs: requirements through architecture, build, data migration, testing, and release. I'm PMP-certified, run disciplined Agile delivery, scale cross-functional onshore and offshore teams, and keep technical strategy tied to what the client's business actually needs.",
       "badges": [
@@ -138,9 +173,9 @@
       ]
     },
     {
-      "title": "Founder & Product Builder",
+      "title": "Founder & Builder",
       "level": "Founder",
-      "subTitle": "Outside my client engagements, I build and ship products end to end through Christian Festa LLC. I design, develop, and publish native iOS apps on the App Store, including AI-powered apps that use on-device large language models, and I co-founded and operate Aloha Fitness, a direct-to-consumer brand spanning physical products and software, owning everything from international manufacturing and logistics to fulfillment, app development, and sales.",
+      "subTitle": "Outside client work I build and ship products end to end through Christian Festa LLC: native iOS apps on the App Store, including AI-powered apps that run on-device language models. I also co-founded Aloha Fitness, a direct-to-consumer brand spanning physical products and software, owning everything from manufacturing and logistics to fulfillment and sales.",
       "badges": [
         "iOS App Development & Publishing",
         "On-Device & Generative AI Products",
@@ -157,11 +192,13 @@
     {
       "title": "Founder & iOS Developer",
       "organization": "Christian Festa LLC",
-      "lead": "Shipping my own iOS products end to end through the LLC I consult from — Walkout Intros live on the App Store, Ghosty in development.",
+      "section": "ventures",
+      "ventureSummary": "Independent consulting entity and iOS product studio. Published Walkout Intros, a live App Store product that generates AI announcer intros, and built Ghosty Privacy, an on-device privacy firewall now in App Store submission, with an on-device-LLM nutrition app in development.",
+      "lead": "Shipping my own iOS products end to end through the LLC I consult from — Walkout Intros live on the App Store, Ghosty Privacy heading into App Review.",
       "description": "Founder of Christian Festa LLC, my own software company and the entity through which I take on independent contract and corp-to-corp consulting engagements. I also design, build, publish, and operate native iOS apps end to end, owning concept, development, App Store launch, monetization, and ongoing operations.",
       "bullets": [
-        "Published Walkout Intros, a live iOS app that pairs AI-generated announcer intros with trimmed music cues for sports team walkouts, with a free tier and in-app purchases.",
-        "Building Ghosty, a privacy app currently in development, delivered as two products: a business version using a DNS proxy for managed devices and a consumer version delivered as a VPN. I re-architected into this split after hitting the App Store restriction that DNS proxy configurations only run on managed devices.",
+        "Published Walkout Intros, a live iOS app that pairs AI announcer intros with music cued to the drop for eleven sports, with a free tier and Pro subscription.",
+        "Built Ghosty Privacy, an on-device privacy firewall: a packet tunnel Network Extension with its own lwIP-based TCP/IP stack and DNS forwarder that answers tracker lookups locally and forwards the rest. Re-architected it from a DNS proxy extension to a packet tunnel after App Review, since DNS proxy configurations only install on managed devices; 1.2.0 is in submission with monthly, yearly, and family subscriptions.",
         "Own the full product lifecycle independently, from architecture and AI integration through App Store submission, monetization, and post-launch iteration."
       ],
       "date": "2025 - Present",
@@ -173,7 +210,7 @@
         "On-Device LLM Integration",
         "AI Product Development",
         "App Store Publishing",
-        "Networking (DNS Proxy / VPN)",
+        "Network Extensions (Packet Tunnel / DNS)",
         "Monetization & In-App Purchases",
         "Solo Product Ownership"
       ]
@@ -181,6 +218,8 @@
     {
       "title": "Co-Founder",
       "organization": "Aloha Fitness",
+      "section": "ventures",
+      "ventureSummary": "Co-founded a direct-to-consumer fitness brand spanning physical products and an AI nutrition app; owner-operator across sourcing, international logistics, and Amazon FBA operations.",
       "lead": "Running a direct-to-consumer fitness brand with my wife — the full physical supply chain from factory to doorstep, plus an on-device-AI iOS app on the way.",
       "description": "Co-founded and operate Aloha Fitness with my wife, a direct-to-consumer fitness brand spanning two product lines: physical yoga products and an AI-powered iOS app. I own the full supply chain on the physical side and lead product and AI development on the software side.",
       "bullets": [
@@ -206,24 +245,21 @@
       "title": "Director of Software Engineering",
       "organization": "Public Consulting Group",
       "lead": "Directing a $40M AWS-hosted platform and the firm's generative-AI practice for a California state health agency — teams of 30+ across the full lifecycle.",
-      "description": "As Director of Software Engineering, Technical Delivery Manager, and Principal Design Manager at a national consulting firm, I own all design, development, and integration (DDI) for a $40M AWS-hosted grant management platform delivered for a California state health agency client, spanning a public portal and an administrative back office, while building the firm's secure generative AI capability. I direct cross-functional teams of 30+ designers, developers, and engineers across the full lifecycle and serve as the client-facing technical lead. I joined corp-to-corp as an independent consultant in 2022 and converted to full-time employee in 2025 after three years of contract delivery.",
+      "description": "Director of Software Engineering, technical delivery manager, and principal design lead for a $40M AWS-hosted grant management platform delivered to a California state health agency: a public portal, an administrative back office, and the firm's secure generative AI capability. Joined corp-to-corp in 2022 and converted to full-time in 2025.",
       "bullets": [
-        "Leading the build of a multi-tenant platform engineered to support a portfolio of products on shared infrastructure, currently moving toward market launch.",
-        "Led strategy and delivery of a secure Retrieval-Augmented Generation (RAG) application on Amazon Bedrock, letting users query proprietary company data through natural-language chat with zero exposure of PII or IP, even under edge-case prompts, using isolated foundation models and layered guardrails.",
-        "Drove measurable efficiency gains with the RAG application, cutting work that previously took a week or more down to a few hours by having AI handle the heavy lifting while staff review and refine the output.",
-        "Built the governance framework for responsible AI adoption, balancing fast iteration against enterprise compliance and giving the organization a repeatable model for future AI initiatives.",
-        "Architecting the platform's multi-source data migration for client handoff, spanning SharePoint document libraries, AWS MySQL and DynamoDB data stores, S3 archives, and secure SFTP/MOVEit transfer into a federal grants system, with full data-fidelity validation.",
-        "Embedded AI-accelerated engineering across the team, rolling out GitHub Copilot under the firm's approved enterprise licensing while running my own agentic practice on Claude Code and MCP server integrations, automating program management in Jira and Confluence and compressing delivery cycles across every workstream.",
-        "Stood up a Figma-based design system that standardized components, enforced WCAG compliance, and guaranteed responsive behavior across devices, streamlining design-to-development handoff and code review.",
-        "Directed onshore and offshore teams through the full project lifecycle, instituting testing workflows that took the first phase live in just three months.",
-        "Mentored designers at every level and managed client and stakeholder relationships through weekly reviews and progress reporting, keeping creative vision aligned with business goals.",
-        "Drove post-launch optimization from user feedback and performance metrics, sharpening operational efficiency and making the platform a cornerstone of the client's digital strategy."
+        "Direct cross-functional teams of 30+ designers, developers, and engineers across the full lifecycle and serve as the client-facing technical lead.",
+        "Lead the build of a multi-tenant platform that hosts a portfolio of products on shared infrastructure, now approaching market launch.",
+        "Led strategy and delivery of a secure Retrieval-Augmented Generation (RAG) application on Amazon Bedrock that lets staff query proprietary data in natural language with zero PII or IP exposure, using isolated foundation models and layered guardrails; work that took a week or more now takes hours.",
+        "Built the responsible-AI governance framework that balances fast iteration with enterprise compliance and gives the organization a repeatable model for future AI initiatives.",
+        "Architect the multi-source data migration for client handoff: SharePoint libraries, AWS MySQL and DynamoDB stores, S3 archives, and secure SFTP/MOVEit transfer into a federal grants system, with full data-fidelity validation.",
+        "Rolled out GitHub Copilot under enterprise licensing and run an agentic practice on Claude Code and MCP that automates program management in Jira and Confluence, compressing delivery cycles across every workstream.",
+        "Stood up a Figma design system that standardized components, enforced WCAG compliance, and guaranteed responsive behavior across devices, streamlining design-to-development handoff.",
+        "Took the first phase live in three months by directing onshore and offshore teams and instituting testing workflows across the lifecycle."
       ],
       "date": "2022 - Present",
       "link": "https://ca-path.com/",
       "engagementType": "Consultant → Employee",
       "badges": [
-        "Corp-to-Corp Consultant (2022–2025)",
         "Client-Facing DDI Delivery",
         "Multi-Tenant Platform Architecture",
         "Generative AI & RAG Leadership",
@@ -233,20 +269,21 @@
         "Secure AI Governance",
         "Team Leadership (30+ Members)",
         "Figma Design System",
-        "WCAG Compliance"
+        "WCAG Compliance",
+        "Corp-to-Corp Consultant (2022–2025)"
       ]
     },
     {
       "title": "Technical Program and Design Manager",
       "organization": "Unisys",
       "lead": "Delivery manager across three of four solutions on Hawaii's $100M BESSD modernization — design, BA, development, and test all reporting to me.",
-      "description": "Corp-to-corp consultant on the State of Hawaii's BESSD project, a $100M Google Cloud Platform-hosted DDI program modernizing and consolidating the state's welfare and benefits systems into a single new platform, with Medicaid kept standalone by design. I contributed to the winning RFP response for this program, and Unisys brought me back corp-to-corp to deliver it. I led the public-facing solution build, then rose to delivery manager across three of four solutions, with the design, business analysis, development, and test teams all reporting to me, directing 30+ staff across onshore and offshore teams through the full SDLC. I was taking over the administrative welfare solution as well when I concluded the engagement in 2022.",
+      "description": "Corp-to-corp delivery manager on the State of Hawaii's $100M BESSD modernization, a Google Cloud Platform-hosted DDI program consolidating the state's welfare and benefits systems onto a single new platform. Contributed to the winning RFP; Unisys brought me back to deliver it.",
       "bullets": [
-        "Led the DDI of everything public-facing on the program: architecture, UX, build, and delivery of the citizen-facing portal that expanded self-service and customer-service capabilities.",
-        "Promoted to delivery manager with design, BA, development, and test teams reporting to me, owning delivery end to end from requirements through deployment.",
-        "Drove early Figma adoption and built a comprehensive design system that more than doubled design-team output and accelerated the design process 2x.",
-        "Set UI/UX standards for consistency, WCAG compliance, and cross-device responsiveness, embedding them across the lifecycle from requirements gathering to deployment.",
-        "Ran client stakeholder workshops and cross-team coordination, aligning deliverables to the state's consolidation goals and keeping execution built for long-term scale."
+        "Led the DDI of everything public-facing on the program: architecture, UX, build, and delivery of the citizen portal that expanded self-service and customer-service capabilities.",
+        "Promoted to delivery manager across three of four solutions, with design, business analysis, development, and test teams reporting to me: 30+ onshore and offshore staff through the full SDLC.",
+        "Drove early Figma adoption and built a design system that more than doubled design-team output.",
+        "Set UI/UX standards for consistency, WCAG compliance, and cross-device responsiveness, embedded from requirements through deployment.",
+        "Ran client stakeholder workshops and cross-team coordination to keep delivery aligned with the state's consolidation goals."
       ],
       "date": "2018 - 2022",
       "link": "",
@@ -266,12 +303,11 @@
       "title": "Technical Consultant",
       "organization": "County Welfare Directors Association of California",
       "lead": "State-side IV&V over the CalHEERS–county eHIT integration — validating the very interface I had built from the county side.",
-      "description": "Corp-to-corp Independent Verification & Validation (IV&V) consultant overseeing the integration between California's CalHEERS health-benefit exchange and the county welfare eligibility systems via the eHIT interface as the program moved into long-term maintenance and operations (M&O). I had helped build that same interface from the county side on the LEADER project, which gave me a rare vantage point: validating from the state side an integration I had implemented myself.",
+      "description": "Corp-to-corp Independent Verification & Validation (IV&V) consultant for the integration between California's CalHEERS health-benefit exchange and the county welfare eligibility systems over the eHIT interface, as the program moved into maintenance and operations. I had built the county side of that interface on LEADER, so I validated from the state side an integration I had implemented myself.",
       "bullets": [
-        "Oversaw eHIT interface integration between CalHEERS and county systems statewide, analyzing designs and technical documentation to surface integration risks before they threatened timelines or performance.",
-        "Reviewed and signed off on technical deliverables, recommending process improvements that resolved issues early rather than after escalation.",
-        "Presented findings in biweekly reviews with developers and client stakeholders, bridging technical and non-technical teams.",
-        "Helped deliver a reliable, fully integrated system that met every contractual obligation and became a model for later initiatives."
+        "Oversaw eHIT integration between CalHEERS and county systems statewide, reviewing designs and technical documentation to surface integration risks before they reached timelines or performance.",
+        "Reviewed and signed off on technical deliverables and recommended process improvements that resolved issues before escalation.",
+        "Presented findings in biweekly reviews with developers and client stakeholders."
       ],
       "date": "2016 - 2018",
       "link": "",
@@ -289,15 +325,14 @@
       "title": "Technical Consultant, Development & Integration",
       "organization": "Unisys",
       "lead": "New grad to lead across two flagship government DDI programs — New York's criminal-history modernization and LA County's LEADER.",
-      "description": "Joined straight out of Penn State and grew into a management role across two flagship government DDI engagements, wearing every hat in the SDLC: requirements, UX design, development, systems and data integration, testing, and maintenance. My whole career launched here: development, testing, integration, and the UX practice of designing the wireframes that developers built from.",
+      "description": "Joined from Penn State and grew into lead and management roles across two flagship government DDI programs, working every seat in the SDLC: requirements, UX, development, integration, testing, and maintenance.",
       "bullets": [
-        "NYS Division of Criminal Justice Services (DCJS), Albany, NY (2009–2011): Full modernization of New York State's criminal history repository, the system of record for every arrest in the state. The platform ingested fingerprint-event records, maintained complete criminal histories and generated rap sheets, queried federal and interstate systems including the FBI's NCIC for warrants and felony records at arrest time, and exchanged docket records with the courts to keep dispositions current. Made a lead almost immediately out of school, running the test team and building the automated regression suites.",
-        "LA County LEADER, Los Angeles, CA (2011–2016): The largest county welfare eligibility system in California, a legacy mainframe core fronted by modern Java interface services built on Spring Boot. Led the test and regression teams and became the SME on interfaces between LEADER and state systems, including implementing the eHIT exchange connecting LEADER to CalHEERS for Covered California health-benefit eligibility.",
-        "Designed and built in-house applications (largely for the LEADER project) that streamlined team workflows, cut errors, and reduced task completion time from hours to minutes. I did the UX design and wrote code hands-on.",
-        "Set standards and protocols for multi-system case data exchange, enabling seamless data sharing across agencies, and led implementation builds through to deployment.",
-        "Designed wireframes and interaction flows that developers built from, translating complex public-sector requirements into clear, usable interfaces.",
-        "Contributed to winning RFP responses that secured $100M+ in contracts, including the Hawaii BESSD bid that Unisys later brought me back corp-to-corp to deliver.",
-        "Managed teams of up to 25 through full system builds, third-party integrations, and user-acceptance testing."
+        "NYS Division of Criminal Justice Services (DCJS), Albany, NY (2009–2011): modernized New York's criminal history repository, the system of record for every arrest in the state, integrating fingerprint events, FBI NCIC queries, and court docket exchange. Made a lead within months of joining, running the test team and building the automated regression suites.",
+        "LA County LEADER, Los Angeles, CA (2011–2016): California's largest county welfare eligibility system, a mainframe core fronted by Spring Boot interface services. Led the test and regression teams and became the SME on LEADER's state interfaces, including implementing the eHIT exchange to CalHEERS for Covered California eligibility.",
+        "Designed and built in-house tools for the LEADER team that cut task completion time from hours to minutes, owning both the UX and the code.",
+        "Set standards and protocols for multi-system case data exchange across agencies and led implementation builds through deployment.",
+        "Contributed to winning RFP responses worth $100M+, including the Hawaii BESSD bid Unisys later brought me back to deliver.",
+        "Managed teams of up to 25 through full system builds, third-party integrations, and user acceptance testing."
       ],
       "date": "2009 - 2016",
       "link": "",
@@ -329,7 +364,7 @@
       "location": "",
       "date": "2014",
       "icon": "pmi",
-      "description": "Formal grounding in Agile, Scrum, Waterfall, risk management, and stakeholder engagement, giving me the toolkit to deliver multi-million-dollar client programs on time, on budget, and beyond expectations."
+      "description": "Formal grounding in Agile, Scrum, Waterfall, risk management, and stakeholder engagement, applied to multi-million-dollar client programs since 2014."
     },
     {
       "title": "Google User Experience (UX) Design Certification",
@@ -346,33 +381,40 @@
       "tagline": "AI calorie and nutrition tracker",
       "description": "A native iOS calorie and nutrition tracking app from the Aloha Fitness brand. Uses an on-device LLM for three features: natural-language meal logging, multimodal photo meal analysis, and plain-language metabolism insights based on each user's adaptive Total Daily Energy Expenditure (TDEE).",
       "category": "iOS App · Health & Fitness",
-      "meta": "Coming soon",
+      "meta": "In development",
       "available": false,
       "link": "",
       "icon": "aloha-fitness",
-      "glyph": "bi-heart-pulse-fill"
+      "glyph": "bi-heart-pulse-fill",
+      "brandColor": "#5fd3c7",
+      "note": "Aloha Fitness brand"
     },
     {
       "name": "Ghosty Privacy",
-      "tagline": "Privacy on your terms",
-      "description": "A privacy app delivered as two products: a business version using a DNS proxy for managed devices and a consumer version delivered as a VPN. Currently in development.",
+      "tagline": "Stop trackers in every app",
+      "description": "A privacy firewall that lives on your phone. A packet tunnel Network Extension inspects every DNS lookup on the device, answers known analytics, telemetry, and tracking domains locally, and forwards the rest to the resolver you choose. No account, no server, nothing leaves the phone. Free tier plus monthly, yearly, and family Premium.",
       "category": "iOS App · Privacy & Security",
-      "meta": "Coming soon",
+      "meta": "Submitting · 1.2.0",
       "available": false,
-      "link": "",
+      "link": "https://christianfesta.com/#ghosty",
       "icon": "ghosty",
-      "glyph": "bi-shield-lock-fill"
+      "shot": "ghosty-home",
+      "brandColor": "#34d399",
+      "note": "Free · Premium · Family"
     },
     {
       "name": "Walkout Intros",
       "tagline": "Custom walkup songs & intros",
-      "description": "Pro-quality walkout intros for sports teams. Build a roster, pair each player with an AI-announcer intro and a trimmed music cue, then trigger their entrance with a tap. Works with or without Apple Music.",
+      "description": "Pro-quality walkout intros for sports teams. Build a roster, pair each player with one of five AI announcer voices and a song cued to the drop, then run game day with one tap. Eleven sports, Apple Music or your own library, free to try with a Pro subscription.",
       "category": "iOS App · Sports",
-      "meta": "Live on the App Store",
+      "meta": "Live",
       "available": true,
       "link": "https://apps.apple.com/us/app/walkout-intros/id6761736614",
       "icon": "walkout-intros",
-      "glyph": "bi-megaphone-fill"
+      "glyph": "bi-megaphone-fill",
+      "shot": "walkout-game-mode",
+      "brandColor": "#fb923c",
+      "note": "Free · Pro subscription"
     }
   ]
 }

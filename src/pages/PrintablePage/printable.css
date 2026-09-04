@@ -1,4 +1,4 @@
-/* PrintablePage — a clean résumé shown on a "sheet" on screen and
+/* PrintablePage — a clean resume shown on a "sheet" on screen and
  * print-optimised via @media print. Self-contained: no Bootstrap classes,
  * no theme tokens, so it stays a stable, conservative printed document. */
 
@@ -25,8 +25,13 @@
     text-decoration: none;
 }
 .pp-back:hover { color: #1d1d1b; }
-.pp-variant-link {
+.pp-variant-links {
     margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.1rem;
+}
+.pp-variant-link {
     font-size: 0.9rem;
     font-weight: 500;
     color: #2e5339;
@@ -145,6 +150,7 @@
     margin: 0 0.4rem;
     color: #b6b6ad;
 }
+.pp-head-site { display: none; }
 
 /* --- sections --- */
 .pp-section { margin-bottom: 1.5rem; }
@@ -237,6 +243,17 @@
     color: #2e5339;
 }
 .pp-entry-place { color: #8a8a82; }
+.pp-entry-org-name {
+    font-weight: 700;
+    color: #1d1d1b;
+}
+.pp-entry-org-link {
+    font-size: 0.8rem;
+    color: #2e5339;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+}
 .pp-entry-desc { margin: 0 0 0.4rem; }
 .pp-bullets {
     margin: 0;
@@ -253,6 +270,26 @@
     text-underline-offset: 2px;
     text-decoration-thickness: 1px;
 }
+
+/* --- independent ventures (print routes only) ---
+ * Compact founder blocks: org → role + date on one line → short prose. */
+.pp-venture { margin-bottom: 0.85rem; }
+.pp-venture:last-child { margin-bottom: 0; }
+.pp-venture-org {
+    margin: 0;
+    font-size: 0.96rem;
+    font-weight: 700;
+}
+.pp-venture-role {
+    margin: 0.1rem 0 0.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    color: #6b6b66;
+}
+.pp-venture-summary { margin: 0; }
 
 /* --- end-of-resume card (condensed variant, screen only) --- */
 .pp-more {
@@ -299,7 +336,6 @@
 .pp-print-footer { display: none; }
 
 /* --- page-one strip pitching the interactive site (print/PDF only) --- */
-.pp-site-strip { display: none; }
 
 @media (max-width: 620px) {
     .pp-entry-date { margin-left: 0; flex-basis: 100%; }
@@ -307,8 +343,10 @@
 }
 
 /* Dark mode is screen only — @media print below always renders light, since
- * printers don't need a dark theme and forced dark backgrounds waste ink. */
-@media (prefers-color-scheme: dark) {
+ * printers don't need a dark theme and forced dark backgrounds waste ink.
+ * Scoped to `screen` explicitly: an unscoped dark block leaked the dark sheet
+ * background into PDFs saved from a dark-mode browser. */
+@media screen and (prefers-color-scheme: dark) {
     .pp-screen { background: #141413; }
     .pp-back { color: #b6b6ad; }
     .pp-back:hover { color: #ebebe5; }
@@ -344,6 +382,8 @@
 
     .pp-entry-date { color: #6b6b66; }
     .pp-entry-org { color: #8a8a82; }
+    .pp-entry-org-name { color: #ebebe5; }
+    .pp-entry-org-link { color: #7fb992; }
     .pp-entry-type {
         border-color: #3a5840;
         color: #7fb992;
@@ -371,7 +411,7 @@
      * the giant height yields pages of trailing blanks and the fixed/overflow
      * clips the sheet — a blank PDF. Force a clean, content-sized document. */
     html, body {
-        background: #fff;
+        background: #fff !important;
         height: auto !important;
         min-height: 0 !important;
         overflow: visible !important;
@@ -389,43 +429,35 @@
     .pp-banner,
     .pp-more { display: none; }
 
-    /* Page-one strip under the header: the interactive-site pitch plus a
-     * scannable QR. print-color-adjust forces the tint even when the print
-     * dialog's "background graphics" box is unchecked. */
-    .pp-site-strip {
+    /* Header QR block — print only. Sits to the right of the contact lines
+     * so the interactive-site pitch costs no vertical space on page one. */
+    .pp-head {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        justify-content: space-between;
         gap: 16pt;
-        margin: 0 0 14pt;
-        padding: 9pt 13pt;
-        background: #eef2ee;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-        break-inside: avoid;
     }
-    .pp-site-strip-text {
-        flex: 1;
+    .pp-head-main { flex: 1; min-width: 0; }
+    .pp-head-site {
         display: flex;
         flex-direction: column;
-        gap: 2pt;
+        align-items: center;
+        gap: 3pt;
+        flex: none;
+        text-align: center;
     }
-    .pp-site-strip-title {
-        margin: 0;
-        font-size: 9.5pt;
-        font-weight: 700;
-        color: #000;
+    .pp-head-qr {
+        display: block;
+        width: 50pt;
+        height: 50pt;
     }
-    .pp-site-strip-sub {
+    .pp-head-site-text {
         margin: 0;
-        font-size: 9pt;
+        font-size: 7.5pt;
+        line-height: 1.3;
         color: #333;
     }
-    .pp-site-strip-sub a { font-weight: 700; }
-    .pp-site-strip-qr {
-        display: block;
-        width: 44pt;
-        height: 44pt;
-    }
+    .pp-head-site-text a { font-weight: 700; }
 
     /* The screen CTAs above are replaced in print by a plain-text footer:
      * spelled-out URLs stay readable on paper, and Chrome's save-as-PDF
@@ -443,6 +475,7 @@
         max-width: none;
         margin: 0;
         padding: 0;
+        background: #fff;
         box-shadow: none;
         font-size: 10.5pt;
         line-height: 1.4;
@@ -457,10 +490,13 @@
     .pp-contact-line,
     .pp-availability,
     .pp-entry-org,
+    .pp-venture-role,
     .pp-skill { color: #333; }
     .pp-entry-date,
     .pp-entry-place,
     .pp-expertise-level { color: #444; }
+    .pp-entry-org-name { color: #000; }
+    .pp-entry-org-link { font-size: 8.5pt; }
 
     .pp-name { font-size: 22pt; }
     .pp-role { font-size: 11pt; }
@@ -471,6 +507,7 @@
     .pp-skill-line { font-size: 9.5pt; }
     .pp-entry-date { font-size: 9pt; }
     .pp-entry-title { font-size: 11pt; }
+    .pp-venture-org { font-size: 11pt; }
     .pp-skill { font-size: 8.5pt; }
 
     /* Condensed variant: tighter rhythm so the trimmed content lands on as few
@@ -484,6 +521,7 @@
     .pp-sheet--condensed .pp-section { margin-bottom: 10pt; }
     .pp-sheet--condensed .pp-section-label { margin-bottom: 0.45rem; }
     .pp-sheet--condensed .pp-entry { margin-bottom: 0.75rem; }
+    .pp-sheet--condensed .pp-venture { margin-bottom: 0.55rem; }
     .pp-sheet--condensed .pp-entry-desc { margin-bottom: 0.25rem; }
     .pp-sheet--condensed .pp-bullets li { margin-bottom: 0.12rem; }
     .pp-sheet--condensed .pp-skill-line { margin-bottom: 0.22rem; }
@@ -492,9 +530,18 @@
     .pp-section-label { break-after: avoid; }
     .pp-head,
     .pp-entry,
+    .pp-venture,
+    .pp-section--ventures,
     .pp-expertise,
     .pp-skill-line { break-inside: avoid; }
     .pp-bullets li { break-inside: avoid; }
+    /* Long entries (see FLOW_BULLET_THRESHOLD) may continue onto the next
+     * page, but only between bullets: the heading block stays with the
+     * first bullets, and no bullet is ever cut in half. */
+    .pp-entry--flow { break-inside: auto; }
+    .pp-entry--flow .pp-entry-title,
+    .pp-entry--flow .pp-entry-org { break-inside: avoid; break-after: avoid; }
+    .pp-entry--flow .pp-entry-desc { break-inside: avoid; }
 
     /* Keep links visibly link-like in the PDF — accent colour + underline so a
      * reader knows they're clickable (Chrome preserves them as live anchors). */

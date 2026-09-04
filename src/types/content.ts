@@ -20,6 +20,23 @@ export interface Contact {
     linkedin: string;
     website: string;
     availability: string;
+    /** Extra header lines for the contract/C2C print variants (entity,
+     *  availability date, location/remote posture, work authorization). */
+    contractDetails: string[];
+}
+
+/** Audience-specific headline + summary for the condensed print variants.
+ *  `{YEARS}` is replaced with the computed years of experience. */
+export interface PrintAudienceCopy {
+    headline: string;
+    summary: string;
+}
+
+/** Print-only content: per-audience copy plus the Highlights block. */
+export interface PrintContent {
+    corporate: PrintAudienceCopy;
+    contract: PrintAudienceCopy;
+    highlights: string[];
 }
 
 /** One "Category: item, item, …" line in the print page's Technical Skills section. */
@@ -33,6 +50,8 @@ export interface SectionHead {
     kicker: string;
     title: string;
     intro?: string;
+    /** Optional outbound link rendered beside the heading (e.g. the studio site). */
+    cta?: { label: string; href: string };
 }
 
 export interface Sections {
@@ -62,6 +81,13 @@ export interface Experience {
     engagementType: string;
     bullets?: string[];
     badges?: string[];
+    /** Set to "ventures" to pull the entry out of the Experience list on
+     *  every surface (site timeline, /print, /print/full) and into the
+     *  compact Independent Ventures block that follows it. */
+    section?: string;
+    /** 2–3 line prose rendered for a ventures entry in place of
+     *  `description` + `bullets` on every surface. */
+    ventureSummary?: string;
 }
 
 export interface Education {
@@ -87,11 +113,19 @@ export interface Project {
     icon?: string;
     /** Bootstrap-icon class used as a fallback glyph until a real logo is added. */
     glyph?: string;
+    /** Slug into the screenshot map (see Projects.tsx `shotFor`). */
+    shot?: string;
+    /** The product's own brand accent; drives its status chip. The studio
+     *  site uses the same value so the two read as one system. */
+    brandColor?: string;
+    /** Small footnote under the card's CTA, e.g. "Free · Pro subscription". */
+    note?: string;
 }
 
 export interface Data {
     hero: Hero;
     contact: Contact;
+    print: PrintContent;
     skills: SkillGroup[];
     sections: Sections;
     roles: Role[];

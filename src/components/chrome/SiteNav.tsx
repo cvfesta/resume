@@ -141,8 +141,8 @@ const SiteNav: React.FC = () => {
                         to="/print"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Printable résumé"
-                        title="Printable résumé"
+                        aria-label="Printable resume"
+                        title="Printable resume"
                         onClick={() => trackEvent('Printable Résumé Opened', { source: 'nav' })}
                     >
                         <i className="bi bi-printer-fill" aria-hidden="true" />

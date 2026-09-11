@@ -82,7 +82,7 @@ export interface Experience {
     bullets?: string[];
     badges?: string[];
     /** Set to "ventures" to pull the entry out of the Experience list on
-     *  every surface (site timeline, /print, /print/full) and into the
+     *  every surface (site timeline, /print, /print/c2c, and their /full variants) and into the
      *  compact Independent Ventures block that follows it. */
     section?: string;
     /** 2–3 line prose rendered for a ventures entry in place of

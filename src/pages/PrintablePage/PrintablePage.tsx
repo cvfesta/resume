@@ -23,7 +23,7 @@ const hostnameOf = (url: string): string => {
 
 /** Bullets each entry keeps on the condensed variants, keyed by
  * "organization|date" (falling back to organization alone). All trimming
- * lives here in the render layer — the data stays complete for /print/full. */
+ * lives here in the render layer — the data stays complete for the full variants. */
 const CONDENSED_BULLET_COUNTS: Record<string, number> = {
     'Public Consulting Group': 6,
     'Unisys|2018 - 2022': 2,
@@ -47,11 +47,13 @@ const condensedBullets = (exp: Experience): string[] => {
  * page 2 and leaves a quarter of page 1 blank. */
 const FLOW_BULLET_THRESHOLD = 5;
 
-/** The three print routes. Two condensed, audience-specific resumes (the
- * ones actually submitted) plus the long-form reference. `audience` picks
- * the headline/summary copy from `resume.json`'s `print` block and decides
- * whether the contract-only header lines show. */
-export type PrintVariant = 'corporate' | 'contract' | 'full';
+/** The four print routes: a condensed and a full-detail resume per audience.
+ * The condensed ones are what actually gets submitted; each links to the
+ * full version of its *own* audience, so a reader of the C2C resume lands
+ * straight on the C2C full resume. `audience` picks the headline/summary
+ * copy from `resume.json`'s `print` block and decides whether the
+ * contract-only header lines show. */
+export type PrintVariant = 'corporate' | 'contract' | 'corporateFull' | 'contractFull';
 type PrintAudience = 'corporate' | 'contract';
 
 interface VariantMeta {
@@ -64,15 +66,34 @@ interface VariantMeta {
 const VARIANTS: Record<PrintVariant, VariantMeta> = {
     corporate: { path: '/print', label: 'corporate (W-2)', audience: 'corporate', condensed: true },
     contract: { path: '/print/c2c', label: 'contract (C2C)', audience: 'contract', condensed: true },
-    full: { path: '/print/full', label: 'full-detail', audience: 'contract', condensed: false },
+    corporateFull: { path: '/print/full', label: 'corporate (W-2)', audience: 'corporate', condensed: false },
+    contractFull: { path: '/print/c2c/full', label: 'contract (C2C)', audience: 'contract', condensed: false },
+};
+
+/** The variant at the other detail level for the same audience. */
+const counterpartOf = (variant: PrintVariant): PrintVariant => {
+    const { audience, condensed } = VARIANTS[variant];
+    return (Object.keys(VARIANTS) as PrintVariant[]).find(
+        (v) => VARIANTS[v].audience === audience && VARIANTS[v].condensed !== condensed,
+    )!;
+};
+
+/** The variant for the other audience at the same detail level. */
+const siblingOf = (variant: PrintVariant): PrintVariant => {
+    const { audience, condensed } = VARIANTS[variant];
+    return (Object.keys(VARIANTS) as PrintVariant[]).find(
+        (v) => VARIANTS[v].audience !== audience && VARIANTS[v].condensed === condensed,
+    )!;
 };
 
 interface PrintablePageProps {
     variant?: PrintVariant;
 }
 
-const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
+const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' }) => {
     const { condensed, audience, label } = VARIANTS[variant];
+    const fullVariant = condensed ? counterpartOf(variant) : variant;
+    const fullPath = VARIANTS[fullVariant].path;
     const corporate = audience === 'corporate';
     const years = calculateYearsOfExperience();
     const { contact } = data;
@@ -88,7 +109,6 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
     const highlights = data.print.highlights ?? [];
     const ventures = data.experience.filter((exp) => exp.section === 'ventures');
     const experience = data.experience.filter((exp) => exp.section !== 'ventures');
-    const otherVariants = (Object.keys(VARIANTS) as PrintVariant[]).filter((v) => v !== variant);
 
     const variantLink = (target: PrintVariant, className: string, text?: string) => (
         <Link
@@ -107,7 +127,12 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
             <div className="pp-toolbar">
                 <Link to="/" className="pp-back">← Back to the site</Link>
                 <div className="pp-variant-links">
-                    {otherVariants.map((v) => variantLink(v, 'pp-variant-link'))}
+                    {variantLink(siblingOf(variant), 'pp-variant-link')}
+                    {variantLink(
+                        counterpartOf(variant),
+                        'pp-variant-link',
+                        condensed ? 'View full-detail version' : 'View condensed version',
+                    )}
                 </div>
                 <button
                     type="button"
@@ -129,7 +154,7 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
                         <span>The full version adds areas of expertise, every engagement detail, and shipped products.</span>
                     </div>
                     <Link
-                        to="/print/full"
+                        to={fullPath}
                         className="pp-banner-btn"
                         onClick={() => trackEvent('Full Résumé CTA Clicked', { source: 'banner', variant })}
                     >
@@ -339,7 +364,7 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
                             in complete detail, and the products I've designed, built, and shipped.
                         </p>
                         <Link
-                            to="/print/full"
+                            to={fullPath}
                             className="pp-more-btn"
                             onClick={() => trackEvent('Full Résumé CTA Clicked', { source: 'end-card', variant })}
                         >
@@ -356,7 +381,7 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'full' }) => {
                     <p className="pp-print-footer">
                         This is the condensed {label} resume. Full detail — areas of expertise, every
                         engagement, and shipped products:{' '}
-                        <a href={`https://${contact.website}/print/full`}>{contact.website}/print/full</a>
+                        <a href={`https://${contact.website}${fullPath}`}>{contact.website}{fullPath}</a>
                     </p>
                 )}
 

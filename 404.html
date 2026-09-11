@@ -2,22 +2,81 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Christian Festa</title>
-    <!-- Single Page Apps for GitHub Pages — GitHub serves this for unknown paths.
-         It encodes the requested path into a query string and redirects to
-         index.html, which restores the real route (see the snippet in index.html).
-         pathSegmentsToKeep = 1 preserves the "/resume" project-page base. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Single Page Apps for GitHub Pages — restore the deep-link path that
+         404.html encoded into the query string, so /resume/print loads directly.
+         Must run before the app boots. -->
     <script type="text/javascript">
-      var pathSegmentsToKeep = 1;
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      }(window.location));
     </script>
+    <meta name="author" content="Christian Festa" />
+    <meta name="description" content="Christian Festa — technology executive leading the engineering and design teams behind secure, AI-powered, multi-million-dollar platforms, and founder shipping native iOS apps end to end." />
+    <link rel="canonical" href="https://cvfesta.github.io/resume/" />
+    <!-- Icons: SVG for modern tabs, ICO/PNG for everything else, tile PNGs for
+         home screens (iOS ignores transparency), mask-icon for Safari pinned tabs. -->
+    <link rel="icon" href="/resume/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/resume/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/resume/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/resume/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/resume/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/resume/safari-pinned-tab.svg" color="#ccff33" />
+    <link rel="manifest" href="/resume/site.webmanifest" />
+    <meta name="theme-color" content="#0a0b0a" />
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Christian Festa" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Christian Festa — Technology Executive" />
+    <meta property="og:description" content="Technology executive leading the teams behind secure, AI-powered, multi-million-dollar platforms — and founder building and shipping native iOS apps end to end." />
+    <meta property="og:url" content="https://cvfesta.github.io/resume/" />
+    <meta property="og:image" content="https://cvfesta.github.io/resume/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Christian Festa — Technology Executive" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Christian Festa — Technology Executive" />
+    <meta name="twitter:description" content="Technology executive leading the teams behind secure, AI-powered, multi-million-dollar platforms — and founder building and shipping native iOS apps end to end." />
+    <meta name="twitter:image" content="https://cvfesta.github.io/resume/og-image.png" />
+    <meta name="twitter:image:alt" content="Christian Festa — Technology Executive" />
+
+    <title>Christian Festa — Technology Executive</title>
+
+    <!-- JSON-LD structured data (Person) — for rich-result eligibility in search. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Christian Festa",
+        "jobTitle": "Technology Executive & Founder",
+        "url": "https://cvfesta.github.io/resume/",
+        "image": "https://cvfesta.github.io/resume/og-image.png",
+        "description": "Technology executive leading engineering and design teams behind secure, AI-powered, multi-million-dollar platforms, and founder of Christian Festa LLC building native iOS apps.",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Christian Festa LLC",
+          "url": "https://christianfesta.com"
+        },
+        "sameAs": [
+          "https://christianfesta.com",
+          "https://www.linkedin.com/in/christian-festa-008376b6/",
+          "https://github.com/cvfesta"
+        ]
+      }
+    </script>
+    <script type="module" crossorigin src="/resume/assets/index-O0EQ-NQe.js"></script>
+    <link rel="stylesheet" crossorigin href="/resume/assets/index-oqA9gbdX.css">
   </head>
-  <body></body>
+  <body class="" data-bs-theme="auto">
+    <div id="root"></div>
+  </body>
 </html>

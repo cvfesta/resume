@@ -1,10 +1,10 @@
 {
   "hero": {
     "title": "Christian Festa",
-    "eyebrow": "Director of Software Engineering · AI-Native Engineer",
+    "eyebrow": "Director of Software Engineering · Agentic AI Engineer",
     "statLabel": "years consulting & delivering",
-    "statementKickers": ["The work", "Right now", "AI-native"],
-    "subTitle": "I've spent {YEARS} years as a consultant, and every engagement has been client-facing. Not the configure-someone-else's-software kind of consulting: full design, development, and integration (DDI) of custom systems. I've owned every seat in the SDLC, from requirements and UX design in Figma through hands-on development, systems and data integration, and test oversight, and I've run the whole lifecycle as a delivery manager directing teams of 30+.\n\nToday I'm Director of Software Engineering, directing the teams behind a $40M AWS-hosted platform for a state agency client: secure generative AI on Amazon Bedrock with layered guardrails, the responsible-AI governance behind it, and the team building with two AI coding agents, GitHub Copilot and Claude Code.\n\nI don't only direct AI work, I do it. I design, architect, and code with Claude Code and MCP every day, working out the architecture with the agent before a line is written, then building, testing, and shipping. It's how I automate program management in Jira and Confluence, and how I design and ship my own iOS apps end to end."
+    "statementKickers": ["The work", "Right now", "Agentic AI"],
+    "subTitle": "I've spent {YEARS} years as a consultant, and every engagement has been client-facing. Not the configure-someone-else's-software kind of consulting: full design, development, and integration (DDI) of custom systems. I've owned every seat in the SDLC, from requirements and UX design in Figma through hands-on development, systems and data integration, and test oversight, and I've run the whole lifecycle as a delivery manager directing teams of 30+.\n\nToday I'm Director of Software Engineering, directing the teams behind a $40M AWS-hosted platform for a state agency client: secure generative AI on Amazon Bedrock with layered guardrails, the responsible-AI governance behind it, and the team building with two AI coding agents, GitHub Copilot and Claude Code.\n\nI'm a hands-on engineer who works agentically: I design, architect, and code alongside Claude Code and MCP, working out the architecture with the agent before a line is written, then building, testing, and shipping. I've helped build multi-agent systems on Strands and Amazon Bedrock AgentCore and automated program management across Jira and Confluence."
   },
   "contact": {
     "credential": "PMP",
@@ -174,9 +174,9 @@
       ]
     },
     {
-      "title": "AI-Native Engineer",
+      "title": "Agentic AI Engineer",
       "level": "Hands-on",
-      "subTitle": "I don’t only direct AI work, I do it. I design, architect, and code with Claude Code and MCP every day: working out the architecture with the agent before a line is written, then building, testing, and shipping. It’s how I help build multi-agent systems on Strands and Amazon Bedrock AgentCore, how I automate program management in Jira and Confluence, and how I ship my own iOS apps end to end.",
+      "subTitle": "I’m a hands-on engineer who works agentically: I design, architect, and code alongside Claude Code and MCP, working out the architecture with the agent before a line is written, then building, testing, and shipping. I’ve helped build multi-agent systems on Strands and Amazon Bedrock AgentCore and automated program management across Jira and Confluence.",
       "badges": [
         "Claude Code",
         "MCP",

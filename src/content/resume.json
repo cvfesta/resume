@@ -159,7 +159,7 @@
   },
   "roles": [
     {
-      "title": "Director of Software Engineering",
+      "title": "Engineering Leadership",
       "level": "Executive",
       "subTitle": "I direct the teams that design, build, and deliver AI-powered platforms for public-sector clients: a $40M AWS-hosted platform, secure generative AI on Amazon Bedrock with the governance behind it, and two AI coding agents, GitHub Copilot and Claude Code, built into everyday engineering. PMP-certified, I run the full lifecycle with cross-functional teams of 30+.",
       "badges": [
@@ -174,7 +174,7 @@
       ]
     },
     {
-      "title": "AI Engineer",
+      "title": "AI Engineering",
       "level": "Hands-on",
       "subTitle": "I’m a hands-on engineer who works agentically: I design, architect, and code alongside Claude Code and MCP, working out the architecture with the agent before a line is written, then building, testing, and shipping. I’ve helped build multi-agent systems on Strands and Amazon Bedrock AgentCore and automated program management across Jira and Confluence.",
       "badges": [
@@ -191,7 +191,7 @@
       ]
     },
     {
-      "title": "Principal UX Designer",
+      "title": "UX & Design Systems",
       "level": "Expert",
       "subTitle": "I build design systems and UX strategy for complex, accessible, enterprise-scale interfaces. My Figma-led initiatives have doubled design-team output, enforced WCAG compliance, and produced interfaces that hold up across every device and handoff.",
       "badges": [

@@ -4,7 +4,7 @@
     "eyebrow": "Director of Software Engineering · AI-Native Engineer",
     "statLabel": "years consulting & delivering",
     "statementKickers": ["The work", "Right now", "AI-native"],
-    "subTitle": "I've spent {YEARS} years as a consultant, and every engagement has been client-facing. Not the configure-someone-else's-software kind of consulting: full design, development, and integration (DDI) of custom systems. I've owned every seat in the SDLC, from requirements and UX design in Figma through hands-on development, systems and data integration, and test oversight, and I've run the whole lifecycle as a delivery manager directing teams of 30+.\n\nToday I'm Director of Software Engineering, directing the teams behind a $40M AWS-hosted platform for a state agency client: secure generative AI on Amazon Bedrock with layered guardrails, the responsible-AI governance behind it, and GitHub Copilot rolled out to the team under approved enterprise licensing.\n\nI don't only direct AI work, I do it. I design, architect, and code with Claude Code and MCP every day, working out the architecture with the agent before a line is written, then building, testing, and shipping. It's how I automate program management in Jira and Confluence, and how I design and ship my own iOS apps end to end."
+    "subTitle": "I've spent {YEARS} years as a consultant, and every engagement has been client-facing. Not the configure-someone-else's-software kind of consulting: full design, development, and integration (DDI) of custom systems. I've owned every seat in the SDLC, from requirements and UX design in Figma through hands-on development, systems and data integration, and test oversight, and I've run the whole lifecycle as a delivery manager directing teams of 30+.\n\nToday I'm Director of Software Engineering, directing the teams behind a $40M AWS-hosted platform for a state agency client: secure generative AI on Amazon Bedrock with layered guardrails, the responsible-AI governance behind it, and the team building with two AI coding agents, GitHub Copilot and Claude Code.\n\nI don't only direct AI work, I do it. I design, architect, and code with Claude Code and MCP every day, working out the architecture with the agent before a line is written, then building, testing, and shipping. It's how I automate program management in Jira and Confluence, and how I design and ship my own iOS apps end to end."
   },
   "contact": {
     "credential": "PMP",
@@ -23,15 +23,19 @@
       "highlights": [
         "Direct a $40M AWS-hosted grant management platform for a California state health agency with cross-functional teams of 30+.",
         "Built the firm's secure generative AI capability: a RAG application on Amazon Bedrock that cut week-long work to hours with zero PII or IP exposure, plus the governance framework behind it.",
-        "Led AI enablement for engineering, rolling out GitHub Copilot under enterprise licensing.",
+        "Led AI enablement for engineering: the team develops with two AI coding agents, GitHub Copilot and Claude Code.",
         "Delivery manager across three of four solutions on Hawaii's $100M BESSD welfare modernization; design, BA, development, and test reported to me."
       ]
     },
     "contract": {
       "headline": "AI Engineering & Delivery Consultant · Agentic Workflows (Claude Code, MCP) · AWS Bedrock",
       "summary": "Hands-on AI engineering and delivery consultant who builds agentic workflows and secure generative AI for organizations that can't afford for it to fail. I work agentically every day with Claude Code and MCP, using it to automate program management across Jira and Confluence, and I led a secure Retrieval-Augmented Generation application on Amazon Bedrock with layered guardrails and zero PII or IP exposure. I also design, build, and ship my own iOS apps end to end, including on-device AI. {YEARS} years of client-facing design, development, and integration across state and county programs, corp-to-corp since 2016.",
-      "skillsLead": "Claude Code · MCP · Prompt & workflow design · AWS Bedrock · RAG · Python · TypeScript · React · Node.js · Swift · GitHub Copilot",
+      "skillsLead": "Claude Code · MCP · Strands Agents · Amazon Bedrock (AgentCore, Guardrails) · Multi-agent AI · RAG · Python · TypeScript · React · AppSync GraphQL · Swift · GitHub Copilot",
       "selectedProjects": [
+        {
+          "title": "Multi-agent AI assistant.",
+          "text": "Core engineer on a secure chat agent over proprietary knowledge: Strands Agents SDK, Amazon Bedrock AgentCore and Guardrails, AWS Lambda, and a React 19 streaming front end on AppSync GraphQL."
+        },
         {
           "title": "Agentic program management.",
           "text": "Built a Claude Code + MCP workflow that automates program management across Jira and Confluence for a 30+ person delivery program."
@@ -75,9 +79,12 @@
       "items": [
         "Claude Code",
         "MCP",
+        "Strands Agents",
+        "Amazon Bedrock (AgentCore, Guardrails)",
         "Agentic AI",
+        "Multi-Agent Systems",
         "RAG",
-        "AWS (Bedrock, Lambda, S3, DynamoDB, RDS/MySQL, SQS/SNS, VPC, IAM)",
+        "AWS (Lambda, AppSync, S3, DynamoDB, RDS/MySQL, SQS/SNS, Cognito, CloudWatch, VPC, IAM)",
         "AI Guardrails",
         "PII Redaction",
         "Responsible AI Governance",
@@ -88,17 +95,22 @@
     {
       "category": "Engineering",
       "items": [
-        "React",
+        "React 19",
         "TypeScript",
+        "Vite",
+        "Tailwind CSS",
         "Node.js",
         "Python",
+        "pytest",
         "Java",
         "Spring Boot",
         "Swift (iOS)",
+        "GraphQL",
         "REST APIs",
         "Git",
-        "CI/CD",
-        "Automated Regression Testing"
+        "CI/CD (GitHub Actions)",
+        "Playwright",
+        "axe Accessibility Testing"
       ]
     },
     {
@@ -149,12 +161,12 @@
     {
       "title": "Director of Software Engineering",
       "level": "Executive",
-      "subTitle": "I direct the teams that design, build, and deliver AI-powered platforms for public-sector clients: a $40M AWS-hosted platform, secure generative AI on Amazon Bedrock with the governance behind it, and GitHub Copilot rolled out across engineering. PMP-certified, I run the full lifecycle with cross-functional teams of 30+.",
+      "subTitle": "I direct the teams that design, build, and deliver AI-powered platforms for public-sector clients: a $40M AWS-hosted platform, secure generative AI on Amazon Bedrock with the governance behind it, and two AI coding agents, GitHub Copilot and Claude Code, built into everyday engineering. PMP-certified, I run the full lifecycle with cross-functional teams of 30+.",
       "badges": [
         "Full-Lifecycle DDI",
         "Secure GenAI on AWS Bedrock (RAG)",
         "Responsible AI Governance",
-        "AI Enablement (GitHub Copilot)",
+        "AI Enablement (Copilot · Claude Code)",
         "Data Migration & Integration",
         "Agile · Scrum · PMP",
         "Teams of 30+",
@@ -164,13 +176,15 @@
     {
       "title": "AI-Native Engineer",
       "level": "Hands-on",
-      "subTitle": "I don’t only direct AI work, I do it. I design, architect, and code with Claude Code and MCP every day: working out the architecture with the agent before a line is written, then building, testing, and shipping. It’s how I automate program management in Jira and Confluence and how I ship my own iOS apps end to end.",
+      "subTitle": "I don’t only direct AI work, I do it. I design, architect, and code with Claude Code and MCP every day: working out the architecture with the agent before a line is written, then building, testing, and shipping. It’s how I help build multi-agent systems on Strands and Amazon Bedrock AgentCore, how I automate program management in Jira and Confluence, and how I ship my own iOS apps end to end.",
       "badges": [
         "Claude Code",
         "MCP",
-        "Agentic Workflows",
+        "Strands Agents",
+        "Bedrock AgentCore",
+        "Multi-Agent Systems",
+        "Bedrock Guardrails",
         "AI-Assisted Architecture & Design",
-        "Prompt & Workflow Design",
         "Jira & Confluence Automation",
         "Swift · TypeScript · Python",
         "On-Device AI (iOS)"
@@ -201,11 +215,13 @@
       "corporateDescription": "Director of Software Engineering, technical delivery manager, and principal design lead for a $40M AWS-hosted grant management platform delivered to a California state health agency: a public portal, an administrative back office, and the firm's secure generative AI capability.",
       "bullets": [
         "Direct cross-functional teams of 30+ designers, developers, and engineers across the full lifecycle and serve as the client-facing technical lead.",
-        "Lead the build of a multi-tenant platform that hosts a portfolio of products on shared infrastructure, now approaching market launch.",
+        "Core engineer on a secure multi-agent AI assistant that lets teams chat with and review documents against proprietary knowledge, built on the Strands Agents SDK, Amazon Bedrock AgentCore, and Bedrock Guardrails, with AWS Lambda services and a React 19 streaming front end on AppSync GraphQL.",
+        "Lead the build of a multi-tenant platform that hosts a portfolio of products on shared infrastructure, now approaching market launch, and build features hands-on across its React front ends, from a drag-and-drop form builder to automated accessibility testing in Playwright.",
         "Led strategy and delivery of a secure Retrieval-Augmented Generation (RAG) application on Amazon Bedrock that lets staff query proprietary data in natural language with zero PII or IP exposure, using isolated foundation models and layered guardrails; work that took a week or more now takes hours.",
         "Built the responsible-AI governance framework that balances fast iteration with enterprise compliance and gives the organization a repeatable model for future AI initiatives.",
         "Architect the multi-source data migration for client handoff: SharePoint libraries, AWS MySQL and DynamoDB stores, S3 archives, and secure SFTP/MOVEit transfer into a federal grants system, with full data-fidelity validation.",
-        "Rolled out GitHub Copilot under enterprise licensing and run an agentic practice on Claude Code and MCP that automates program management in Jira and Confluence, compressing delivery cycles across every workstream.",
+        "Engineers develop with two AI coding agents, GitHub Copilot under enterprise licensing and Claude Code, built into everyday delivery.",
+        "Automated program management in Jira and Confluence with Claude Code and MCP, compressing delivery cycles across every workstream.",
         "Stood up a Figma design system that standardized components, enforced WCAG compliance, and guaranteed responsive behavior across devices, streamlining design-to-development handoff.",
         "Took the first phase live in three months by directing onshore and offshore teams and instituting testing workflows across the lifecycle."
       ],
@@ -214,11 +230,15 @@
       "engagementType": "Consultant → Employee",
       "badges": [
         "Client-Facing DDI Delivery",
-        "Multi-Tenant Platform Delivery",
+        "Multi-Agent AI (Strands · AgentCore)",
         "Generative AI & RAG Leadership",
+        "Bedrock Guardrails",
+        "Multi-Tenant Platform Delivery",
+        "React 19 · AppSync GraphQL",
         "AWS Bedrock Delivery",
-        "Data Migration & Client Handoff",
         "AI-Accelerated Engineering (Copilot · Claude Code · MCP)",
+        "Data Migration & Client Handoff",
+        "Playwright & Accessibility Testing",
         "Secure AI Governance",
         "Team Leadership (30+ Members)",
         "Figma Design System",
@@ -226,19 +246,23 @@
         "Corp-to-Corp Consultant (2022–2025)"
       ],
       "contractBullets": [
-        "Built and run an agentic engineering practice on Claude Code and MCP that automates program management in Jira and Confluence, compressing delivery cycles across every workstream.",
+        "Core engineer on a secure multi-agent AI assistant over proprietary knowledge, built on the Strands Agents SDK, Amazon Bedrock AgentCore, and Bedrock Guardrails, with a React 19 streaming front end on AppSync GraphQL.",
+        "Automated program management in Jira and Confluence with Claude Code and MCP, compressing delivery cycles across every workstream.",
+        "Engineers develop with two AI coding agents, GitHub Copilot under enterprise licensing and Claude Code, built into everyday delivery.",
         "Built a secure Retrieval-Augmented Generation (RAG) application on Amazon Bedrock that lets staff query proprietary data in natural language with zero PII or IP exposure, using isolated foundation models and layered guardrails; work that took a week or more now takes hours.",
         "Designed the guardrails and the responsible-AI governance framework that let the team iterate quickly while staying compliant.",
         "Architect the multi-source data migration for client handoff: SharePoint libraries, AWS MySQL and DynamoDB stores, S3 archives, and secure SFTP/MOVEit transfer into a federal grants system, with full data-fidelity validation.",
-        "Lead the build of a multi-tenant platform that hosts a portfolio of products on shared infrastructure, now approaching market launch.",
+        "Lead the build of a multi-tenant platform that hosts a portfolio of products on shared infrastructure, now approaching market launch, and build features hands-on across its React front ends, from a drag-and-drop form builder to automated accessibility testing in Playwright.",
         "Client-facing technical lead for a $40M AWS-hosted platform, directing cross-functional teams of 30+ designers, developers, and engineers across the full lifecycle.",
-        "Rolled out GitHub Copilot under enterprise licensing and stood up a Figma design system that standardized components, enforced WCAG compliance, and streamlined design-to-development handoff."
+        "Stood up a Figma design system that standardized components, enforced WCAG compliance, and streamlined design-to-development handoff."
       ],
       "corporateBullets": [
         "Built the firm's secure generative AI capability: a Retrieval-Augmented Generation (RAG) application on Amazon Bedrock with isolated foundation models and layered guardrails (zero PII or IP exposure; week-long work now takes hours) and the responsible-AI governance framework that gives the organization a repeatable model for future AI initiatives.",
-        "Lead AI enablement for engineering: rolled out GitHub Copilot under enterprise licensing and brought Claude Code and MCP into daily delivery to automate program management in Jira and Confluence.",
+        "Lead AI enablement for engineering: the team develops with two AI coding agents, GitHub Copilot under enterprise licensing and Claude Code.",
+        "Automated program management in Jira and Confluence with Claude Code and MCP, compressing delivery cycles across every workstream.",
+        "Core engineer on a secure multi-agent AI assistant over proprietary knowledge, built on the Strands Agents SDK, Amazon Bedrock AgentCore, and Bedrock Guardrails, with a React 19 streaming front end on AppSync GraphQL.",
         "Direct cross-functional teams of 30+ designers, developers, and engineers and serve as the client-facing technical lead.",
-        "Lead the build of a multi-tenant platform that hosts a portfolio of products on shared infrastructure, now approaching market launch.",
+        "Lead the build of a multi-tenant platform that hosts a portfolio of products on shared infrastructure, now approaching market launch, and build features hands-on across its React front ends, from a drag-and-drop form builder to automated accessibility testing in Playwright.",
         "Architect the multi-source data migration for client handoff (SharePoint, AWS MySQL/DynamoDB, S3, SFTP/MOVEit into a federal grants system) with full data-fidelity validation.",
         "Took the first phase live in three months by directing onshore and offshore teams and instituting testing workflows across the lifecycle."
       ],

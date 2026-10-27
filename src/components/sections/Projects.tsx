@@ -6,7 +6,7 @@ import data from '../../content/resume.json';
 import { Data } from '../../types/content';
 import walkoutDark from '../../assets/walkout-dark.svg';
 import ghostyIcon from '../../assets/ghosty.svg';
-import shotWalkout from '../../assets/shots/walkout-game-mode.jpg';
+import shotWalkout from '../../assets/shots/walkout-stage-live.jpg';
 import shotGhosty from '../../assets/shots/ghosty-home.jpg';
 import { trackEvent } from '../../utils/mixpanel';
 import './projects.css';
@@ -24,7 +24,7 @@ const logoFor: Record<string, string> = {
 /** Product screenshots, keyed by a project's `shot` slug. The same captures
  * sit on the studio site's ledger, so the two stay in step. */
 const shotFor: Record<string, string> = {
-    'walkout-game-mode': shotWalkout,
+    'walkout-stage-live': shotWalkout,
     'ghosty-home': shotGhosty,
 };
 

@@ -139,6 +139,9 @@ export interface Project {
     brandColor?: string;
     /** Small footnote under the card's CTA, e.g. "Free · Pro subscription". */
     note?: string;
+    /** A coming-soon line shown in place of the screenshot on the site; a
+     *  project with one shows no tagline or description there. */
+    teaser?: string;
     /** One-sentence version for the condensed corporate print's Independent
      *  Projects block; projects without one are left out there. */
     printLine?: string;

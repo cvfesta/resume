@@ -410,13 +410,13 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                         <div className="pp-entry" key={project.name}>
                             <h3 className="pp-entry-title">{project.name}</h3>
                             <p className="pp-entry-org">
-                                <span>{project.tagline}</span>
+                                {project.tagline && <span>{project.tagline}</span>}
                                 {project.meta && (
                                     <span className="pp-entry-type">{project.meta}</span>
                                 )}
                                 <span className="pp-entry-date">{project.category}</span>
                             </p>
-                            <p className="pp-entry-desc">{project.description}</p>
+                            {project.description && <p className="pp-entry-desc">{project.description}</p>}
                             {project.link && (
                                 <p className="pp-entry-link">
                                     <a

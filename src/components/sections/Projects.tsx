@@ -6,6 +6,7 @@ import data from '../../content/resume.json';
 import { Data } from '../../types/content';
 import walkoutDark from '../../assets/walkout-dark.svg';
 import ghostyIcon from '../../assets/ghosty.svg';
+import alohaHeart from '../../assets/aloha-heart.svg';
 import shotWalkout from '../../assets/shots/walkout-stage-live.jpg';
 import shotGhosty from '../../assets/shots/ghosty-home.jpg';
 import { trackEvent } from '../../utils/mixpanel';
@@ -19,6 +20,7 @@ const content = data as Data;
 const logoFor: Record<string, string> = {
     'walkout-intros': walkoutDark,
     'ghosty': ghostyIcon,
+    'aloha-fitness': alohaHeart,
 };
 
 /** Product screenshots, keyed by a project's `shot` slug. The same captures
@@ -140,15 +142,21 @@ const Projects: React.FC = () => {
                             <div className="project-body">
                                 <span className="project-category">{project.category}</span>
                                 <h3 className="project-name">{project.name}</h3>
-                                <p className="project-tagline">{project.tagline}</p>
-                                <div className={shot ? 'project-stage' : 'project-stage project-stage--empty'}>
-                                    {shot ? (
-                                        <img className="project-shot" src={shot} alt={`${project.name} screenshot`} loading="lazy" />
-                                    ) : (
-                                        <span>Screenshots when the build is ready</span>
-                                    )}
-                                </div>
-                                <p className="project-desc">{project.description}</p>
+                                {project.tagline && <p className="project-tagline">{project.tagline}</p>}
+                                {project.teaser ? (
+                                    <div className="project-stage project-stage--teaser">
+                                        <p className="project-teaser">{project.teaser}</p>
+                                    </div>
+                                ) : (
+                                    <div className={shot ? 'project-stage' : 'project-stage project-stage--empty'}>
+                                        {shot ? (
+                                            <img className="project-shot" src={shot} alt={`${project.name} screenshot`} loading="lazy" />
+                                        ) : (
+                                            <span>Screenshots when the build is ready</span>
+                                        )}
+                                    </div>
+                                )}
+                                {project.description && <p className="project-desc">{project.description}</p>}
                                 <div className="project-foot">
                                     {href ? (
                                         <span className="project-cta">
@@ -156,7 +164,7 @@ const Projects: React.FC = () => {
                                             <span className="project-arrow" aria-hidden="true">↗</span>
                                         </span>
                                     ) : (
-                                        <span className="project-cta project-cta--muted">Coming soon</span>
+                                        <span className="project-cta project-cta--soon">Coming soon</span>
                                     )}
                                     {project.note && (
                                         <span className="project-meta">{project.note}</span>

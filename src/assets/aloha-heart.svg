@@ -1,0 +1,10 @@
+<svg width="1024" height="1024" viewBox="-4 -4.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Aloha Fitness app icon mark (dark appearance): the coral heart from Aloha Fitness/Assets.xcassets/AppIcon (AppIcon-Dark-1024.png), top-to-bottom gradient. The card supplies the tile. -->
+<defs>
+<linearGradient id="aloha-heart" x1="12" y1="4.5" x2="12" y2="21" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#FF8FA8"/>
+<stop offset="1" stop-color="#E0254F"/>
+</linearGradient>
+</defs>
+<path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2.1 0 3.5 1.1 5.4 3.2 1.9-2.1 3.3-3.2 5.4-3.2 3.6 0 5.7 3.7 4.2 7.2C19.5 16.4 12 21 12 21z" fill="url(#aloha-heart)"/>
+</svg>

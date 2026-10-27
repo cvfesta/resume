@@ -353,15 +353,15 @@
   "projects": [
     {
       "name": "Aloha Fitness",
-      "tagline": "AI calorie and nutrition tracker",
-      "description": "A native iOS calorie and nutrition tracking app that uses an on-device LLM for three features: natural-language meal logging, multimodal photo meal analysis, and plain-language metabolism insights based on each user's adaptive Total Daily Energy Expenditure (TDEE).",
+      "tagline": "",
+      "description": "",
+      "teaser": "Something good is cooking.",
       "category": "iOS App · Health & Fitness",
-      "meta": "In development",
+      "meta": "Coming soon",
       "available": false,
       "link": "",
       "icon": "aloha-fitness",
-      "glyph": "bi-heart-pulse-fill",
-      "brandColor": "#5fd3c7"
+      "brandColor": "#ff6482"
     },
     {
       "name": "Ghosty Privacy",

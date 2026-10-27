@@ -92,10 +92,6 @@ a.project-card:hover {
 }
 .project-card--soon {
     cursor: default;
-    background: var(--bg-3);
-    border-style: dashed;
-    border-color: var(--line-strong);
-    box-shadow: none;
 }
 
 /* icon tile left, the product's status chip right */
@@ -130,6 +126,26 @@ a.project-card:hover {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-align: center;
+}
+/* coming-soon teaser: one display line over a glow in the product's colour,
+   filling the space a screenshot and description would take */
+.project-stage--teaser {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 15.5rem;
+    align-items: center;
+    padding: 1.5rem;
+    background:
+        radial-gradient(70% 55% at 50% 45%, color-mix(in srgb, var(--brand) 32%, transparent), transparent 70%),
+        var(--bg-3);
+}
+.project-teaser {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    line-height: 1.02;
+    text-align: center;
+    color: var(--text);
 }
 .project-shot {
     display: block;
@@ -227,7 +243,7 @@ a.project-card:hover .project-arrow {
     font-size: 0.78rem;
     color: var(--text-faint);
 }
-.project-cta--muted { color: var(--text-soft); }
+.project-cta--soon { color: var(--brand); }
 /* status chip in the product's own brand colour (--brand, declared on the
    card with the site accent as its default) */
 .project-status {

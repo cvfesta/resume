@@ -65,9 +65,9 @@ interface VariantMeta {
 
 const VARIANTS: Record<PrintVariant, VariantMeta> = {
     corporate: { path: '/print', audience: 'corporate', condensed: true },
-    contract: { path: '/print/c2c', audience: 'contract', condensed: true },
+    contract: { path: '/print/independent-contractor-gj3cva', audience: 'contract', condensed: true },
     corporateFull: { path: '/print/full', audience: 'corporate', condensed: false },
-    contractFull: { path: '/print/c2c/full', audience: 'contract', condensed: false },
+    contractFull: { path: '/print/independent-contractor-gj3cva/full', audience: 'contract', condensed: false },
 };
 
 /** The variant at the other detail level for the same audience. */

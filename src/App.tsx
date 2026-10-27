@@ -13,11 +13,11 @@ const getPageName = (pathname: string): string => {
             return 'Home';
         case '/print':
             return 'Print';
-        case '/print/c2c':
+        case '/print/independent-contractor-gj3cva':
             return 'Print Contract';
         case '/print/full':
             return 'Print Full';
-        case '/print/c2c/full':
+        case '/print/independent-contractor-gj3cva/full':
             return 'Print Contract Full';
         case '/slides':
             return 'Slides';
@@ -43,15 +43,28 @@ const App: React.FC = () => {
         document.title = pageName.startsWith('Print')
             ? `${content.hero.title} — Resume`
             : `${content.hero.title} — ${content.hero.eyebrow}`;
+        // The contract résumé lives at an unlisted URL; keep it out of
+        // search results as well.
+        let robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+        if (pageName.startsWith('Print Contract')) {
+            if (!robots) {
+                robots = document.createElement('meta');
+                robots.name = 'robots';
+                document.head.appendChild(robots);
+            }
+            robots.content = 'noindex, nofollow';
+        } else {
+            robots?.remove();
+        }
     }, [location]);
 
     return (
         <Routes>
             <Route path="/" element={<Slides />} />
             <Route path="/print" element={<PrintablePage variant="corporate" />} />
-            <Route path="/print/c2c" element={<PrintablePage variant="contract" />} />
+            <Route path="/print/independent-contractor-gj3cva" element={<PrintablePage variant="contract" />} />
             <Route path="/print/full" element={<PrintablePage variant="corporateFull" />} />
-            <Route path="/print/c2c/full" element={<PrintablePage variant="contractFull" />} />
+            <Route path="/print/independent-contractor-gj3cva/full" element={<PrintablePage variant="contractFull" />} />
             <Route path="/slides" element={<Slides />} />
             <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

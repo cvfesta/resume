@@ -4,7 +4,7 @@
     "eyebrow": "Director of Software Engineering · AI Engineer",
     "statLabel": "years consulting & delivering",
     "statementKickers": ["The work", "Right now", "AI engineering"],
-    "subTitle": "I've spent {YEARS} years as a consultant, and every engagement has been client-facing. Not the configure-someone-else's-software kind of consulting: full design, development, and integration (DDI) of custom systems. I've owned every seat in the SDLC, from requirements and UX design in Figma through hands-on development, systems and data integration, and test oversight, and I've run the whole lifecycle as a delivery manager directing teams of 30+.\n\nToday I'm Director of Software Engineering, directing the teams behind a $40M AWS-hosted platform for a state agency client: secure generative AI on Amazon Bedrock with layered guardrails, the responsible-AI governance behind it, and the team building with two AI coding agents, GitHub Copilot and Claude Code.\n\nI'm a hands-on engineer who works agentically: I design, architect, and code alongside Claude Code and MCP, working out the architecture with the agent before a line is written, then building, testing, and shipping. I've helped build multi-agent systems on Strands and Amazon Bedrock AgentCore and automated program management across Jira and Confluence."
+    "subTitle": "I've spent {YEARS} years as a consultant, and every engagement has been client-facing. Not the configure-someone-else's-software kind of consulting: full design, development, and integration (DDI) of custom systems. I've owned every seat in the SDLC, from requirements and UX design in Figma through hands-on development, systems and data integration, and test oversight, and I've run the whole lifecycle as a delivery manager directing teams of 30+.\n\nToday I'm Director of Software Engineering, leading multiple programs from design through delivery: a $40M AWS-hosted platform for a state agency client, secure generative and multi-agent AI on Amazon Bedrock with the governance behind it, and a team building with two AI coding agents, GitHub Copilot and Claude Code.\n\nI'm a hands-on engineer who works agentically: I design, architect, and code alongside Claude Code and MCP, working out the architecture with the agent before a line is written, then building, testing, and shipping. I've helped build multi-agent systems on Strands and Amazon Bedrock AgentCore and automated program management across Jira and Confluence."
   },
   "contact": {
     "credential": "PMP",
@@ -19,10 +19,10 @@
   "print": {
     "corporate": {
       "headline": "Engineering & AI Leader · Director of Software Engineering · Generative AI, AI Enablement, Platform Delivery",
-      "summary": "Engineering and AI leader who built a consulting firm's secure generative AI capability and the governance that lets it scale: Retrieval-Augmented Generation on Amazon Bedrock with layered guardrails and responsible-AI policy. I lead AI enablement across engineering, rolling out GitHub Copilot and bringing Claude Code and MCP into daily delivery, while directing a $40M AWS-hosted platform for a California state health agency with cross-functional teams of 30+. I stay hands-on as a core engineer on multi-agent AI systems built on Strands Agents and Amazon Bedrock AgentCore. {YEARS} years delivering on regulated healthcare, eligibility, and criminal-justice data, contributing to $100M+ in winning proposals. PMP-certified.",
+      "summary": "Engineering and AI leader who delivers secure generative AI and the governance that lets it scale: Retrieval-Augmented Generation on Amazon Bedrock with layered guardrails and responsible-AI policy. I lead AI enablement across engineering, rolling out GitHub Copilot and bringing Claude Code and MCP into daily delivery, while directing a $40M AWS-hosted platform for a California state health agency with cross-functional teams of 30+. I stay hands-on as a core engineer on multi-agent AI systems built on Strands Agents and Amazon Bedrock AgentCore. {YEARS} years delivering on regulated healthcare, eligibility, and criminal-justice data, contributing to $100M+ in winning proposals. PMP-certified.",
       "highlights": [
         "Direct a $40M AWS-hosted grant management platform for a California state health agency with cross-functional teams of 30+.",
-        "Built the firm's secure generative AI capability: a RAG application on Amazon Bedrock that cut week-long work to hours with zero PII or IP exposure, plus the governance framework behind it.",
+        "Delivered secure generative AI: a RAG application on Amazon Bedrock that cut week-long work to hours with zero PII or IP exposure, plus the governance framework behind it.",
         "Led AI enablement for engineering: the team develops with two AI coding agents, GitHub Copilot and Claude Code.",
         "Delivery manager across three of four solutions on Hawaii's $100M BESSD welfare modernization; design, BA, development, and test reported to me."
       ]
@@ -210,9 +210,9 @@
     {
       "title": "Director of Software Engineering",
       "organization": "Public Consulting Group",
-      "lead": "Directing a $40M AWS-hosted platform and the firm's generative-AI practice for a California state health agency — teams of 30+ across the full lifecycle.",
-      "description": "Director of Software Engineering, technical delivery manager, and principal design lead for a $40M AWS-hosted grant management platform delivered to a California state health agency: a public portal, an administrative back office, and the firm's secure generative AI capability. Joined corp-to-corp in 2022 and converted to full-time in 2025.",
-      "corporateDescription": "Director of Software Engineering, technical delivery manager, and principal design lead for a $40M AWS-hosted grant management platform delivered to a California state health agency: a public portal, an administrative back office, and the firm's secure generative AI capability.",
+      "lead": "Leading multiple programs from design through delivery: cloud platforms on AWS and secure, agentic AI built with Amazon Bedrock and Strands.",
+      "description": "Director of Software Engineering, technical delivery manager, and principal design lead across multiple programs: a $40M AWS-hosted grant management platform for a California state health agency (a public portal and an administrative back office) and secure generative and multi-agent AI. Joined corp-to-corp in 2022 and converted to full-time in 2025.",
+      "corporateDescription": "Director of Software Engineering, technical delivery manager, and principal design lead across multiple programs: a $40M AWS-hosted grant management platform for a California state health agency (a public portal and an administrative back office) and secure generative and multi-agent AI.",
       "bullets": [
         "Direct cross-functional teams of 30+ designers, developers, and engineers across the full lifecycle and serve as the client-facing technical lead.",
         "Core engineer on a secure multi-agent AI assistant that lets teams chat with and review documents against proprietary knowledge, built on the Strands Agents SDK, Amazon Bedrock AgentCore, and Bedrock Guardrails, with AWS Lambda services and a React 19 streaming front end on AppSync GraphQL.",
@@ -257,7 +257,7 @@
         "Stood up a Figma design system that standardized components, enforced WCAG compliance, and streamlined design-to-development handoff."
       ],
       "corporateBullets": [
-        "Built the firm's secure generative AI capability: a Retrieval-Augmented Generation (RAG) application on Amazon Bedrock with isolated foundation models and layered guardrails (zero PII or IP exposure; week-long work now takes hours) and the responsible-AI governance framework that gives the organization a repeatable model for future AI initiatives.",
+        "Delivered secure generative AI: a Retrieval-Augmented Generation (RAG) application on Amazon Bedrock with isolated foundation models and layered guardrails (zero PII or IP exposure; week-long work now takes hours) and the responsible-AI governance framework that gives the organization a repeatable model for future AI initiatives.",
         "Lead AI enablement for engineering: the team develops with two AI coding agents, GitHub Copilot under enterprise licensing and Claude Code.",
         "Automated program management in Jira and Confluence with Claude Code and MCP, compressing delivery cycles across every workstream.",
         "Core engineer on a secure multi-agent AI assistant over proprietary knowledge, built on the Strands Agents SDK, Amazon Bedrock AgentCore, and Bedrock Guardrails, with a React 19 streaming front end on AppSync GraphQL.",
@@ -271,7 +271,7 @@
     {
       "title": "Technical Program and Design Manager",
       "organization": "Unisys",
-      "lead": "Delivery manager across three of four solutions on Hawaii's $100M BESSD modernization — design, BA, development, and test all reporting to me.",
+      "lead": "Helped win a $100M statewide modernization, then came back to deliver it, adopting Figma early and doubling the design team’s output.",
       "description": "Corp-to-corp delivery manager on the State of Hawaii's $100M BESSD modernization, a Google Cloud Platform-hosted DDI program consolidating the state's welfare and benefits systems onto a single new platform. Contributed to the winning RFP; Unisys brought me back to deliver it.",
       "corporateDescription": "Delivery manager on the State of Hawaii's $100M BESSD modernization, a Google Cloud Platform-hosted DDI program consolidating the state's welfare and benefits systems onto a single new platform. Contributed to the winning RFP; Unisys brought me back to deliver it.",
       "bullets": [
@@ -299,7 +299,7 @@
     {
       "title": "Technical Consultant",
       "organization": "County Welfare Directors Association of California",
-      "lead": "State-side IV&V over the CalHEERS–county eHIT integration — validating the very interface I had built from the county side.",
+      "lead": "Independently verified, from the state side, the health-exchange integration I had built from the county side.",
       "description": "Corp-to-corp Independent Verification & Validation (IV&V) consultant for the integration between California's CalHEERS health-benefit exchange and the county welfare eligibility and approval systems over the eHIT interface, as the program moved into maintenance and operations. I had built the county side of that interface on LEADER, so I validated from the state side an integration I had implemented myself.",
       "corporateDescription": "Independent Verification & Validation (IV&V) consultant for the integration between California's CalHEERS health-benefit exchange and the county welfare eligibility and approval systems over the eHIT interface, as the program moved into maintenance and operations. I had built the county side of that interface on LEADER, so I validated from the state side an integration I had implemented myself.",
       "bullets": [
@@ -323,7 +323,7 @@
     {
       "title": "Technical Consultant, Development & Integration",
       "organization": "Unisys",
-      "lead": "New grad to lead across two flagship government DDI programs — New York's criminal-history modernization and LA County's LEADER.",
+      "lead": "Started my career building criminal-justice and welfare-eligibility systems for government, rising from team lead to manager.",
       "description": "Joined from Penn State and grew into lead and management roles across two flagship government DDI programs, working every seat in the SDLC: requirements, UX, development, integration, testing, and maintenance.",
       "bullets": [
         "NYS Division of Criminal Justice Services (DCJS), Albany, NY (2009–2011): modernized New York's criminal history repository, the system of record for every arrest in the state, integrating fingerprint events, FBI NCIC queries, and court docket exchange. Made a lead within months of joining, running the test team and building the automated regression suites.",

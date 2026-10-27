@@ -147,33 +147,33 @@
   },
   "roles": [
     {
-      "title": "AI & Cloud Architect",
+      "title": "Director of Software Engineering",
       "level": "Executive",
-      "subTitle": "I architect and deliver generative and agentic AI for enterprise clients, from proof of concept to production. My RAG systems run on Amazon Bedrock with isolated foundation models and layered guardrails that protect PII and IP, backed by a responsible-AI governance framework. I work with Claude Code and MCP daily and bring those patterns to the teams I lead.",
+      "subTitle": "I direct the teams that design, build, and deliver AI-powered platforms for public-sector clients: a $40M AWS-hosted platform, secure generative AI on Amazon Bedrock with the governance behind it, and GitHub Copilot rolled out across engineering. PMP-certified, I run the full lifecycle with cross-functional teams of 30+.",
       "badges": [
-        "AI-Accelerated Engineering (Copilot · Claude Code · MCP)",
-        "Generative & Agentic AI Strategy",
-        "AWS Bedrock & RAG Implementation",
-        "AI Guardrails & PII Protection",
+        "Full-Lifecycle DDI",
+        "Secure GenAI on AWS Bedrock (RAG)",
         "Responsible AI Governance",
-        "Secure Enterprise AI Deployment",
-        "Secure Access to Proprietary Data",
-        "POC-to-Production Delivery"
+        "AI Enablement (GitHub Copilot)",
+        "Data Migration & Integration",
+        "Agile · Scrum · PMP",
+        "Teams of 30+",
+        "Client & Stakeholder Management"
       ]
     },
     {
-      "title": "Delivery Director",
-      "level": "Executive",
-      "subTitle": "I own full-lifecycle design, development, and integration (DDI) for client programs: requirements through architecture, build, data migration, testing, and release. I'm PMP-certified, run disciplined Agile delivery, scale cross-functional onshore and offshore teams, and keep technical strategy tied to what the client's business actually needs.",
+      "title": "AI-Native Engineer",
+      "level": "Hands-on",
+      "subTitle": "I don’t only direct AI work, I do it. I design, architect, and code with Claude Code and MCP every day: working out the architecture with the agent before a line is written, then building, testing, and shipping. It’s how I automate program management in Jira and Confluence and how I ship my own iOS apps end to end.",
       "badges": [
-        "Full-Lifecycle DDI Delivery",
-        "Technical Delivery Management",
-        "Data Migration & Enterprise Integration",
-        "Agile · Scrum · PMP",
-        "AWS Architecture (Lambda · S3 · DynamoDB · RDS)",
-        "Modern Stacks (React · TypeScript · Node · Python)",
-        "Team Scaling & Leadership (30+)",
-        "Client & Stakeholder Management"
+        "Claude Code",
+        "MCP",
+        "Agentic Workflows",
+        "AI-Assisted Architecture & Design",
+        "Prompt & Workflow Design",
+        "Jira & Confluence Automation",
+        "Swift · TypeScript · Python",
+        "On-Device AI (iOS)"
       ]
     },
     {
@@ -214,9 +214,9 @@
       "engagementType": "Consultant → Employee",
       "badges": [
         "Client-Facing DDI Delivery",
-        "Multi-Tenant Platform Architecture",
+        "Multi-Tenant Platform Delivery",
         "Generative AI & RAG Leadership",
-        "AWS Bedrock Architecture",
+        "AWS Bedrock Delivery",
         "Data Migration & Client Handoff",
         "AI-Accelerated Engineering (Copilot · Claude Code · MCP)",
         "Secure AI Governance",

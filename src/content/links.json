@@ -16,13 +16,13 @@
       "id": 3,
       "name": "Portfolio",
       "href": "https://www.figma.com/design/RulTebK1wDbGY2FcF4wGUB/Profile?node-id=0-1&t=t8OfAwYDGAJKXb8B-1",
-      "display": true
+      "display": false
     },
     {
       "id": 4,
       "name": "Github",
       "href": "https://github.com/cvfesta/resume",
-      "display": true
+      "display": false
     },
     {
       "id": 5,

@@ -54,7 +54,7 @@ const ContactModal: React.FC = () => {
                             <div className="form-floating">
                                 <textarea name="message" className="form-control contactTextarea"
                                           placeholder="Leave a comment here" id="message" required></textarea>
-                                <label htmlFor="message">How can I help you?</label>
+                                <label htmlFor="message">Message</label>
                                 <div className="invalid-feedback">
                                     Please enter a message.
                                 </div>

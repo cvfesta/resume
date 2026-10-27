@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const content = data as Data;
 
-/** Pretty hostname for a job's external link, e.g. "https://ca-path.com/" → "ca-path.com". */
+/** Pretty hostname for a job's external link, e.g. "https://example.com/" → "example.com". */
 const hostnameOf = (url: string): string => {
     try {
         return new URL(url).hostname.replace(/^www\./, '');
@@ -23,11 +23,7 @@ const hostnameOf = (url: string): string => {
 
 const Experience: React.FC = () => {
     const rootRef = useRef<HTMLElement>(null);
-    // Founder roles flagged `section: "ventures"` leave the timeline (it
-    // opens with the primary role, not three concurrent "Present" cards) and
-    // render as a compact row beneath it. Same flag drives the print pages.
-    const jobs = content.experience.filter((job) => job.section !== 'ventures');
-    const ventures = content.experience.filter((job) => job.section === 'ventures');
+    const jobs = content.experience;
     // Per-entry "+N more" badge expansion, keyed by title+organization.
     const [expandedBadges, setExpandedBadges] = useState<Record<string, boolean>>({});
     // Targeted spine re-measure, set by build() — called after a badge toggle
@@ -49,7 +45,6 @@ const Experience: React.FC = () => {
         gsap.set(q('.exp-range'), { opacity: 0, y: 10 });
         gsap.set(q('.exp-badge'), { opacity: 0, scale: 0 });
         gsap.set(q('.timeline-progress'), { scaleY: 0 });
-        gsap.set(q('.ventures-kicker, .venture-card'), { opacity: 0, y: 32 });
 
         let cancelled = false;
         let ctx: gsap.Context | undefined;
@@ -148,21 +143,6 @@ const Experience: React.FC = () => {
                     },
                 });
 
-                // --- ventures row: a plain reveal once the spine is done ---
-                const venturesEl = q('.ventures')[0];
-                if (venturesEl) {
-                    gsap.timeline({
-                        defaults: { ease: 'power3.out' },
-                        scrollTrigger: {
-                            trigger: venturesEl,
-                            start: 'top 82%',
-                            toggleActions: 'play none none reverse',
-                        },
-                    })
-                        .to(q('.ventures-kicker'), { opacity: 1, y: 0, duration: 0.6 }, 0)
-                        .to(q('.venture-card'), { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 }, 0.1);
-                }
-
                 ScrollTrigger.refresh();
 
                 // Sync to current scroll (covers load-scrolled + resize rebuilds):
@@ -244,7 +224,10 @@ const Experience: React.FC = () => {
                     const entryKey = job.title + job.organization;
                     const isExpanded = !!expandedBadges[entryKey];
                     const bullets = (job.bullets ?? []).slice(0, 3);
-                    const badges = job.badges ?? [];
+                    // Corp-to-corp framing belongs to the contract résumé; the
+                    // site reads like the corporate one.
+                    const badges = (job.badges ?? []).filter((b) => !/corp-to-corp/i.test(b));
+                    const engagementLabel = job.corporateEngagementLabel ?? job.engagementType;
                     const shownBadges = isExpanded ? badges : badges.slice(0, 5);
                     const hiddenBadges = badges.length - 5;
                     return (
@@ -262,8 +245,8 @@ const Experience: React.FC = () => {
                             <h3 className="exp-title">{job.title}</h3>
                             <div className="exp-org-row">
                                 <span className="exp-org">{job.organization}</span>
-                                {job.engagementType && (
-                                    <span className="exp-type">{job.engagementType}</span>
+                                {engagementLabel && engagementLabel !== 'Employee' && (
+                                    <span className="exp-type">{engagementLabel}</span>
                                 )}
                             </div>
                             {job.lead ? (
@@ -320,35 +303,6 @@ const Experience: React.FC = () => {
                     );
                 })}
             </div>
-
-            {/* Founder roles, kept off the spine: entity → role + dates → the
-              * short venture summary. Products themselves live in Projects. */}
-            {ventures.length > 0 && (
-                <div className="ventures">
-                    <p className="ventures-kicker">Independent ventures</p>
-                    <div className="ventures-grid">
-                        {ventures.map((job) => (
-                            <article className="venture-card" key={job.title + job.organization}>
-                                <h3 className="venture-org">{job.organization}</h3>
-                                <p className="venture-role">
-                                    <span>{job.title}</span>
-                                    <span className="venture-date">{job.date}</span>
-                                </p>
-                                <p className="venture-summary">{job.ventureSummary ?? job.description}</p>
-                                {job.link && (
-                                    <a className="exp-link" href={job.link}
-                                       target="_blank" rel="noopener noreferrer"
-                                       onClick={() => trackEvent('Experience Link Clicked', {
-                                           company: job.organization, role: job.title, url: job.link,
-                                       })}>
-                                        Visit {hostnameOf(job.link)} <LinkArrow size={13} />
-                                    </a>
-                                )}
-                            </article>
-                        ))}
-                    </div>
-                </div>
-            )}
         </section>
     );
 };

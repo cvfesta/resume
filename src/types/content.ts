@@ -25,17 +25,32 @@ export interface Contact {
     contractDetails: string[];
 }
 
-/** Audience-specific headline + summary for the condensed print variants.
- *  `{YEARS}` is replaced with the computed years of experience. */
+/** One entry in the condensed contract print's "Selected AI & Build Work" block. */
+export interface SelectedProject {
+    /** Bold lead-in, written with its own closing period. */
+    title: string;
+    text: string;
+}
+
+/** Audience-specific copy for the condensed print variants.
+ *  `{YEARS}` is replaced with the computed years of experience. Every
+ *  optional field is omitted (or falls back) when absent. */
 export interface PrintAudienceCopy {
     headline: string;
     summary: string;
+    /** One-line skills list rendered directly under the summary. */
+    skillsLead?: string;
+    /** Rendered after the skills, before Experience. */
+    selectedProjects?: SelectedProject[];
+    /** Replaces `PrintContent.highlights` for this audience. */
+    highlights?: string[];
 }
 
 /** Print-only content: per-audience copy plus the Highlights block. */
 export interface PrintContent {
     corporate: PrintAudienceCopy;
     contract: PrintAudienceCopy;
+    /** Default Highlights, used when an audience has none of its own. */
     highlights: string[];
 }
 
@@ -76,18 +91,22 @@ export interface Experience {
      *  always uses the full description). */
     lead?: string;
     description: string;
+    /** `description` without the contracting detail, for the corporate
+     *  prints; falls back to `description`. */
+    corporateDescription?: string;
     date: string;
     link: string;
     engagementType: string;
     bullets?: string[];
+    /** Audience rewrites of `bullets` (same facts) for the condensed
+     *  contract / corporate prints; each falls back to `bullets`. */
+    contractBullets?: string[];
+    corporateBullets?: string[];
+    /** Engagement label on the corporate prints and the interactive site
+     *  in place of `engagementType`; "" hides it. The contract prints
+     *  always show `engagementType`. */
+    corporateEngagementLabel?: string;
     badges?: string[];
-    /** Set to "ventures" to pull the entry out of the Experience list on
-     *  every surface (site timeline, /print, /print/c2c, and their /full variants) and into the
-     *  compact Independent Ventures block that follows it. */
-    section?: string;
-    /** 2–3 line prose rendered for a ventures entry in place of
-     *  `description` + `bullets` on every surface. */
-    ventureSummary?: string;
 }
 
 export interface Education {
@@ -120,6 +139,9 @@ export interface Project {
     brandColor?: string;
     /** Small footnote under the card's CTA, e.g. "Free · Pro subscription". */
     note?: string;
+    /** One-sentence version for the condensed corporate print's Independent
+     *  Projects block; projects without one are left out there. */
+    printLine?: string;
 }
 
 export interface Data {

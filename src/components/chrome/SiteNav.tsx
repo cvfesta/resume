@@ -154,7 +154,7 @@ const SiteNav: React.FC = () => {
                         data-bs-target="#contactModal"
                         onClick={() => trackEvent('Contact Modal Opened', { source: 'nav' })}
                     >
-                        Let’s talk
+                        Contact
                     </button>
                 </div>
 

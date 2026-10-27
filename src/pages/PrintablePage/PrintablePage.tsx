@@ -12,7 +12,7 @@ import './printable.css';
 // missing `contact`/`skills` crashed this page to a blank screen once).
 const data: Data = homepageContent;
 
-/** "https://ca-path.com/" → "ca-path.com" */
+/** "https://example.com/" → "example.com" */
 const hostnameOf = (url: string): string => {
     try {
         return new URL(url).hostname.replace(/^www\./, '');
@@ -106,9 +106,18 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
         .split('{YEARS}').join(years)
         .split(/\n+/)
         .filter(Boolean);
-    const highlights = data.print.highlights ?? [];
-    const ventures = data.experience.filter((exp) => exp.section === 'ventures');
-    const experience = data.experience.filter((exp) => exp.section !== 'ventures');
+    // Audience copy beyond the summary is condensed-only too; the full
+    // versions stay the complete reference.
+    const highlights = (condensed && copy.highlights) || data.print.highlights || [];
+    const skillsLead = condensed ? copy.skillsLead : undefined;
+    const selectedProjects = (condensed && copy.selectedProjects) || [];
+    const experience = data.experience;
+    // The condensed corporate print has no Selected Work block, so it gets a
+    // short Independent Projects list instead (the full prints have the
+    // complete Projects section).
+    const projectLines = condensed && corporate
+        ? data.projects.filter((project) => project.available && project.printLine)
+        : [];
 
     const variantLink = (target: PrintVariant, className: string, text?: string) => (
         <Link
@@ -231,6 +240,7 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                     {summaryParagraphs.map((paragraph, i) => (
                         <p className="pp-summary" key={i}>{paragraph}</p>
                     ))}
+                    {skillsLead && <p className="pp-skills-lead">{skillsLead}</p>}
                 </section>
 
                 {highlights.length > 0 && (
@@ -270,20 +280,41 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                     ))}
                 </section>}
 
+                {selectedProjects.length > 0 && (
+                    <section className="pp-section">
+                        <h2 className="pp-section-label">Selected AI &amp; Build Work</h2>
+                        <ul className="pp-bullets">
+                            {selectedProjects.map((item) => (
+                                <li key={item.title}><strong>{item.title}</strong> {item.text}</li>
+                            ))}
+                        </ul>
+                    </section>
+                )}
+
                 {/* Entries read linearly for text extraction: title → organization →
                   * link → dates → bullets. The date is right-aligned visually but stays
                   * in the org line's DOM flow — never a structurally separate column. */}
                 <section className="pp-section">
                     <h2 className="pp-section-label">Experience</h2>
                     {experience.map((exp) => {
-                        const bullets = condensed ? condensedBullets(exp) : (exp.bullets ?? []);
+                        // A purpose-written audience rewrite is used whole; otherwise
+                        // the condensed variants trim the shared bullets.
+                        const audienceBullets = condensed
+                            ? (corporate ? exp.corporateBullets : exp.contractBullets)
+                            : undefined;
+                        const bullets = audienceBullets
+                            ?? (condensed ? condensedBullets(exp) : (exp.bullets ?? []));
                         const entryClass = bullets.length > FLOW_BULLET_THRESHOLD
                             ? 'pp-entry pp-entry--flow'
                             : 'pp-entry';
                         // Corporate readers assume "employee"; the pill only earns
-                        // its space there when the engagement was something else.
-                        const showType = !!exp.engagementType
-                            && !(corporate && exp.engagementType === 'Employee');
+                        // its space there when the engagement was something else,
+                        // and those entries can carry a softer corporate label.
+                        const engagementLabel = corporate
+                            ? (exp.corporateEngagementLabel ?? exp.engagementType)
+                            : exp.engagementType;
+                        const showType = !!engagementLabel
+                            && !(corporate && engagementLabel === 'Employee');
                         return (
                         <div className={entryClass} key={exp.title + exp.organization}>
                             <h3 className="pp-entry-title">{exp.title}</h3>
@@ -304,11 +335,13 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                                     </a>
                                 )}
                                 {showType && (
-                                    <span className="pp-entry-type">{exp.engagementType}</span>
+                                    <span className="pp-entry-type">{engagementLabel}</span>
                                 )}
                                 <span className="pp-entry-date">{exp.date}</span>
                             </p>
-                            <p className="pp-entry-desc">{exp.description}</p>
+                            <p className="pp-entry-desc">
+                                {corporate ? (exp.corporateDescription ?? exp.description) : exp.description}
+                            </p>
                             {bullets.length > 0 && (
                                 <ul className="pp-bullets">
                                     {bullets.map((bullet, i) => (
@@ -321,21 +354,16 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                     })}
                 </section>
 
-                {/* Founder roles, kept out of the Experience narrative: one compact
-                  * block each — org, then role + dates, then a short prose summary. */}
-                {ventures.length > 0 && (
-                    <section className="pp-section pp-section--ventures">
-                        <h2 className="pp-section-label">Independent Ventures</h2>
-                        {ventures.map((exp) => (
-                            <div className="pp-venture" key={exp.title + exp.organization}>
-                                <h3 className="pp-venture-org">{exp.organization}</h3>
-                                <p className="pp-venture-role">
-                                    <span>{exp.title}</span>
-                                    <span className="pp-entry-date">{exp.date}</span>
-                                </p>
-                                <p className="pp-venture-summary">{exp.ventureSummary ?? exp.description}</p>
-                            </div>
-                        ))}
+                {projectLines.length > 0 && (
+                    <section className="pp-section pp-section--keep">
+                        <h2 className="pp-section-label">Independent Projects</h2>
+                        <ul className="pp-bullets">
+                            {projectLines.map((project) => (
+                                <li key={project.name}>
+                                    <strong>{project.name}</strong> (iOS, live on the App Store). {project.printLine}
+                                </li>
+                            ))}
+                        </ul>
                     </section>
                 )}
 
@@ -360,7 +388,7 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                     <aside className="pp-more">
                         <p className="pp-more-title">There's more to the story</p>
                         <p className="pp-more-sub">
-                            The full resume adds four areas of expertise, every engagement
+                            The full resume adds areas of expertise, every engagement
                             in complete detail, and the products I've designed, built, and shipped.
                         </p>
                         <Link
@@ -386,7 +414,7 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                 )}
 
                 {!condensed && <section className="pp-section">
-                    <h2 className="pp-section-label">Projects</h2>
+                    <h2 className="pp-section-label">Independent Projects</h2>
                     {data.projects.map((project) => (
                         <div className="pp-entry" key={project.name}>
                             <h3 className="pp-entry-title">{project.name}</h3>

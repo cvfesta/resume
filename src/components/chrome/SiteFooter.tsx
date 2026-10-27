@@ -79,7 +79,7 @@ const SiteFooter: React.FC = () => {
                     data-bs-target="#contactModal"
                     onClick={() => trackEvent('Contact Modal Opened', { source: 'footer' })}
                 >
-                    <span className="sf-headline-text">Let’s talk</span>
+                    <span className="sf-headline-text">Get in touch</span>
                     <span className="sf-headline-mark">↗</span>
                 </button>
             </div>

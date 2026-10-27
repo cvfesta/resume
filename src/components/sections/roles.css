@@ -41,11 +41,6 @@
     perspective: 1500px;
 }
 
-/* Mid-size screens: 4 cards in one row gets cramped, so reflow to 2×2. */
-@media (max-width: 1200px) and (min-width: 901px) {
-    .role-card { flex: 1 1 calc(50% - clamp(1.1rem, 2.2vw, 1.9rem)); }
-}
-
 @media (max-width: 900px) {
     .roles-deck { flex-direction: column; align-items: center; }
 }

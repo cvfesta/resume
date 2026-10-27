@@ -176,6 +176,13 @@
 .pp-skill-line:last-child { margin-bottom: 0; }
 .pp-skill-line strong { color: #1d1d1b; }
 
+/* one-line skills list under the contract summary */
+.pp-skills-lead {
+    margin: 0.55rem 0 0;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
 /* --- expertise --- */
 .pp-expertise { margin-bottom: 0.9rem; }
 .pp-expertise:last-child { margin-bottom: 0; }
@@ -270,26 +277,6 @@
     text-underline-offset: 2px;
     text-decoration-thickness: 1px;
 }
-
-/* --- independent ventures (print routes only) ---
- * Compact founder blocks: org → role + date on one line → short prose. */
-.pp-venture { margin-bottom: 0.85rem; }
-.pp-venture:last-child { margin-bottom: 0; }
-.pp-venture-org {
-    margin: 0;
-    font-size: 0.96rem;
-    font-weight: 700;
-}
-.pp-venture-role {
-    margin: 0.1rem 0 0.25rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.88rem;
-    color: #6b6b66;
-}
-.pp-venture-summary { margin: 0; }
 
 /* --- end-of-resume card (condensed variant, screen only) --- */
 .pp-more {
@@ -490,7 +477,6 @@
     .pp-contact-line,
     .pp-availability,
     .pp-entry-org,
-    .pp-venture-role,
     .pp-skill { color: #333; }
     .pp-entry-date,
     .pp-entry-place,
@@ -504,10 +490,10 @@
     .pp-availability { font-size: 9pt; }
     .pp-section { margin-bottom: 14pt; }
     .pp-section-label { font-size: 9pt; }
-    .pp-skill-line { font-size: 9.5pt; }
+    .pp-skill-line,
+    .pp-skills-lead { font-size: 9.5pt; }
     .pp-entry-date { font-size: 9pt; }
     .pp-entry-title { font-size: 11pt; }
-    .pp-venture-org { font-size: 11pt; }
     .pp-skill { font-size: 8.5pt; }
 
     /* Condensed variant: tighter rhythm so the trimmed content lands on as few
@@ -521,7 +507,6 @@
     .pp-sheet--condensed .pp-section { margin-bottom: 10pt; }
     .pp-sheet--condensed .pp-section-label { margin-bottom: 0.45rem; }
     .pp-sheet--condensed .pp-entry { margin-bottom: 0.75rem; }
-    .pp-sheet--condensed .pp-venture { margin-bottom: 0.55rem; }
     .pp-sheet--condensed .pp-entry-desc { margin-bottom: 0.25rem; }
     .pp-sheet--condensed .pp-bullets li { margin-bottom: 0.12rem; }
     .pp-sheet--condensed .pp-skill-line { margin-bottom: 0.22rem; }
@@ -530,8 +515,7 @@
     .pp-section-label { break-after: avoid; }
     .pp-head,
     .pp-entry,
-    .pp-venture,
-    .pp-section--ventures,
+    .pp-section--keep,
     .pp-expertise,
     .pp-skill-line { break-inside: avoid; }
     .pp-bullets li { break-inside: avoid; }

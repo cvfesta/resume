@@ -48,26 +48,26 @@ const condensedBullets = (exp: Experience): string[] => {
 const FLOW_BULLET_THRESHOLD = 5;
 
 /** The four print routes: a condensed and a full-detail resume per audience.
- * The condensed ones are what actually gets submitted; each links to the
- * full version of its *own* audience, so a reader of the C2C resume lands
- * straight on the C2C full resume. `audience` picks the headline/summary
- * copy from `resume.json`'s `print` block and decides whether the
- * contract-only header lines show. */
+ * The condensed ones are what actually gets submitted; each links only to
+ * the other detail level of its *own* audience. Readers never see that a
+ * second audience exists: no cross-audience link, and no audience name in
+ * any visible or printed text. `audience` picks the headline/summary copy
+ * from `resume.json`'s `print` block and decides whether the contract-only
+ * header lines show. */
 export type PrintVariant = 'corporate' | 'contract' | 'corporateFull' | 'contractFull';
 type PrintAudience = 'corporate' | 'contract';
 
 interface VariantMeta {
     path: string;
-    label: string;
     audience: PrintAudience;
     condensed: boolean;
 }
 
 const VARIANTS: Record<PrintVariant, VariantMeta> = {
-    corporate: { path: '/print', label: 'corporate (W-2)', audience: 'corporate', condensed: true },
-    contract: { path: '/print/c2c', label: 'contract (C2C)', audience: 'contract', condensed: true },
-    corporateFull: { path: '/print/full', label: 'corporate (W-2)', audience: 'corporate', condensed: false },
-    contractFull: { path: '/print/c2c/full', label: 'contract (C2C)', audience: 'contract', condensed: false },
+    corporate: { path: '/print', audience: 'corporate', condensed: true },
+    contract: { path: '/print/c2c', audience: 'contract', condensed: true },
+    corporateFull: { path: '/print/full', audience: 'corporate', condensed: false },
+    contractFull: { path: '/print/c2c/full', audience: 'contract', condensed: false },
 };
 
 /** The variant at the other detail level for the same audience. */
@@ -78,20 +78,12 @@ const counterpartOf = (variant: PrintVariant): PrintVariant => {
     )!;
 };
 
-/** The variant for the other audience at the same detail level. */
-const siblingOf = (variant: PrintVariant): PrintVariant => {
-    const { audience, condensed } = VARIANTS[variant];
-    return (Object.keys(VARIANTS) as PrintVariant[]).find(
-        (v) => VARIANTS[v].audience !== audience && VARIANTS[v].condensed === condensed,
-    )!;
-};
-
 interface PrintablePageProps {
     variant?: PrintVariant;
 }
 
 const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' }) => {
-    const { condensed, audience, label } = VARIANTS[variant];
+    const { condensed, audience } = VARIANTS[variant];
     const fullVariant = condensed ? counterpartOf(variant) : variant;
     const fullPath = VARIANTS[fullVariant].path;
     const corporate = audience === 'corporate';
@@ -119,14 +111,14 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
         ? data.projects.filter((project) => project.available && project.printLine)
         : [];
 
-    const variantLink = (target: PrintVariant, className: string, text?: string) => (
+    const variantLink = (target: PrintVariant, className: string, text: string) => (
         <Link
             key={target}
             to={VARIANTS[target].path}
             className={className}
             onClick={() => trackEvent('Résumé Variant Toggled', { from: variant, to: target })}
         >
-            {text ?? `View ${VARIANTS[target].label} version`}
+            {text}
         </Link>
     );
 
@@ -136,7 +128,6 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
             <div className="pp-toolbar">
                 <Link to="/" className="pp-back">← Back to the site</Link>
                 <div className="pp-variant-links">
-                    {variantLink(siblingOf(variant), 'pp-variant-link')}
                     {variantLink(
                         counterpartOf(variant),
                         'pp-variant-link',
@@ -159,7 +150,7 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
             {condensed && (
                 <div className="pp-banner">
                     <div className="pp-banner-text">
-                        <strong>You're reading the condensed {label} resume.</strong>
+                        <strong>You're reading the condensed resume.</strong>
                         <span>The full version adds areas of expertise, every engagement detail, and shipped products.</span>
                     </div>
                     <Link
@@ -407,7 +398,7 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                 {/* Printed/PDF-only closing line: points readers at the full version. */}
                 {condensed && (
                     <p className="pp-print-footer">
-                        This is the condensed {label} resume. Full detail — areas of expertise, every
+                        This is the condensed resume. Full detail — areas of expertise, every
                         engagement, and shipped products:{' '}
                         <a href={`https://${contact.website}${fullPath}`}>{contact.website}{fullPath}</a>
                     </p>

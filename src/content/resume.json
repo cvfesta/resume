@@ -4,7 +4,7 @@
     "eyebrow": "Director of Software Engineering · AI Engineer",
     "statLabel": "years consulting & delivering",
     "statementKickers": ["The work", "Right now", "AI engineering"],
-    "subTitle": "I've spent {YEARS} years as a consultant, and every engagement has been client-facing. Not the configure-someone-else's-software kind of consulting: full design, development, and integration (DDI) of custom systems. I've owned every seat in the SDLC, from requirements and UX design in Figma through hands-on development, systems and data integration, and test oversight, and I've run the whole lifecycle as a delivery manager directing teams of 30+.\n\nToday I'm Director of Software Engineering, leading multiple programs from design through delivery: a $40M AWS-hosted platform for a state agency client, secure generative and multi-agent AI on Amazon Bedrock with the governance behind it, and a team building with two AI coding agents, GitHub Copilot and Claude Code.\n\nI'm a hands-on engineer who works agentically: I design, architect, and code alongside Claude Code and MCP, working out the architecture with the agent before a line is written, then building, testing, and shipping. I've helped build multi-agent systems on Strands and Amazon Bedrock AgentCore and automated program management across Jira and Confluence."
+    "subTitle": "I've spent {YEARS} years as a consultant, and every engagement has been client-facing. Not the configure-someone-else's-software kind of consulting: full design, development, and integration (DDI) of custom systems. I've owned every seat in the SDLC, from requirements and UX design in Figma through hands-on development, systems and data integration, and test oversight, and I've run the whole lifecycle as a delivery manager directing teams of 30+.\n\nToday I'm Director of Software Engineering, leading multiple programs from design through delivery: a $40M AWS-hosted platform for a state agency client, secure generative and multi-agent AI on Amazon Bedrock with the governance behind it, and a team building with AI coding agents every day.\n\nI'm a hands-on engineer who works agentically: I design, architect, and code alongside AI coding agents and MCP, working out the architecture with the agent before a line is written, then building, testing, and shipping. I've helped build multi-agent systems on Strands and Amazon Bedrock AgentCore and automated program management across Jira and Confluence."
   },
   "contact": {
     "credential": "PMP",
@@ -19,17 +19,17 @@
   "print": {
     "corporate": {
       "headline": "Engineering & AI Leader · Director of Software Engineering · Generative AI, AI Enablement, Platform Delivery",
-      "summary": "Engineering and AI leader who delivers secure generative AI and the governance that lets it scale: Retrieval-Augmented Generation on Amazon Bedrock with layered guardrails and responsible-AI policy. I lead AI enablement across engineering, rolling out GitHub Copilot and bringing Claude Code and MCP into daily delivery, while directing a $40M AWS-hosted platform for a California state health agency with cross-functional teams of 30+. I stay hands-on as a core engineer on multi-agent AI systems built on Strands Agents and Amazon Bedrock AgentCore. {YEARS} years delivering on regulated healthcare, eligibility, and criminal-justice data, contributing to $100M+ in winning proposals. PMP-certified.",
+      "summary": "Engineering and AI leader who delivers secure generative AI and the governance that lets it scale: Retrieval-Augmented Generation on Amazon Bedrock with layered guardrails and responsible-AI policy. I lead AI enablement across engineering, bringing AI coding agents and MCP into daily delivery, while directing a $40M AWS-hosted platform for a California state health agency with cross-functional teams of 30+. I stay hands-on as a core engineer on multi-agent AI systems built on Strands Agents and Amazon Bedrock AgentCore. {YEARS} years delivering on regulated healthcare, eligibility, and criminal-justice data, contributing to $100M+ in winning proposals. PMP-certified.",
       "highlights": [
         "Direct a $40M AWS-hosted grant management platform for a California state health agency with cross-functional teams of 30+.",
         "Delivered secure generative AI: a RAG application on Amazon Bedrock that cut week-long work to hours with zero PII or IP exposure, plus the governance framework behind it.",
-        "Led AI enablement for engineering: the team develops with two AI coding agents, GitHub Copilot and Claude Code.",
+        "Led AI enablement for engineering, bringing approved AI coding agents into everyday delivery.",
         "Delivery manager across three of four solutions on Hawaii's $100M BESSD welfare modernization; design, BA, development, and test reported to me."
       ]
     },
     "contract": {
-      "headline": "AI Engineering & Delivery Consultant · Agentic Workflows (Claude Code, MCP) · AWS Bedrock",
-      "summary": "Hands-on AI engineering and delivery consultant who builds agentic workflows and secure generative AI for organizations that can't afford for it to fail. I work agentically every day with Claude Code and MCP, using it to automate program management across Jira and Confluence, and I led a secure Retrieval-Augmented Generation application on Amazon Bedrock with layered guardrails and zero PII or IP exposure. I'm a core engineer on multi-agent AI systems built on Strands Agents and Amazon Bedrock AgentCore, and I design, build, and ship my own iOS apps end to end. {YEARS} years of client-facing design, development, and integration across state and county programs, corp-to-corp since 2016.",
+      "headline": "AI Engineering & Delivery Consultant · Agentic Workflows & MCP · AWS Bedrock",
+      "summary": "Hands-on AI engineering and delivery consultant who builds agentic workflows and secure generative AI for organizations that can't afford for it to fail. I work agentically every day with AI coding agents and MCP, using them to automate program management across Jira and Confluence, and I led a secure Retrieval-Augmented Generation application on Amazon Bedrock with layered guardrails and zero PII or IP exposure. I'm a core engineer on multi-agent AI systems built on Strands Agents and Amazon Bedrock AgentCore, and I design, build, and ship my own iOS apps end to end. {YEARS} years of client-facing design, development, and integration across state and county programs, corp-to-corp since 2016.",
       "skillsLead": "Claude Code · MCP · Strands Agents · Amazon Bedrock (AgentCore, Guardrails) · Multi-agent AI · RAG · Python · TypeScript · React · AppSync GraphQL · Swift · GitHub Copilot",
       "selectedProjects": [
         {
@@ -38,7 +38,7 @@
         },
         {
           "title": "Agentic program management.",
-          "text": "Built a Claude Code + MCP workflow that automates program management across Jira and Confluence for a 30+ person delivery program."
+          "text": "Built an agentic AI + MCP workflow that automates program management across Jira and Confluence for a 30+ person delivery program."
         },
         {
           "title": "Secure RAG on Amazon Bedrock.",
@@ -161,7 +161,7 @@
     {
       "title": "Engineering Leadership",
       "level": "Executive",
-      "subTitle": "I direct the teams that design, build, and deliver AI-powered platforms for public-sector clients: a $40M AWS-hosted platform, secure generative AI on Amazon Bedrock with the governance behind it, and two AI coding agents, GitHub Copilot and Claude Code, built into everyday engineering. PMP-certified, I run the full lifecycle with cross-functional teams of 30+.",
+      "subTitle": "I direct the teams that design, build, and deliver AI-powered platforms for public-sector clients: a $40M AWS-hosted platform, secure generative AI on Amazon Bedrock with the governance behind it, and AI coding agents built into everyday engineering. PMP-certified, I run the full lifecycle with cross-functional teams of 30+.",
       "badges": [
         "Full-Lifecycle DDI",
         "Secure GenAI on AWS Bedrock (RAG)",
@@ -176,7 +176,7 @@
     {
       "title": "AI Engineering",
       "level": "Hands-on",
-      "subTitle": "I’m a hands-on engineer who works agentically: I design, architect, and code alongside Claude Code and MCP, working out the architecture with the agent before a line is written, then building, testing, and shipping. I’ve helped build multi-agent systems on Strands and Amazon Bedrock AgentCore and automated program management across Jira and Confluence.",
+      "subTitle": "I’m a hands-on engineer who works agentically: I design, architect, and code alongside AI coding agents and MCP, working out the architecture with the agent before a line is written, then building, testing, and shipping. I’ve helped build multi-agent systems on Strands and Amazon Bedrock AgentCore and automated program management across Jira and Confluence.",
       "badges": [
         "Claude Code",
         "MCP",
@@ -220,8 +220,8 @@
         "Led strategy and delivery of a secure Retrieval-Augmented Generation (RAG) application on Amazon Bedrock that lets staff query proprietary data in natural language with zero PII or IP exposure, using isolated foundation models and layered guardrails; work that took a week or more now takes hours.",
         "Built the responsible-AI governance framework that balances fast iteration with enterprise compliance and gives the organization a repeatable model for future AI initiatives.",
         "Architect the multi-source data migration for client handoff: SharePoint libraries, AWS MySQL and DynamoDB stores, S3 archives, and secure SFTP/MOVEit transfer into a federal grants system, with full data-fidelity validation.",
-        "Engineers develop with two AI coding agents, GitHub Copilot under enterprise licensing and Claude Code, built into everyday delivery.",
-        "Automated program management in Jira and Confluence with Claude Code and MCP, compressing delivery cycles across every workstream.",
+        "Engineers build with approved AI coding agents as part of everyday delivery.",
+        "Automated program management in Jira and Confluence with AI agents and MCP, compressing delivery cycles across every workstream.",
         "Stood up a Figma design system that standardized components, enforced WCAG compliance, and guaranteed responsive behavior across devices, streamlining design-to-development handoff.",
         "Took the first phase live in three months by directing onshore and offshore teams and instituting testing workflows across the lifecycle."
       ],
@@ -247,8 +247,8 @@
       ],
       "contractBullets": [
         "Core engineer on a secure multi-agent AI assistant over proprietary knowledge, built on the Strands Agents SDK, Amazon Bedrock AgentCore, and Bedrock Guardrails, with a React 19 streaming front end on AppSync GraphQL.",
-        "Automated program management in Jira and Confluence with Claude Code and MCP, compressing delivery cycles across every workstream.",
-        "Engineers develop with two AI coding agents, GitHub Copilot under enterprise licensing and Claude Code, built into everyday delivery.",
+        "Automated program management in Jira and Confluence with AI agents and MCP, compressing delivery cycles across every workstream.",
+        "Engineers build with approved AI coding agents as part of everyday delivery.",
         "Built a secure Retrieval-Augmented Generation (RAG) application on Amazon Bedrock that lets staff query proprietary data in natural language with zero PII or IP exposure, using isolated foundation models and layered guardrails; work that took a week or more now takes hours.",
         "Designed the guardrails and the responsible-AI governance framework that let the team iterate quickly while staying compliant.",
         "Architect the multi-source data migration for client handoff: SharePoint libraries, AWS MySQL and DynamoDB stores, S3 archives, and secure SFTP/MOVEit transfer into a federal grants system, with full data-fidelity validation.",
@@ -258,8 +258,8 @@
       ],
       "corporateBullets": [
         "Delivered secure generative AI: a Retrieval-Augmented Generation (RAG) application on Amazon Bedrock with isolated foundation models and layered guardrails (zero PII or IP exposure; week-long work now takes hours) and the responsible-AI governance framework that gives the organization a repeatable model for future AI initiatives.",
-        "Lead AI enablement for engineering: the team develops with two AI coding agents, GitHub Copilot under enterprise licensing and Claude Code.",
-        "Automated program management in Jira and Confluence with Claude Code and MCP, compressing delivery cycles across every workstream.",
+        "Lead AI enablement for engineering: the team builds with approved AI coding agents as part of everyday delivery.",
+        "Automated program management in Jira and Confluence with AI agents and MCP, compressing delivery cycles across every workstream.",
         "Core engineer on a secure multi-agent AI assistant over proprietary knowledge, built on the Strands Agents SDK, Amazon Bedrock AgentCore, and Bedrock Guardrails, with a React 19 streaming front end on AppSync GraphQL.",
         "Direct cross-functional teams of 30+ designers, developers, and engineers and serve as the client-facing technical lead.",
         "Lead the build of a multi-tenant platform that hosts a portfolio of products on shared infrastructure, now approaching market launch, and build features hands-on across its React front ends, from a drag-and-drop form builder to automated accessibility testing in Playwright.",

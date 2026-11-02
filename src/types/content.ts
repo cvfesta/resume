@@ -6,7 +6,7 @@ export interface Hero {
     /** First sentence is the site's title-card lead; the whole text is the
      *  full-detail prints' summary. */
     subTitle: string;
-    /** Tiles under the title card (site only). */
+    /** Tiles under the title card; the prints' Highlights use the same words. */
     proofWall: ProofTile[];
 }
 
@@ -56,18 +56,14 @@ export interface PrintAudienceCopy {
     skillsLead?: string;
     /** Rendered before the skills. */
     selectedProjects?: SelectedProject[];
-    /** Replaces `PrintContent.highlights` for this audience; [] hides the block. */
-    highlights?: string[];
-    /** Follows the live apps' linked names in the condensed print's Apps line. */
-    appsLine?: string;
+    /** Drops the Highlights block from this audience's condensed print. */
+    hideHighlights?: boolean;
 }
 
-/** Print-only content: per-audience copy plus the Highlights block. */
+/** Print-only, per-audience copy. Highlights come from `hero.proofWall`. */
 export interface PrintContent {
     corporate: PrintAudienceCopy;
     contract: PrintAudienceCopy;
-    /** Default Highlights, used when an audience has none of its own. */
-    highlights: string[];
 }
 
 /** One "Category: item, item, …" line in the print page's Technical Skills section. */

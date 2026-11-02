@@ -45,8 +45,7 @@
   "print": {
     "corporate": {
       "headline": "AI Engineer · Director of Software Engineering · Applied AI, Agentic Systems, AI Enablement",
-      "summary": "Hands-on AI engineer and engineering director who delivers agentic systems and secure generative AI with the governance that lets them scale. I work alongside AI coding agents and MCP every day and lead AI enablement across engineering. {YEARS} years of client-facing design, development, and integration on regulated healthcare, eligibility, and criminal-justice data, contributing to $100M+ in winning proposals. PMP-certified.",
-      "appsLine": ": personal iOS apps designed, built, and shipped, live on the App Store."
+      "summary": "Hands-on AI engineer and engineering director who delivers agentic systems and secure generative AI with the governance that lets them scale. I work alongside AI coding agents and MCP every day and lead AI enablement across engineering. {YEARS} years of client-facing design, development, and integration on regulated healthcare, eligibility, and criminal-justice data, contributing to $100M+ in winning proposals. PMP-certified."
     },
     "contract": {
       "headline": "AI Engineering & Delivery Consultant · Agentic Workflows & MCP · AWS Bedrock",
@@ -74,13 +73,8 @@
           "text": "AI announcer intros paired with music cued to the drop for eleven sports, with a free tier and Pro subscription."
         }
       ],
-      "highlights": []
-    },
-    "highlights": [
-      "Work agentically with AI coding agents and MCP: new features go from days or weeks to hours, and bug triage from hours to minutes.",
-      "Automate when the steps are predictable, use AI when the input is messy or takes judgment, and keep a human in the loop when a mistake would be costly; shape the architecture and contribute hands-on to multi-agent systems on Strands Agents and Amazon Bedrock AgentCore.",
-      "Accountable for entire DDI deliveries, with front-end, back-end, test, UX/UI design, and business analysis teams reporting through their leads: 30+ people on a $40M AWS program and about 25 on a $100M statewide modernization."
-    ]
+      "hideHighlights": true
+    }
   },
   "skills": [
     {

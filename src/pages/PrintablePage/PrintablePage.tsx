@@ -21,6 +21,19 @@ const hostnameOf = (url: string): string => {
     }
 };
 
+/** Parsers can garble the proof wall's arrow, so print spells it out. */
+const printTitle = (title: string): string => title.replace(' → ', ' to ');
+
+/** Links each live app's name wherever it appears in a line of copy. */
+const withAppLinks = (text: string): React.ReactNode[] => {
+    const apps = data.projects.filter((project) => project.available);
+    const pattern = new RegExp(`(${apps.map((app) => app.name).join('|')})`);
+    return text.split(pattern).map((part, i) => {
+        const app = apps.find((candidate) => candidate.name === part);
+        return app ? <a key={i} href={app.link} target="_blank" rel="noopener noreferrer">{part}</a> : part;
+    });
+};
+
 /** Bullets each entry keeps on the condensed variants, keyed by
  * "organization|date" (falling back to organization alone). All trimming
  * lives here in the render layer — the data stays complete for the full variants. */
@@ -100,14 +113,11 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
         .filter(Boolean);
     // Audience copy beyond the summary is condensed-only too; the full
     // versions stay the complete reference.
-    const highlights = (condensed && copy.highlights) || data.print.highlights || [];
+    // Highlights say exactly what the site's proof wall says, so the two can't drift.
+    const highlights = condensed && copy.hideHighlights ? [] : data.hero.proofWall;
     const skillsLead = condensed ? copy.skillsLead : undefined;
     const selectedProjects = (condensed && copy.selectedProjects) || [];
     const experience = data.experience;
-    // The condensed main print has no Selected Work block, so it gets a short
-    // Apps line instead (the full prints have the complete Apps section).
-    const appsLine = condensed ? copy.appsLine : undefined;
-    const liveApps = data.projects.filter((project) => project.available);
 
     const variantLink = (target: PrintVariant, className: string, text: string) => (
         <Link
@@ -236,34 +246,12 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                     <section className="pp-section">
                         <h2 className="pp-section-label">Highlights</h2>
                         <ul className="pp-bullets pp-highlights">
-                            {highlights.map((item, i) => (
-                                <li key={i}>{item}</li>
+                            {highlights.map((tile) => (
+                                <li key={tile.title}>
+                                    <strong>{tile.kicker}: {printTitle(tile.title)}.</strong> {withAppLinks(tile.text)}
+                                </li>
                             ))}
                         </ul>
-                    </section>
-                )}
-
-                {appsLine && (
-                    <section className="pp-section pp-section--keep">
-                        <h2 className="pp-section-label">Apps</h2>
-                        <p className="pp-summary">
-                            {liveApps.map((project, i) => (
-                                <React.Fragment key={project.name}>
-                                    {i > 0 && ' and '}
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={() => trackEvent('Project Link Clicked', {
-                                            project: project.name, url: project.link, location: 'print',
-                                        })}
-                                    >
-                                        {project.name}
-                                    </a>
-                                </React.Fragment>
-                            ))}
-                            {appsLine}
-                        </p>
                     </section>
                 )}
 

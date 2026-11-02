@@ -104,12 +104,10 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
     const skillsLead = condensed ? copy.skillsLead : undefined;
     const selectedProjects = (condensed && copy.selectedProjects) || [];
     const experience = data.experience;
-    // The condensed corporate print has no Selected Work block, so it gets a
-    // short Independent Projects list instead (the full prints have the
-    // complete Projects section).
-    const projectLines = condensed && corporate
-        ? data.projects.filter((project) => project.available && project.printLine)
-        : [];
+    // The condensed main print has no Selected Work block, so it gets a short
+    // Apps line instead (the full prints have the complete Apps section).
+    const appsLine = condensed ? copy.appsLine : undefined;
+    const liveApps = data.projects.filter((project) => project.available);
 
     const variantLink = (target: PrintVariant, className: string, text: string) => (
         <Link
@@ -151,7 +149,7 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                 <div className="pp-banner">
                     <div className="pp-banner-text">
                         <strong>You're reading the condensed resume.</strong>
-                        <span>The full version adds areas of expertise, every engagement detail, and shipped products.</span>
+                        <span>The full version adds areas of expertise, every engagement detail, and shipped apps.</span>
                     </div>
                     <Link
                         to={fullPath}
@@ -245,6 +243,41 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                     </section>
                 )}
 
+                {appsLine && (
+                    <section className="pp-section pp-section--keep">
+                        <h2 className="pp-section-label">Apps</h2>
+                        <p className="pp-summary">
+                            {liveApps.map((project, i) => (
+                                <React.Fragment key={project.name}>
+                                    {i > 0 && ' and '}
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={() => trackEvent('Project Link Clicked', {
+                                            project: project.name, url: project.link, location: 'print',
+                                        })}
+                                    >
+                                        {project.name}
+                                    </a>
+                                </React.Fragment>
+                            ))}
+                            {appsLine}
+                        </p>
+                    </section>
+                )}
+
+                {selectedProjects.length > 0 && (
+                    <section className="pp-section">
+                        <h2 className="pp-section-label">Selected AI &amp; Build Work</h2>
+                        <ul className="pp-bullets">
+                            {selectedProjects.map((item) => (
+                                <li key={item.title}><strong>{item.title}</strong> {item.text}</li>
+                            ))}
+                        </ul>
+                    </section>
+                )}
+
                 <section className="pp-section">
                     <h2 className="pp-section-label">Technical Skills</h2>
                     {data.skills.map((group) => (
@@ -270,17 +303,6 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                         </div>
                     ))}
                 </section>}
-
-                {selectedProjects.length > 0 && (
-                    <section className="pp-section">
-                        <h2 className="pp-section-label">Selected AI &amp; Build Work</h2>
-                        <ul className="pp-bullets">
-                            {selectedProjects.map((item) => (
-                                <li key={item.title}><strong>{item.title}</strong> {item.text}</li>
-                            ))}
-                        </ul>
-                    </section>
-                )}
 
                 {/* Entries read linearly for text extraction: title → organization →
                   * link → dates → bullets. The date is right-aligned visually but stays
@@ -345,19 +367,6 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                     })}
                 </section>
 
-                {projectLines.length > 0 && (
-                    <section className="pp-section pp-section--keep">
-                        <h2 className="pp-section-label">Independent Projects</h2>
-                        <ul className="pp-bullets">
-                            {projectLines.map((project) => (
-                                <li key={project.name}>
-                                    <strong>{project.name}</strong> (iOS, live on the App Store). {project.printLine}
-                                </li>
-                            ))}
-                        </ul>
-                    </section>
-                )}
-
                 <section className="pp-section">
                     <h2 className="pp-section-label">Education &amp; Certifications</h2>
                     {data.education.map((edu) => (
@@ -380,7 +389,7 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                         <p className="pp-more-title">There's more to the story</p>
                         <p className="pp-more-sub">
                             The full resume adds areas of expertise, every engagement
-                            in complete detail, and the products I've designed, built, and shipped.
+                            in complete detail, and the apps I've designed, built, and shipped.
                         </p>
                         <Link
                             to={fullPath}
@@ -399,13 +408,13 @@ const PrintablePage: React.FC<PrintablePageProps> = ({ variant = 'contractFull' 
                 {condensed && (
                     <p className="pp-print-footer">
                         This is the condensed resume. Full detail — areas of expertise, every
-                        engagement, and shipped products:{' '}
+                        engagement, and shipped apps:{' '}
                         <a href={`https://${contact.website}${fullPath}`}>{contact.website}{fullPath}</a>
                     </p>
                 )}
 
                 {!condensed && <section className="pp-section">
-                    <h2 className="pp-section-label">Independent Projects</h2>
+                    <h2 className="pp-section-label">Apps</h2>
                     {data.projects.map((project) => (
                         <div className="pp-entry" key={project.name}>
                             <h3 className="pp-entry-title">{project.name}</h3>

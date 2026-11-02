@@ -92,7 +92,7 @@ const Projects: React.FC = () => {
     const { kicker, title, intro, cta } = content.sections.projects;
 
     return (
-        <section className="projects" id="Projects" ref={rootRef}>
+        <section className="projects" id="Apps" ref={rootRef}>
             <div className="projects-head">
                 <div className="projects-head-copy">
                     <p className="projects-kicker">{kicker}</p>

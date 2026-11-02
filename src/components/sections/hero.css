@@ -1,8 +1,8 @@
 /* hero.css — cinematic hero.
  *
- * Two stacked full-height "beats": the title card, then the executive
- * statement. The title scrolls away with native momentum and the statement
- * lines reveal on enter — no pin, no scrub (which jittered on iOS). */
+ * Two stacked "beats": the full-height title card, then the proof wall. The
+ * title scrolls away with native momentum and the tiles reveal on enter — no
+ * pin, no scrub (which jittered on iOS). */
 
 .hero {
     position: relative;
@@ -106,42 +106,104 @@
     color: var(--text);
 }
 
-.hero-body {
-    max-width: 54ch;
-    margin: 0 auto;
-    font-size: clamp(1rem, 1.5vw, 1.22rem);
-    line-height: 1.7;
-    color: var(--text-soft);
+/* --- proof wall (beat two): a label, a big claim, and a line of explanation --- */
+.hero-beat--proof {
+    min-height: 0;
+    padding: 1rem 1.5rem clamp(5rem, 9vw, 7rem);
 }
-/* Left-aligned: centered ragged lines fight multi-paragraph reading. */
-.hero-body { text-align: left; }
-
-/* Statement beats — each paragraph under a lime kicker on a hairline rule.
- * Block font-size matches the body so the 54ch measures line up. */
-.hero-statement-block {
-    width: 100%;
-    max-width: 54ch;
-    margin: 0 auto;
-    font-size: clamp(1rem, 1.5vw, 1.22rem);
-    text-align: left;
-}
-.hero-statement-block + .hero-statement-block { margin-top: 2.4rem; }
-.hero-statement-kicker {
+.proof-wall {
     display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    margin: 0 0 0.7rem;
-    font-size: 0.82rem;
-    letter-spacing: 0.28em;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 1.6vw, 1.4rem);
+    width: 100%;
+    max-width: 78rem;
+}
+.proof-tile {
+    flex: 1 1 max(32%, 18rem);        /* the max() keeps two rows of two, one column on phones */
+    min-width: 0;
+    min-height: 21rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: clamp(1.75rem, 3vw, 2.75rem);
+    border-radius: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: 0 32px 64px -28px rgba(0, 0, 0, 0.8);
+    will-change: transform;
+}
+.proof-tile--wide { flex: 2 1 max(56%, 26rem); }
+.proof-tile--accent {
+    background: var(--accent);
+    border-color: transparent;
+    color: var(--on-accent);
+}
+/* label row: pinned to the tile's top, with the tile's graphic opposite */
+.proof-top {
+    display: flex;
+    flex-wrap: wrap;                  /* a long label drops the graphic below it on phones */
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: auto;
+}
+.proof-kicker {
+    margin: 0;
+    font-size: 1.05rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--accent);
 }
-.hero-statement-kicker-rule {
-    flex: 1;
-    height: 1px;
-    background: var(--line);
+.proof-tile--accent .proof-kicker { color: var(--on-accent); }
+.proof-title {
+    margin: 2rem 0 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2.1rem, 3.4vw, 3.1rem);
+    line-height: 1.05;
+    color: var(--text);
 }
+.proof-tile--accent .proof-title {
+    font-size: clamp(2.5rem, 4.6vw, 4.25rem);
+    line-height: 1.02;
+    color: var(--on-accent);
+}
+.proof-text {
+    margin: 1rem 0 0;
+    max-width: 36rem;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: var(--text-soft);
+}
+.proof-tile--accent .proof-text {
+    font-weight: 500;
+    color: var(--on-accent);
+}
+.proof-flow {
+    flex: none;
+    display: block;
+    width: 7.5rem;
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2.5;
+}
+.proof-flow-dot { fill: var(--accent); }
+.proof-apps { flex: none; display: flex; gap: 0.8rem; }
+.proof-app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(4rem, 6vw, 5.5rem);
+    height: clamp(4rem, 6vw, 5.5rem);
+    padding: 0.55rem;
+    border-radius: 22%;
+    background: linear-gradient(150deg, var(--surface-2), var(--bg));
+    border: 1px solid var(--line);
+    transition: border-color 0.2s ease;
+}
+.proof-app:hover { border-color: var(--accent); }
+.proof-app img { display: block; width: 100%; height: auto; }
 
 /* --- corner stat (bottom-right) --- */
 .hero-stat {

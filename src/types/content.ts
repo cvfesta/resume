@@ -3,10 +3,24 @@ export interface Hero {
     title: string;
     eyebrow: string;
     statLabel: string;
-    /** Lime kicker labels over the hero statement's paragraphs, paired by
-     *  index with subTitle's \n\n-separated paragraphs (site only). */
-    statementKickers?: string[];
+    /** First sentence is the site's title-card lead; the whole text is the
+     *  full-detail prints' summary. */
     subTitle: string;
+    /** Tiles under the title card (site only). */
+    proofWall: ProofTile[];
+}
+
+/** One proof-wall tile: a label, a big claim, and a line of explanation. */
+export interface ProofTile {
+    kicker: string;
+    title: string;
+    text: string;
+    /** "wide" takes twice the width of a standard tile. */
+    size?: string;
+    /** "accent" = lime fill. */
+    tone?: string;
+    /** "flow" = automation → AI → person mark; "apps" = linked app icons. */
+    visual?: string;
 }
 
 /** Contact block rendered as the ATS-parseable header on the print page. */
@@ -40,10 +54,12 @@ export interface PrintAudienceCopy {
     summary: string;
     /** One-line skills list rendered directly under the summary. */
     skillsLead?: string;
-    /** Rendered after the skills, before Experience. */
+    /** Rendered before the skills. */
     selectedProjects?: SelectedProject[];
-    /** Replaces `PrintContent.highlights` for this audience. */
+    /** Replaces `PrintContent.highlights` for this audience; [] hides the block. */
     highlights?: string[];
+    /** Follows the live apps' linked names in the condensed print's Apps line. */
+    appsLine?: string;
 }
 
 /** Print-only content: per-audience copy plus the Highlights block. */
@@ -142,9 +158,6 @@ export interface Project {
     /** A coming-soon line shown in place of the screenshot on the site; a
      *  project with one shows no tagline or description there. */
     teaser?: string;
-    /** One-sentence version for the condensed corporate print's Independent
-     *  Projects block; projects without one are left out there. */
-    printLine?: string;
 }
 
 export interface Data {

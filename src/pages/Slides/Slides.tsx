@@ -57,8 +57,8 @@ const Slides: React.FC = () => {
             [
                 { name: 'Roles', selector: '#Roles' },
                 { name: 'Experience', selector: '#Experience' },
+                { name: 'Apps', selector: '#Apps' },
                 { name: 'Education', selector: '#Education' },
-                { name: 'Projects', selector: '#Projects' },
                 { name: 'Contact', selector: '.sitefooter' },
             ].forEach(({ name, selector }) => {
                 const el = document.querySelector(selector);
@@ -92,8 +92,8 @@ const Slides: React.FC = () => {
                     <Hero />
                     <Roles />
                     <Experience />
-                    <Education />
                     <Projects />
+                    <Education />
                     <SiteFooter />
                 </div>
             </div>

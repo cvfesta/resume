@@ -7,17 +7,37 @@ import { Data } from '../../types/content';
 import { calculateYearsOfExperience } from '../../utils/calculateYearsOfExperience';
 import { introGate } from '../../utils/introGate';
 import { makeMagnetic } from '../../utils/magnetic';
+import { trackEvent } from '../../utils/mixpanel';
+import walkoutDark from '../../assets/walkout-dark.svg';
+import ghostyIcon from '../../assets/ghosty.svg';
 import './hero.css';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const content = data as Data;
 
-/** Split the executive summary into a punchy lead sentence + supporting body. */
-const splitSummary = (text: string): { lead: string; body: string } => {
-    const match = text.match(/^(.*?[.!?])\s+(.+)$/s);
-    return match ? { lead: match[1], body: match[2] } : { lead: text, body: '' };
+/** The title card shows only the summary's first sentence; the rest of it is
+ * the full-detail print's summary. */
+const firstSentence = (text: string): string => text.match(/^.*?[.!?](?=\s|$)/s)?.[0] ?? text;
+
+/** App icons on the proof wall, keyed by a project's `icon` slug. */
+const appIcon: Record<string, string> = {
+    'walkout-intros': walkoutDark,
+    'ghosty': ghostyIcon,
 };
+
+const liveApps = content.projects.filter((project) => project.available);
+
+/** Decorative automation → AI → person mark for the "how I decide" tile. */
+const FlowMark: React.FC = () => (
+    <svg className="proof-flow" viewBox="0 0 220 70" aria-hidden="true">
+        <path d="M44 35 H90 M130 35 H172" strokeOpacity="0.5" />
+        <rect x="8" y="17" width="36" height="36" rx="8" />
+        <circle className="proof-flow-dot" cx="110" cy="35" r="20" />
+        <circle cx="196" cy="24" r="10" />
+        <path d="M176 58 C176 42 216 42 216 58" />
+    </svg>
+);
 
 type Mover = { x: gsap.QuickToFunc; y: gsap.QuickToFunc; depth: number };
 
@@ -27,10 +47,7 @@ const Hero: React.FC = () => {
     const years = calculateYearsOfExperience();                       // e.g. "16+"
     const yearsNum = parseInt(years, 10) || 0;
     const summary = content.hero.subTitle.replace('{YEARS}', years);
-    const { lead, body } = splitSummary(summary);
-    // The statement beat renders each data paragraph as its own block —
-    // three short beats read; one 190-word wall gets skimmed past.
-    const bodyParagraphs = body.split(/\n+/).map((p) => p.trim()).filter(Boolean);
+    const lead = firstSentence(summary);
 
     useLayoutEffect(() => {
         const root = rootRef.current;
@@ -42,7 +59,7 @@ const Hero: React.FC = () => {
         const q = gsap.utils.selector(root);
 
         // Hide animated elements before first paint so nothing flashes in.
-        gsap.set(q('.hero-eyebrow, .hero-name, .hero-lead, .hero-body, .hero-stat-in, .hero-cue-in'), {
+        gsap.set(q('.hero-eyebrow, .hero-name, .hero-lead, .hero-stat-in, .hero-cue-in, .proof-tile'), {
             opacity: 0,
         });
 
@@ -67,13 +84,10 @@ const Hero: React.FC = () => {
                 // SplitText needs final, font-loaded layout to break lines correctly.
                 const name = new SplitText(q('.hero-name'), { type: 'words,chars', mask: 'chars' });
                 const leadLines = new SplitText(q('.hero-lead'), { type: 'lines', mask: 'lines' });
-                const bodyLines = new SplitText(q('.hero-body'), { type: 'lines', mask: 'lines' });
-                splits = [name, leadLines, bodyLines];
+                splits = [name, leadLines];
 
                 // Containers are visible; their split children carry the reveal.
-                gsap.set(q('.hero-name, .hero-lead, .hero-body'), { opacity: 1 });
-                // Body lines stay hidden until the statement beat scrolls in.
-                gsap.set(bodyLines.lines, { yPercent: 105 });
+                gsap.set(q('.hero-name, .hero-lead'), { opacity: 1 });
 
                 if (firstRun) {
                     // --- intro: the title card builds itself once the curtain lifts ---
@@ -125,28 +139,22 @@ const Hero: React.FC = () => {
                     repeat: -1, repeatDelay: 0.5,
                 });
 
-                // --- statement reveal (beat two) ---
+                // --- proof wall reveal (beat two) ---
                 // A plain triggered reveal, the same pattern the other sections
                 // use — they scroll smoothly on iOS where the old pinned hero
                 // jittered. No pin, no scrub: the title card scrolls away with
-                // native momentum, and these lines slide in on enter.
-                gsap.set(q('.hero-statement-kicker'), { opacity: 0, y: 14 });
+                // native momentum, and the tiles deal in on enter.
                 gsap.timeline({
                     defaults: { ease: 'power3.out' },
                     scrollTrigger: {
-                        trigger: q('.hero-beat--statement')[0],
-                        start: 'top 68%',
+                        trigger: q('.hero-beat--proof')[0],
+                        start: 'top 72%',
                         toggleActions: 'play none none reverse',
                     },
                 })
-                    .to(q('.hero-statement-kicker'), {
-                        opacity: 1, y: 0, duration: 0.6, stagger: 0.12,
-                    }, 0)
-                    .to(bodyLines.lines, {
-                        yPercent: 0,
-                        duration: 0.9,
-                        stagger: 0.12,
-                    }, 0.08);
+                    .fromTo(q('.proof-tile'),
+                        { opacity: 0, y: 48 },
+                        { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 }, 0);
             }, root);
 
             // Mouse parallax for the ambient blobs (re-bound on every build).
@@ -234,20 +242,40 @@ const Hero: React.FC = () => {
                 </div>
             </div>
 
-            <div className="hero-beat hero-beat--statement">
-                <div className="hero-pane hero-statement-pane">
-                    {bodyParagraphs.map((paragraph, i) => {
-                        const kicker = content.hero.statementKickers?.[i];
+            <div className="hero-beat hero-beat--proof">
+                <div className="proof-wall">
+                    {content.hero.proofWall.map((tile) => {
+                        const classes = ['proof-tile'];
+                        if (tile.size === 'wide') classes.push('proof-tile--wide');
+                        if (tile.tone === 'accent') classes.push('proof-tile--accent');
                         return (
-                            <div className="hero-statement-block" key={i}>
-                                {kicker && (
-                                    <div className="hero-statement-kicker">
-                                        <span>{kicker}</span>
-                                        <span className="hero-statement-kicker-rule" aria-hidden="true" />
-                                    </div>
-                                )}
-                                <p className="hero-body">{paragraph}</p>
-                            </div>
+                            <article className={classes.join(' ')} key={tile.title}>
+                                <div className="proof-top">
+                                    <p className="proof-kicker">{tile.kicker}</p>
+                                    {tile.visual === 'flow' && <FlowMark />}
+                                    {tile.visual === 'apps' && (
+                                        <div className="proof-apps">
+                                            {liveApps.map((app) => (
+                                                <a
+                                                    className="proof-app"
+                                                    key={app.name}
+                                                    href={app.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label={`${app.name} on the App Store`}
+                                                    onClick={() => trackEvent('Project Clicked', {
+                                                        project: app.name, url: app.link, location: 'proof wall',
+                                                    })}
+                                                >
+                                                    <img src={app.icon ? appIcon[app.icon] : undefined} alt="" />
+                                                </a>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                                <h2 className="proof-title">{tile.title}</h2>
+                                <p className="proof-text">{tile.text}</p>
+                            </article>
                         );
                     })}
                 </div>

@@ -9,6 +9,7 @@
 /* offset smooth-scroll / anchor jumps so sections clear the floating nav */
 #Roles,
 #Experience,
+#Apps,
 #Education {
     scroll-margin-top: 88px;
 }

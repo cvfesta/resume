@@ -16,7 +16,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-variant-ligatures: none;
 }
 .pp-back {
     font-size: 0.9rem;
@@ -52,49 +53,6 @@
 }
 .pp-print-btn:hover { background: #2e5339; }
 
-/* --- full-version banner (condensed variant, screen only) --- */
-.pp-banner {
-    max-width: 52rem;
-    margin: 0 auto 1.25rem;
-    padding: 1rem 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    background: #2e5339;
-    border-radius: 8px;
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-}
-.pp-banner-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-}
-.pp-banner-text strong {
-    color: #fff;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-.pp-banner-text span {
-    color: rgba(255, 255, 255, 0.78);
-    font-size: 0.82rem;
-}
-.pp-banner-btn {
-    padding: 0.55rem 1.25rem;
-    border-radius: 99rem;
-    background: #fff;
-    color: #2e5339;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-decoration: none;
-    white-space: nowrap;
-}
-.pp-banner-btn:hover { background: #e8e8e3; }
-
-@media (max-width: 620px) {
-    .pp-banner { flex-direction: column; align-items: flex-start; }
-}
-
 /* --- the sheet --- */
 .pp-sheet {
     max-width: 52rem;
@@ -103,7 +61,7 @@
     background: #fff;
     color: #1d1d1b;
     box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.45);
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 0.92rem;
     line-height: 1.5;
 }
@@ -161,7 +119,6 @@
     border-bottom: 1px solid #dcdcd5;
     font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: #2e5339;
 }
@@ -169,48 +126,7 @@
 .pp-summary:last-child { margin-bottom: 0; }
 
 /* --- technical skills (plain "Category: item, item" lines for parsers) --- */
-.pp-skill-line {
-    margin: 0 0 0.35rem;
-    font-size: 0.88rem;
-}
-.pp-skill-line:last-child { margin-bottom: 0; }
-.pp-skill-line strong { color: #1d1d1b; }
 
-/* one-line skills list under the contract summary */
-.pp-skills-lead {
-    margin: 0.55rem 0 0;
-    font-size: 0.88rem;
-    font-weight: 600;
-}
-
-/* --- expertise --- */
-.pp-expertise { margin-bottom: 0.9rem; }
-.pp-expertise:last-child { margin-bottom: 0; }
-.pp-expertise-title {
-    margin: 0 0 0.4rem;
-    font-size: 0.96rem;
-    font-weight: 700;
-}
-.pp-expertise-level {
-    margin-left: 0.55rem;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #8a8a82;
-}
-.pp-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-}
-.pp-skill {
-    padding: 0.16rem 0.5rem;
-    border: 1px solid #cfcfc7;
-    border-radius: 4px;
-    font-size: 0.76rem;
-    color: #44443f;
-}
 
 /* --- entries (experience / education / projects) ---
  * Single linear column: title → org line (with the date at its end) → bullets.
@@ -245,8 +161,6 @@
     border-radius: 99rem;
     font-size: 0.66rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
     color: #2e5339;
 }
 .pp-entry-place { color: #8a8a82; }
@@ -278,51 +192,8 @@
     text-decoration-thickness: 1px;
 }
 
-/* --- end-of-resume card (condensed variant, screen only) --- */
-.pp-more {
-    margin-top: 2rem;
-    padding-top: 1.8rem;
-    border-top: 1px solid #dcdcd5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.55rem;
-    text-align: center;
-}
-.pp-more-title {
-    margin: 0;
-    font-size: 1.18rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: #1d1d1b;
-}
-.pp-more-sub {
-    margin: 0;
-    max-width: 30rem;
-    font-size: 0.88rem;
-    color: #6b6b66;
-}
-.pp-more-btn {
-    margin-top: 0.5rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.68rem 1.5rem;
-    border-radius: 99rem;
-    background: #1d1d1b;
-    color: #fff;
-    font-size: 0.88rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s ease;
-}
-.pp-more-btn:hover { background: #2e5339; color: #fff; }
-.pp-more-btn svg { display: block; }
 
-/* --- print-only pointer to the full resume (hidden on screen) --- */
-.pp-print-footer { display: none; }
 
-/* --- page-one strip pitching the interactive site (print/PDF only) --- */
 
 @media (max-width: 620px) {
     .pp-entry-date { margin-left: 0; flex-basis: 100%; }
@@ -355,16 +226,10 @@
     .pp-contact-line a:hover { color: #ebebe5; }
     .pp-availability { color: #8a8a82; }
     .pp-sep { color: #44443f; }
-    .pp-skill-line strong { color: #ebebe5; }
 
     .pp-section-label {
         border-bottom-color: #2e2e2b;
         color: #7fb992;
-    }
-    .pp-expertise-level { color: #6b6b66; }
-    .pp-skill {
-        border-color: #3a3a37;
-        color: #b6b6ad;
     }
 
     .pp-entry-date { color: #6b6b66; }
@@ -378,11 +243,6 @@
     .pp-entry-place { color: #6b6b66; }
     .pp-entry-link a { color: #7fb992; }
 
-    .pp-more { border-top-color: #2e2e2b; }
-    .pp-more-title { color: #ebebe5; }
-    .pp-more-sub { color: #8a8a82; }
-    .pp-more-btn { background: #ebebe5; color: #141413; }
-    .pp-more-btn:hover { background: #7fb992; color: #141413; }
 }
 
 /* --- print --- */
@@ -412,9 +272,7 @@
         padding: 0;
         background: #fff;
     }
-    .pp-toolbar,
-    .pp-banner,
-    .pp-more { display: none; }
+    .pp-toolbar { display: none; }
 
     /* Header QR block — print only. Sits to the right of the contact lines
      * so the interactive-site pitch costs no vertical space on page one. */
@@ -440,24 +298,12 @@
     }
     .pp-head-site-text {
         margin: 0;
-        font-size: 7.5pt;
+        font-size: 9pt;
         line-height: 1.3;
         color: #333;
     }
     .pp-head-site-text a { font-weight: 700; }
 
-    /* The screen CTAs above are replaced in print by a plain-text footer:
-     * spelled-out URLs stay readable on paper, and Chrome's save-as-PDF
-     * keeps the anchors live so the PDF links straight to the full resume. */
-    .pp-print-footer {
-        display: block;
-        margin: 14pt 0 0;
-        padding-top: 8pt;
-        border-top: 1px solid #dcdcd5;
-        font-size: 9pt;
-        color: #333;
-        break-inside: avoid;
-    }
     .pp-sheet {
         max-width: none;
         margin: 0;
@@ -473,28 +319,25 @@
      * enough to scan cleanly (no light greys that OCR poorly). */
     .pp-name,
     .pp-summary,
-    .pp-skill-line strong { color: #000; }
     .pp-contact-line,
     .pp-availability,
     .pp-entry-org,
-    .pp-skill { color: #333; }
     .pp-entry-date,
     .pp-entry-place,
-    .pp-expertise-level { color: #444; }
     .pp-entry-org-name { color: #000; }
-    .pp-entry-org-link { font-size: 8.5pt; }
+    .pp-entry-org-link { font-size: 9pt; }
 
     .pp-name { font-size: 22pt; }
     .pp-role { font-size: 11pt; }
     .pp-contact-line { font-size: 9pt; }
+    .pp-sep { color: #444; }
+    .pp-entry-type { font-size: 9pt; }
     .pp-availability { font-size: 9pt; }
     .pp-section { margin-bottom: 14pt; }
     .pp-section-label { font-size: 9pt; }
-    .pp-skill-line,
-    .pp-skills-lead { font-size: 9.5pt; }
+    .pp-apps-intro { break-after: avoid; }
     .pp-entry-date { font-size: 9pt; }
     .pp-entry-title { font-size: 11pt; }
-    .pp-skill { font-size: 8.5pt; }
 
     /* Condensed variant: tighter rhythm so the trimmed content lands on as few
      * pages as possible while keeping the ATS-safe ≥10.5pt base font. */
@@ -516,8 +359,6 @@
     .pp-head,
     .pp-entry,
     .pp-section--keep,
-    .pp-expertise,
-    .pp-skill-line { break-inside: avoid; }
     .pp-bullets li { break-inside: avoid; }
     /* Long entries (see FLOW_BULLET_THRESHOLD) may continue onto the next
      * page, but only between bullets: the heading block stays with the

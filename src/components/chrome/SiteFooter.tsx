@@ -6,6 +6,7 @@ import { SplitText } from 'gsap/SplitText';
 import footerData from '../../content/links.json';
 import content from '../../content/resume.json';
 import { makeMagnetic } from '../../utils/magnetic';
+import { printResume } from '../../utils/printResume';
 import { trackEvent } from '../../utils/mixpanel';
 import './sitefooter.css';
 
@@ -101,14 +102,24 @@ const SiteFooter: React.FC = () => {
                             {link.name}<span className="sf-link-arrow">↗</span>
                         </a>
                     ))}
+                    <button
+                        className="sf-link sf-link--button"
+                        type="button"
+                        onClick={() => {
+                            trackEvent('Printable Résumé Opened', { source: 'footer' });
+                            printResume();
+                        }}
+                    >
+                        Print resume
+                    </button>
                     <Link
                         className="sf-link"
-                        to="/print"
+                        to="/print/full"
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => trackEvent('Printable Résumé Opened', { source: 'footer' })}
+                        onClick={() => trackEvent('Full Résumé CTA Clicked', { source: 'footer' })}
                     >
-                        Printable resume<span className="sf-link-arrow">↗</span>
+                        Full resume<span className="sf-link-arrow">↗</span>
                     </Link>
                 </div>
                 <div className="sf-col sf-col--meta">

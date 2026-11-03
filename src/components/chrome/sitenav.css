@@ -103,9 +103,12 @@
     width: 2rem;
     height: 2rem;
     border-radius: 99rem;
+    padding: 0;
+    border: 0;
+    background: none;
     color: var(--text-soft);
     font-size: 0.95rem;
-    text-decoration: none;
+    cursor: pointer;
     transition: color 0.2s ease, background 0.2s ease;
 }
 .sitenav-print:hover {

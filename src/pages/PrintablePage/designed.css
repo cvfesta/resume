@@ -1,0 +1,308 @@
+/* designed.css — the resume, condensed and full: the site's look on letter paper.
+ * Size floors (1pt = 4/3px): sentences 10.5pt (14px), lists 10pt, short labels 9pt.
+ * Light surfaces are the page's own; brand colors come from tokens.css. */
+
+.dr-page {
+    display: flex;
+    flex-direction: column;
+    width: 816px;
+    box-sizing: border-box;
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+    background: #fff;
+    color: var(--on-accent);
+    box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.45);
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    /* A joined "fi" reads back as one odd character and can hide "Certifications" from parsers. */
+    font-variant-ligatures: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+.dr-page a { color: inherit; }
+
+/* --- header band --- */
+.dr-band {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 44px 14px;
+    background: radial-gradient(90% 140% at 0% 0%, #1d2412 0%, var(--bg) 62%);
+    color: var(--text);
+}
+.dr-band-main { flex: 1; min-width: 0; }
+.dr-eyebrow {
+    margin: 0 0 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+}
+.dr-name {
+    margin: 0 0 6px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+}
+.dr-contact { margin: 3px 0 0; font-size: 13px; color: #c9cdc4; }
+.dr-contact a { color: var(--accent); }
+.dr-availability { font-style: italic; color: #c9cdc4; }
+/* A paper reader needs the way back to the site; someone on the site doesn't. */
+.dr-qr { display: none; flex: none; text-align: center; }
+.dr-qr-plate { width: fit-content; margin: 0 auto; padding: 5px; border-radius: 8px; background: #fff; }
+.dr-qr img { display: block; width: 64px; height: 64px; }
+.dr-qr p { margin: 4px 0 0; font-size: 12px; font-weight: 600; color: var(--accent); }
+
+/* --- body --- */
+.dr-body { padding: 12px 44px 12px; }
+.dr-summary { margin-bottom: 10px; font-size: 14px; line-height: 1.36; }
+.dr-summary p { margin: 0; }
+.dr-summary p + p { margin-top: 8px; }
+.dr-heading {
+    margin: 16px 0 8px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1;
+}
+.dr-heading--section { margin-top: 10px; }
+
+/* --- skills, by hat --- */
+.dr-hat {
+    display: grid;
+    grid-template-columns: 124px minmax(0, 1fr);
+    gap: 14px;
+    padding: 7px 0;
+    border-top: 1px solid #dcddd5;
+    break-inside: avoid;
+}
+.dr-hat-title { margin: 0; font-size: 14px; font-weight: 700; line-height: 1.2; }
+.dr-hat-text { margin: 0; font-size: 14px; line-height: 1.34; }
+.dr-hat-skills { margin: 3px 0 0; font-size: 13.5px; line-height: 1.32; color: #333; }
+.dr-hat-skills strong { color: var(--on-accent); }
+
+/* --- site strip --- */
+.dr-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding: 8px 44px;
+    background: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.dr-strip-url { white-space: nowrap; }
+
+/* --- timeline --- */
+.dr-timeline { margin-top: 6px; }
+.dr-job {
+    display: grid;
+    grid-template-columns: 86px minmax(0, 1fr);
+    gap: 10px;
+    break-inside: avoid;
+}
+.dr-year { display: block; width: auto; height: 19px; fill: currentColor; }
+.dr-job-card {
+    position: relative;
+    padding: 0 0 5px 16px;
+    border-left: 2px solid var(--on-accent);
+}
+.dr-job-card::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: -7px;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+    border: 2px solid var(--on-accent);
+    border-radius: 50%;
+    background: var(--accent);
+}
+.dr-job-title { margin: 0; font-size: 15.5px; font-weight: 700; line-height: 1.2; }
+.dr-job-org {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    margin: 2px 0 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+.dr-chip {
+    padding: 1px 7px;
+    border: 1px solid #8a8a82;
+    border-radius: 99rem;
+    font-size: 12px;
+    font-weight: 600;
+}
+.dr-job-lead { margin: 0 0 3px; font-size: 14px; font-weight: 600; line-height: 1.32; }
+.dr-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.dr-lines li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 14px;
+    line-height: 1.32;
+    color: #222;
+}
+.dr-lines li::before {
+    content: "";
+    position: absolute;
+    top: 0.62em;
+    left: 0;
+    width: 9px;
+    height: 2px;
+    background: var(--on-accent);
+}
+
+/* The timeline dot needs a positioned card, and browsers write positioned
+ * elements to a PDF after everything else. Positioning its neighbours too keeps
+ * the PDF's text in reading order for resume parsers. */
+.dr-job > div,
+.dr-heading--section,
+.dr-project,
+.dr-education,
+.dr-strip { position: relative; }
+
+/* --- credentials --- */
+.dr-education {
+    display: grid;
+    gap: 5px;
+}
+.dr-education section {
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 12px;
+    align-items: center;
+    padding: 5px 12px;
+    border: 1px solid #dcddd5;
+    border-radius: 12px;
+    break-inside: avoid;
+}
+/* Same light plate the site uses behind these logos. */
+.dr-edu-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    grid-row: span 3;
+    height: 36px;
+    border-radius: 12px;
+    background: var(--logo-chip);
+    color: var(--on-accent);
+}
+.dr-edu-logo svg { display: block; max-width: 28px; max-height: 28px; }
+.dr-education h3,
+.dr-education p { grid-column: 2; }
+.dr-education h3 { margin: 0; font-size: 14px; font-weight: 700; line-height: 1.3; }
+.dr-education p { margin: 3px 0 0; font-size: 13.5px; color: #333; }
+.dr-edu-text { line-height: 1.4; }
+.dr-chips { margin: 6px 0 0; font-size: 13.5px; line-height: 1.4; color: #555; }
+.dr-intro { margin: 0 0 8px; font-size: 14px; }
+.dr-project {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 10px;
+    padding: 12px 14px 0;
+    border: 1px solid #dcddd5;
+    border-radius: 12px;
+    background: #f2f3ee;
+    break-inside: avoid;
+}
+.dr-project-icon {
+    flex: none;
+    box-sizing: border-box;
+    width: 64px;
+    height: 64px;
+    padding: 7px;
+    border-radius: 22%;
+    background: var(--bg);
+}
+.dr-project-icon img { display: block; width: 100%; height: auto; }
+.dr-project-copy { flex: 1; min-width: 0; padding-bottom: 12px; }
+.dr-project .dr-job-title { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.dr-chip--live { border-color: transparent; background: var(--accent); }
+.dr-project-category { margin: 2px 0 0; font-size: 13.5px; font-weight: 600; color: #333; }
+.dr-project-text { margin: 6px 0 0; font-size: 14px; line-height: 1.4; color: #333; }
+.dr-project-shot {
+    flex: none;
+    align-self: flex-end;
+    width: 104px;
+    height: 128px;
+    overflow: hidden;
+    border: 1px solid #c9cbc2;
+    border-bottom: 0;
+    border-radius: 10px 10px 0 0;
+}
+.dr-project-shot img { display: block; width: 100%; height: auto; }
+
+/* Phones read it as a web page: same blocks, one column. */
+@media screen and (max-width: 860px) {
+    .dr-page { width: 100%; min-height: 0; }
+    .dr-band { align-items: flex-start; padding: 20px; }
+    .dr-name { font-size: 34px; }
+    .dr-body { padding-inline: 20px; }
+    .dr-hat,
+    .dr-education { grid-template-columns: minmax(0, 1fr); }
+    .dr-job { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+    .dr-project { flex-wrap: wrap; }
+    .dr-project-copy { flex-basis: 12rem; }
+    .dr-project-shot { display: none; }
+    .dr-strip { flex-direction: column; align-items: flex-start; padding-inline: 20px; }
+    .dr-screen .pp-toolbar { flex-wrap: wrap; }
+}
+
+/* --- print: edge-to-edge letter pages --- */
+@page designed {
+    size: letter portrait;
+    margin: 0.3in 0;
+}
+/* The black header runs to the top edge of page one. */
+@page designed:first {
+    margin: 0 0 0.3in;
+}
+@media print {
+    .dr-qr { display: block; }
+    .dr-strip--screen { display: none; }
+    .dr-page {
+        page: designed;
+        width: 8.5in;
+        margin: 0;
+        overflow: visible;
+        box-shadow: none;
+    }
+    /* A grid won't split across pages, so a long job would jump whole to the
+     * next page and leave a gap. In print the job is a block that can split
+     * between bullets, with the year set beside it. */
+    .dr-job { display: block; position: relative; padding-left: 96px; break-inside: auto; }
+    .dr-job > div:first-child { position: absolute; top: 0; left: 0; width: 86px; }
+    /* Same layout for a hat, kept whole so its label can't split across pages. */
+    /* The min-height keeps a short skills line from running under the hat's label. */
+    .dr-hat { display: block; position: relative; min-height: 44px; padding-left: 138px; break-inside: avoid; }
+    .dr-hat > div:first-child { position: absolute; top: 7px; left: 0; width: 124px; }
+    .dr-hat > div:last-child { position: relative; }
+    .dr-hat-text,
+    .dr-hat-skills { break-inside: avoid; }
+    /* Keep each piece whole, and a heading with what follows it. */
+    .dr-heading,
+    .dr-intro,
+    .dr-job-title,
+    .dr-job-org,
+    .dr-job-lead { break-after: avoid; }
+    .dr-job-lead,
+    .dr-lines li,
+    .dr-strip { break-inside: avoid; }
+}

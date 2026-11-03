@@ -3,10 +3,13 @@ export interface Hero {
     title: string;
     eyebrow: string;
     statLabel: string;
-    /** First sentence is the site's title-card lead; the whole text is the
-     *  full-detail prints' summary. */
-    subTitle: string;
-    /** Tiles under the title card; the prints' Highlights use the same words. */
+    /** The intro, shared by the site and every resume. `{YEARS}` is replaced
+     *  with the computed years of experience. The site's title card shows its
+     *  first sentence, with the rest beneath. */
+    summary: string;
+    /** Label on the site's intro card. */
+    summaryLabel: string;
+    /** Proof wall tiles, shared by the site and every resume. */
     proofWall: ProofTile[];
 }
 
@@ -25,8 +28,6 @@ export interface ProofTile {
 
 /** Contact block rendered as the ATS-parseable header on the print page. */
 export interface Contact {
-    /** Credential appended to the title line, e.g. "PMP". */
-    credential: string;
     location: string;
     email: string;
     phone: string;
@@ -37,33 +38,6 @@ export interface Contact {
     /** Extra header lines for the contract/C2C print variants (entity,
      *  availability date, location/remote posture, work authorization). */
     contractDetails: string[];
-}
-
-/** One entry in the condensed contract print's "Selected AI & Build Work" block. */
-export interface SelectedProject {
-    /** Bold lead-in, written with its own closing period. */
-    title: string;
-    text: string;
-}
-
-/** Audience-specific copy for the condensed print variants.
- *  `{YEARS}` is replaced with the computed years of experience. Every
- *  optional field is omitted (or falls back) when absent. */
-export interface PrintAudienceCopy {
-    headline: string;
-    summary: string;
-    /** One-line skills list rendered directly under the summary. */
-    skillsLead?: string;
-    /** Rendered before the skills. */
-    selectedProjects?: SelectedProject[];
-    /** Drops the Highlights block from this audience's condensed print. */
-    hideHighlights?: boolean;
-}
-
-/** Print-only, per-audience copy. Highlights come from `hero.proofWall`. */
-export interface PrintContent {
-    corporate: PrintAudienceCopy;
-    contract: PrintAudienceCopy;
 }
 
 /** One "Category: item, item, …" line in the print page's Technical Skills section. */
@@ -98,25 +72,17 @@ export interface Role {
 export interface Experience {
     title: string;
     organization: string;
-    /** One-line outcome shown as the card opener on the interactive site.
-     *  When present, the site shows it instead of `description` (print
-     *  always uses the full description). */
-    lead?: string;
-    description: string;
-    /** `description` without the contracting detail, for the corporate
-     *  prints; falls back to `description`. */
-    corporateDescription?: string;
+    /** One-line opener, shared by the site and every resume. */
+    lead: string;
     date: string;
     link: string;
     engagementType: string;
-    bullets?: string[];
-    /** Audience rewrites of `bullets` (same facts) for the condensed
-     *  contract / corporate prints; each falls back to `bullets`. */
-    contractBullets?: string[];
-    corporateBullets?: string[];
-    /** Engagement label on the corporate prints and the interactive site
-     *  in place of `engagementType`; "" hides it. The contract prints
-     *  always show `engagementType`. */
+    /** In display order. Shown on the site and every resume, except that
+     *  `fullOnly` bullets are left off the condensed and plain resumes. */
+    bullets: { text: string; fullOnly?: boolean }[];
+    /** Engagement label on the main resumes and the site in place of
+     *  `engagementType`; "" hides it. The contract resumes always show
+     *  `engagementType`. */
     corporateEngagementLabel?: string;
     badges?: string[];
 }
@@ -159,7 +125,6 @@ export interface Project {
 export interface Data {
     hero: Hero;
     contact: Contact;
-    print: PrintContent;
     skills: SkillGroup[];
     sections: Sections;
     roles: Role[];

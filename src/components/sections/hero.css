@@ -108,9 +108,32 @@
 
 /* --- proof wall (beat two): a label, a big claim, and a line of explanation --- */
 .hero-beat--proof {
+    flex-direction: column;
+    gap: clamp(1rem, 1.6vw, 1.4rem);
     min-height: 0;
     padding: 1rem 1.5rem clamp(5rem, 9vw, 7rem);
 }
+.hero-summary {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 78rem;
+    padding: clamp(1.75rem, 3vw, 2.75rem);
+    border-radius: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: 0 32px 64px -28px rgba(0, 0, 0, 0.8);
+    will-change: transform;
+}
+.hero-summary .proof-kicker { margin-bottom: 1rem; }
+.hero-summary-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+    gap: 1rem clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1rem, 1.3vw, 1.12rem);
+    line-height: 1.6;
+    color: var(--text-soft);
+}
+.hero-summary-columns p { margin: 0; }
 .proof-wall {
     display: flex;
     flex-wrap: wrap;
@@ -188,7 +211,7 @@
     stroke: var(--accent);
     stroke-width: 2.5;
 }
-.proof-flow-dot { fill: var(--accent); }
+.proof-flow .flow-mark-dot { fill: var(--accent); }
 .proof-apps { flex: none; display: flex; gap: 0.8rem; }
 .proof-app {
     display: flex;

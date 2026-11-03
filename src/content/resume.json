@@ -1,9 +1,8 @@
 {
   "hero": {
     "title": "Christian Festa",
-    "eyebrow": "AI Engineer · Director of Software Engineering",
+    "eyebrow": "Hands-on AI Engineer & Engineering Leader",
     "statLabel": "years consulting & delivering",
-    "subTitle": "I'm a hands-on AI engineer with {YEARS} years of client-facing delivery behind me. I design, architect, and code alongside AI coding agents and MCP, working out the architecture with the agent before a line is written, then building, testing, and shipping. I've helped build multi-agent systems on Strands and Amazon Bedrock AgentCore and automated program management across Jira and Confluence.\n\nToday I'm Director of Software Engineering, leading multiple programs from design through delivery: secure generative and multi-agent AI on Amazon Bedrock with the governance behind it, a team building with AI coding agents every day, and a $40M design, development, and integration (DDI) program on AWS for a state agency client.\n\nEvery engagement has been client-facing. Not the configure-someone-else's-software kind of consulting: full DDI of custom systems. I've owned every seat in the SDLC, from requirements and UX design in Figma through hands-on development, systems and data integration, and test oversight. As a delivery manager I'm accountable for the entire delivery, with front-end, back-end, test, UX/UI design, and business analysis teams reporting to me through their leads.",
     "proofWall": [
       {
         "kicker": "How I work",
@@ -30,10 +29,11 @@
         "size": "wide",
         "visual": "apps"
       }
-    ]
+    ],
+    "summary": "I work directly with customers to turn their ideas into working software, leading the teams that take it from first prototype through production. I run discovery with stakeholders, shape the scope and architecture, and stay accountable for the outcome after go-live. For {YEARS} years I've delivered mission-critical systems in government, healthcare, and criminal justice, where privacy, security, and compliance can't be an afterthought.\n\nOn AI work, my teams and I evaluate foundation models (LLMs) against the real use case, build RAG on the customer's own data, and create agents with the right prompts, tools, and guardrails. I translate between executives and engineers, and I set the standards and playbooks that make AI adoption stick. I'm a hands-on leader: I make the technical calls, review the work myself, and step in when the team needs it.",
+    "summaryLabel": "Who I am"
   },
   "contact": {
-    "credential": "PMP",
     "location": "Rocklin, CA (Sacramento area)",
     "email": "christian.festa1@gmail.com",
     "phone": "(570) 406-8534",
@@ -42,55 +42,27 @@
     "availability": "Corp-to-corp via Christian Festa LLC",
     "contractDetails": []
   },
-  "print": {
-    "corporate": {
-      "headline": "AI Engineer · Director of Software Engineering · Applied AI, Agentic Systems, AI Enablement",
-      "summary": "Hands-on AI engineer and engineering director who delivers agentic systems and secure generative AI with the governance that lets them scale. I work alongside AI coding agents and MCP every day and lead AI enablement across engineering. {YEARS} years of client-facing design, development, and integration on regulated healthcare, eligibility, and criminal-justice data, contributing to $100M+ in winning proposals. PMP-certified."
-    },
-    "contract": {
-      "headline": "AI Engineering & Delivery Consultant · Agentic Workflows & MCP · AWS Bedrock",
-      "summary": "Hands-on AI engineering and delivery consultant who builds agentic workflows and secure generative AI for organizations that can't afford for it to fail. I work agentically every day with AI coding agents and MCP, using them to automate program management across Jira and Confluence, and I led a secure Retrieval-Augmented Generation application on Amazon Bedrock with layered guardrails and zero PII or IP exposure. I shape the architecture and contribute hands-on to multi-agent AI systems built on Strands Agents and Amazon Bedrock AgentCore, and I design, build, and ship my own iOS apps end to end. {YEARS} years of client-facing design, development, and integration across state and county programs, corp-to-corp since 2016.",
-      "skillsLead": "Claude Code · MCP · Strands Agents · Amazon Bedrock (AgentCore, Guardrails) · Multi-agent AI · RAG · Python · TypeScript · React · AppSync GraphQL · Swift · GitHub Copilot",
-      "selectedProjects": [
-        {
-          "title": "Multi-agent AI assistant.",
-          "text": "Shape the architecture and contribute hands-on to a secure chat agent over proprietary knowledge: Strands Agents SDK, Amazon Bedrock AgentCore and Guardrails, AWS Lambda, and a React 19 streaming front end on AppSync GraphQL."
-        },
-        {
-          "title": "Agentic program management.",
-          "text": "Built an agentic AI + MCP workflow that automates program management across Jira and Confluence for a 30+ person delivery program."
-        },
-        {
-          "title": "Secure RAG on Amazon Bedrock.",
-          "text": "Natural-language querying of proprietary data with isolated foundation models, layered guardrails, and zero PII or IP exposure; week-long work now takes hours."
-        },
-        {
-          "title": "Ghosty Privacy (iOS, live on the App Store).",
-          "text": "On-device privacy firewall: a packet tunnel Network Extension with its own lwIP-based TCP/IP stack and DNS forwarder."
-        },
-        {
-          "title": "Walkout Intros (iOS, live on the App Store).",
-          "text": "AI announcer intros paired with music cued to the drop for eleven sports, with a free tier and Pro subscription."
-        }
-      ],
-      "hideHighlights": true
-    }
-  },
   "skills": [
     {
       "category": "AI & Cloud",
       "items": [
         "Claude Code",
         "MCP",
+        "Foundation Models (Claude, Amazon Nova, Grok)",
+        "Model Testing & Selection",
+        "Prompt Engineering",
+        "Agent Tool Integration",
+        "LLM Evals",
+        "AI Observability (CloudWatch Traces, AgentCore Observability)",
+        "Vector Databases (pgvector)",
         "Strands Agents",
         "Amazon Bedrock (AgentCore, Guardrails)",
-        "Agentic AI",
         "Multi-Agent Systems",
         "RAG",
-        "AI Guardrails",
         "PII Redaction",
         "Responsible AI Governance",
         "GitHub Copilot",
+        "AWS CDK",
         "AWS (Lambda, AppSync, S3, DynamoDB, RDS/MySQL, SQS/SNS, Cognito, CloudWatch, VPC, IAM)",
         "Google Cloud Platform"
       ]
@@ -98,10 +70,8 @@
     {
       "category": "Engineering",
       "items": [
-        "React 19",
+        "React",
         "TypeScript",
-        "Vite",
-        "Tailwind CSS",
         "Node.js",
         "Python",
         "pytest",
@@ -110,10 +80,11 @@
         "Swift (iOS)",
         "GraphQL",
         "REST APIs",
-        "Git",
         "CI/CD (GitHub Actions)",
         "Playwright",
-        "axe Accessibility Testing"
+        "axe Accessibility Testing",
+        "Docker",
+        "Kubernetes"
       ]
     },
     {
@@ -121,13 +92,13 @@
       "items": [
         "Full-Lifecycle DDI",
         "Agile/Scrum",
-        "PMP",
-        "SDLC",
         "IV&V",
         "Data Migration",
         "Enterprise Integration (eHIT, NCIC, SFTP/MOVEit)",
-        "Jira & Confluence Administration",
-        "Stakeholder Management"
+        "Jira & Confluence",
+        "Offshore Team Management",
+        "Build-vs-Buy Decisions",
+        "Technical Hiring"
       ]
     },
     {
@@ -144,9 +115,9 @@
       "category": "Domain",
       "items": [
         "State & County Government Modernization",
-        "Integrated Eligibility & Welfare Systems (LEADER, BESSD)",
-        "Medicaid & ACA Exchange Integration (CalHEERS, eHIT)",
-        "Criminal Justice Systems (DCJS, FBI NCIC)",
+        "Integrated Eligibility & Welfare Systems",
+        "Medicaid & ACA Integration",
+        "Criminal Justice Systems",
         "Grants Management",
         "Prime/Subcontractor Delivery",
         "RFP & Proposal Support"
@@ -169,14 +140,14 @@
     "projects": {
       "kicker": "03 — Apps",
       "title": "Also shipped.",
-      "intro": "Native iOS apps I designed, built, and shipped myself, because I love building."
+      "intro": "Native iOS apps I designed, built, and shipped myself."
     }
   },
   "roles": [
     {
       "title": "AI Engineering",
       "level": "Hands-on",
-      "subTitle": "I work agentically: I work out the architecture with the agent before a line is written, then build, test, and ship. I’ve also automated program management across Jira and Confluence with AI agents and MCP.",
+      "subTitle": "I design and deliver AI systems built for production: RAG on vector databases, agents with tools and guardrails, evals to compare foundation models, and monitoring once they’re live. I use AI coding agents and MCP every day, and I’ve automated program management across Jira and Confluence.",
       "badges": [
         "Claude Code",
         "MCP",
@@ -193,7 +164,7 @@
     {
       "title": "Engineering Leadership",
       "level": "Executive",
-      "subTitle": "I direct programs from design through delivery as the client-facing technical lead: custom systems, not configurations of someone else’s software, with secure generative AI, the governance behind it, and AI coding agents built into everyday engineering. PMP-certified.",
+      "subTitle": "I lead onshore and offshore teams through the entire delivery, from customer discovery to production, and I’m accountable for scope, quality, schedule, and budget. As the customer’s technical lead, I bring AI into how teams build, with the governance that security and compliance require.",
       "badges": [
         "Full-Lifecycle DDI",
         "Secure GenAI on AWS Bedrock (RAG)",
@@ -208,7 +179,7 @@
     {
       "title": "UX & Design Systems",
       "level": "Expert",
-      "subTitle": "I build design systems and UX strategy for complex, accessible, enterprise-scale interfaces. My Figma-led initiatives have doubled design-team output, enforced WCAG compliance, and produced interfaces that hold up across every device and handoff.",
+      "subTitle": "I stay hands-on in design, turning complex requirements into accessible, usable products. I build design systems that speed up delivery, and my Figma-led work more than doubled design-team output.",
       "badges": [
         "Design Systems Architecture",
         "WCAG & Accessibility",
@@ -225,20 +196,20 @@
     {
       "title": "Director of Software Engineering",
       "organization": "Public Consulting Group",
-      "lead": "Leading multiple programs from design through delivery: cloud platforms on AWS and secure, agentic AI built with Amazon Bedrock and Strands.",
-      "description": "Director of Software Engineering, technical delivery manager, and principal design lead across multiple programs: secure generative and multi-agent AI, and a $40M DDI program building an AWS-hosted grant management platform for a California state health agency (a public portal and an administrative back office). Joined corp-to-corp in 2022 and converted to full-time in 2025.",
-      "corporateDescription": "Director of Software Engineering, technical delivery manager, and principal design lead across multiple programs: secure generative and multi-agent AI, and a $40M DDI program building an AWS-hosted grant management platform for a California state health agency (a public portal and an administrative back office).",
+      "lead": "Accountable for the design, development, and delivery of AI-enabled platforms across multiple programs.",
       "bullets": [
-        "Shape the architecture and contribute hands-on to a secure multi-agent AI assistant that lets teams chat with and review documents against proprietary knowledge, built on the Strands Agents SDK, Amazon Bedrock AgentCore, and Bedrock Guardrails, with AWS Lambda services and a React 19 streaming front end on AppSync GraphQL.",
-        "Led strategy and delivery of a secure Retrieval-Augmented Generation (RAG) application on Amazon Bedrock that lets staff query proprietary data in natural language with zero PII or IP exposure, using isolated foundation models and layered guardrails; work that took a week or more now takes hours.",
-        "Delivery lead on a $40M DDI program on AWS and client-facing technical lead: front-end, back-end, test, UX/UI design, and business analysis teams report to me through their leads, 30+ people in all.",
-        "Lead the build of a multi-tenant platform that hosts a portfolio of products on shared infrastructure, now approaching market launch, and build features hands-on across its React front ends, from a drag-and-drop form builder to automated accessibility testing in Playwright.",
-        "Built the responsible-AI governance framework that balances fast iteration with enterprise compliance and gives the organization a repeatable model for future AI initiatives.",
-        "Architect the multi-source data migration for client handoff: SharePoint libraries, AWS MySQL and DynamoDB stores, S3 archives, and secure SFTP/MOVEit transfer into a federal grants system, with full data-fidelity validation.",
-        "Engineers build with approved AI coding agents as part of everyday delivery.",
-        "Automated program management in Jira and Confluence with AI agents and MCP, compressing delivery cycles across every workstream.",
-        "Stood up a Figma design system that standardized components, enforced WCAG compliance, and guaranteed responsive behavior across devices, streamlining design-to-development handoff.",
-        "Took the first phase live in three months by directing onshore and offshore teams and instituting testing workflows across the lifecycle."
+        { "text": "Set technical vision and architecture with senior leaders and customers, turning goals into a delivery roadmap." },
+        { "text": "Lead delivery of a $40M DDI program on AWS as prime contractor and the customer’s technical lead, with up to 30+ people across front-end, back-end, test, UX/UI design, and business analysis, including an offshore subcontractor development team." },
+        { "text": "Direct secure generative AI delivery: RAG on Amazon Bedrock and a pgvector database, with layered guardrails and zero PII or IP exposure, cutting week-long work to hours." },
+        { "text": "Shape the architecture and contribute hands-on to a secure multi-agent AI system on Strands Agents, Amazon Bedrock AgentCore, and Guardrails." },
+        { "text": "Established evals for AI in production, writing Python: baseline question sets to compare foundation models (Claude, Amazon Nova, Grok), run manually and by an AI agent." },
+        { "text": "Delivered an internal monitoring console, writing Python, that brings together traces (CloudWatch, AgentCore observability), response times, and token usage to estimate cost." },
+        { "text": "Lead adoption and governance of AI coding agents: coding standards they must follow, adherence to Figma designs and the design system, and AI-powered pull request reviews with a person making the final call." },
+        { "text": "Define engineering standards for quality, testing, and CI/CD across teams, and hold teams accountable to delivery and quality metrics.", "fullOnly": true },
+        { "text": "Established the responsible-AI governance that lets teams move fast and stay compliant.", "fullOnly": true },
+        { "text": "Built the team: personally interviewed nearly all of its 30+ members using a technical exercise and code walkthrough I created, then set goals and mentored engineers and team leads." },
+        { "text": "Manage program budget and staffing, including scaling a 30+ team down to a small team as the program moved toward handoff, and take part in build-versus-buy decisions." },
+        { "text": "Lead a multi-tenant platform hosting a portfolio of products on shared infrastructure." }
       ],
       "date": "2022 - Present",
       "link": "",
@@ -250,7 +221,7 @@
         "AI-Accelerated Engineering (Copilot · Claude Code · MCP)",
         "Client-Facing DDI Delivery",
         "Multi-Tenant Platform Delivery",
-        "React 19 · AppSync GraphQL",
+        "React · AppSync GraphQL",
         "AWS Bedrock Delivery",
         "Data Migration & Client Handoff",
         "Playwright & Accessibility Testing",
@@ -259,42 +230,20 @@
         "Figma Design System",
         "WCAG Compliance",
         "Corp-to-Corp Consultant (2022–2025)"
-      ],
-      "contractBullets": [
-        "Shape the architecture and contribute hands-on to a secure multi-agent AI assistant over proprietary knowledge, built on the Strands Agents SDK, Amazon Bedrock AgentCore, and Bedrock Guardrails, with a React 19 streaming front end on AppSync GraphQL.",
-        "Automated program management in Jira and Confluence with AI agents and MCP, compressing delivery cycles across every workstream.",
-        "Engineers build with approved AI coding agents as part of everyday delivery.",
-        "Built a secure Retrieval-Augmented Generation (RAG) application on Amazon Bedrock that lets staff query proprietary data in natural language with zero PII or IP exposure, using isolated foundation models and layered guardrails; work that took a week or more now takes hours.",
-        "Designed the guardrails and the responsible-AI governance framework that let the team iterate quickly while staying compliant.",
-        "Architect the multi-source data migration for client handoff: SharePoint libraries, AWS MySQL and DynamoDB stores, S3 archives, and secure SFTP/MOVEit transfer into a federal grants system, with full data-fidelity validation.",
-        "Lead the build of a multi-tenant platform that hosts a portfolio of products on shared infrastructure, now approaching market launch, and build features hands-on across its React front ends, from a drag-and-drop form builder to automated accessibility testing in Playwright.",
-        "Delivery lead on a $40M DDI program on AWS and client-facing technical lead: front-end, back-end, test, UX/UI design, and business analysis teams report to me through their leads, 30+ people in all.",
-        "Stood up a Figma design system that standardized components, enforced WCAG compliance, and streamlined design-to-development handoff."
-      ],
-      "corporateBullets": [
-        "Delivered secure generative AI: a Retrieval-Augmented Generation (RAG) application on Amazon Bedrock with isolated foundation models and layered guardrails (zero PII or IP exposure; week-long work now takes hours) and the responsible-AI governance framework that gives the organization a repeatable model for future AI initiatives.",
-        "Lead AI enablement for engineering: the team builds with approved AI coding agents as part of everyday delivery.",
-        "Automated program management in Jira and Confluence with AI agents and MCP, compressing delivery cycles across every workstream.",
-        "Shape the architecture and contribute hands-on to a secure multi-agent AI assistant over proprietary knowledge, built on the Strands Agents SDK, Amazon Bedrock AgentCore, and Bedrock Guardrails, with a React 19 streaming front end on AppSync GraphQL.",
-        "Delivery lead on a $40M DDI program on AWS and client-facing technical lead: front-end, back-end, test, UX/UI design, and business analysis teams report to me through their leads, 30+ people in all.",
-        "Lead the build of a multi-tenant platform that hosts a portfolio of products on shared infrastructure, now approaching market launch, and build features hands-on across its React front ends, from a drag-and-drop form builder to automated accessibility testing in Playwright.",
-        "Architect the multi-source data migration for client handoff (SharePoint, AWS MySQL/DynamoDB, S3, SFTP/MOVEit into a federal grants system) with full data-fidelity validation.",
-        "Took the first phase live in three months by directing onshore and offshore teams and instituting testing workflows across the lifecycle."
-      ],
-      "corporateEngagementLabel": ""
+      ]
     },
     {
-      "title": "Technical Program and Design Manager",
+      "title": "Program Manager",
       "organization": "Unisys",
-      "lead": "Helped win a $100M statewide modernization (the build plus about 10 years of operations), then came back to deliver it, adopting Figma early and doubling the design team’s output.",
-      "description": "Corp-to-corp delivery manager on the State of Hawaii's $100M BESSD modernization (the build plus about 10 years of operations), a Google Cloud Platform-hosted DDI program consolidating the state's welfare and benefits systems onto a single new platform. Contributed to the winning RFP; Unisys brought me back to deliver it.",
-      "corporateDescription": "Delivery manager on the State of Hawaii's $100M BESSD modernization (the build plus about 10 years of operations), a Google Cloud Platform-hosted DDI program consolidating the state's welfare and benefits systems onto a single new platform. Contributed to the winning RFP; Unisys brought me back to deliver it.",
+      "lead": "Program manager and hands-on design lead for a prime contractor on a $100M statewide modernization on Google Cloud.",
       "bullets": [
-        "Led the DDI of everything public-facing on the program: architecture, UX, build, and delivery of the citizen portal that expanded self-service and customer-service capabilities.",
-        "Promoted to delivery manager across three of four solutions, accountable for the entire delivery: front-end, back-end, test, UX/UI design, and business analysis teams reported to me through their leads, about 25 onshore and offshore staff through the full SDLC.",
-        "Drove early Figma adoption and built a design system that more than doubled design-team output.",
-        "Set UI/UX standards for consistency, WCAG compliance, and cross-device responsiveness, embedded from requirements through deployment.",
-        "Ran client stakeholder workshops and cross-team coordination to keep delivery aligned with the state's consolidation goals."
+        { "text": "Served as the primary technical contact for state stakeholders, aligning priorities and managing scope.", "fullOnly": true },
+        { "text": "Ran Joint Application Design (JAD) sessions with state stakeholders, turning requirements into approved designs." },
+        { "text": "Owned the product backlog and release roadmap, sequencing functionality into phased releases based on priorities and dependencies." },
+        { "text": "Directed onshore and offshore teams across development, test, UX/UI design, and business analysis, about 25 people through their leads, coordinating handoffs across time zones." },
+        { "text": "Managed scope, schedule, and release planning to keep Agile delivery predictable." },
+        { "text": "Stayed hands-on in design while running the program, leading the move to Figma and building a design system that more than doubled design-team output with WCAG compliance built in." },
+        { "text": "Led the design and build of the public-facing citizen portal.", "fullOnly": true }
       ],
       "date": "2018 - 2022",
       "link": "",
@@ -302,7 +251,7 @@
       "badges": [
         "Hawaii BESSD Modernization",
         "Corp-to-Corp Engagement",
-        "Helped Win the RFP, Then Delivered It",
+        "Helped Win the RFP, Then Returned to Build It",
         "Statewide System Consolidation",
         "Full-SDLC Delivery Management",
         "Public-Facing Portal DDI",
@@ -314,13 +263,10 @@
     {
       "title": "Technical Consultant",
       "organization": "County Welfare Directors Association of California",
-      "lead": "Independently verified, from the state side, the health-exchange integration I had built from the county side.",
-      "description": "Corp-to-corp Independent Verification & Validation (IV&V) consultant for the integration between California's CalHEERS health-benefit exchange and the county welfare eligibility and approval systems over the eHIT interface, as the program moved into maintenance and operations. I had built the county side of that interface on LEADER, so I validated from the state side an integration I had implemented myself.",
-      "corporateDescription": "Independent Verification & Validation (IV&V) consultant for the integration between California's CalHEERS health-benefit exchange and the county welfare eligibility and approval systems over the eHIT interface, as the program moved into maintenance and operations. I had built the county side of that interface on LEADER, so I validated from the state side an integration I had implemented myself.",
+      "lead": "Independent design authority for California’s statewide health-exchange and county welfare integrations.",
       "bullets": [
-        "Oversaw eHIT integration between CalHEERS and county systems statewide, reviewing designs and technical documentation to surface integration risks before they reached timelines or performance.",
-        "Reviewed and signed off on technical deliverables and recommended process improvements that resolved issues before escalation.",
-        "Presented findings in biweekly reviews with developers and client stakeholders."
+        { "text": "Served as the approval gate for every design: reviewed each one in joint design sessions, and nothing moved into development without my sign-off." },
+        { "text": "Reported risks and findings to executive and technical stakeholders as a trusted advisor.", "fullOnly": true }
       ],
       "date": "2016 - 2018",
       "link": "",
@@ -338,15 +284,12 @@
     {
       "title": "Technical Consultant, Development & Integration",
       "organization": "Unisys",
-      "lead": "Started my career building criminal-justice and welfare-eligibility systems for government, rising from team lead to manager.",
-      "description": "Joined from Penn State and grew into lead and management roles across two flagship government DDI programs, working every seat in the SDLC: requirements, UX, development, integration, testing, and maintenance.",
+      "lead": "Rose from test lead to test manager and implementation lead on mission-critical government systems, managing teams of up to 25.",
       "bullets": [
-        "NYS Division of Criminal Justice Services (DCJS), Albany, NY (2009–2011): modernized New York's criminal history repository, the system of record for every arrest in the state, integrating fingerprint events, FBI NCIC queries, and court docket exchange. Made a lead within months of joining, running the test team and building the automated regression suites.",
-        "LA County LEADER, Los Angeles, CA (2011–2016): California's largest county welfare eligibility system, a mainframe core fronted by Spring Boot interface services. Led the test and regression teams and became the SME on LEADER's state interfaces, including implementing the eHIT exchange to CalHEERS for Covered California eligibility.",
-        "Designed and built in-house tools for the LEADER team that cut task completion time from hours to minutes, owning both the UX and the code.",
-        "Set standards and protocols for multi-system case data exchange across agencies and led implementation builds through deployment.",
-        "Contributed to winning RFP responses worth $100M+, including the Hawaii BESSD bid Unisys later brought me back to deliver.",
-        "Managed teams of up to 25 through full system builds, third-party integrations, and user acceptance testing."
+        { "text": "Moved from test lead into development on New York’s criminal history system of record, building its automated regression suites." },
+        { "text": "Became test manager on California’s largest county welfare system and led implementation of its Affordable Care Act changes." },
+        { "text": "Built internal tools that cut daily tasks from hours to minutes." },
+        { "text": "Helped write proposals that won $100M+ in work, including the statewide modernization I later returned to deliver." }
       ],
       "date": "2009 - 2016",
       "link": "",
@@ -393,7 +336,7 @@
     {
       "name": "Ghosty Privacy",
       "tagline": "Stop trackers in every app",
-      "description": "A privacy firewall that lives on your phone. Ghosty stops the trackers, analytics, and telemetry your apps send in the background, across every app on the device, not just the browser. See what your apps look up, switch whole categories off with one tap, and pause it whenever you like. No account, no server: what Ghosty sees stays on your phone. Free tier plus monthly, yearly, and family Premium.",
+      "description": "A privacy firewall that lives on your phone. Ghosty stops the trackers, analytics, and telemetry your apps send in the background, across every app on the device, not just the browser. See what your apps look up, switch whole categories off with one tap, and pause it whenever you like. No account, no server: what Ghosty sees stays on your phone.",
       "category": "iOS App · Privacy & Security",
       "meta": "Live",
       "available": true,
@@ -406,7 +349,7 @@
     {
       "name": "Walkout Intros",
       "tagline": "Custom walkup songs & intros",
-      "description": "Pro-quality walkout intros for sports teams. Build a roster, pair each player with one of five AI announcer voices and a song cued to the drop, then run game day with one tap. Eleven sports, Apple Music or your own library, free to try with a Pro subscription.",
+      "description": "Pro-quality walkout intros for sports teams. Build a roster, pair each player with one of five AI announcer voices and a song cued to the drop, then run game day with one tap. Eleven sports, Apple Music or your own library.",
       "category": "iOS App · Sports",
       "meta": "Live",
       "available": true,

@@ -73,6 +73,14 @@
     transition: color 0.2s ease;
 }
 .sf-link:hover { color: var(--accent); }
+.sf-link--button {
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
 .sf-link-arrow { font-size: 0.8em; opacity: 0.7; }
 
 .sf-col--meta { align-items: flex-end; justify-content: flex-end; }

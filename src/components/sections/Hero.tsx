@@ -10,14 +10,14 @@ import { makeMagnetic } from '../../utils/magnetic';
 import { trackEvent } from '../../utils/mixpanel';
 import walkoutDark from '../../assets/walkout-dark.svg';
 import ghostyIcon from '../../assets/ghosty.svg';
+import FlowMark from '../icons/FlowMark';
 import './hero.css';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const content = data as Data;
 
-/** The title card shows only the summary's first sentence; the rest of it is
- * the full-detail print's summary. */
+/** The title card shows the summary's first sentence; the rest follows beneath. */
 const firstSentence = (text: string): string => text.match(/^.*?[.!?](?=\s|$)/s)?.[0] ?? text;
 
 /** App icons on the proof wall, keyed by a project's `icon` slug. */
@@ -28,17 +28,6 @@ const appIcon: Record<string, string> = {
 
 const liveApps = content.projects.filter((project) => project.available);
 
-/** Decorative automation → AI → person mark for the "how I decide" tile. */
-const FlowMark: React.FC = () => (
-    <svg className="proof-flow" viewBox="0 0 220 70" aria-hidden="true">
-        <path d="M44 35 H90 M130 35 H172" strokeOpacity="0.5" />
-        <rect x="8" y="17" width="36" height="36" rx="8" />
-        <circle className="proof-flow-dot" cx="110" cy="35" r="20" />
-        <circle cx="196" cy="24" r="10" />
-        <path d="M176 58 C176 42 216 42 216 58" />
-    </svg>
-);
-
 type Mover = { x: gsap.QuickToFunc; y: gsap.QuickToFunc; depth: number };
 
 const Hero: React.FC = () => {
@@ -46,8 +35,9 @@ const Hero: React.FC = () => {
 
     const years = calculateYearsOfExperience();                       // e.g. "16+"
     const yearsNum = parseInt(years, 10) || 0;
-    const summary = content.hero.subTitle.replace('{YEARS}', years);
+    const summary = content.hero.summary.split('{YEARS}').join(years);
     const lead = firstSentence(summary);
+    const summaryRest = summary.slice(lead.length).split(/\n+/).map((p) => p.trim()).filter(Boolean);
 
     useLayoutEffect(() => {
         const root = rootRef.current;
@@ -59,7 +49,7 @@ const Hero: React.FC = () => {
         const q = gsap.utils.selector(root);
 
         // Hide animated elements before first paint so nothing flashes in.
-        gsap.set(q('.hero-eyebrow, .hero-name, .hero-lead, .hero-stat-in, .hero-cue-in, .proof-tile'), {
+        gsap.set(q('.hero-eyebrow, .hero-name, .hero-lead, .hero-stat-in, .hero-cue-in, .hero-summary, .proof-tile'), {
             opacity: 0,
         });
 
@@ -152,7 +142,7 @@ const Hero: React.FC = () => {
                         toggleActions: 'play none none reverse',
                     },
                 })
-                    .fromTo(q('.proof-tile'),
+                    .fromTo(q('.hero-summary, .proof-tile'),
                         { opacity: 0, y: 48 },
                         { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 }, 0);
             }, root);
@@ -243,6 +233,12 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="hero-beat hero-beat--proof">
+                <section className="hero-summary">
+                    <p className="proof-kicker">{content.hero.summaryLabel}</p>
+                    <div className="hero-summary-columns">
+                        {summaryRest.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    </div>
+                </section>
                 <div className="proof-wall">
                     {content.hero.proofWall.map((tile) => {
                         const classes = ['proof-tile'];
@@ -252,7 +248,7 @@ const Hero: React.FC = () => {
                             <article className={classes.join(' ')} key={tile.title}>
                                 <div className="proof-top">
                                     <p className="proof-kicker">{tile.kicker}</p>
-                                    {tile.visual === 'flow' && <FlowMark />}
+                                    {tile.visual === 'flow' && <FlowMark className="proof-flow" />}
                                     {tile.visual === 'apps' && (
                                         <div className="proof-apps">
                                             {liveApps.map((app) => (

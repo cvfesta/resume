@@ -1,11 +1,11 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import ContactModal from './Contact';
 import { introGate } from '../../utils/introGate';
 import { makeMagnetic } from '../../utils/magnetic';
+import { printResume } from '../../utils/printResume';
 import { trackEvent } from '../../utils/mixpanel';
 import './sitenav.css';
 
@@ -136,17 +136,18 @@ const SiteNav: React.FC = () => {
                     >
                         <i className={`bi ${menuOpen ? 'bi-x-lg' : 'bi-list'}`} aria-hidden="true" />
                     </button>
-                    <Link
+                    <button
                         className="sitenav-print"
-                        to="/print"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Printable resume"
-                        title="Printable resume"
-                        onClick={() => trackEvent('Printable Résumé Opened', { source: 'nav' })}
+                        type="button"
+                        aria-label="Print resume"
+                        title="Print resume"
+                        onClick={() => {
+                            trackEvent('Printable Résumé Opened', { source: 'nav' });
+                            printResume();
+                        }}
                     >
                         <i className="bi bi-printer-fill" aria-hidden="true" />
-                    </Link>
+                    </button>
                     <button
                         className="sitenav-cta"
                         type="button"

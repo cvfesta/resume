@@ -218,13 +218,12 @@ const Experience: React.FC = () => {
                 </div>
 
                 {jobs.map((job) => {
-                    // The site card opens with the one-line outcome and stays
-                    // scannable: three bullets, five chips + a "+N more" toggle
-                    // that expands the full set. Full record on the print pages.
+                    // The same wording as the full resume, with five chips + a
+                    // "+N more" toggle that expands the full set.
                     const entryKey = job.title + job.organization;
                     const isExpanded = !!expandedBadges[entryKey];
-                    const bullets = (job.bullets ?? []).slice(0, 3);
-                    // Corp-to-corp framing belongs to the contract résumé; the
+                    const bullets = job.bullets.map((bullet) => bullet.text);
+                    // Corp-to-corp framing belongs to the contract resume; the
                     // site reads like the corporate one.
                     const badges = (job.badges ?? []).filter((b) => !/corp-to-corp/i.test(b));
                     const engagementLabel = job.corporateEngagementLabel ?? job.engagementType;
@@ -249,11 +248,7 @@ const Experience: React.FC = () => {
                                     <span className="exp-type">{engagementLabel}</span>
                                 )}
                             </div>
-                            {job.lead ? (
-                                <p className="exp-lead">{job.lead}</p>
-                            ) : (
-                                <p className="exp-desc">{job.description}</p>
-                            )}
+                            <p className="exp-lead">{job.lead}</p>
 
                             {bullets.length > 0 && (
                                 <ul className="exp-bullets">
